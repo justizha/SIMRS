@@ -9,7 +9,42 @@
 </head>
 
 <body>
-    <h1 class="font-bold text-3xl text-center">INI HOME PAGE</h1>
+    <nav class="border-b shadow mx-auto w-full py-3 elative flex items-center">
+        <div class="flex justify-between items-center max-w-7xl mx-4 w-full">
+            <a href="#" class="font-bold text-lg">Logo</a>
+            <ul class="list-none md:flex  hidden gap-14">
+                <li>About</li>
+                <li>Faq ?</li>
+                <li>Menu</li>
+            </ul>
+            <div class="md:hidden">
+                <button id="mobileMenuButton" class="">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div class="md:hidden fixed top-12 left-0 h-full w-56 z-10 transform -translate-x-full transition-transform duration-300 ease-in-out"
+        id="mobileMenu">
+        <ul class="list-none  p-4 ">
+            <li class="block py-2 ">About</li>
+            <li class="block py-2 ">Faq?</li>
+            <li class="block py-2 ">Menu</li>
+        </ul>
+    </div>
 </body>
+<script>
+    const mobileMenuButton = document.getElementById("mobileMenuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("translate-x-0");
+    });
+
+</script>
 
 </html>
