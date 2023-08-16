@@ -4,20 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="dist/output.css">
     <title>Document</title>
 </head>
 
 <body>
     <nav class="border-b shadow mx-auto w-full py-3 elative flex items-center">
-        <div class="flex justify-between items-center max-w-7xl mx-4 w-full">
-            <a href="#" class="font-bold text-lg">Logo</a>
-            <ul class="list-none md:flex  hidden gap-14">
-                <li>About</li>
-                <li>Faq ?</li>
-                <li>Menu</li>
-            </ul>
-            <div class="md:hidden">
+        <div class="flex gap-3 justify-between items-center max-w-7xl mx-4 w-full">
+            <div class="flex items-center gap-4">
                 <button id="MobileMenuBtn" class="">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
@@ -25,26 +20,21 @@
                         </path>
                     </svg>
                 </button>
+                <a href="#" class="font-bold text-lg">Logo</a>
             </div>
+            <ul class="list-none   flex gap-14">
+                <li>About</li>
+                <li>Faq ?</li>
+            </ul>
         </div>
     </nav>
-    <div class="md:hidden fixed top-[53px] shadow left-0 h-full w-56 z-10 transform -translate-x-full transition-transform duration-300 ease-in-out border-r"
+    <div class=" fixed top-[53px] shadow left-0 h-full w-56 z-10 transform -translate-x-full transition-transform duration-300 ease-in-out border-r"
         id="mobile-menu">
         <ul class="list-none  p-4 flex items-center flex-col mt-32">
             <li class="block py-2 ">About</li>
             <li class="block py-2 ">Faq?</li>
-            <li class="block py-2 ">Menu</li>
         </ul>
     </div>
 </body>
-<script>
-    const mobileMenuBtn = document.getElementById("MobileMenuBtn");
-    const mobile = document.getElementById("mobile-menu");
-
-    mobileMenuBtn.addEventListener("click", () => {
-        mobile.classList.toggle("translate-x-0");
-    });
-
-</script>
 
 </html>
