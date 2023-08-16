@@ -18,7 +18,7 @@
                 <li>Menu</li>
             </ul>
             <div class="md:hidden">
-                <button id="mobileMenuButton" class="">
+                <button id="MobileMenuBtn" class="">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16">
@@ -28,9 +28,9 @@
             </div>
         </div>
     </nav>
-    <div class="md:hidden fixed top-12 left-0 h-full w-56 z-10 transform -translate-x-full transition-transform duration-300 ease-in-out"
-        id="mobileMenu">
-        <ul class="list-none  p-4 ">
+    <div class="md:hidden fixed top-[53px] shadow left-0 h-full w-56 z-10 transform -translate-x-full transition-transform duration-300 ease-in-out border-r"
+        id="mobile-menu">
+        <ul class="list-none  p-4 flex items-center flex-col mt-32">
             <li class="block py-2 ">About</li>
             <li class="block py-2 ">Faq?</li>
             <li class="block py-2 ">Menu</li>
@@ -38,11 +38,11 @@
     </div>
 </body>
 <script>
-    const mobileMenuButton = document.getElementById("mobileMenuButton");
-    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileMenuBtn = document.getElementById("MobileMenuBtn");
+    const mobile = document.getElementById("mobile-menu");
 
-    mobileMenuButton.addEventListener("click", () => {
-        mobileMenu.classList.toggle("translate-x-0");
+    mobileMenuBtn.addEventListener("click", () => {
+        mobile.classList.toggle("translate-x-0");
     });
 
 </script>
