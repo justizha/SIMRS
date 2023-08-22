@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js" defer></script>
     <link rel="stylesheet" href="dist/output.css">
     <title>Document</title>
 </head>
@@ -36,5 +35,14 @@
         </ul>
     </div>
 </body>
+<script>
+    const mobileMenuBtn = document.getElementById("MobileMenuBtn");
+    const mobile = document.getElementById("mobile-menu");
+
+    mobileMenuBtn.addEventListener("click", () => {
+        mobile.classList.toggle("translate-x-0");
+    });
+
+</script>
 
 </html>
