@@ -6,6 +6,9 @@ module.exports = {
       fontFamily : {
         'font-inter': ['Inter','sans-serif'],
         'font-comfortaa' : ['Comfortaa', 'sans-serif']
+      },
+      colors : {
+        'main-gray' : ['#2a2d33']
       }
     },
   },
