@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily : {
-        'font-inter': ['Inter','sans-serif']
+        'font-inter': ['Inter','sans-serif'],
+        'font-comfortaa' : ['Comfortaa', 'sans-serif']
       }
     },
   },
