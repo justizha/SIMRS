@@ -4,11 +4,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily : {
-        'font-inter': ['Inter','sans-serif'],
-        'font-comfortaa' : ['Comfortaa', 'sans-serif']
+        'inter': ['Inter','sans-serif'],
+        'comfortaa' : ['Comfortaa', 'sans-serif']
       },
       colors : {
-        'main-gray' : ['#2a2d33']
+        'main-gray' : ['#2a2d33'],
+        'main-blue' : ['#41abf2']
       }
     },
   },
