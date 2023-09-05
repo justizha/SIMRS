@@ -18,12 +18,11 @@
 <body class="font-comfortaa">
     <header class="bg-main-gray-0 w-full py-1 flex justify-between items-center">
         <div class="flex  mx-2 ">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 72 72" class="mt-2">
-                <path fill="white"
-                    d="M56 48c2.209 0 4 1.791 4 4 0 2.209-1.791 4-4 4-1.202 0-38.798 0-40 0-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4C17.202 48 54.798 48 56 48zM56 32c2.209 0 4 1.791 4 4 0 2.209-1.791 4-4 4-1.202 0-38.798 0-40 0-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4C17.202 32 54.798 32 56 32zM56 16c2.209 0 4 1.791 4 4 0 2.209-1.791 4-4 4-1.202 0-38.798 0-40 0-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4C17.202 16 54.798 16 56 16z">
-                </path>
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="white">
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
             </svg>
-            <div class="flex flex-col">
+
+            <div class="flex flex-col cstyle=" width: auto;"">
                 <h1 class="font-semibold text-[30px] text-white">TRANS<span class="text-red-500">M</span>EDIC</h1>
                 <p class="text-white italic text-[15px]">E-Healthcare / RS TRANSMEDIC</p>
             </div>
@@ -33,26 +32,26 @@
         <h1 class="text-white text-[30px] ml-6">Data Pasien</h1>
     </div>
     <section class="max-w-7xl relative z-0 mx-1 mt-1">
-        <div class="grid-cols-6 grid gap-3">
+        <div class="md:grid-cols-6 md:grid gap-3 flex-col">
             <div class="flex flex-col">
                 <label for="No RM" class=" text-md">No RM</label>
                 <input type="text"
                     class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-full">
             </div>
-            <div class="flex flex-col">
+            <div class="flex flex-col cstyle=">
                 <label for="Nama Pasien" class=" text-md">Nama Pasien</label>
                 <input type="text"
-                    class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-full">
+                    class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-full ">
             </div>
-            <div class="flex flex-col">
+            <div class="flex flex-col cstyle=">
                 <label for="Nama Pasien" class=" text-md">Tanggal Lahir</label>
                 <input type="date" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
             </div>
-            <div class="flex flex-col">
+            <div class="flex flex-col cstyle=">
                 <label for="Nama Ayah Kandung" class=" text-md">Nama Ayah Kandung</label>
                 <input type="text" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
             </div>
-            <div class="flex flex-col">
+            <div class="flex flex-col cstyle=">
                 <label for="Alamat" class=" text-md">Alamat</label>
                 <input type="text"
                     class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full lg:w-[350px]">
@@ -66,22 +65,43 @@
         <p class="text-white mx-1 text-[13px] tracking-wide">Tarik untuk mengkelompokan data</p>
     </div>
     <table class="bg-main-gray-0 w-full border-gray-600 border">
-        <div class="overflow-x-auto">
-
-            <thead>
-                <th class="border border-gray-600 text-white text-[13px]">No Rekam Medis</th>
-                <th class="border border-gray-600 text-white text-[13px]">Nama Pasien</th>
-                <th class="border border-gray-600 text-white text-[13px]">Jenis Kelamin</th>
-                <th class="border border-gray-600 text-white text-[13px]">Tanggal Lahir</th>
-                <th class="border border-gray-600 text-white text-[13px]">Alamat</th>
-                <th class="border border-gray-600 text-white text-[13px]">No Telepon</th>
-                <th class="border border-gray-600 text-white text-[13px]">No HP</th>
-            </thead>
-            <tbody class="bg-gray-100 border border-gray-600 text-[15px]" id="dataLoop">
-
-            </tbody>
-        </div>
+        <thead>
+            <th class="border border-gray-600 text-white text-[13px] w-[122px]">No Rekam Medis</th>
+            <th class="border border-gray-600 text-white text-[13px] w-[160px]">Nama Pasien</th>
+            <th class="border border-gray-600 text-white text-[13px]">Jenis Kelamin</th>
+            <th class="border border-gray-600 text-white text-[13px]">Nama Ayah Kandung</th>
+            <th class="border border-gray-600 text-white text-[13px]">Tanggal Lahir</th>
+            <th class="border border-gray-600 text-white text-[13px]">Alamat</th>
+            <th class="border border-gray-600 text-white text-[13px]">No Telepon</th>
+            <th class="border border-gray-600 text-white text-[13px]">No HP</th>
+            <th class="">&nbsp;</th>
+        </thead>
     </table>
+    <div class="h-[300px] overflow-y-auto">
+        <table class="w-full border">
+            <colgroup>
+                <col style="width: 114px;" class="border border-gray-600 border-b">
+                <col style="width: 150px;" class="border border-gray-600">
+                <col style="width: 180px;" class="border border-gray-600">
+                <col style="width: 290px;" class="border border-gray-600">
+                <col style="width: 180px;" class="border border-gray-600">
+                <col style="width: 100px;" class="border border-gray-600">
+                <col style="width: 120px;" class="border border-gray-600">
+                <col style="width: 120px;" class="border border-gray-600">
+            </colgroup>
+            <tbody class="b border border-gray-600 text-[15px]" id="dataLoop">
+                <!-- Your table data goes here -->
+            </tbody>
+        </table>
+    </div>
+    <div class="bg-main-gray-0 py-[7px] w-full">
+        <p class="text-white mx-1 text-[13px] tracking-wide">Tarik untuk mengkelompokan data</p>
+    </div>
+    <div class="mt-2 flex gap-3 justify-end mx-4">
+        <button class="bg-main-blue-0 p-1 rounded text-white text-[20px] w-[400px]">Input Triage Pasien Baru</button>
+        <button class="bg-main-blue-0 p-1 rounded text-white text-[20px]">Input Triage</button>
+    </div>
+
 </body>
 <script type="module" src="../js/dataIgd.js">
 

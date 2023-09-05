@@ -165,7 +165,7 @@ const data = [
         JenisKelamin : "Laki Laki",
         NamaAyahKandung : "-",
         TanggalLahir : "29-oct-2000",
-        Alamat :"Bandung 29",
+        Alamat :"Jalan Pesantren No. 48-D RT.07 RW.08 Kelurahan Sukamiskin Kecamatan Arcamanik Bandung - 40293",
         NoTelp : "005945894",
         NoHP : "09086930",
     },
@@ -183,8 +183,7 @@ const data = [
 
 document.addEventListener('DOMContentLoaded', function () {
     const dataLoop = document.getElementById('dataLoop');
-
-    data.forEach((item) => {
+    data.forEach((item, index) => {
         const row = document.createElement('tr');
         for (const key in item) {
             if (item.hasOwnProperty(key)) {
@@ -193,6 +192,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 row.appendChild(cell);
             }
         }
+        if (index % 2 === 0) {
+            row.classList.add('bg-gray-100'); 
+        }
         dataLoop.appendChild(row);
     });
 });
+
