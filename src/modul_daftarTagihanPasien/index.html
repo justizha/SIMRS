@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SimRS</title>
+  <link rel="stylesheet" href="/dist/output.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css"
+    integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="font-comfortaa">
+  <!-- navbar -->
+  <nav class="bg-[#28292b] text-white p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div class="flex mt-1">
+      <img src="../img/Menu Logo.png" class="mt-1 w-10 h-11 pt--6 pb-3" alt="" />
+      <div class="flex flex-col">
+        <span class="text-3xl font-Comfortaa font-bold">
+          <a class="text-white mt-2 ml-3" href="#">TRANS<a href="#" class="text-[#FE0000] font-semibold">M</a><a href=""
+              class="font-bold">EDIC</a></a>
+        </span>
+        <span class="ml-4 italic">E-Healthcare / RS TRANSMEDIC</span>
+      </div>
+      <div class="absolute right-4 py-3">
+        <span class="px-2 py-2 bg-[#363940] rounded-md text-lg">ABOUT</span>
+      </div>
+    </div>
+  </nav>
+  <!-- end navbar -->
+
+  <!-- header -->
+  <div class="bg-[#41abf2] p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <p class="text-white text-center text-3xl font-bold">Daftar Tagihan Pasien</p>
+  </div>
+  <!-- end header -->
+
+  <!-- form input -->
+  <div class="flex flex-wrap-12 -mx-3 mb-1">
+    <div class="w-full ml-4">
+      <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-first-name"> Tipe Pasien </label>
+      <select name="pasien"
+        class="block w-full text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600">
+        <option class="bg-[#313235] text-white" value=""></option>
+        <option class="bg-[#313235] text-white" value="">Asuransi</option>
+        <option class="bg-[#313235] text-white" value="">Bpjs</option>
+        <option class="bg-[#313235] text-white" value="">Karyawan</option>
+        <option class="bg-[#313235] text-white" value="">Perusahaan</option>
+        <option class="bg-[#313235] text-white" value="">Umum/Pribadi</option>
+      </select>
+    </div>
+    <div class="w-full px-3">
+      <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-last-name"> Instalasi </label>
+      <input
+        class="block w-full text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600"
+        type="text" />
+    </div>
+    <div class="w-full px-3">
+      <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-last-name"> Ruangan </label>
+      <input
+        class="block w-full text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600"
+        type="text" />
+    </div>
+    <div class="w-full px-3">
+      <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-last-name"> Periode </label>
+      <input
+        class="block w-full text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600 col-span-2"
+        type="date" />
+    </div>
+    <div class="w-full px-4">
+      <input
+        class="block w-full text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600 mt-8"
+        type="date" />
+    </div>
+    <div class="w-full px-3">
+      <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-last-name"> Status </label>
+      <input
+        class="block w-full text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600"
+        type="text" />
+    </div>
+    <div class="px2 p-5">
+      <button class="bg-[#41abf2] hover:bg-blue-700 text-white font-bold py-1 w-32 mt-3 px-7 border rounded-md"
+        type="search">Cari</button>
+    </div>
+  </div>
+  <!-- end form input -->
+
+  <!-- judul -->
+  <div class="bg-[#41abf2] p-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 font-bold">
+    <p class="text-white text-1xl text-left pt-1 ml-2 font-bold">Daftar Tagihan Pasien</p>
+  </div>
+  <!-- end judul -->
+
+  <!-- tebel -->
+  <div class="border border-gray-500 border-b-gray-600 bg-[#313235]">
+    <button class="py-1 pl-1 ml-2 text-white border rounded mt-1 mb-1 p-1 hover:bg-[#41abf2]">Export To Excel</button>
+  </div>
+  <div class="overflow-x-auto">
+    <table class="w-full table-zebra table-fixed text-left border font-thin text-sm">
+      <tr class="text-center text-white font-light bg-[#313235]">
+        <th class="border border-gray-500 w-36 p-2">Tanggal Masuk</th>
+        <th class="border border-gray-500 w-36 p-2">Tanggal Pulang</th>
+        <th class="border border-gray-500 w-36 p-2">No RM</th>
+        <th class="border border-gray-500 w-36 p-2">No Reg</th>
+        <th class="border border-gray-500 w-48 p-2">Nama Pasien</th>
+        <th class="border border-gray-500 w-36 p-2">Tipe Pasien</th>
+        <th class="border border-gray-500 w-36 p-2">Ruangan</th>
+        <th class="border border-gray-500 w-36 p-2">Total Tagihan</th>
+        <th class="border border-gray-500 w-36 p-2">Total Klaim</th>
+        <th class="border border-gray-500 w-36 p-2">Total Deposit</th>
+        <th class="border border-gray-500 w-36 p-2">Sisa Deposit</th>
+        <th class="border border-gray-500 w-36 p-2">Total Dibayar</th>
+        <th class="border border-gray-500 w-36 p-2">Status</th>
+      </tr>
+
+      <!-- Data data -->
+      <div class="overflow-y-auto">
+        <tr class="font-light text-black text-center hover:bg-blue-400 hover:text-white">
+          <td class="border border-gray-500 p-5">28-Aug-2023</td>
+          <td class="border border-gray-500 p-5 truncate">28-Aug-2023</td>
+          <td class="border border-gray-500 p-5">00003522</td>
+          <td class="border border-gray-500 p-5">2308000183</td>
+          <td class="border border-gray-500 p-5 uppercase">ihsan hafizh</td>
+          <td class="border border-gray-500 p-5">Umum/Pribadi</td>
+          <td class="border border-gray-500 p-5">IGD</td>
+          <td class="border border-gray-500 p-5">Rp. 125,000,00</td>
+          <td class="border border-gray-500 p-5">Rp. 0.00</td>
+          <td class="border border-gray-500 p-5">Rp. 0.00</td>
+          <td class="border border-gray-500 p-5">Rp. 0.00</td>
+          <td class="border border-gray-500 p-5">Rp. 0.00</td>
+          <td class="border border-gray-500 p-5">LUNAS</td>
+        </tr>
+      </div>
+    </table>
+  </div>
+  <!-- end tabel -->
+
+  <!-- Pagination -->
+  <div class="bg-main-gray-0">
+    <div class="bg-main-gray-0 py-[7px] flex items-center gap-2">
+      <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+        <i class="fa fa-solid fa-backward-step text-white"></i>
+      </div>
+      <div class="rounded-full border w-6 h-6 flex hover:bg-main-blue-0 items-center justify-center">
+        <i class="fa fa-solid fa-play text-white fa-rotate-180"></i>
+      </div>
+      <div class="rounded-full border w-6 h-6 flex items-center justify-center">
+        <h2 class="text-white">1</h2>
+      </div>
+      <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+        <i class="fa fa-solid fa-play text-white"></i>
+      </div>
+      <div class="rounded-full border w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+        <i class="fa fa-solid fa-forward-step text-white"></i>
+      </div>
+      <span class="text-white absolute right-3">1 - 3 of 3 items</span>
+    </div>
+  </div>
+  <!-- end Pagination  -->
+
+  <!-- form bawah -->
+  <div class="flex flex-wrap-5 -mx-3 mb-1">
+    <div class="px-3 ml-3">
+      <label class="block tracking-wide text-gray-700 text-1 font-semibold mb-1" for="grid-last-name"> No CM </label>
+      <input
+        class="block w-32 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600"
+        type="text" />
+    </div>
+    <div class="px-3">
+      <label class="block tracking-wide text-gray-700 text-1 font-semibold mb-1" for="grid-last-name"> No Registrasi
+      </label>
+      <input
+        class="block w-52 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600"
+        type="text" />
+    </div>
+    <div class="w-full px-3">
+      <label class="block tracking-wide text-gray-700 text-1 font-semibold mb-1" for="grid-last-name"> Nama </label>
+      <input
+        class="block w-52 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600"
+        type="text" />
+    </div>
+  </div>
+  <!-- end form bawah -->
+
+  <!-- button footer -->
+  <div class="flex flex-wrap-2 gap-3 float-right mt-7">
+    <div class="px-1">
+      <button class="bg-[#41abf2] text-white font-bold py-1 px-7 border rounded" type="search">Kwitansi Layanan</button>
+    </div>
+    <div class="px-1">
+      <button class="bg-[#41abf2] text-white font-bold py-1 px-7 border rounded" type="search">Pengembalian
+        Deposit</button>
+    </div>
+    <div class="px- 1">
+      <button class="bg-[#41abf2] text-white font-bold py-1 px-7 border rounded" type="search">Bayar Tagihan</button>
+    </div>
+    <div class="px-1 mr-1">
+      <button class="bg-[#41abf2] text-white font-bold py-1 px-7 border rounded" type="search">Bayar Tagihan</button>
+    </div>
+  </div>
+</body>
+
+</html>

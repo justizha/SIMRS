@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/dist/output.css">
+    <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -12,7 +13,6 @@
         href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@400;500;700&display=swap"
         rel="stylesheet">
     <link rel="icon" href="/public/transmedic-logo.png">
-    <title>IGD</title>
 </head>
 
 <body class="font-comfortaa">
@@ -29,32 +29,33 @@
         </div>
     </header>
     <div class="bg-main-blue-0 flex items-center py-1">
-        <h1 class="text-white text-[30px] ml-6">Data Pasien</h1>
+        <h1 class="text-white text-[30px] ml-6">Daftar Pasien Triage Gawat Darurat</h1>
     </div>
     <section class="max-w-7xl relative z-0 mx-1 mt-1">
-        <div class="md:grid-cols-6 md:grid gap-3 flex-col">
+        <div class="md:grid-cols-6 md:grid gap-3 flex-col ">
             <div class="flex flex-col">
-                <label for="No RM" class=" text-md">No RM</label>
-                <input type="text"
-                    class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-full">
+                <label for="No RM" class="text-[14px] font-bold">Periode tanggal</label>
+                <input type="date"
+                    class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300"
+                    id="DateInput">
+            </div>
+            <div class="flex flex-col">
+                <label for="" class="text-white">Periode Tanggal</label>
+                <input type="date"
+                    class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 "
+                    id="DateInput2">
+            </div>
+            <div class="flex flex-col ">
+                <label for="No Rm" class=" text-md">No RM</label>
+                <input type="number" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
             </div>
             <div class="flex flex-col">
                 <label for="Nama Pasien" class=" text-md">Nama Pasien</label>
-                <input type="text"
-                    class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-full ">
-            </div>
-            <div class="flex flex-col">
-                <label for="Nama Pasien" class=" text-md">Tanggal Lahir</label>
-                <input type="date" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
-            </div>
-            <div class="flex flex-col">
-                <label for="Nama Ayah Kandung" class=" text-md">Nama Ayah Kandung</label>
                 <input type="text" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
             </div>
             <div class="flex flex-col">
-                <label for="Alamat" class=" text-md">Alamat</label>
-                <input type="text"
-                    class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full lg:w-[350px]">
+                <label for="Alamat" class=" text-md">Tanggal Lahir</label>
+                <input type="text" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
             </div>
             <div class="flex justify-end mr-6 mt-[23px]">
                 <button class="w-7 h-7 bg-main-gray-0 rounded"><i class="bi bi-arrow-clockwise text-white"></i></button>
@@ -66,37 +67,45 @@
     </div>
     <table class="bg-main-gray-0 w-full border-gray-600 border">
         <thead>
-            <th class="border border-gray-600 text-white text-[13px] w-[122px] hover:bg-main-blue-0 duration-150">No
+            <th class="border border-gray-600 text-white text-[13px] w-[100px] hover:bg-main-blue-0 duration-150">No
                 Rekam Medis</th>
-            <th class="border border-gray-600 text-white text-[13px] w-[160px] hover:bg-main-blue-0 duration-150">Nama
+            <th class="border border-gray-600 text-white text-[13px] w-[260px] hover:bg-main-blue-0 duration-150">Nama
                 Pasien</th>
-            <th class="border border-gray-600 text-white text-[13px]  hover:bg-main-blue-0 duration-150 ">Jenis
+            <th class="border border-gray-600 text-white text-[13px] w-[140px] hover:bg-main-blue-0 duration-150 ">Jenis
                 Kelamin
             </th>
-            <th class="border border-gray-600 text-white text-[13px] hover:bg-main-blue-0 duration-150">Nama Ayah
-                Kandung</th>
-            <th class="border border-gray-600 text-white text-[13px] hover:bg-main-blue-0 duration-150">Tanggal Lahir
+
+            <th class="border border-gray-600 text-white text-[13px] w-[140px] hover:bg-main-blue-0 duration-150">
+                Tanggal Lahir
             </th>
-            <th class="border border-gray-600 text-white text-[13px] hover:bg-main-blue-0 duration-150">Alamat</th>
-            <th class="border border-gray-600 text-white text-[13px] hover:bg-main-blue-0 duration-150">No Telepon</th>
-            <th class="border border-gray-600 text-white text-[13px] hover:bg-main-blue-0 duration-150">No HP</th>
-            <th class="">&nbsp;</th>
+            <th class="border border-gray-600 text-white text-[13px] w-[290px] hover:bg-main-blue-0 duration-150">
+                Alamat
+            </th>
+            <th class="border border-gray-600 text-white text-[13px] w-[140px] hover:bg-main-blue-0 duration-150">No
+                Telepon</th>
+            <th class="border border-gray-600 text-white text-[13px] w-[140px] hover:bg-main-blue-0 duration-150">No Emr
+            </th>
+            <th class="border border-gray-600 text-white text-[13px] w-[140px] hover:bg-main-blue-0 duration-150">Tgl
+                Emr</th>
+            <th class="border border-gray-600 text-white text-[13px] w-[130px] hover:bg-main-blue-0 duration-150">
+                Noregistrasi
+            </th>
+            <th class="w-[20px]">&nbsp;</th>
         </thead>
     </table>
     <div class="h-[300px] overflow-y-auto">
         <table class="w-full border">
             <colgroup>
-                <col style="width: 114px;" class="border border-gray-600 border-b">
-                <col style="width: 148px;" class="border border-gray-600">
-                <col style="width: 184px;" class="border border-gray-600">
-                <col style="width: 280px;" class="border border-gray-600">
-                <col style="width: 180px;" class="border border-gray-600">
-                <col style="width: 100px;" class="border border-gray-600">
-                <col style="width: 120px;" class="border border-gray-600">
-                <col style="width: 120px;" class="border border-gray-600">
+                <col style="width: 95px;" class="border border-gray-600 border-b">
+                <col style="width: 230px;" class="border border-gray-600">
+                <col style="width: 128px;" class="border border-gray-600">
+                <col style="width: 127px;" class="border border-gray-600">
+                <col style="width: 250px;" class="border border-gray-600">
+                <col style="width: 128px;" class="border border-gray-600">
+                <col style="width: 125px;" class="border border-gray-600">
+                <col style="width: 125px;" class="border border-gray-600">
             </colgroup>
             <tbody class="b border border-gray-600 text-[15px]" id="dataLoop">
-                <!-- Your table data goes here -->
             </tbody>
         </table>
     </div>
@@ -119,15 +128,14 @@
         </div>
     </div>
     <div class=" mt-2 flex gap-3 justify-end mx-4">
-        <button class="bg-main-blue-0 p-1 rounded text-white text-[20px] w-[400px]">Input Triage Pasien
-            Baru</button>
-        <button class="bg-main-blue-0 p-1 rounded text-white text-[20px]">Input Triage</button>
+        <button class="bg-main-blue-0 p-1 rounded text-white text-[20px] w-[400px]">Lihat Triage</button>
+        <button class="bg-main-blue-0 p-1 rounded text-white text-[20px]">Registrasi</button>
     </div>
-
 </body>
-<script type="module" src="../js/dataIgd.js">
-
-
+<script src="../js/dataTriageIgd.js"></script>
+<script>
+    document.getElementById('DateInput').value = new Date().toISOString().slice(0, 10)
+    document.getElementById('DateInput2').value = new Date().toISOString().slice(0, 10)
 </script>
 
 </html>

@@ -3,183 +3,160 @@ const data = [
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
         JenisKelamin : "Laki Laki",
-        NamaAyahKandung : "-",
         TanggalLahir : "29-oct-2000",
         Alamat :"Bandung 29",
         NoTelp : "005945894",
-        NoHP : "09086930",
+        NoEmr : "001",
+        TglEmr : "12-decs-2023",
+        NoRegistrasi : "0001"
+    
     },
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
         JenisKelamin : "Laki Laki",
-        NamaAyahKandung : "-",
         TanggalLahir : "29-oct-2000",
         Alamat :"Bandung 29",
         NoTelp : "005945894",
-        NoHP : "09086930",
+        NoEmr : "001",
+        TglEmr : "12-decs-2023",
+        NoRegistrasi : "0001"
+    
     },
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
         JenisKelamin : "Laki Laki",
-        NamaAyahKandung : "-",
         TanggalLahir : "29-oct-2000",
         Alamat :"Bandung 29",
         NoTelp : "005945894",
-        NoHP : "09086930",
+        NoEmr : "001",
+        TglEmr : "12-decs-2023",
+        NoRegistrasi : "0001"
+    
     },
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
         JenisKelamin : "Laki Laki",
-        NamaAyahKandung : "-",
         TanggalLahir : "29-oct-2000",
         Alamat :"Bandung 29",
         NoTelp : "005945894",
-        NoHP : "09086930",
+        NoEmr : "001",
+        TglEmr : "12-decs-2023",
+        NoRegistrasi : "0001"
+    
     },
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
         JenisKelamin : "Laki Laki",
-        NamaAyahKandung : "-",
         TanggalLahir : "29-oct-2000",
         Alamat :"Bandung 29",
         NoTelp : "005945894",
-        NoHP : "09086930",
+        NoEmr : "001",
+        TglEmr : "12-decs-2023",
+        NoRegistrasi : "0001"
+    
     },
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
         JenisKelamin : "Laki Laki",
-        NamaAyahKandung : "-",
         TanggalLahir : "29-oct-2000",
         Alamat :"Bandung 29",
         NoTelp : "005945894",
-        NoHP : "09086930",
+        NoEmr : "001",
+        TglEmr : "12-decs-2023",
+        NoRegistrasi : "0001"
+    
     },
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
         JenisKelamin : "Laki Laki",
-        NamaAyahKandung : "-",
         TanggalLahir : "29-oct-2000",
         Alamat :"Bandung 29",
         NoTelp : "005945894",
-        NoHP : "09086930",
+        NoEmr : "001",
+        TglEmr : "12-decs-2023",
+        NoRegistrasi : "0001"
+    
     },
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
         JenisKelamin : "Laki Laki",
-        NamaAyahKandung : "-",
         TanggalLahir : "29-oct-2000",
         Alamat :"Bandung 29",
         NoTelp : "005945894",
-        NoHP : "09086930",
+        NoEmr : "001",
+        TglEmr : "12-decs-2023",
+        NoRegistrasi : "0001"
+    
     },
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
         JenisKelamin : "Laki Laki",
-        NamaAyahKandung : "-",
         TanggalLahir : "29-oct-2000",
         Alamat :"Bandung 29",
         NoTelp : "005945894",
-        NoHP : "09086930",
+        NoEmr : "001",
+        TglEmr : "12-decs-2023",
+        NoRegistrasi : "0001"
+    
     },
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
         JenisKelamin : "Laki Laki",
-        NamaAyahKandung : "-",
         TanggalLahir : "29-oct-2000",
         Alamat :"Bandung 29",
         NoTelp : "005945894",
-        NoHP : "09086930",
+        NoEmr : "001",
+        TglEmr : "12-decs-2023",
+        NoRegistrasi : "0001"
+    
     },
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
         JenisKelamin : "Laki Laki",
-        NamaAyahKandung : "-",
         TanggalLahir : "29-oct-2000",
         Alamat :"Bandung 29",
         NoTelp : "005945894",
-        NoHP : "09086930",
+        NoEmr : "001",
+        TglEmr : "12-decs-2023",
+        NoRegistrasi : "0001"
+    
     },
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
         JenisKelamin : "Laki Laki",
-        NamaAyahKandung : "-",
         TanggalLahir : "29-oct-2000",
         Alamat :"Bandung 29",
         NoTelp : "005945894",
-        NoHP : "09086930",
+        NoEmr : "001",
+        TglEmr : "12-decs-2023",
+        NoRegistrasi : "0001"
+    
     },
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
         JenisKelamin : "Laki Laki",
-        NamaAyahKandung : "-",
         TanggalLahir : "29-oct-2000",
         Alamat :"Bandung 29",
         NoTelp : "005945894",
-        NoHP : "09086930",
-    },
-    {
-        NoRekamMedis : "0001",
-        NamaPasien : "Test0001",
-        JenisKelamin : "Laki Laki",
-        NamaAyahKandung : "-",
-        TanggalLahir : "29-oct-2000",
-        Alamat :"Bandung 29",
-        NoTelp : "005945894",
-        NoHP : "09086930",
-    },
-    {
-        NoRekamMedis : "0001",
-        NamaPasien : "Test0001",
-        JenisKelamin : "Laki Laki",
-        NamaAyahKandung : "-",
-        TanggalLahir : "29-oct-2000",
-        Alamat :"Bandung 29",
-        NoTelp : "005945894",
-        NoHP : "09086930",
-    },
-    {
-        NoRekamMedis : "0001",
-        NamaPasien : "Test0001",
-        JenisKelamin : "Laki Laki",
-        NamaAyahKandung : "-",
-        TanggalLahir : "29-oct-2000",
-        Alamat :"Bandung 29",
-        NoTelp : "005945894",
-        NoHP : "09086930",
-    },
-    {
-        NoRekamMedis : "0001",
-        NamaPasien : "Test0001",
-        JenisKelamin : "Laki Laki",
-        NamaAyahKandung : "-",
-        TanggalLahir : "29-oct-2000",
-        Alamat :"Jalan Pesantren No. 48-D RT.07 RW.08 Kelurahan Sukamiskin Kecamatan Arcamanik Bandung - 40293",
-        NoTelp : "005945894",
-        NoHP : "09086930",
-    },
-    {
-        NoRekamMedis : "0001",
-        NamaPasien : "Test0001",
-        JenisKelamin : "Laki Laki",
-        NamaAyahKandung : "-",
-        TanggalLahir : "29-oct-2000",
-        Alamat :"Bandung 29",
-        NoTelp : "005945894",
-        NoHP : "09086930",
+        NoEmr : "001",
+        TglEmr : "12-decs-2023",
+        NoRegistrasi : "0001"
+    
     },
 ]
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const dataLoop = document.getElementById('dataLoop');
