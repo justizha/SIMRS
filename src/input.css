@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+    .tab-content {
+            transition: transform 0.8s ease-in-out;
+            transform: translateX(0);
+        }
+
+        .tab-hidden {
+            transform: translateX(-200%);
+        }

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/dist/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="/public/transmedic-logo.png">
+    <style>
+
+    </style>
+
+</head>
+
+<body class="font-comfortaa">
+    <header class="bg-main-gray-0 w-full py-1 flex justify-between items-center">
+        <div class="flex  mx-2 ">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="white">
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+            </svg>
+
+            <div class="flex flex-col cstyle=" width: auto;"">
+                <h1 class="font-semibold text-[30px] text-white">TRANS<span class="text-red-500">M</span>EDIC</h1>
+                <p class="text-white italic text-[15px]">E-Healthcare / RS TRANSMEDIC</p>
+            </div>
+        </div>
+    </header>
+    <div class="bg-main-blue-0 flex items-center py-1">
+        <h1 class="text-white text-[30px] ml-6">Data Pasien</h1>
+    </div>
+    <section class="max-w-7xl relative z-0 mx-4 mt-1 mb-4">
+        <div class="md:grid-cols-7 md:grid gap-3 flex-col ">
+            <div class="flex flex-col">
+                <label for="No RM" class="text-[13px]">No RM</label>
+                <input type="text" value="-"
+                    class="ring-1 rounded hover:shadow focus:outline-none bg-gray-300 focus:ring focus:border-blue-300"
+                    id="DateInput" readonly>
+            </div>
+            <div class="flex flex-col">
+                <label for="Nama Pasien" class="text-[13px] font-bold">Nama Pasien</label>
+                <input type="text" value="Pasien test" readonly
+                    class="ring-1 rounded focus:outline-none focus:ring bg-gray-200 focus:border-blue-300  w-full">
+            </div>
+            <div class="flex flex-col">
+                <label for="" class="text-[13px] font-bold">Tgl.Lahir</label>
+                <input type="text" value="22-05-2000 00:00"
+                    class="ring-1 rounded hover:shadow bg-gray-200 focus:outline-none focus:ring focus:border-blue-300 "
+                    id="DateInput2">
+            </div>
+            <div class="flex flex-col ">
+                <label for="No Rm" class=" text-[13px] font-bold">Umur</label>
+                <input type="number"
+                    class="ring-1 rounded focus:outline-none bg-gray-200 focus:ring focus:border-blue-300  w-full">
+            </div>
+            <div class="flex flex-col">
+                <label for="Alamat" class=" text-[13px] font-bold">Jenis Kelamin</label>
+                <input type="text"
+                    class="ring-1 bg-gray-200 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
+            </div>
+            <div class="flex flex-col">
+                <label for="Alamat" class=" text-[13px] font-bold">Alamat</label>
+                <input type="text"
+                    class="ring-1 bg-gray-200 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
+            </div>
+            <div class="flex flex-col">
+                <label for="Alamat" class=" text-[13px] font-bold">Telepon</label>
+                <input type="text"
+                    class="ring-1 bg-gray-200 rounded focus:outline-none focus:ring focus:border-blue-300  w-[220px]">
+            </div>
+
+        </div>
+        <div id="tab" class="py-6">
+            <ul class="flex flex-wrap -mb-px">
+                <li class="mr-2">
+                    <a href="#riwayat-pengkajian"
+                        class="tab-link inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300">RIWAYAT
+                        PENGKAJIAN</a>
+                </li>
+                <li class="mr-2">
+                    <a href="#pengkajian-detail"
+                        class="tab-link inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300"
+                        aria-current="page">PENGKAJIAN DETAIL</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mx-8 tab-content" id="riwayat-pengkajian">
+            <table class="bg-main-gray-0 w-full  border border-main-blue-0">
+                <thead>
+                    <th
+                        class="border border-gray-600 text-white text-[13px] w-[100px] hover:bg-main-blue-0 duration-150">
+                        Tgl EMR
+                    </th>
+                    <th
+                        class="border border-gray-600 text-white text-[13px] w-[260px] hover:bg-main-blue-0 duration-150">
+                        No EMR
+                    </th>
+                    <th
+                        class="border border-gray-600 text-white text-[13px] w-[140px] hover:bg-main-blue-0 duration-150 ">
+                        Pegawai
+                    </th>
+                </thead>
+                <tbody class="bg-gray-100 ">
+                    <tr class="hover:bg-main-blue-0 hover:text-white">
+                        <td class="border-r border-gray-600">
+                            23-aug-2023
+                        </td>
+                        <td class="border-r border-gray-600">
+                            MR2308/00000095
+                        </td>
+                        <td>
+                            Programmer Administrator
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="bg-main-gray-0 py-[7px] flex items-center gap-2 ">
+                <div> </div>
+                <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+                    <img src="/public/play-and-pause-button.png" alt="img"
+                        class="object-contain w-3 h-3 filter brightness-0 invert rotate-180">
+                </div>
+                <div class="rounded-full border w-6 h-6 flex hover:bg-main-blue-0">
+                    <i class="bi bi-play-fill text-white text-lg rotate-180"></i>
+                </div>
+                <h2 class="text-white">1</h2>
+                <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+                    <i class="bi bi-play-fill text-white text-lg"></i>
+                </div>
+                <div class="rounded-full border w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+                    <img src="/public/play-and-pause-button.png" alt="img"
+                        class="object-contain w-3 h-3 filter brightness-0 invert">
+                </div>
+            </div>
+            <div class=" mt-2 flex gap-3 justify-end mx-4">
+                <button class="bg-main-blue-0 p-1 rounded text-white text-[14px] w-[200px]">Lihat Triage</button>
+                <button class="bg-main-blue-0 p-1 rounded text-white text-[14px] w-[200px]">Registrasi</button>
+            </div>
+        </div>
+
+        <div id="pengkajian-detail" class="tab-content absolute top-36">
+            <div class="relative inline-block text-start">
+                <p class="text-[12px]">Rekam Medis</p>
+                <div class="flex gap-1">
+                    <button id="dropdown-button" type="button">
+                        <span class="bi bi-play-fill text-white p-1 rounded-full bg-gray-400"></span>
+                    </button>
+                    <p class="text-[12px] p-1 rounded-md bg-main-blue-0 text-white ring-2 ring-blue-600">
+                        Triage
+                    </p>
+                </div>
+                <div id="dropdown-content">
+                    <ul class="list-none">
+                        <li class="text-[12px]">
+                            <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md">
+                                Pemerikasaan Umum
+                            </button>
+                        </li>
+                        <li class="text-[12px]">
+                            <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md">
+                                Derajat Nyeri
+                            </button>
+                        </li>
+                        <li class="text-[12px]">
+                            <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md">
+                                Klasifikasi Triage
+                            </button>
+                        </li>
+                        <li class="text-[12px]">
+                            <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md">
+                                Tanda Vital
+                            </button>
+                        </li>
+                        <li class="text-[12px]">
+                            <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md">
+                                Anamnesa
+                            </button>
+                        </li>
+                        <li class="text-[12px]">
+                            <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md">
+                                Pemerikasaan Fisik
+                            </button>
+                        </li>
+                        <li class="text-[12px]">
+                            <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md">
+                                Pemerikasaan
+                            </button>
+                        </li>
+                        <li class="text-[12px]">
+                            <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md">
+                                Informasi Pemindahan Ruangan/Pemulangan Pasien
+                            </button>
+                        </li>
+                        <li class="text-[12px]">
+                            <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md">
+                                Pemberian Komunikasi, Informasi dan Edukasi (KIE)
+                            </button>
+                        </li>
+                        <li class="text-[12px]">
+                            <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md">
+                                Lembar ObservasiPenderita Instalasi Gawat Darurat
+                            </button>
+                        </li>
+                        <li class="text-[12px]">
+                            <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md">
+                                Asuhan Keperawatan Instalasi Gawat Darurat
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+</body>
+<script src="script.js"></script>
+
+
+</html>
