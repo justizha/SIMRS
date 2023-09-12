@@ -146,81 +146,93 @@
             </div>
         </div>
 
-        <div id="pengkajian-detail" class="tab-content absolute top-36">
-            <div class="relative inline-block text-start">
-                <p class="text-[12px]">Rekam Medis</p>
-                <div class="flex gap-1">
-                    <button id="dropdown-button" type="button">
-                        <span class="bi bi-play-fill text-white p-1 rounded-full bg-gray-400"></span>
-                    </button>
-                    <p class="text-[12px] p-1 rounded-md bg-main-blue-0 text-white ring-2 ring-blue-600">
-                        Triage
-                    </p>
+        <div class="flex tab-content" id="pengkajian-detail">
+            <div class="flex">
+                <div class="relative -top-36 inline-block">
+                    <p class="text-[12px] w-[88px]">Rekam Medis</p>
+                    <div class="flex gap-1">
+                        <button id="dropdown-button" type="button">
+                            <span class="bi bi-play-fill text-white p-1 rounded-full bg-gray-400"></span>
+                        </button>
+                        <p
+                            class="text-[12px] p-1 rounded-md hover:bg-main-blue-0 hover:text-white ring-2 hover:ring-blue-600">
+                            Triage
+                        </p>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <div class=" absolute ml-10 w-[400px]" id="dropdown-content">
+                            <ul class="list-none flex flex-col">
+                                <li class="text-[12px]">
+                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md"
+                                        id="bt-pemerikasaan-umum" data-target="content-pemerikasaan-umum">
+                                        Pemerikasaan Umum
+                                    </button>
+                                </li>
+                                <li class="text-[12px]">
+                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start">
+                                        Derajat Nyeri
+                                    </button>
+                                </li>
+                                <li class="text-[12px]">
+                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start">
+                                        Klasifikasi Triage
+                                    </button>
+                                </li>
+                                <li class="text-[12px]">
+                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start">
+                                        Tanda Vital
+                                    </button>
+                                </li>
+                                <li class="text-[12px]">
+                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start">
+                                        Anamnesa
+                                    </button>
+                                </li>
+                                <li class="text-[12px]">
+                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start">
+                                        Pemerikasaan Fisik
+                                    </button>
+                                </li>
+                                <li class="text-[12px]">
+                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start">
+                                        Pemerikasaan
+                                    </button>
+                                </li>
+                                <li class="text-[12px]">
+                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start">
+                                        Informasi Pemindahan Ruangan/Pemulangan Pasien
+                                    </button>
+                                </li>
+                                <li class="text-[12px]">
+                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start">
+                                        Pemberian Komunikasi, Informasi dan Edukasi (KIE)
+                                    </button>
+                                </li>
+                                <li class="text-[12px]">
+                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start">
+                                        Lembar Observasi Penderita Instalasi Gawat Darurat
+                                    </button>
+                                </li>
+                                <li class="text-[12px]">
+                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start">
+                                        Asuhan Keperawatan Instalasi Gawat Darurat
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div id="dropdown-content">
-                    <ul class="list-none">
-                        <li class="text-[12px]">
-                            <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md">
-                                Pemerikasaan Umum
-                            </button>
-                        </li>
-                        <li class="text-[12px]">
-                            <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md">
-                                Derajat Nyeri
-                            </button>
-                        </li>
-                        <li class="text-[12px]">
-                            <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md">
-                                Klasifikasi Triage
-                            </button>
-                        </li>
-                        <li class="text-[12px]">
-                            <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md">
-                                Tanda Vital
-                            </button>
-                        </li>
-                        <li class="text-[12px]">
-                            <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md">
-                                Anamnesa
-                            </button>
-                        </li>
-                        <li class="text-[12px]">
-                            <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md">
-                                Pemerikasaan Fisik
-                            </button>
-                        </li>
-                        <li class="text-[12px]">
-                            <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md">
-                                Pemerikasaan
-                            </button>
-                        </li>
-                        <li class="text-[12px]">
-                            <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md">
-                                Informasi Pemindahan Ruangan/Pemulangan Pasien
-                            </button>
-                        </li>
-                        <li class="text-[12px]">
-                            <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md">
-                                Pemberian Komunikasi, Informasi dan Edukasi (KIE)
-                            </button>
-                        </li>
-                        <li class="text-[12px]">
-                            <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md">
-                                Lembar ObservasiPenderita Instalasi Gawat Darurat
-                            </button>
-                        </li>
-                        <li class="text-[12px]">
-                            <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md">
-                                Asuhan Keperawatan Instalasi Gawat Darurat
-                            </button>
-                        </li>
-                    </ul>
-                </div>
+            </div>
+            <div class="bg-main-blue-0 w-full h-12 ml-[290px] relative -top-32" id="content-rekam-medik"
+                data-content="content-rekam-medik">
+                <h1 class="text-white">Rekam Medik</h1>
+            </div>
+            <div id="content-pemerikasaan-umum" class="hidden" data-content="content-pemerikasaan-umum">
+                <h1>Pemerikasaan umum</h1>
             </div>
         </div>
 
 </body>
 <script src="script.js"></script>
-
 
 </html>

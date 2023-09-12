@@ -1,3 +1,4 @@
+    //tabs
     const switchTab = (tabId) => {
         const tabLinks = document.querySelectorAll('.tab-link');
         const tabContents = document.querySelectorAll('.tab-content');
@@ -26,7 +27,9 @@
             switchTab(tabId);
         });
     });
+////////////////////////////////////////////////
 
+    //drop-down
     const button = document.getElementById('dropdown-button');
     const content = document.getElementById('dropdown-content');
     button.addEventListener('click', () => {
@@ -38,3 +41,32 @@
         content.classList.add('hidden');
         }
     });
+    //content toggle
+    function showSelectedContent(contentId) {
+        const contentElements = document.querySelectorAll('[data-content]');
+        contentElements.forEach(content => {
+            const targetId = content.getAttribute('data-content');
+            if (targetId === contentId) {
+                content.classList.remove("hidden");
+            } else {
+                content.classList.add("hidden");
+            }
+        });
+    }
+
+    const buttons = document.querySelectorAll('[data-target]');
+    buttons.forEach(button => {
+        const targetId = button.getAttribute('data-target');
+        button.addEventListener("click", function () {
+            showSelectedContent(targetId);
+        });
+    });
+
+
+
+
+
+
+
+
+
