@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transmedic | Daftar Resep Pasien</title>
+  <link rel="stylesheet" href="/dist/output.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="icon" href="https://apps.transmedic.co.id:2200/app/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css"
+    integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <style>
+    th {
+      padding: 3px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      color: white;
+    }
+  </style>
+</head>
+
+<body class="font-comfortaa">
+  <!-- navbar -->
+  <nav class="bg-[#28292b] text-white p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div class="flex mt-1">
+      <a href="#" id="MobileMenuBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="white">
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+        </svg></a>
+      <div class="flex flex-col">
+        <span class="text-3xl font-Comfortaa font-semibold">
+          <a class="text-white mt-2 ml-3" href="#">TRANS<a href="#" class="text-[#FE0000] font-semibold">M</a><a href=""
+              class="font-semibold">EDIC</a></a>
+        </span>
+        <span class="ml-4 italic">E-Healthcare / RS TRANSMEDIC</span>
+      </div>
+      <div class="absolute right-4 py-3">
+        <a href="/about">
+          <span class="px-2 py-2 bg-[#363940] rounded-md text-lg">ABOUT</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <!-- end navbar -->
+  <div class="w-full">
+    <div class="w-full py-5 bg-blue-400 justify-center m-auto flex">
+      <h1 class="text-white text-xl font-semibold">Daftar Resep Pasien</h1>
+    </div>
+    <div class="mx-8 my-3 flex-col gap-3 md:grid md:grid-cols-7">
+      <div class="flex flex-col">
+        <label for="Nama Pasien" class="text-md">Instalasi</label>
+        <select name="" id="" class="rounded ring-1 focus:border-blue-300 focus:outline-none focus:ring">
+          <option value="" selected disabled hidden></option>
+          <option value="" class="bg-gray-600 text-white hover:bg-blue-300">Instalasi Farmasi</option>
+          <option value="" class="bg-gray-600 text-white hover:bg-blue-300">Instalasi Gawat Darurat</option>
+          <option value="" class="bg-gray-600 text-white hover:bg-blue-300">Instalasi Laboratorium</option>
+          <option value="" class="bg-gray-600 text-white hover:bg-blue-300">Instalasi Rawat Inap dan Perawatan Intensif
+          </option>
+          <option value="" class="bg-gray-600 text-white hover:bg-blue-300">Instalasi Rawat Jalan dan Rehabilitasi Medik
+          </option>
+          <option value="" class="bg-gray-600 text-white hover:bg-blue-300">Instalasi Radiologi dan Imaging</option>
+        </select>
+      </div>
+      <div class="flex flex-col">
+        <label class="text-md">Ruangan</label>
+        <select name="" id="" class="w-full rounded ring-1 focus:border-blue-300 focus:outline-none focus:ring">
+          <option value="" selected disabled hidden></option>
+          <option value="" class="bg-gray-600 text-white hover:bg-blue-300">KLINIK</option>
+          <option value="" class="bg-gray-600 text-white hover:bg-blue-300">LABORATORIUM</option>
+        </select>
+      </div>
+      <div class="flex flex-col">
+        <label class="text-md">Depo</label>
+        <select name="" id="" class="w-full rounded ring-1 focus:border-blue-300 focus:outline-none focus:ring">
+          <option value="" selected disabled hidden></option>
+          <option value="" class="bg-gray-600 text-white hover:bg-blue-300">BE AMBULANCE</option>
+          <option value="" class="bg-gray-600 text-white hover:bg-blue-300">ET IGD</option>
+        </select>
+      </div>
+      <div class="cstyle= flex flex-col">
+        <label for="Nama Ayah Kandung" class="text-md">Periode tanggal</label>
+        <input type="date" class="rounded ring-1 focus:border-blue-300 focus:outline-none focus:ring" />
+      </div>
+      <div class="cstyle= flex flex-col">
+        <label for="Nama Ayah Kandung" class="text-md">Sampai</label>
+        <input type="date" class="rounded ring-1 focus:border-blue-300 focus:outline-none focus:ring" />
+      </div>
+      <div class="cstyle= flex flex-col">
+        <label for="">Rows</label>
+        <input type="text" placeholder="50"
+          class="rounded pl-1 ring-1 focus:border-blue-300 focus:outline-none focus:ring">
+      </div>
+      <div class="flex flex-col">
+        <label for="">Cari</label>
+        <button style="padding:6px;" class="btn w-full bg-main-blue-0 flex m-auto text-white rounded"><i
+            class="fa-solid fa-search m-auto text-white"></i></button>
+      </div>
+    </div>
+
+    <table class="table-auto w-full">
+      <thead class="bg-main-gray-0">
+        <tr>
+          <th class="border border-gray-600 text-white text-[13px]" colspan="11"><a href="hello"><i
+                class="fa-solid fa-file-excel"></i> Export to Excel</a>
+          </th>
+        </tr>
+        <tr>
+          <th scope="col" class="border border-gray-600 text-white text-[13px]">
+            <div class="flex items-center">
+              No
+              <a href="#"><svg class="w-3 h-3 ml-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z" />
+                </svg></a>
+            </div>
+          </th>
+          <th class="border border-gray-600 text-white text-[13px]">Tgl Resep</th>
+          <th class="border border-gray-600 text-white text-[13px]">No Resep</th>
+          <th class="border border-gray-600 text-white text-[13px]">No Registrasi</th>
+          <th class="border border-gray-600 text-white text-[13px]">No MR</th>
+          <th class="border border-gray-600 text-white text-[13px]">Nama Pasien</th>
+          <th class="border border-gray-600 text-white text-[13px]">Nama Ruangan</th>
+          <th class="border border-gray-600 text-white text-[13px]">Tipe pembayaran</th>
+          <th class="border border-gray-600 text-white text-[13px]">Dokter</th>
+          <th class="border border-gray-600 text-white text-[13px]">Apotik</th>
+          <th class="border border-gray-600 text-white text-[13px]">Cito</th>
+        </tr>
+      </thead>
+      <tbody id="dataLoop">
+      </tbody>
+    </table>
+  </div>
+  <div class="bg-main-gray-0">
+    <div class="bg-main-gray-0 py-[7px] flex items-center gap-2 ">
+      <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+        <i class="fa fa-solid fa-backward-step text-white"></i>
+      </div>
+      <div class="rounded-full border w-6 h-6 flex hover:bg-main-blue-0 items-center justify-center">
+        <i class="fa fa-solid fa-play text-white fa-rotate-180"></i>
+      </div>
+      <div class="rounded-full border w-6 h-6 flex items-center justify-center">
+        <h2 class="text-white">1</h2>
+      </div>
+      <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+        <i class="fa fa-solid fa-play text-white"></i>
+      </div>
+      <div class="rounded-full border w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+        <i class="fa fa-solid fa-forward-step text-white"></i>
+      </div>
+    </div>
+  </div>
+  <div class="w-full flex-col gap-3 md:grid md:grid-cols-2">
+    <div class="mx-8 my-3 flex-col gap-3 md:grid md:grid-cols-4">
+      <div class="flex flex-col">
+        <label class="text-md">No Resep</label>
+        <input type="text" placeholder=""
+          class="rounded ring-1 focus:border-blue-300 focus:outline-none focus:ring pl-2">
+      </div>
+      <div class="flex flex-col">
+        <label class="text-md">No Registrasi</label>
+        <input type="text" placeholder=""
+          class="rounded ring-1 focus:border-blue-300 focus:outline-none focus:ring pl-2">
+      </div>
+      <div class="flex flex-col">
+        <label class="text-md">No MR</label>
+        <input type="text" placeholder=""
+          class="rounded ring-1 focus:border-blue-300 focus:outline-none focus:ring pl-2">
+      </div>
+      <div class="flex flex-col">
+        <label class="text-md">Nama Pasien</label>
+        <input type="text" placeholder=""
+          class="rounded ring-1 focus:border-blue-300 focus:outline-none focus:ring pl-2">
+      </div>
+    </div>
+    <div class="my-3 flex flex-col mx-5 justify-end items-end">
+      <label class="mr-14" for=""></label>
+      <button class="btn bg-main-blue-0 rounded text-white px-3 py-1"><i
+          class="fa fa-solid fa-search mx-2"></i>Transaksi Pelayanan</button>
+    </div>
+  </div>
+  <div
+    class="fixed top-[80px] shadow left-0 h-full w-56 z-10 transform -translate-x-full transition-transform duration-300 ease-in-out border-r bg-main-gray-0"
+    id="mobile-menu">
+    <ul class="list-none  p-4 flex items-center flex-col mt-32 text-white">
+      <li class="block py-2 ">About</li>
+      <li class="block py-2 ">Faq?</li>
+    </ul>
+  </div>
+  <script src="./src/js/dataDaftarreseppasien.js"></script>
+  <script>
+    const mobileMenuBtn = document.getElementById("MobileMenuBtn");
+    const mobile = document.getElementById("mobile-menu");
+
+    mobileMenuBtn.addEventListener("click", () => {
+      mobile.classList.toggle("translate-x-0");
+    });
+
+  </script>
+</body>
+
+</html>

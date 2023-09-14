@@ -154,43 +154,48 @@
                         <button id="dropdown-button" type="button">
                             <span class="bi bi-play-fill text-white p-1 rounded-full bg-gray-400"></span>
                         </button>
-                        <p
+                        <button
                             class="text-[12px] p-1 rounded-md hover:bg-main-blue-0 hover:text-white ring-2 hover:ring-blue-600">
                             Triage
-                        </p>
+                        </button>
                     </div>
                     <div class="overflow-x-auto">
                         <div class=" absolute ml-10 w-[400px]" id="dropdown-content">
                             <ul class="list-none flex flex-col">
                                 <li class="text-[12px]">
                                     <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md"
-                                        id="bt-pemerikasaan-umum" data-target="content-pemerikasaan-umum">
+                                        id="btn-pemerikasaan-umum" data-target="content-pemerikasaan-umum">
                                         Pemerikasaan Umum
                                     </button>
                                 </li>
                                 <li class="text-[12px]">
-                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start">
+                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
+                                        id="btn-derajat-nyeri" data-target="content-derajat-nyeri">
                                         Derajat Nyeri
                                     </button>
                                 </li>
                                 <li class="text-[12px]">
-                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start">
+                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
+                                        id="btn-klasifikasi-triage" data-target="content-klasifikasi-triage">
                                         Klasifikasi Triage
                                     </button>
                                 </li>
                                 <li class="text-[12px]">
-                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start">
+                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
+                                        id="btn-tanda-vital" data-target="content-tanda-vital">
                                         Tanda Vital
                                     </button>
                                 </li>
                                 <li class="text-[12px]">
-                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start">
+                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
+                                        id="btn-anamnesa" data-target="content-anamnesa">
                                         Anamnesa
                                     </button>
                                 </li>
                                 <li class="text-[12px]">
-                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start">
-                                        Pemerikasaan Fisik
+                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
+                                        id="btn-pemerikasaan-fisik" data-target="content-pemeriksaan-fisik">
+                                        Pemeriksaan Fisik
                                     </button>
                                 </li>
                                 <li class="text-[12px]">
@@ -227,8 +232,9 @@
                 data-content="content-rekam-medik">
                 <h1 class="text-white">Rekam Medik</h1>
             </div>
-            <div id="content-pemerikasaan-umum" class="hidden" data-content="content-pemerikasaan-umum">
-                <h1>Pemerikasaan umum</h1>
+            <div id="content-pemerikasaan-umum" class="hidden bg-main-blue-0 w-full h-12 ml-[290px] relative -top-32"
+                data-content="content-pemerikasaan-umum">
+                <h1 class="text-white">Pemerikasaan umum</h1>
             </div>
         </div>
 

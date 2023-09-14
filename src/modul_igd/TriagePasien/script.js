@@ -27,7 +27,6 @@
             switchTab(tabId);
         });
     });
-////////////////////////////////////////////////
 
     //drop-down
     const button = document.getElementById('dropdown-button');
@@ -42,7 +41,7 @@
         }
     });
     //content toggle
-    function showSelectedContent(contentId) {
+    const showSelectedContent = (contentId) => {
         const contentElements = document.querySelectorAll('[data-content]');
         contentElements.forEach(content => {
             const targetId = content.getAttribute('data-content');
