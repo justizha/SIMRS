@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Transmedic</title>
     <link rel="stylesheet" href="/dist/output.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -89,6 +89,7 @@
                         aria-current="page">PENGKAJIAN DETAIL</a>
                 </li>
             </ul>
+            <hr class="w-full">
         </div>
 
         <div class="mx-8 tab-content" id="riwayat-pengkajian">
@@ -140,6 +141,7 @@
                         class="object-contain w-3 h-3 filter brightness-0 invert">
                 </div>
             </div>
+
             <div class=" mt-2 flex gap-3 justify-end mx-4">
                 <button class="bg-main-blue-0 p-1 rounded text-white text-[14px] w-[200px]">Lihat Triage</button>
                 <button class="bg-main-blue-0 p-1 rounded text-white text-[14px] w-[200px]">Registrasi</button>
@@ -149,15 +151,17 @@
         <div class="flex tab-content" id="pengkajian-detail">
             <div class="flex">
                 <div class="relative -top-36 inline-block">
-                    <p class="text-[12px] w-[88px]">Rekam Medis</p>
+                    <button class="text-[12px] w-[90px]  hover:bg-main-blue-0 hover:text-white p-1 rounded-md"
+                        id="btn-rekam-nedis" data-target="content-rekam-medik">Rekam
+                        Medis</button>
                     <div class="flex gap-1">
                         <button id="dropdown-button" type="button">
                             <span class="bi bi-play-fill text-white p-1 rounded-full bg-gray-400"></span>
                         </button>
-                        <button
+                        <p
                             class="text-[12px] p-1 rounded-md hover:bg-main-blue-0 hover:text-white ring-2 hover:ring-blue-600">
                             Triage
-                        </button>
+                        </p>
                     </div>
                     <div class="overflow-x-auto">
                         <div class=" absolute ml-10 w-[400px]" id="dropdown-content">
@@ -199,27 +203,33 @@
                                     </button>
                                 </li>
                                 <li class="text-[12px]">
-                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start">
-                                        Pemerikasaan
+                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
+                                        id="btn-pemerikasaan-penunjang" data-target="content-pemeriksaan-penunjang">
+                                        Pemerikasaan Penunjang
                                     </button>
                                 </li>
                                 <li class="text-[12px]">
-                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start">
+                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
+                                        id="btn-informasi-pemindahan-Ruagan/Pemulangan-pasien"
+                                        data-target="content-informasi-pemindahan-Ruangan/Pemulangan-pasien">
                                         Informasi Pemindahan Ruangan/Pemulangan Pasien
                                     </button>
                                 </li>
                                 <li class="text-[12px]">
-                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start">
+                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
+                                        id="btn-pemberian-komunikasi" data-target="content-pemberian-komunikasi">
                                         Pemberian Komunikasi, Informasi dan Edukasi (KIE)
                                     </button>
                                 </li>
                                 <li class="text-[12px]">
-                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start">
+                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
+                                        id="btn-lembar-observasi" data-content="content-lembar-observasi">
                                         Lembar Observasi Penderita Instalasi Gawat Darurat
                                     </button>
                                 </li>
                                 <li class="text-[12px]">
-                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start">
+                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
+                                        id="btn-asuhan-keperawatan" data-target="content-asuhan-keperawatan">
                                         Asuhan Keperawatan Instalasi Gawat Darurat
                                     </button>
                                 </li>
@@ -228,15 +238,373 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-main-blue-0 w-full h-12 ml-[290px] relative -top-32" id="content-rekam-medik"
-                data-content="content-rekam-medik">
-                <h1 class="text-white">Rekam Medik</h1>
+            <div data-content="content-rekam-medik" id="content-rekam-medik" class="w-full">
+                <div class="bg-main-blue-0 h-12 ml-[290px] relative -top-32 flex items-center">
+                    <div class="">
+                        <h1 class="text-white">Rekam Medik</h1>
+                    </div>
+                </div>
             </div>
-            <div id="content-pemerikasaan-umum" class="hidden bg-main-blue-0 w-full h-12 ml-[290px] relative -top-32"
-                data-content="content-pemerikasaan-umum">
-                <h1 class="text-white">Pemerikasaan umum</h1>
+            <div class="w-full hidden" id="content-pemerikasaan-umum" data-content="content-pemerikasaan-umum">
+                <div class=" bg-main-blue-0 h-12 ml-[290px] relative -top-32 items-center flex">
+                    <h1 class="text-white">Pemerikasaan umum</h1>
+                </div>
+                <div class="ml-[300px] relative -top-28">
+                    <div class="mb-2">
+                        <p class="text-sm mb-2">Pemeriksa</p>
+                        <select
+                            class="border rounded p-1 text-[12px] ml-3 ring-blue-300 ring-1 duration-150 hover:ring-blue-500 hover:ring-2">
+                            <option value="Aben Bagja Cahya Nandika, A.Md.RMIK" class="bg-main-gray-0 text-white">
+                                Aben Bagja Cahya Nandika, A.Md.RMIK
+                            </option>
+                            <option value="Adellia Mega Aryanti, A.Md.KepK" class="bg-main-gray-0 text-white">
+                                Adellia Mega Aryanti, A.Md.Kep
+                            </option>
+                            <option value="Afifah Ngudi Rahayu, A.Md.Kes" class="bg-main-gray-0 text-white">
+                                Afifah Ngudi Rahayu, A.Md.Kes
+                            </option>
+                            <option value="Ahyar Rosidin, S.Kep., Ners" class="bg-main-gray-0 text-white">
+                                Administrator
+                            </option>
+                            <option value="Administrator, S.Kep., Ners" class="bg-main-gray-0 text-white">
+                                Administrator
+                            </option>
+                            <option value="Administrator" class="bg-main-gray-0 text-white">
+                                Administrator
+                            </option>
+                            <option value="Administrator" class="bg-main-gray-0 text-white">
+                                Administrator
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-2">
+                        <p class="font-bold text-sm mb-2">Jalan Napas (A)</p>
+                        <div class="flex items-center">
+                            <input type="checkbox">
+                            <p class="text-[13px] ml-1">Pasien</p>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox">
+                            <p class="text-[13px] ml-1">Obstruksi Partial</p>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <p class="text-sm mb-2 font-bold">Pernapasan (B)</p>
+                        <p class="text-[13px]">Gerakan Dada</p>
+                        <div class="flex items-center mb-1">
+                            <input type="checkbox">
+                            <p class="text-[13px] ml-1">Simetris</p>
+                        </div>
+                        <p class="text-[13px]">Tipe Pernapasan</p>
+
+                        <div class="flex items-center mb-1">
+                            <input type="checkbox">
+                            <p class="text-[13px] ml-1">Normal</p>
+                        </div>
+                        <p class="text-[13px]">Laju Pernapasan</p>
+
+                        <div class="flex items-center mb-1">
+                            <input type="checkbox">
+                            <p class="text-[13px] ml-1">Normal</p>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <p class="text-sm mb-2 font-bold">Sirkulasi (C)</p>
+                        <p class="text-[13px]">Denyut Nadi</p>
+                        <div class="flex items-center mb-1">
+                            <input type="checkbox">
+                            <p class="ml-1 text-[13px]">Ada</p>
+                        </div>
+                        <p class="text-[13px]">Kulit/Mukosa</p>
+                        <div class="flex items-center mb-1">
+                            <input type="checkbox">
+                            <p class="ml-1 text-[13px]">Normal</p>
+                        </div>
+                        <div class="flex items-center mb-1">
+                            <input type="checkbox">
+                            <p class="ml-1 text-[13px]">Pucak</p>
+                        </div>
+                        <div class="flex items-center mb-1">
+                            <input type="checkbox">
+                            <p class="ml-1 text-[13px]">Ikterik</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-end relative -top-[460px] mr-[400px]">
+                        <div class="flex flex-col">
+                            <p class="text-[13px]">jam</p>
+                            <select id="timeSelect" style="top: 10px;"
+                                class="border rounded relative p-1 text-[12px] ml-3 ring-blue-300 ring-1 duration-150 hover:ring-blue-500 hover:ring-2">
+
+                            </select>
+                            <div class="flex flex-col relative top-10">
+                                <p class="mb-4">.</p>
+                                <div class="flex items-center mb-3">
+                                    <input type="checkbox">
+                                    <p class="text-[13px] ml-1">Obstruksi total</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox">
+                                    <p class="text-[13px] ml-1">Suara Napas Tambahan</p>
+                                </div>
+                                <p class="mb-4">.</p>
+
+                                <div class="flex items-center">
+                                    <input type="checkbox">
+                                    <p class="text-[13px] ml-1">Asimetris</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox">
+                                    <p class="text-[13px] ml-1">Abnormal</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox">
+                                    <p class="text-[13px] ml-1">Abnormal</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox">
+                                    <p class="text-[13px] ml-1">Tidak</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox">
+                                    <p class="text-[13px] ml-1">Sianonis</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox">
+                                    <p class="text-[13px] ml-1">Berkeringat</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-end absolute right-14 top-[500px] gap-4">
+                        <button class="p-1 rounded bg-main-blue-0 text-white">
+                            <p class="text-[14px]">Simpan</p>
+                        </button>
+                        <button class="p-1 rounded bg-main-blue-0 text-white">
+                            <p class="text-[14px]">Batal</p>
+                        </button>
+                        <button class="p-1 rounded bg-red-500 text-white">
+                            <p class="text-[14px]">Kembali</p>
+                        </button>
+                    </div>
+                </div>
             </div>
-        </div>
+            <div class="w-full hidden" id="content-derjat-nyeri" data-content="content-derajat-nyeri">
+                <div class=" bg-main-blue-0 h-12 ml-[290px] relative -top-32 flex items-center">
+                    <div class="">
+                        <h1 class="text-white">Derajat Nyeri</h1>
+                    </div>
+                </div>
+                <div class=" relative -top-20 flex justify-center mr-12">
+                    <div class="flex gap-16">
+                        <div class="flex flex-col justify-center">
+                            <img src="https://apps.transmedic.co.id:2200/app/stylesheets/skalanyeri/1.png" alt="0"
+                                class="w-8">
+                            <p class="text-center">0</p>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <img src="https://apps.transmedic.co.id:2200/app/stylesheets/skalanyeri/2.png" alt="2"
+                                class="w-8">
+                            <p class="text-center">2</p>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <img src="https://apps.transmedic.co.id:2200/app/stylesheets/skalanyeri/3.png" alt="4"
+                                class="w-8">
+                            <p class="text-center">4</p>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <img src="https://apps.transmedic.co.id:2200/app/stylesheets/skalanyeri/4.png" alt="6"
+                                class="w-8">
+                            <p class="text-center">6</p>
+                        </div>
+                        <div class="flex flex-col">
+                            <img src="https://apps.transmedic.co.id:2200/app/stylesheets/skalanyeri/5.png" alt="8"
+                                class="w-8">
+                            <p class="text-center">8</p>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <img src="https://apps.transmedic.co.id:2200/app/stylesheets/skalanyeri/6.png" alt="10"
+                                class="w-8">
+                            <p class="text-center">10</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative -top-36 flex justify-end mr-32">
+                    <div class="flex flex-col">
+                        <p class="text-[13px] font-bold">&nbsp; &nbsp; Skala Neyeri</p>
+                        <input type="text"
+                            class="border rounded relative p-1 text-[12px] ml-3 ring-blue-300 ring-1 duration-150 hover:ring-blue-500 hover:ring-2 focus:ring-blue-500">
+                    </div>
+                </div>
+                <div class="flex justify-end">
+                    <div class="bg-main-blue-0 h-1 relative -top-24 w-[900px]"></div>
+                </div>
+                <div class="relative -top-20 flex justify-center mr-[360px]">
+                    <table>
+                        <tbody>
+                            <tr class="flex gap-20">
+                                <td>
+                                    <p class="text-[14px] font-thin">1-3</p>
+                                </td>
+                                <td>
+                                    <p class="text-[14px] font-thin">&nbsp;&nbsp;:Nyeri Ringan</p>
+                                </td>
+                            </tr>
+                            <tr class="flex gap-20">
+                                <td>
+                                    <p class="text-[14px] font-thin">4-7</p>
+                                </td>
+                                <td>
+                                    <p class="text-[14px] font-thin">&nbsp;:Nyeri Menggangu</p>
+                                </td>
+                            </tr>
+                            <tr class="flex gap-20">
+                                <td>
+                                    <p class="text-[14px] font-thin">8-10</p>
+                                </td>
+                                <td>
+                                    <p class="text-[14px] font-thin">:Nyeri Berat</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="flex justify-end absolute right-5 top-[200px] gap-4">
+                    <button class="p-1 rounded bg-main-blue-0 text-white">
+                        <p class="text-[14px]">Simpan</p>
+                    </button>
+                    <button class="p-1 rounded bg-main-blue-0 text-white">
+                        <p class="text-[14px]">Batal</p>
+                    </button>
+                    <button class="p-1 rounded bg-red-500 text-white">
+                        <p class="text-[14px]">Kembali</p>
+                    </button>
+                </div>
+            </div>
+            <div class="w-full hidden" id="content-klasifikasi-triage" data-content="content-klasifikasi-triage">
+                <div class=" bg-main-blue-0 h-12 ml-[290px] relative -top-32 flex items-center">
+                    <div class="">
+                        <h1 class="text-white">Klasifikasi Triage</h1>
+                    </div>
+                </div>
+                <div class="relative -top-28 ">
+                    <div class="flex ml-[292px]">
+                        <div class=" flex flex-col mb-1">
+                            <div class="flex items-center">
+                                <input type="checkbox" name="" id="">
+                                <p class="text-[14px] font-thin">Hijau</p>
+                            </div>
+                            <div class="flex items-center mb-1">
+                                <input type="checkbox" name="" id="">
+                                <p class="text-[14px] font-thin">Kuning</p>
+                            </div>
+                            <div class="flex items-center mb-1">
+                                <input type="checkbox" name="" id="">
+                                <p class="text-[14px] font-thin">Merah</p>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" name="" id="">
+                                <p class="text-[14px] font-thin">Hitam</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end absolute right-5 top-[200px] gap-4">
+                            <button class="p-1 rounded bg-main-blue-0 text-white">
+                                <p class="text-[14px]">Simpan</p>
+                            </button>
+                            <button class="p-1 rounded bg-main-blue-0 text-white">
+                                <p class="text-[14px]">Batal</p>
+                            </button>
+                            <button class="p-1 rounded bg-red-500 text-white">
+                                <p class="text-[14px]">Kembali</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full hidden" id="content-tanda-vital" data-content="content-tanda-vital">
+                <div class=" bg-main-blue-0 h-12 ml-[290px] relative -top-32 flex items-center mb-8">
+                    <div class="">
+                        <h1 class="text-white">Tanda Vital</h1>
+                    </div>
+                </div>
+                <div class="relative -top-32">
+                    <div class="flex justify-between ml-[300px]">
+                        <div class="flex justify-center">
+                            <div class="flex flex-col">
+                                <div class="mb-4">
+                                    <p class="font-thin text-[13px]">TD</p>
+                                    <div class="flex ml-10">
+                                        <input type="text"
+                                            class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[270px] font-thin text-sm"
+                                            value="mmHg">
+                                        <p class="font-thin text-sm ml-2">
+                                            mmHg
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="font-thin text-[13px]">Nadi</p>
+                                    <div class="flex ml-10">
+                                        <input type="text"
+                                            class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[270px] font-thin text-sm"
+                                            value="x/menit">
+                                        <p class="font-thin text-sm ml-2">
+                                            x/menit
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="font-thin text-[13px]">BB</p>
+                                    <div class="flex ml-10">
+                                        <input type="text"
+                                            class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[270px] font-thin text-sm"
+                                            value="kg">
+                                        <p class="font-thin text-sm ml-2">
+                                            kg
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mr-[70px]">
+                            <div class="flex flex-col mb-4">
+                                <div class="mb-4">
+                                    <p class="font-thin text-[13px]">Nafas</p>
+                                    <div class="flex ml-10">
+                                        <input type="text"
+                                            class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[270px] font-thin text-sm"
+                                            value="x/menit">
+                                        <p class="font-thin text-sm ml-2">
+                                            x/menit
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="font-thin text-[13px]">Nafas</p>
+                                    <div class="flex ml-10">
+                                        <input type="text"
+                                            class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[270px] font-thin text-sm"
+                                            value="°C">
+                                        <p class="font-thin text-sm ml-2">
+                                            °C
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-end absolute right-5 top-[200px] gap-4">
+                            <button class="p-1 rounded bg-main-blue-0 text-white">
+                                <p class="text-[14px]">Simpan</p>
+                            </button>
+                            <button class="p-1 rounded bg-main-blue-0 text-white">
+                                <p class="text-[14px]">Batal</p>
+                            </button>
+                            <button class="p-1 rounded bg-red-500 text-white">
+                                <p class="text-[14px]">Kembali</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 </body>
 <script src="script.js"></script>

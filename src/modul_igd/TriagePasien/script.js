@@ -31,15 +31,20 @@
     //drop-down
     const button = document.getElementById('dropdown-button');
     const content = document.getElementById('dropdown-content');
-    button.addEventListener('click', () => {
-        content.classList.toggle('hidden');
+    let isOpen = false; 
+
+    button.addEventListener('click', (event) => {
+        event.stopPropagation(); 
+        isOpen = !isOpen; 
+        content.classList.toggle('hidden', !isOpen); 
     });
 
     document.addEventListener('click', (event) => {
-        if (!button.contains(event.target) && !content.contains(event.target)) {
-        content.classList.add('hidden');
+        if (isOpen && !button.contains(event.target)) {
+            event.stopPropagation(); 
         }
     });
+
     //content toggle
     const showSelectedContent = (contentId) => {
         const contentElements = document.querySelectorAll('[data-content]');
@@ -63,7 +68,35 @@
 
 
 
+    const select = document.getElementById("timeSelect");
 
+    function addLeadingZero(number) {
+        return number < 10 ? `0${number}` : number;
+    }
+    for (let hour = 0; hour <= 11; hour++) {
+        for (let minute = 0; minute <= 45; minute += 15) {
+            const amHour = addLeadingZero(hour);
+            const pmHour = addLeadingZero(hour + 12);
+            const formattedMinute = addLeadingZero(minute);
+
+            const amTime = `${amHour}:${formattedMinute} AM`;
+            const pmTime = `${pmHour}:${formattedMinute} PM`;
+
+            const amOption = document.createElement("option");
+            amOption.value = amTime;
+            amOption.classList.add("bg-main-gray-0")
+            amOption.classList.add("text-white")
+            amOption.text = amTime;
+            select.appendChild(amOption);
+
+            const pmOption = document.createElement("option");
+            pmOption.classList.add("bg-main-gray-0")
+            pmOption.classList.add("text-white")
+            pmOption.value = pmTime;
+            pmOption.text = pmTime;
+            select.appendChild(pmOption);
+        }
+    }
 
 
 
