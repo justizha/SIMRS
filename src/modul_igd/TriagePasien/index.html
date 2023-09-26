@@ -13,9 +13,10 @@
         href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@400;500;700&display=swap"
         rel="stylesheet">
     <link rel="icon" href="/public/transmedic-logo.png">
-    <style>
 
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -72,7 +73,7 @@
             <div class="flex flex-col">
                 <label for="Alamat" class=" text-[13px] font-bold">Telepon</label>
                 <input type="text"
-                    class="ring-1 bg-gray-200 rounded focus:outline-none focus:ring focus:border-blue-300  w-[220px]">
+                    class="ring-1 bg-gray-200 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
             </div>
 
         </div>
@@ -124,7 +125,6 @@
             </table>
 
             <div class="bg-main-gray-0 py-[7px] flex items-center gap-2 ">
-                <div> </div>
                 <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
                     <img src="/public/play-and-pause-button.png" alt="img"
                         class="object-contain w-3 h-3 filter brightness-0 invert rotate-180">
@@ -163,90 +163,88 @@
                             Triage
                         </p>
                     </div>
-                    <div class="overflow-x-auto">
-                        <div class=" absolute ml-10 w-[400px]" id="dropdown-content">
-                            <ul class="list-none flex flex-col">
-                                <li class="text-[12px]">
-                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md"
-                                        id="btn-pemerikasaan-umum" data-target="content-pemerikasaan-umum">
-                                        Pemerikasaan Umum
-                                    </button>
-                                </li>
-                                <li class="text-[12px]">
-                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
-                                        id="btn-derajat-nyeri" data-target="content-derajat-nyeri">
-                                        Derajat Nyeri
-                                    </button>
-                                </li>
-                                <li class="text-[12px]">
-                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
-                                        id="btn-klasifikasi-triage" data-target="content-klasifikasi-triage">
-                                        Klasifikasi Triage
-                                    </button>
-                                </li>
-                                <li class="text-[12px]">
-                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
-                                        id="btn-tanda-vital" data-target="content-tanda-vital">
-                                        Tanda Vital
-                                    </button>
-                                </li>
-                                <li class="text-[12px]">
-                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
-                                        id="btn-anamnesa" data-target="content-anamnesa">
-                                        Anamnesa
-                                    </button>
-                                </li>
-                                <li class="text-[12px]">
-                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
-                                        id="btn-pemerikasaan-fisik" data-target="content-pemeriksaan-fisik">
-                                        Pemeriksaan Fisik
-                                    </button>
-                                </li>
-                                <li class="text-[12px]">
-                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
-                                        id="btn-pemerikasaan-penunjang" data-target="content-pemeriksaan-penunjang">
-                                        Pemerikasaan Penunjang
-                                    </button>
-                                </li>
-                                <li class="text-[12px]">
-                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
-                                        id="btn-informasi-pemindahan-Ruagan/Pemulangan-pasien"
-                                        data-target="content-informasi-pemindahan-Ruangan/Pemulangan-pasien">
-                                        Informasi Pemindahan Ruangan/Pemulangan Pasien
-                                    </button>
-                                </li>
-                                <li class="text-[12px]">
-                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
-                                        id="btn-pemberian-komunikasi" data-target="content-pemberian-komunikasi">
-                                        Pemberian Komunikasi, Informasi dan Edukasi (KIE)
-                                    </button>
-                                </li>
-                                <li class="text-[12px]">
-                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
-                                        id="btn-lembar-observasi" data-content="content-lembar-observasi">
-                                        Lembar Observasi Penderita Instalasi Gawat Darurat
-                                    </button>
-                                </li>
-                                <li class="text-[12px]">
-                                    <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
-                                        id="btn-asuhan-keperawatan" data-target="content-asuhan-keperawatan">
-                                        Asuhan Keperawatan Instalasi Gawat Darurat
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class=" absolute ml-10 w-[250px] overflow-x-auto" id="dropdown-content">
+                        <ul class="list-none flex flex-col">
+                            <li class="text-[12px]">
+                                <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md"
+                                    id="btn-pemerikasaan-umum" data-target="content-pemerikasaan-umum">
+                                    Pemerikasaan Umum
+                                </button>
+                            </li>
+                            <li class="text-[12px]">
+                                <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
+                                    id="btn-derajat-nyeri" data-target="content-derajat-nyeri">
+                                    Derajat Nyeri
+                                </button>
+                            </li>
+                            <li class="text-[12px]">
+                                <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
+                                    id="btn-klasifikasi-triage" data-target="content-klasifikasi-triage">
+                                    Klasifikasi Triage
+                                </button>
+                            </li>
+                            <li class="text-[12px]">
+                                <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
+                                    id="btn-tanda-vital" data-target="content-tanda-vital">
+                                    Tanda Vital
+                                </button>
+                            </li>
+                            <li class="text-[12px]">
+                                <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
+                                    id="btn-anamnesa" data-target="content-anamnesa">
+                                    Anamnesa
+                                </button>
+                            </li>
+                            <li class="text-[12px]">
+                                <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
+                                    id="btn-pemerikasaan-fisik" data-target="content-pemeriksaan-fisik">
+                                    Pemeriksaan Fisik
+                                </button>
+                            </li>
+                            <li class="text-[12px]">
+                                <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
+                                    id="btn-pemerikasaan-penunjang" data-target="content-pemeriksaan-penunjang">
+                                    Pemerikasaan Penunjang
+                                </button>
+                            </li>
+                            <li class="text-[12px]">
+                                <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
+                                    id="btn-informasi-pemindahan-Ruagan/Pemulangan-pasien"
+                                    data-target="content-informasi-pemindahan-Ruangan/Pemulangan-pasien">
+                                    Informasi Pemindahan Ruangan/Pemulangan Pasien
+                                </button>
+                            </li>
+                            <li class="text-[12px]">
+                                <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
+                                    id="btn-pemberian-komunikasi" data-target="content-pemberian-komunikasi">
+                                    Pemberian Komunikasi, Informasi dan Edukasi (KIE)
+                                </button>
+                            </li>
+                            <li class="text-[12px]">
+                                <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
+                                    id="btn-lembar-observasi" data-target="content-lembar-observasi">
+                                    Lembar Observasi Penderita Instalasi Gawat Darurat
+                                </button>
+                            </li>
+                            <li class="text-[12px]">
+                                <button class="hover:bg-main-blue-0 hover:text-white p-1 rounded-md text-start"
+                                    id="btn-asuhan-keperawatan" data-target="content-asuhan-keperawatan">
+                                    Asuhan Keperawatan Instalasi Gawat Darurat
+                                </button>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div data-content="content-rekam-medik" id="content-rekam-medik" class="w-full">
-                <div class="bg-main-blue-0 h-12 ml-[290px] relative -top-32 flex items-center">
+                <div class="bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center">
                     <div class="">
                         <h1 class="text-white">Rekam Medik</h1>
                     </div>
                 </div>
             </div>
             <div class="w-full hidden" id="content-pemerikasaan-umum" data-content="content-pemerikasaan-umum">
-                <div class=" bg-main-blue-0 h-12 ml-[290px] relative -top-32 items-center flex">
+                <div class=" bg-main-blue-0 h-12 ml-[220px] relative -top-32 items-center flex">
                     <h1 class="text-white">Pemerikasaan umum</h1>
                 </div>
                 <div class="ml-[300px] relative -top-28">
@@ -389,7 +387,7 @@
                 </div>
             </div>
             <div class="w-full hidden" id="content-derjat-nyeri" data-content="content-derajat-nyeri">
-                <div class=" bg-main-blue-0 h-12 ml-[290px] relative -top-32 flex items-center">
+                <div class=" bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center">
                     <div class="">
                         <h1 class="text-white">Derajat Nyeri</h1>
                     </div>
@@ -481,7 +479,7 @@
                 </div>
             </div>
             <div class="w-full hidden" id="content-klasifikasi-triage" data-content="content-klasifikasi-triage">
-                <div class=" bg-main-blue-0 h-12 ml-[290px] relative -top-32 flex items-center">
+                <div class=" bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center">
                     <div class="">
                         <h1 class="text-white">Klasifikasi Triage</h1>
                     </div>
@@ -521,7 +519,7 @@
                 </div>
             </div>
             <div class="w-full hidden" id="content-tanda-vital" data-content="content-tanda-vital">
-                <div class=" bg-main-blue-0 h-12 ml-[290px] relative -top-32 flex items-center mb-8">
+                <div class=" bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center mb-8">
                     <div class="">
                         <h1 class="text-white">Tanda Vital</h1>
                     </div>
@@ -605,7 +603,1508 @@
                     </div>
                 </div>
             </div>
+            <div class="w-full hidden" id="content-anamanesa" data-content="content-anamnesa">
+                <div class=" bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center mb-8">
+                    <div class="">
+                        <h1 class="text-white">Anamnesa</h1>
+                    </div>
+                </div>
+                <div class="relative -top-36">
+                    <div class="flex ml-[300px]">
+                        <div class="flex flex-col">
+                            <div class="mb-2">
+                                <p class="text-[13px] mb-4">Anamnesa :</p>
+                                <textarea
+                                    class="ring-1 rounded hover:shadow h-8 focus:outline-none focus:ring focus:border-blue-300 w-[620px]"
+                                    cols="30" rows="10"></textarea>
+                            </div>
+                            <div class="mb-2">
+                                <p class="text-[13px] mb-1">Riwayat Penyakit Terdahulu</p>
+                                <div class="flex">
+                                    <input type="checkbox">
+                                    <p class="text-[12px] ml-1">Tidak Ada</p>
+                                </div>
+                                <div class="flex mb-2">
+                                    <input type="checkbox" name="" id="">
+                                    <p class="text-[12px] ml-1">Ada</p>
+                                </div>
+                                <input type="text"
+                                    class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[620px]">
+                            </div>
+                            <div class="mb-2">
+                                <p class="text-[13px] mb-1">Riwayat Pengobatan</p>
+                                <div class="flex">
+                                    <input type="checkbox">
+                                    <p class="text-[12px] ml-1">Tidak Ada</p>
+                                </div>
+                                <div class="flex mb-2">
+                                    <input type="checkbox" name="" id="">
+                                    <p class="text-[12px] ml-1">Ada</p>
+                                </div>
+                                <input type="text"
+                                    class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[620px]">
+                            </div>
+                            <div class="mb-2">
+                                <p class="text-[13px] mb-1">Riwayat Kandungan & Kebidanan</p>
+                                <div class="flex">
+                                    <input type="checkbox">
+                                    <p class="text-[12px] ml-1">Tidak Ada</p>
+                                </div>
+                                <div class="flex mb-2">
+                                    <input type="checkbox" name="" id="">
+                                    <p class="text-[12px] ml-1">Ada</p>
+                                </div>
+                                <input type="text"
+                                    class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[620px]">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-end absolute right-14 top-[340px] gap-4">
+                    <button class="p-1 rounded bg-main-blue-0 text-white">
+                        <p class="text-[14px]">Simpan</p>
+                    </button>
+                    <button class="p-1 rounded bg-main-blue-0 text-white">
+                        <p class="text-[14px]">Batal</p>
+                    </button>
+                    <button class="p-1 rounded bg-red-500 text-white">
+                        <p class="text-[14px]">Kembali</p>
+                    </button>
+                </div>
+            </div>
+            <div class="w-full hidden" id="content-pemeriksaan-fisik" data-content="content-pemeriksaan-fisik">
+                <div class=" bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center mb-8">
+                    <div class="">
+                        <h1 class="text-white">Pemeriksaan Fisik</h1>
+                    </div>
+                </div>
+                <div class="relative -top-32">
+                    <div class="flex justify-center">
+                        <img src="https://apps.transmedic.co.id:2200/app/images/emrgawat.png" alt="fisik">
+                    </div>
+                </div>
+                <div class="relative -top-28 ml-[300px]">
+                    <div class="bg-main-blue-0 w-[307px]">
+                        <p class="text-white">Kode Gambar</p>
+                    </div>
+                    <table role="grid" class="bg-main-gray-0">
+                        <colgroup>
+                            <col class="w-[]">
+                            <col class="w-[300px]">
+                        </colgroup>
+                        <thead>
+                            <tr role="row">
+                                <th>&nbsp;</th>
+                                <th class="text-white font-thin text-[13px]">Kode Gambar</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div>
+                        <table class="bg-main-gray-0">
+                            <colgroup>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td class="w-[307px]">
+                                        <p class="text-white">
+                                            Group A
+                                        </p>
+                                        <div class="bg-white ml-10">
+                                            <p>Abrasi</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-[307px]">
+                                        <p class="text-white">
+                                            Group B
+                                        </p>
+                                        <div class="bg-white ml-10">
+                                            <p>* TRIAL *</p>
+                                        </div>
+                                    </td>
 
+                                </tr>
+                                <tr>
+                                    <td class="w-[307px]">
+                                        <p class="text-white">
+                                            Group D
+                                        </p>
+                                        <div class="bg-white ml-10">
+                                            <p>Deformitras</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-[307px]">
+                                        <p class="text-white">
+                                            Group H
+                                        </p>
+                                        <div class="bg-white ml-10">
+                                            <p>Hematoma</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-[307px]">
+                                        <p class="text-white">
+                                            Group: L
+                                        </p>
+                                        <div class="bg-white ml-10">
+                                            <p>* TRIAL * TRIAL * TR</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-[307px]">
+                                        <p class="text-white">
+                                            Group: N
+                                        </p>
+                                        <div class="bg-white ml-10">
+                                            <p>Nyeri</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-[307px]">
+                                        <p class="text-white ml-10">
+                                            Group: U
+                                        </p>
+                                        <div class="bg-white ml-10">
+                                            <p>Ulkus/p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-[307px]">
+                                        <p class="text-white">
+                                            Group VA
+                                        </p>
+                                        <div class="bg-white ml-10">
+                                            <p>Vuinus Appertum</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="relative flex justify-end mr-20 -top-[550px] gap-5 ml-20">
+                    <div class="flex flex-col">
+                        <p>Tanggal</p>
+                        <input type="date"
+                            class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[150px]">
+                    </div>
+                    <div class="flex flex-col">
+                        <p>GCS</p>
+                        <input type="text"
+                            class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[150px]">
+                    </div>
+                    <div class="flex flex-col">
+                        <p>Eyes</p>
+                        <input type="text"
+                            class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[150px]">
+                    </div>
+                </div>
+                <div class="relative flex justify-end mr-20 -top-[520px] gap-5 ml-20">
+                    <div class="flex flex-col">
+                        <p>Verbal</p>
+                        <input type="text"
+                            class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[150px]">
+                    </div>
+                    <div class="flex flex-col">
+                        <p>Motoric</p>
+                        <input type="text"
+                            class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[150px]">
+                    </div>
+                    <div class="flex flex-col">
+                        <p>Total</p>
+                        <input type="text"
+                            class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[150px]">
+                    </div>
+                </div>
+                <div class="relative -top-[180px] ml-[300px]">
+                    <div class="flex gap-4 mb-2">
+                        <div class="w-full">
+                            <div class="flex flex-col">
+                                <p class="text-[13px]">Kepala dan Wajah</p>
+                                <input type="text"
+                                    class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="flex flex-col">
+                                <p class="text-[13px]">Leher</p>
+                                <input type="text"
+                                    class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="font-bold">Thorax</h2>
+                    <div class="flex gap-4 mb-2">
+                        <div class="w-full">
+                            <div class="flex flex-col">
+                                <p class="text-[13px]">inspeksi</p>
+                                <input type="text"
+                                    class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="flex flex-col">
+                                <p class="text-[13px]">Palpasi</p>
+                                <input type="text"
+                                    class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="flex flex-col">
+                                <p class="text-[13px]">Perkusi</p>
+                                <input type="text"
+                                    class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="flex flex-col">
+                                <p class="text-[13px]">Auskultasi</p>
+                                <input type="text"
+                                    class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="font-bold">Abdomen</h2>
+                    <div class="flex gap-4 mb-2">
+                        <div class="w-full">
+                            <div class="flex flex-col">
+                                <p class="text-[13px]">inspeksi</p>
+                                <input type="text"
+                                    class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="flex flex-col">
+                                <p class="text-[13px]">Palpasi</p>
+                                <input type="text"
+                                    class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="flex flex-col">
+                                <p class="text-[13px]">Perkusi</p>
+                                <input type="text"
+                                    class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="flex flex-col">
+                                <p class="text-[13px]">Auskultasi</p>
+                                <input type="text"
+                                    class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 mb-2">
+                        <div class="w-full">
+                            <div class="flex flex-col">
+                                <p class="text-[13px]">Anogenital</p>
+                                <input type="text"
+                                    class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="flex flex-col">
+                                <p class="text-[13px]">Ekstremitas</p>
+                                <input type="text"
+                                    class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="flex flex-col">
+                                <p class="text-[13px]">Neurologis</p>
+                                <input type="text"
+                                    class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-end absolute right-14 top-[1040px] gap-4">
+                    <button class="p-1 rounded bg-main-blue-0 text-white">
+                        <p class="text-[14px]">Simpan</p>
+                    </button>
+                    <button class="p-1 rounded bg-main-blue-0 text-white">
+                        <p class="text-[14px]">Batal</p>
+                    </button>
+                    <button class="p-1 rounded bg-red-500 text-white">
+                        <p class="text-[14px]">Kembali</p>
+                    </button>
+                </div>
+            </div>
+            <div class="w-full hidden" id="content-pemeriksaan-penunjang" data-content="content-pemeriksaan-penunjang">
+                <div class="bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center mb-4">
+                    <div class="">
+                        <h1 class="text-white">Pemerikasaan Penunjang</h1>
+                    </div>
+                </div>
+                <div class="relative -top-32 ml-[300px]">
+                    <div class="flex flex-col mb-2">
+                        <p class="font-thin text-[13px]">Labolatorium</p>
+                        <input type="text"
+                            class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[330px]">
+                    </div>
+                    <div class="flex flex-col mb-2">
+                        <p class="font-thin text-[13px]">Radiologi</p>
+                        <input type="text"
+                            class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[330px]">
+                    </div>
+                    <div class="flex flex-col mb-2">
+                        <p class="font-thin text-[13px]">Lain-lain</p>
+                        <input type="text"
+                            class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[330px]">
+                    </div>
+                    <div class="flex flex-col mb-2">
+                        <p class="font-thin text-[13px]">Diagnosa Kerja</p>
+                        <textarea type="text"
+                            class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[330px]"></textarea>
+                    </div>
+                </div>
+                <div class="flex justify-end">
+                    <div class="relative -top-[358px] flex-col flex mr-[100px]">
+                        <div class="flex flex-col mb-2">
+                            <p class="font-thin text-[13px]">Jam</p>
+                            <input type="date"
+                                class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[180px]">
+                        </div>
+                        <div class="flex flex-col mb-2">
+                            <p class="font-thin text-[13px]">EKG</p>
+                            <input type="text"
+                                class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[330px]">
+                        </div>
+                        <div class="flex flex-col mb-2">
+                            <p class="font-thin text-[13px]">Diagnosa Banding</p>
+                            <input type="text"
+                                class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[330px]">
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-end absolute top-56 right-5">
+                    <div class="px-1">
+                        <button class="bg-[#41abf2] text-white font-bold text-[12px] mt-1 h-9 py-1 px-7 border rounded"
+                            type="search"><i class="fa fa-save -ml-5 mr-4n"></i>Simpan</button>
+                    </div>
+                    <div class="px- 1">
+                        <button class="bg-[#41abf2] text-white font-bold text-[12px] py-1 px-7 border rounded mt-1 h-9"
+                            type="search">
+                            <a href="#"><i class="fa fa-refresh -ml-5 mr-4"></i>Batal</a>
+                        </button>
+                    </div>
+                    <div class="px-1 mr-1">
+                        <button class="bg-[#ff2359] text-white font-bold text-[12px] py-1 px-7 border rounded mt-1 h-9"
+                            type="search">
+                            <a href="#"><i class="fa fa-arrow-left -ml-5 mr-4"></i>Kembali</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full hidden" id="content-informasi-pemindahan-Ruangan/Pemulangan-pasien"
+                data-content="content-informasi-pemindahan-Ruangan/Pemulangan-pasien">
+                <div class="bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center">
+                    <div class="">
+                        <h1 class="text-white">
+                            Informasi Pemindahan Ruangan/Pemulangan Pasien
+                        </h1>
+                    </div>
+                </div>
+                <div class="relative -top-32 ml-[220px] mb-2">
+                    <div class="flex flex-col mb-2">
+                        <p class="text-sm font-thin">tanggal</p>
+                        <input type="date"
+                            class="ring-1 rounded ml-8 focus:outline-none focus:ring focus:border-blue-300  w-[100px]">
+                    </div>
+                    <div class="flex flex-col mb-2">
+                        <p class="text-sm font-bold">Diagnosa Akhir</p>
+                        <input type="text"
+                            class="ring-main-blue-0 ring-1 ml-8 focus:outline-none focus:border-blue-300 rounded w-[300px]">
+                    </div>
+                    <div class="flex flex-col mb-2">
+                        <p class="text-sm font-bold">Kondisi Akhir Penderita</p>
+                        <p class="font-thin">TD</p>
+                        <div class="flex">
+                            <input type="text"
+                                class="ring-1 ml-8 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[300px] font-thin text-base"
+                                value="mmHg">
+                            <p class="font-thin text-sm ml-2">mmHg</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col mb-2">
+                        <p class="font-thin">Nafas</p>
+                        <div class="flex">
+                            <input type="text"
+                                class="ring-1 ml-8 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[300px] font-thin text-base"
+                                value="x/menit">
+                            <p class="font-thin text-sm ml-2">x/menit</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col mb-2">
+                        <p class="font-thin">GCS</p>
+                        <div class="flex">
+                            <input type="text"
+                                class="ring-1 ml-8 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[300px] font-thin text-base" />
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-sm mb-2">Status Keluar</h3>
+                    <div class="flex items-center">
+                        <input type="checkbox">
+                        <p class="font-thin">MRS</p>
+                    </div>
+                    <div class="flex flex-col mb-2">
+                        <p class="font-thin mb-2">Ruangan</p>
+                        <select
+                            class="border rounded p-1 text-[12px]  ring-blue-300 ring-1 duration-150 hover:ring-blue-500 hover:ring-2 w-[300px] ml-8 mb-2">
+                            <option value="Aben Bagja Cahya Nandika, A.Md.RMIK" class="bg-main-gray-0 text-white">
+                                Ruangan A
+                            </option>
+                            <option class="bg-main-gray-0 text-white">
+                                Ruangan B
+                            </option>
+                            <option class="bg-main-gray-0 text-white">
+                                Ruangan C
+                            </option>
+                            <option " class=" bg-main-gray-0 text-white">
+                                Ruangan D
+                            </option>
+                            <option class="bg-main-gray-0 text-white">
+                                LABORATORIUM PATALOGI KLINIK
+                            </option>
+                            <option v" class="bg-main-gray-0 text-white">
+                                Instalasi Laboratorium
+                            </option>
+                            <option class="bg-main-gray-0 text-white">
+                                ICU/ICVCU
+                            </option>
+                        </select>
+                        <div class="flex">
+                            <input type="checkbox">
+                            <p class="font-thin">Pulang</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col mb-2">
+                        <p class="font-thin mb-2">Kontrol</p>
+                        <select
+                            class="border rounded p-1 text-[12px]  ring-blue-300 ring-1 duration-150 hover:ring-blue-500 hover:ring-2 w-[300px] ml-8 mb-2">
+                            <option value="Aben Bagja Cahya Nandika, A.Md.RMIK" class="bg-main-gray-0 text-white">
+                                Angiography Intervention / PCI Package </option>
+                            <option class="bg-main-gray-0 text-white">
+                                Diagnostic / Coronary Angiography
+                            </option>
+                            <option class="bg-main-gray-0 text-white">
+                                Percutaneous Coronary Intervention (PCI)
+                            </option>
+                        </select>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox">
+                        <p class="font-thin text-sm">Obat Pulang</p>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox">
+                        <p class="font-thin text-sm">Laboratorium</p>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox">
+                        <p class="font-thin text-sm">Radiologi</p>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <input type="checkbox">
+                        <p class="font-thin text-sm">Pindah Rumah Sakit</p>
+                    </div>
+                    <div class="flex flex-col mb-2">
+                        <p class="font-thin text-sm">Alasan</p>
+                        <input type="text"
+                            class="ring-1 ml-8 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[300px] font-thin text-base" />
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <input type="checkbox">
+                        <p class="font-thin text-sm">Pulang Paksa</p>
+                    </div>
+                    <div class="flex flex-col mb-2">
+                        <p class="font-thin text-sm">Alasan</p>
+                        <input type="text"
+                            class="ring-1 ml-8 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[300px] font-thin text-base" />
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <input type="checkbox">
+                        <p class="font-thin text-sm">Meniggal Dunia</p>
+                    </div>
+                    <div class="flex flex-col">
+                        <p class="text-[13px]">jam</p>
+                        <select id="timeSelect2"
+                            class="border rounded  w-[100px] relative p-1 text-[12px] ml-3 ring-blue-300 ring-1 duration-150 hover:ring-blue-500 hover:ring-2">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="flex justify-end flex-col absolute -top-10 right-10">
+                    <div class="flex flex-col">
+                        <h1 class="mb-4">.</h1>
+                        <h1 class="mb-4">.</h1>
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="font-thin text-sm mb-2">ICD 10</label>
+                        <select name="" id=""
+                            class="ring-1 ring-main-blue-0 text-sm ml-8 focus:border-blue-300 overflow-y-auto rounded w-[300px] focus:outline-none  ">
+                            <option class="bg-main-gray-0 hover:bg-main-blue-0 text-white">RHABDOMIOSARKOMA</option>
+                            <option class="bg-main-gray-0 hover:bg-main-blue-0 text-white">- Tidak ada diagnosis gizi
+                                untuk saat
+                                ini</option>
+                            <option class="bg-main-gray-0 hover:bg-main-blue-0 text-white">5-730 Artificial Rupture Of
+                                Membranes
+                            </option>
+                            <option class="bg-main-gray-0 hover:bg-main-blue-0 text-white">9-164B Sources of coming from
+                                inside
+                                docter</option>
+                            <option class="bg-main-gray-0 hover:bg-main-blue-0 text-white">9-172 Day Hospital Care
+                            </option>
+                            <option class="bg-main-gray-0 hover:bg-main-blue-0 text-white">A00 Cholera</option>
+                            <option class="bg-main-gray-0 hover:bg-main-blue-0 text-white">A00.1 Cholera Due To Vibrio
+                                Cholerae 01,
+                                Biovar Eltor</option>
+                            <option class="bg-main-gray-0 hover:bg-main-blue-0 text-white">A00.9 Cholera, Unspecified
+                            </option>
+                            <option class="bg-main-gray-0 hover:bg-main-blue-0 text-white">A01 Typhoid and paratyphoid
+                                fevers
+                            </option>
+                            <option class="bg-main-gray-0 hover:bg-main-blue-0 text-white">A01.0 Typhoid fever</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col mb-2">
+                        <p class="font-thin">Nadi</p>
+                        <div class="flex">
+                            <input type="text"
+                                class="ring-1 ml-8 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[300px] font-thin text-base"
+                                value="x/menit">
+                            <p class="font-thin text-sm ml-2">x/menit</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col mb-2">
+                        <p class="font-thin">Suhu</p>
+                        <div class="flex">
+                            <input type="text"
+                                class="ring-1 ml-8 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[300px] font-thin text-base"
+                                value="°C">
+                            <p class="font-thin text-sm ml-2">°C</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class=" relative -top-20">
+                    <div class="flex flex-wrap-2 gap-3 float-right mt-7">
+                        <div class="px-1">
+                            <button
+                                class="bg-[#41abf2] text-white font-bold text-[12px] mt-1 h-9 py-1 px-7 border rounded"
+                                type="search"><i class="fa fa-save -ml-5 mr-4n"></i>Simpan</button>
+                        </div>
+                        <div class="px- 1">
+                            <button
+                                class="bg-[#41abf2] text-white font-bold text-[12px] py-1 px-7 border rounded mt-1 h-9"
+                                type="search">
+                                <a href="#"><i class="fa fa-refresh -ml-5 mr-4"></i>Batal</a>
+                            </button>
+                        </div>
+                        <div class="px-1 mr-1">
+                            <button
+                                class="bg-[#ff2359] text-white font-bold text-[12px] py-1 px-7 border rounded mt-1 h-9"
+                                type="search">
+                                <a href="#"><i class="fa fa-arrow-left -ml-5 mr-4"></i>Kembali</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full hidden" id="content-pemberian-komunikasi" data-content="content-pemberian-komunikasi">
+                <div class="bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center">
+                    <div class="">
+                        <h1 class="text-white">
+                            Pemberian Komunikasi, Informasi dan Edukasi (KIE)
+                        </h1>
+                    </div>
+                </div>
+                <div class="relative -top-32 ml-[240px] mt-4">
+                    <div class="flex flex-col mb-2">
+                        <h3 class="font-bold text-sm">Saya telah diberikan kounikasi informasidan edukasi oleh
+                            petugas
+                            mengenai</h3>
+                        <textarea type="text"
+                            class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[630px] h-10 ml-8"></textarea>
+                    </div>
+                    <div class="flex flex-col mb-2">
+                        <h3 class="font-thin text-sm">Petugas</h3>
+                        <select
+                            class="border rounded p-1 text-[12px]  ring-blue-300 ring-1 duration-150 hover:ring-blue-500 hover:ring-2 w-[630px] ml-8">
+                            <option value="Aben Bagja Cahya Nandika, A.Md.RMIK" class="bg-main-gray-0 text-white">
+                                Aben Bagja Cahya Nandika, A.Md.RMIK
+                            </option>
+                            <option value="Adellia Mega Aryanti, A.Md.KepK" class="bg-main-gray-0 text-white">
+                                Adellia Mega Aryanti, A.Md.Kep
+                            </option>
+                            <option value="Afifah Ngudi Rahayu, A.Md.Kes" class="bg-main-gray-0 text-white">
+                                Afifah Ngudi Rahayu, A.Md.Kes
+                            </option>
+                            <option value="Ahyar Rosidin, S.Kep., Ners" class="bg-main-gray-0 text-white">
+                                Administrator
+                            </option>
+                            <option value="Administrator, S.Kep., Ners" class="bg-main-gray-0 text-white">
+                                Administrator
+                            </option>
+                            <option value="Administrator" class="bg-main-gray-0 text-white">
+                                Administrator
+                            </option>
+                            <option value="Administrator" class="bg-main-gray-0 text-white">
+                                Administrator
+                            </option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col mb-2">
+                        <h3 class="font-thin text-sm">Keluarga Pasien</h3>
+                        <input type="text"
+                            class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[630px] ml-8" />
+                    </div>
+                    <div class="relative top-28">
+                        <div class="flex flex-wrap-2 gap-3 float-right mt-7 justify-end relative -top-32">
+                            <div class="px-1">
+                                <button
+                                    class="bg-[#41abf2] text-white font-bold text-[12px] mt-1 h-9 py-1 px-7 border rounded"
+                                    type="search"><i class="fa fa-save -ml-5 mr-4n"></i>Simpan</button>
+                            </div>
+                            <div class="px- 1">
+                                <button
+                                    class="bg-[#41abf2] text-white font-bold text-[12px] py-1 px-7 border rounded mt-1 h-9"
+                                    type="search">
+                                    <a href="#"><i class="fa fa-refresh -ml-5 mr-4"></i>Batal</a>
+                                </button>
+                            </div>
+                            <div class="px-1 mr-1">
+                                <button
+                                    class="bg-[#ff2359] text-white font-bold text-[12px] py-1 px-7 border rounded mt-1 h-9"
+                                    type="search">
+                                    <a href="#"><i class="fa fa-arrow-left -ml-5 mr-4"></i>Kembali</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full hidden" id="content-lembar-observasi" data-content="content-lembar-observasi">
+                <div class="bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center">
+                    <div class="">
+                        <h1 class="text-white ml-4">
+                            Lembar Observasi Penderita Instalasi Gawat Darurat
+                        </h1>
+                    </div>
+                </div>
+                <div class="flex flex-wrap-2 gap-3 float-right mt-7 justify-end relative -top-32">
+                    <div class="px-1">
+                        <button class="bg-[#41abf2] text-white font-bold text-[12px] mt-1 h-9 py-1 px-7 border rounded"
+                            type="search"><i class="fa fa-save -ml-5 mr-4n"></i>Simpan</button>
+                    </div>
+                    <div class="px- 1">
+                        <button class="bg-[#41abf2] text-white font-bold text-[12px] py-1 px-7 border rounded mt-1 h-9"
+                            type="search">
+                            <a href="#"><i class="fa fa-refresh -ml-5 mr-4"></i>Batal</a>
+                        </button>
+                    </div>
+                    <div class="px-1 mr-1">
+                        <button class="bg-[#ff2359] text-white font-bold text-[12px] py-1 px-7 border rounded mt-1 h-9"
+                            type="search">
+                            <a href="#"><i class="fa fa-arrow-left -ml-5 mr-4"></i>Kembali</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full hidden" id="content-asuhan-keperawatan" data-content="content-asuhan-keperawatan">
+                <div class="bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center">
+                    <div class="">
+                        <h1 class="text-white ml-4">
+                            Asuhan Keperawatan Instalasi Gawat Darurat
+                        </h1>
+                    </div>
+                </div>
+                <div class="relative -top-32">
+                    <table class="flex flex-wrap-2 ml-[220px] mt-2">
+                        <tr>
+                            <th class="px-1">
+                                <p class="font-bold text-[18px]">Masalah Keperawatan</p>
+                            </th>
+                            <th class="px-1">
+                                <p class="font-bold text-[18px] ml-8 mt-4">Perencanaan</p>
+                                <p class="font-bold text-[18px] -mt-2 ml-8">Keperawatan</p>
+                            </th>
+                            <th class="px- 1">
+                                <p class="font-bold text-[18px] ml-28">Tindakan Keperawatan</p>
+                            </th>
+                            <th class="px-1">
+                                <p class="font-bold text-[18px] ml-10">Evaluasi Keperawatan</p>
+                            </th>
+                        </tr>
+                    </table>
+                    <!-- isi -->
+                    <table class="flex flex-wrap-2 ml-[220px] text-[14px] text-gray-500">
+                        <tr>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="-ml-14 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                Ketidakefektifan
+                                <p class="-ml-4">Bersihan Jalan Nafas</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="-ml-1 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                Buka
+                                Jalan
+                                Nafas
+                                <p class="ml-[60px]">gunakan tehnik head tilt</p>
+                                <p class="ml-[80px]">chin lift atau jaw thrust bila</p>
+                                <p class="-ml-20">perlu</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-10 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Membuka
+                                jalan
+                                nafas
+                                <p class="ml-14">tehnik head til chin atau</p>
+                                <p class="-ml-2">hrust bila perlu</p>
+                            </th>
+                            <th class="">
+                                <p class="-ml-20 -mt-2">S :</p>
+                                <textarea
+                                    class="border rounded ml-28 mt-2 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2"
+                                    cols="17" rows="2"></textarea>
+                            </th>
+                        </tr>
+
+                        <!-- isi2 -->
+                        <tr class="w-full">
+                            <th class="">
+                                <input type="checkbox"
+                                    class="-mt-20 -ml-5 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                Ketidakefektifan Pola
+                                <p class="-mt-1 -ml-28">Nafas</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-[34px] mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                Posisikan
+                                pasien untuk
+                                <p class="ml-[70px]">memaksimalkan ventilasi</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-10 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Memposisikan
+                                pasien
+                                <p class="ml-14">untuk memaksimalkan</p>
+                                <p class="-ml-[50px]">ventilasi</p>
+                            </th>
+                            <th class="">
+                                <p class="-ml-20 -mt-4">O :</p>
+                                <textarea
+                                    class="border rounded ml-28 mt-1 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2"
+                                    cols="17" rows="2"></textarea>
+                            </th>
+                        </tr>
+
+                        <!-- isi3 -->
+                        <tr class="w-full">
+                            <th class="">
+                                <input type="checkbox"
+                                    class="-ml-2 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                Gangguan
+                                pertukaran
+                                <p class="-mt-1 -ml-36">gas</p>
+                            </th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-3 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                Lakukan suction</th>
+                            <th class=""><input type="checkbox"
+                                    class="ml-5 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Melakukan
+                                suction</th>
+                            <th class="">
+                                <p class="-ml-20 -mt-1">A :</p>
+                                <textarea
+                                    class="border rounded ml-28 mt-1 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2"
+                                    cols="17" rows="2"></textarea>
+                            </th>
+                        </tr>
+
+                        <!-- isi4 -->
+                        <tr class="w-full">
+                            <th class="">
+                                <input type="checkbox"
+                                    class="-mt-20 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                Ketidakefektifan
+                                perfusi
+                                <p class="-mt-2 -ml-10">jaringan perifer</p>
+                            </th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-11 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                Berikan O2</th>
+                            <th class=""><input type="checkbox"
+                                    class="ml-1 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Memberikan
+                                O2
+                            </th>
+                            <th class="">
+                                <p class="-ml-20 mt-1">P :</p>
+                                <textarea
+                                    class="border rounded ml-28 mt-1 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2"
+                                    cols="17" rows="2"></textarea>
+                            </th>
+                        </tr>
+
+                        <!-- isi5 -->
+                        <tr class="w-full">
+                            <th class="">
+                                <input type="checkbox"
+                                    class="-mt-20 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                Ketidakefektifan
+                                perfusi
+                                <p class="-mt-2 -ml-10">jaringan jantung</p>
+                            </th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-8 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Pasang
+                                Maya
+                            </th>
+                            <th class=""><input type="checkbox"
+                                    class="ml-3 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Memasang
+                                Maya</th>
+                            <th class="">
+                                <p class="-ml-9 -mt-3 mb-4">Petugas</p>
+                                <div class="w-full ml-28">
+                                    <select name="pasien"
+                                        class="block w-40 h-8 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600">
+                                        <option class="bg-[#313235] text-white" value=""></option>
+                                        <option class="bg-[#313235] text-white" value="">Asuransi</option>
+                                        <option class="bg-[#313235] text-white" value="">Bpjs</option>
+                                        <option class="bg-[#313235] text-white" value="">Karyawan</option>
+                                        <option class="bg-[#313235] text-white" value="">Perusahaan</option>
+                                        <option class="bg-[#313235] text-white" value="">Umum/Pribadi</option>
+                                    </select>
+                                </div>
+                            </th>
+                        </tr>
+
+                        <!-- isi6 -->
+                        <tr class="w-full">
+                            <th class="">
+                                <input type="checkbox"
+                                    class="-mt-20 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                Ketidakefektifan
+                                perfusi
+                                <p class="-mt-2 -ml-12">jaringan ginjal</p>
+                            </th>
+                            <th class=""><input type="checkbox"
+                                    class="ml-12 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Lakukan
+                                fisoterapi dada</th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-10 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Melakukan
+                                fisoterapi
+                                <p class="-ml-16">dada</p>
+                            </th>
+                        </tr>
+
+                        <!-- isi7 -->
+                        <tr class="w-full">
+                            <th class="">
+                                <input type="checkbox"
+                                    class="-mt-20 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                Ketidakefektifan
+                                perfusi
+                                <p class="-mt-2 -ml-16">jaringan otak</p>
+                            </th>
+                            <th class=""><input type="checkbox"
+                                    class="ml-10 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />berikan
+                                bronchodilator</th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="-ml-5 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Memberikan
+                                <p class="ml-6">bronchodilator</p>
+                            </th>
+                        </tr>
+
+                        <!-- isi8 -->
+                        <tr class="w-full">
+                            <th class="">
+                                <input type="checkbox"
+                                    class="-ml-11 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                Penurunan
+                                curah
+                                <p class="-mt-2 -ml-28">jantung</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-1 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Auskultulasi
+                                suara
+                                <p class="-ml-20">nafas</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-14 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Melakukan
+                                auskultulasi
+                                <p class="-ml-6">suara nafas</p>
+                            </th>
+                        </tr>
+
+                        <!-- isi9 -->
+                        <tr class="w-full">
+                            <th class="">
+                                <input type="checkbox"
+                                    class="-ml-8 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                kekurangan
+                                volume
+                                <p class="-mt-2 -ml-28">cairan</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-7 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Monitor
+                                respirasi dan
+                                <p class="-ml-16">status O2</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-10 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Memonitor
+                                respirasi
+                                <p class="]ml-1">dan status O2</p>
+                            </th>
+                        </tr>
+
+                        <!-- isi10 -->
+                        <tr class="w-full">
+                            <th class="">
+                                <input type="checkbox"
+                                    class="-ml-11 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                kelebihan
+                                volume
+                                <p class="-mt-2 -ml-28">cairan</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-11 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Monitor
+                                TD,
+                                Nadi, Suhu,
+                                <p class="-ml-16">dan RR</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-10 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Memonitor
+                                TD,
+                                Nadi,
+                                <p class="]ml-1">Suhu, dan RR</p>
+                            </th>
+                        </tr>
+
+                        <!-- isi11 -->
+                        <tr class="w-full">
+                            <th class=""><input type="checkbox"
+                                    class="-ml-[89px] ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                Hipertemia</th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-5 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Monitor
+                                suhu,
+                                warna
+                                <p class="ml-7">dan kelembaban kulit</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-14 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Memonitor
+                                suhu,
+                                warna
+                                <p class="ml-10">dan kelembaban kulit</p>
+                            </th>
+                        </tr>
+
+                        <!-- isi12 -->
+                        <tr class="w-full">
+                            <th class=""><input type="checkbox"
+                                    class="-ml-[89px] ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                Hiportemia</th>
+                            <th class=""><input type="checkbox"
+                                    class="ml-11 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Monitor
+                                balance cairan</th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-8 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Memonitor
+                                balance
+                                <p class="-ml-12">cairan</p>
+                            </th>
+                        </tr>
+
+                        <!-- isi13 -->
+                        <tr class="w-full">
+                            <th class=""><input type="checkbox"
+                                    class="-ml-[96px] ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                Nyeri akut</th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="-ml-5 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Monitor
+                                status
+                                <p class="ml-8">kardiovaskuler pasien</p>
+                                <p class="-ml-24">(EKG)</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-5 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Memonitor
+                                status
+                                <p class="ml-12">kardiovaskuler pasien</p>
+                                <p class="-ml-20">(EKG)</p>
+                            </th>
+                        </tr>
+
+                        <!-- isi14 -->
+                        <tr class="w-full">
+                            <th class=""><input type="checkbox"
+                                    class="-ml-[118px] ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                Nausea</th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="-ml-3 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Monitor
+                                tingkat
+                                <p class="ml-3">kesadaran Pasien</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-7 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Memonitor
+                                tingkat
+                                <p class="ml-10">kesadaran Pasien</p>
+                            </th>
+                        </tr>
+
+                        <!-- isi15 -->
+                        <tr class="w-full">
+                            <th class="">
+                                <input type="checkbox"
+                                    class="-ml-8 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                Kerusakan
+                                integras
+                                <p class="-ml-32">kulit</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-8 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Monitor
+                                tanda-tanda
+                                <p class="-ml-16">infeksi</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-12 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Memonitor
+                                tanda-tanda
+                                <p class="-ml-16">infeksi</p>
+                            </th>
+                        </tr>
+
+                        <!-- isi16 -->
+                        <tr class="w-full">
+                            <th class="">
+                                <input type="checkbox"
+                                    class="-ml-8 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                Gangguan
+                                eliminasi
+                                <p class="-ml-32">urin</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-8 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Monitor
+                                kualitas dari
+                                <p class="-ml-16">nadi</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-12 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Memonitor
+                                kualitas
+                                dari
+                                <p class="-ml-16">nadi</p>
+                            </th>
+                        </tr>
+
+                        <!-- isi17 -->
+                        <tr class="w-full">
+                            <th class="">
+                                <input type="checkbox"
+                                    class="-ml-6 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                Hambatan
+                                mobilitas
+                                <p class="-ml-32">fisik</p>
+                            </th>
+                            <th class=""><input type="checkbox"
+                                    class="ml-12 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Monitor
+                                sianosis prifer</th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-5 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Memonitor
+                                sianosis
+                                <p class="-ml-16">prifer</p>
+                            </th>
+                        </tr>
+
+                        <!-- isi18 -->
+                        <tr class="w-full">
+                            <th class=""><input type="checkbox"
+                                    class="-ml-28 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                Ansietas</th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-10 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Monitor
+                                suhu
+                                minimal
+                                <p class="-ml-8">setiap 2 jam</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-12 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Memonitor
+                                suhu
+                                minimal
+                                <p class="-ml-9">setiap 2 jam</p>
+                            </th>
+                        </tr>
+
+                        <!-- isi19 -->
+                        <tr class="w-full">
+                            <th class=""><input type="checkbox"
+                                    class="-ml-16 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                Resiko
+                                aspirasi</th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="-ml-3 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Monitor
+                                lokasi,
+                                <p class="ml-8">karakteristik, duras,</p>
+                                <p class="ml-14">frekuensi, kualitas dan</p>
+                                <p class="ml-14">faktorpresipitasi Nyeri</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="-ml-1 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Memonitor
+                                lokasi,
+                                <p class="ml-8">karakteristik, duras,</p>
+                                <p class="ml-14">frekuensi, kualitas dan</p>
+                                <p class="ml-14">faktorpresipitasi Nyeri</p>
+                            </th>
+                        </tr>
+
+                        <!-- isi20 -->
+                        <tr class="w-full">
+                            <th class=""><input type="checkbox"
+                                    class="-ml-20 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                Resiko
+                                infeksi</th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-10 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Kompres
+                                pasing
+                                pada
+                                <p class="ml-16">lipatan paha dan axila</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-5 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Melakukan
+                                kompres
+                                <p class="ml-12">pasing pada lipatan paha</p>
+                                <p class="-ml-16">dan axila</p>
+                            </th>
+                        </tr>
+
+                        <!-- isi21 -->
+                        <tr class="w-full">
+                            <th class="">
+                                <input type="checkbox"
+                                    class="-ml-[178px] ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />
+                                <p><input type="text" class="border border-blue-500 rounded-md h-8 w-36 -ml-7" /></p>
+                            </th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-2 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Selimut
+                                pasien</th>
+                            <th class=""><input type="checkbox"
+                                    class="ml-6 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Menyelimuti
+                                pasien
+                            </th>
+                        </tr>
+
+                        <!-- isi22-->
+                        <tr class="w-full">
+                            <th></th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-14 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Ajarkan
+                                tehnik
+                                distraksi
+                                <p class="-ml-8">dan relaksasi</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-8 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Mengajarkan
+                                tehnik
+                                <p class="ml-11">distraksi dan relaksasi</p>
+                            </th>
+                        </tr>
+
+                        <!-- isi23-->
+                        <tr class="w-full">
+                            <th></th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-1 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Jelaskan
+                                semua
+                                <p class="-ml-8">prosedur</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-8 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Menjelaskan
+                                semua
+                                <p class="-ml-6">prosedur</p>
+                            </th>
+                        </tr>
+
+                        <!-- isi24-->
+                        <tr class="w-full">
+                            <th></th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-8 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Ciptakan
+                                hubungan
+                                <p class="ml-3">saling percaya</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-14 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Menciptakan
+                                hubungan
+                                <p class="-ml-3">saling percaya</p>
+                            </th>
+                        </tr>
+
+                        <!-- isi25-->
+                        <tr class="w-full">
+                            <th></th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-5 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Pasang
+                                pengaman
+                                <p class="ml-14">(imobilisasi dengan spalk)</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-12 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Memasang
+                                pengaman
+                                <p class="ml-11">(imobilisasi dengan spalk)</p>
+                            </th>
+                        </tr>
+
+                        <!-- isi26-->
+                        <tr class="w-full">
+                            <th></th>
+                            <th class=""><input type="checkbox"
+                                    class="ml-4 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Kolaborasi
+                                dalam</th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-12 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Melakukan
+                                kolaborasi
+                                <p class="-ml-12">dalam</p>
+                            </th>
+                        </tr>
+
+                        <!-- isi27-->
+                        <tr class="w-full">
+                            <th></th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-12 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Intubasi,
+                            </th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-11 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Intubasi,
+                            </th>
+                        </tr>
+
+                        <!-- isi28-->
+                        <tr class="w-full">
+                            <th></th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-10 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Ventilator
+                            </th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-8 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Ventilator
+                            </th>
+                        </tr>
+
+                        <!-- isi29-->
+                        <tr class="w-full">
+                            <th></th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-4 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Kolaborasi
+                                dalam
+                                <p class="-ml-8">pemasangan</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-14 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Melakukan
+                                kolaborasi
+                                <p class="ml-11">dalam pemasangan</p>
+                            </th>
+                        </tr>
+
+                        <!-- isi30-->
+                        <tr class="w-full">
+                            <th></th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-14 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Kateter,
+                            </th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-12 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Kateter,
+                            </th>
+                        </tr>
+
+                        <!-- isi31-->
+                        <tr class="w-full">
+                            <th></th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-20 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />NGT,
+                            </th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-16 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />NGT,
+                            </th>
+                        </tr>
+
+                        <!-- isi32-->
+                        <tr class="w-full">
+                            <th></th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-14 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Kumbah,
+                            </th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-12 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Kumbah,
+                            </th>
+                        </tr>
+
+                        <!-- isi33-->
+                        <tr class="w-full">
+                            <th></th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-9 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Antiemetic,
+                            </th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-7 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Antiemetic,
+                            </th>
+                        </tr>
+
+                        <!-- isi34-->
+                        <tr class="w-full">
+                            <th></th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-10 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Antibiotik,
+                            </th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-8 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Antibiotik,
+                            </th>
+                        </tr>
+
+                        <!-- isi35-->
+                        <tr class="w-full">
+                            <th></th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-4 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Kolaborasi
+                                dalam
+                                <p class="-ml-12">pemberian</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-14 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Melakukan
+                                kolaborasi
+                                <p class="ml-3">dalam pemberian</p>
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        <!-- isi36-->
+                        <tr class="w-full">
+                            <th></th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-5 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Antipirektik,
+                            </th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Antipirektik,
+                            </th>
+                        </tr>
+
+                        <!-- isi37-->
+                        <tr class="w-full">
+                            <th></th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-10 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Analgetik,
+                            </th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-7 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Analgetik,
+                            </th>
+                        </tr>
+
+                        <!-- isi38-->
+                        <tr class="w-full">
+                            <th></th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-8 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Antiemetic,
+                            </th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-5 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Antiemetic,
+                            </th>
+                        </tr>
+
+                        <!-- isi39-->
+                        <tr class="w-full">
+                            <th></th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-10 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Antibiotik,
+                            </th>
+                            <th class=""><input type="checkbox"
+                                    class="-ml-7 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Antibiotik,
+                            </th>
+                        </tr>
+
+                        <!-- isi40-->
+                        <tr class="w-full">
+                            <th></th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-12 mt-4 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Kolaborasi
+                                pemberian
+                                <p class="-ml-9">cairan IV</p>
+                            </th>
+                            <th class="">
+                                <input type="checkbox"
+                                    class="ml-16 ring-blue-300 ring-1 hover:ring-blue-500 hover:ring-2" />Melakukan
+                                Kolaborasi
+                                <p class="ml-10">pemberian cairan IV</p>
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="flex flex-wrap-2 gap-3 float-right mt-7">
+                    <div class="px-1">
+                        <button class="bg-[#41abf2] text-white font-bold text-[12px] mt-1 h-9 py-1 px-7 border rounded"
+                            type="search"><i class="fa fa-save -ml-5 mr-4n"></i>Simpan</button>
+                    </div>
+                    <div class="px- 1">
+                        <button class="bg-[#41abf2] text-white font-bold text-[12px] py-1 px-7 border rounded mt-1 h-9"
+                            type="search">
+                            <a href="#"><i class="fa fa-refresh -ml-5 mr-4"></i>Batal</a>
+                        </button>
+                    </div>
+                    <div class="px-1 mr-1">
+                        <button class="bg-[#ff2359] text-white font-bold text-[12px] py-1 px-7 border rounded mt-1 h-9"
+                            type="search">
+                            <a href="#"><i class="fa fa-arrow-left -ml-5 mr-4"></i>Kembali</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="h-40"></div>
+            </div>
 </body>
 <script src="script.js"></script>
 
