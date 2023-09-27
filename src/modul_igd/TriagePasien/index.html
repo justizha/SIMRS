@@ -17,10 +17,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/webtour@1.1.0/dist/webtour.min.css">
+    <script src="https://unpkg.com/webtour@1.1.0/dist/webtour.min.js"></script>
 
 </head>
 
-<body class="font-comfortaa">
+<body class="font-comfortaa min-h-screen">
     <header class="bg-main-gray-0 w-full py-1 flex justify-between items-center">
         <div class="flex  mx-2 ">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="white">
@@ -244,13 +246,15 @@
                 </div>
             </div>
             <div class="w-full hidden" id="content-pemerikasaan-umum" data-content="content-pemerikasaan-umum">
-                <div class=" bg-main-blue-0 h-12 ml-[220px] relative -top-32 items-center flex">
+                <div class=" bg-main-blue-0 h-12 ml-[220px] relative -top-32 items-center flex justify-between">
                     <h1 class="text-white">Pemerikasaan umum</h1>
+                    <button id="umum" class="text-white p-1 bg-main-gray-0 cursor-pointer rounded w-10">?</button>
                 </div>
+
                 <div class="ml-[300px] relative -top-28">
                     <div class="mb-2">
                         <p class="text-sm mb-2">Pemeriksa</p>
-                        <select
+                        <select id="step_1"
                             class="border rounded p-1 text-[12px] ml-3 ring-blue-300 ring-1 duration-150 hover:ring-blue-500 hover:ring-2">
                             <option value="Aben Bagja Cahya Nandika, A.Md.RMIK" class="bg-main-gray-0 text-white">
                                 Aben Bagja Cahya Nandika, A.Md.RMIK
@@ -275,63 +279,84 @@
                             </option>
                         </select>
                     </div>
-                    <div class="mb-2">
-                        <p class="font-bold text-sm mb-2">Jalan Napas (A)</p>
-                        <div class="flex items-center">
-                            <input type="checkbox">
-                            <p class="text-[13px] ml-1">Pasien</p>
+                    <div id="step_3" class="w-[230px]">
+                        <div class="mb-2">
+                            <p class="font-bold text-sm mb-2">Jalan Napas (A)</p>
+                            <div class="flex items-center">
+                                <input type="checkbox">
+                                <p class="text-[13px] ml-1">Pasien</p>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox">
+                                <p class="text-[13px] ml-1">Obstruksi Partial</p>
+                            </div>
                         </div>
-                        <div class="flex items-center">
-                            <input type="checkbox">
-                            <p class="text-[13px] ml-1">Obstruksi Partial</p>
-                        </div>
-                    </div>
-                    <div class="mb-2">
-                        <p class="text-sm mb-2 font-bold">Pernapasan (B)</p>
-                        <p class="text-[13px]">Gerakan Dada</p>
-                        <div class="flex items-center mb-1">
-                            <input type="checkbox">
-                            <p class="text-[13px] ml-1">Simetris</p>
-                        </div>
-                        <p class="text-[13px]">Tipe Pernapasan</p>
+                        <div class="mb-2">
+                            <p class="text-sm mb-2 font-bold">Pernapasan (B)</p>
+                            <p class="text-[13px]">Gerakan Dada</p>
+                            <div class="flex items-center mb-1">
+                                <input type="checkbox">
+                                <p class="text-[13px] ml-1">Simetris</p>
+                            </div>
+                            <p class="text-[13px]">Tipe Pernapasan</p>
 
-                        <div class="flex items-center mb-1">
-                            <input type="checkbox">
-                            <p class="text-[13px] ml-1">Normal</p>
-                        </div>
-                        <p class="text-[13px]">Laju Pernapasan</p>
+                            <div class="flex items-center mb-1">
+                                <input type="checkbox">
+                                <p class="text-[13px] ml-1">Normal</p>
+                            </div>
+                            <p class="text-[13px]">Laju Pernapasan</p>
 
-                        <div class="flex items-center mb-1">
-                            <input type="checkbox">
-                            <p class="text-[13px] ml-1">Normal</p>
+                            <div class="flex items-center mb-1">
+                                <input type="checkbox">
+                                <p class="text-[13px] ml-1">Normal</p>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <p class="text-sm mb-2 font-bold">Sirkulasi (C)</p>
+                            <p class="text-[13px]">Denyut Nadi</p>
+                            <div class="flex items-center mb-1">
+                                <input type="checkbox">
+                                <p class="ml-1 text-[13px]">Ada</p>
+                            </div>
+                            <p class="text-[13px]">Kulit/Mukosa</p>
+                            <div class="flex items-center mb-1">
+                                <input type="checkbox">
+                                <p class="ml-1 text-[13px]">Normal</p>
+                            </div>
+                            <div class="flex items-center mb-1">
+                                <input type="checkbox">
+                                <p class="ml-1 text-[13px]">Pucak</p>
+                            </div>
+                            <div class="flex items-center mb-1">
+                                <input type="checkbox">
+                                <p class="ml-1 text-[13px]">Ikterik</p>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <p class="text-sm mb-2 font-bold">Kersadaran (D)</p>
+                            <div class="flex items-center mb-1">
+                                <input type="checkbox">
+                                <p class="ml-1 text-[13px]">Alert</p>
+                            </div>
+                            <div class="flex items-center mb-1">
+                                <input type="checkbox">
+                                <p class="ml-1 text-[13px]">Voice</p>
+                            </div>
+                            <div class="flex items-center mb-1">
+                                <input type="checkbox">
+                                <p class="ml-1 text-[13px]">Pain</p>
+                            </div>
+                            <div class="flex items-center mb-1">
+                                <input type="checkbox">
+                                <p class="ml-1 text-[13px]">Unconscious</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="mb-2">
-                        <p class="text-sm mb-2 font-bold">Sirkulasi (C)</p>
-                        <p class="text-[13px]">Denyut Nadi</p>
-                        <div class="flex items-center mb-1">
-                            <input type="checkbox">
-                            <p class="ml-1 text-[13px]">Ada</p>
-                        </div>
-                        <p class="text-[13px]">Kulit/Mukosa</p>
-                        <div class="flex items-center mb-1">
-                            <input type="checkbox">
-                            <p class="ml-1 text-[13px]">Normal</p>
-                        </div>
-                        <div class="flex items-center mb-1">
-                            <input type="checkbox">
-                            <p class="ml-1 text-[13px]">Pucak</p>
-                        </div>
-                        <div class="flex items-center mb-1">
-                            <input type="checkbox">
-                            <p class="ml-1 text-[13px]">Ikterik</p>
-                        </div>
-                    </div>
-                    <div class="flex justify-end relative -top-[460px] mr-[400px]">
+                    <div class="flex justify-end relative -top-[560px] mr-[200px]">
                         <div class="flex flex-col">
                             <p class="text-[13px]">jam</p>
                             <select id="timeSelect" style="top: 10px;"
-                                class="border rounded relative p-1 text-[12px] ml-3 ring-blue-300 ring-1 duration-150 hover:ring-blue-500 hover:ring-2">
+                                class="border step_2 rounded relative p-1 text-[12px] ml-3 ring-blue-300 ring-1 duration-150 hover:ring-blue-500 hover:ring-2">
 
                             </select>
                             <div class="flex flex-col relative top-10">
@@ -386,13 +411,14 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full hidden" id="content-derjat-nyeri" data-content="content-derajat-nyeri">
-                <div class=" bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center">
+            <div class="w-full hidden min-h-screen" id="content-derjat-nyeri" data-content="content-derajat-nyeri">
+                <div class=" bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center justify-between">
                     <div class="">
                         <h1 class="text-white">Derajat Nyeri</h1>
                     </div>
+                    <button id="nyeri" class="text-white p-1 bg-main-gray-0 cursor-pointer rounded w-10">?</button>
                 </div>
-                <div class=" relative -top-20 flex justify-center mr-12">
+                <div class=" relative -top-20 flex justify-center mr-12 w-[500px] ml-[260px]" id="nyeri_1">
                     <div class="flex gap-16">
                         <div class="flex flex-col justify-center">
                             <img src="https://apps.transmedic.co.id:2200/app/stylesheets/skalanyeri/1.png" alt="0"
@@ -478,15 +504,19 @@
                     </button>
                 </div>
             </div>
-            <div class="w-full hidden" id="content-klasifikasi-triage" data-content="content-klasifikasi-triage">
-                <div class=" bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center">
+            <div class="w-full hidden min-h-screen" id="content-klasifikasi-triage"
+                data-content="content-klasifikasi-triage">
+                <div class=" bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center justify-between mx-3">
                     <div class="">
                         <h1 class="text-white">Klasifikasi Triage</h1>
                     </div>
+                    <button id="klasifikasi"
+                        class="text-white p-1 bg-main-gray-0 cursor-pointer rounded w-10">?</button>
+
                 </div>
                 <div class="relative -top-28 ">
                     <div class="flex ml-[292px]">
-                        <div class=" flex flex-col mb-1">
+                        <div class=" flex flex-col mb-1" id="klasifikasiTriage">
                             <div class="flex items-center">
                                 <input type="checkbox" name="" id="">
                                 <p class="text-[14px] font-thin">Hijau</p>
@@ -518,14 +548,15 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full hidden" id="content-tanda-vital" data-content="content-tanda-vital">
-                <div class=" bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center mb-8">
+            <div class="w-full hidden min-h-screen" id="content-tanda-vital" data-content="content-tanda-vital">
+                <div class=" bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center mb-8 justify-between">
                     <div class="">
                         <h1 class="text-white">Tanda Vital</h1>
                     </div>
+                    <button id="vital" class="text-white p-1 bg-main-gray-0 cursor-pointer rounded w-10">?</button>
                 </div>
-                <div class="relative -top-32">
-                    <div class="flex justify-between ml-[300px]">
+                <div class="relative -top-32 ">
+                    <div class="flex justify-between ml-[300px]" id="tanda_vital">
                         <div class="flex justify-center">
                             <div class="flex flex-col">
                                 <div class="mb-4">
@@ -603,14 +634,16 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full hidden" id="content-anamanesa" data-content="content-anamnesa">
-                <div class=" bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center mb-8">
+            <div class="w-full hidden min-h-screen" id="content-anamanesa" data-content="content-anamnesa">
+                <div class=" bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center mb-8  justify-between">
                     <div class="">
                         <h1 class="text-white">Anamnesa</h1>
                     </div>
+                    <button id="anamnesa" class="text-white p-1 bg-main-gray-0 cursor-pointer rounded w-10">?</button>
+
                 </div>
                 <div class="relative -top-36">
-                    <div class="flex ml-[300px]">
+                    <div class="flex ml-[300px]" id="anamnesa_1">
                         <div class="flex flex-col">
                             <div class="mb-2">
                                 <p class="text-[13px] mb-4">Anamnesa :</p>
@@ -673,10 +706,13 @@
                 </div>
             </div>
             <div class="w-full hidden" id="content-pemeriksaan-fisik" data-content="content-pemeriksaan-fisik">
-                <div class=" bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center mb-8">
+                <div
+                    class=" bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center mb-8 justify-between mx-4">
                     <div class="">
                         <h1 class="text-white">Pemeriksaan Fisik</h1>
                     </div>
+                    <button id="fisik" class="text-white p-1 bg-main-gray-0 cursor-pointer rounded w-10">?</button>
+
                 </div>
                 <div class="relative -top-32">
                     <div class="flex justify-center">
@@ -791,7 +827,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="relative flex justify-end mr-20 -top-[550px] gap-5 ml-20">
+                <div class="relative grid grid-cols-3 mr-20 -top-[550px] gap-5  w-[450px] ml-[700px]" id="fisik1">
                     <div class="flex flex-col">
                         <p>Tanggal</p>
                         <input type="date"
@@ -807,8 +843,6 @@
                         <input type="text"
                             class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[150px]">
                     </div>
-                </div>
-                <div class="relative flex justify-end mr-20 -top-[520px] gap-5 ml-20">
                     <div class="flex flex-col">
                         <p>Verbal</p>
                         <input type="text"
@@ -825,7 +859,7 @@
                             class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[150px]">
                     </div>
                 </div>
-                <div class="relative -top-[180px] ml-[300px]">
+                <div class="relative -top-[180px] ml-[300px]" id="fisik2">
                     <div class="flex gap-4 mb-2">
                         <div class="w-full">
                             <div class="flex flex-col">
@@ -941,12 +975,14 @@
                 </div>
             </div>
             <div class="w-full hidden" id="content-pemeriksaan-penunjang" data-content="content-pemeriksaan-penunjang">
-                <div class="bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center mb-4">
+                <div class="bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center mb-4 justify-between">
                     <div class="">
                         <h1 class="text-white">Pemerikasaan Penunjang</h1>
                     </div>
+                    <button id="penunjang" class="text-white p-1 bg-main-gray-0 cursor-pointer rounded w-10">?</button>
+
                 </div>
-                <div class="relative -top-32 ml-[300px]">
+                <div class="relative -top-32 ml-[300px] " id="penunjang1">
                     <div class="flex flex-col mb-2">
                         <p class="font-thin text-[13px]">Labolatorium</p>
                         <input type="text"
@@ -967,26 +1003,29 @@
                         <textarea type="text"
                             class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[330px]"></textarea>
                     </div>
-                </div>
-                <div class="flex justify-end">
-                    <div class="relative -top-[358px] flex-col flex mr-[100px]">
-                        <div class="flex flex-col mb-2">
-                            <p class="font-thin text-[13px]">Jam</p>
-                            <input type="date"
-                                class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[180px]">
-                        </div>
-                        <div class="flex flex-col mb-2">
-                            <p class="font-thin text-[13px]">EKG</p>
-                            <input type="text"
-                                class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[330px]">
-                        </div>
-                        <div class="flex flex-col mb-2">
-                            <p class="font-thin text-[13px]">Diagnosa Banding</p>
-                            <input type="text"
-                                class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[330px]">
+                    <div class="flex justify-end absolute top-10 right-0">
+
+                        <div class=" flex-col">
+
+                            <div class="flex flex-col mb-2">
+                                <p class="font-thin text-[13px]">Jam</p>
+                                <input type="date"
+                                    class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[180px]">
+                            </div>
+                            <div class="flex flex-col mb-2">
+                                <p class="font-thin text-[13px]">EKG</p>
+                                <input type="text"
+                                    class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[330px]">
+                            </div>
+                            <div class="flex flex-col mb-2">
+                                <p class="font-thin text-[13px]">Diagnosa Banding</p>
+                                <input type="text"
+                                    class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-[330px]">
+                            </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="flex justify-end absolute top-56 right-5">
                     <div class="px-1">
                         <button class="bg-[#41abf2] text-white font-bold text-[12px] mt-1 h-9 py-1 px-7 border rounded"
@@ -1006,27 +1045,31 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full hidden" id="content-informasi-pemindahan-Ruangan/Pemulangan-pasien"
+            <div class="w-full hidden min-h-screen" id="content-informasi-pemindahan-Ruangan/Pemulangan-pasien"
                 data-content="content-informasi-pemindahan-Ruangan/Pemulangan-pasien">
-                <div class="bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center">
+                <div class="bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center justify-between">
                     <div class="">
                         <h1 class="text-white">
                             Informasi Pemindahan Ruangan/Pemulangan Pasien
                         </h1>
+
                     </div>
+                    <button id="pemulang" class="text-white p-1 bg-main-gray-0 cursor-pointer rounded w-10">?</button>
                 </div>
                 <div class="relative -top-32 ml-[220px] mb-2">
                     <div class="flex flex-col mb-2">
                         <p class="text-sm font-thin">tanggal</p>
                         <input type="date"
-                            class="ring-1 rounded ml-8 focus:outline-none focus:ring focus:border-blue-300  w-[100px]">
+                            class="ring-1 rounded ml-8 focus:outline-none focus:ring focus:border-blue-300  w-[100px]"
+                            id="pemulang1">
                     </div>
                     <div class="flex flex-col mb-2">
                         <p class="text-sm font-bold">Diagnosa Akhir</p>
                         <input type="text"
-                            class="ring-main-blue-0 ring-1 ml-8 focus:outline-none focus:border-blue-300 rounded w-[300px]">
+                            class="ring-main-blue-0 ring-1 ml-8 focus:outline-none focus:border-blue-300 rounded w-[300px]"
+                            id="pemulang2">
                     </div>
-                    <div class="flex flex-col mb-2">
+                    <div class="flex flex-col mb-2" id="pemulang3">
                         <p class="text-sm font-bold">Kondisi Akhir Penderita</p>
                         <p class="font-thin">TD</p>
                         <div class="flex">
@@ -1057,91 +1100,94 @@
                         <input type="checkbox">
                         <p class="font-thin">MRS</p>
                     </div>
-                    <div class="flex flex-col mb-2">
-                        <p class="font-thin mb-2">Ruangan</p>
-                        <select
-                            class="border rounded p-1 text-[12px]  ring-blue-300 ring-1 duration-150 hover:ring-blue-500 hover:ring-2 w-[300px] ml-8 mb-2">
-                            <option value="Aben Bagja Cahya Nandika, A.Md.RMIK" class="bg-main-gray-0 text-white">
-                                Ruangan A
-                            </option>
-                            <option class="bg-main-gray-0 text-white">
-                                Ruangan B
-                            </option>
-                            <option class="bg-main-gray-0 text-white">
-                                Ruangan C
-                            </option>
-                            <option " class=" bg-main-gray-0 text-white">
-                                Ruangan D
-                            </option>
-                            <option class="bg-main-gray-0 text-white">
-                                LABORATORIUM PATALOGI KLINIK
-                            </option>
-                            <option v" class="bg-main-gray-0 text-white">
-                                Instalasi Laboratorium
-                            </option>
-                            <option class="bg-main-gray-0 text-white">
-                                ICU/ICVCU
-                            </option>
-                        </select>
-                        <div class="flex">
-                            <input type="checkbox">
-                            <p class="font-thin">Pulang</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-col mb-2">
-                        <p class="font-thin mb-2">Kontrol</p>
-                        <select
-                            class="border rounded p-1 text-[12px]  ring-blue-300 ring-1 duration-150 hover:ring-blue-500 hover:ring-2 w-[300px] ml-8 mb-2">
-                            <option value="Aben Bagja Cahya Nandika, A.Md.RMIK" class="bg-main-gray-0 text-white">
-                                Angiography Intervention / PCI Package </option>
-                            <option class="bg-main-gray-0 text-white">
-                                Diagnostic / Coronary Angiography
-                            </option>
-                            <option class="bg-main-gray-0 text-white">
-                                Percutaneous Coronary Intervention (PCI)
-                            </option>
-                        </select>
-                    </div>
-                    <div class="flex items-center">
-                        <input type="checkbox">
-                        <p class="font-thin text-sm">Obat Pulang</p>
-                    </div>
-                    <div class="flex items-center">
-                        <input type="checkbox">
-                        <p class="font-thin text-sm">Laboratorium</p>
-                    </div>
-                    <div class="flex items-center">
-                        <input type="checkbox">
-                        <p class="font-thin text-sm">Radiologi</p>
-                    </div>
-                    <div class="flex items-center mb-2">
-                        <input type="checkbox">
-                        <p class="font-thin text-sm">Pindah Rumah Sakit</p>
-                    </div>
-                    <div class="flex flex-col mb-2">
-                        <p class="font-thin text-sm">Alasan</p>
-                        <input type="text"
-                            class="ring-1 ml-8 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[300px] font-thin text-base" />
-                    </div>
-                    <div class="flex items-center mb-2">
-                        <input type="checkbox">
-                        <p class="font-thin text-sm">Pulang Paksa</p>
-                    </div>
-                    <div class="flex flex-col mb-2">
-                        <p class="font-thin text-sm">Alasan</p>
-                        <input type="text"
-                            class="ring-1 ml-8 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[300px] font-thin text-base" />
-                    </div>
-                    <div class="flex items-center mb-2">
-                        <input type="checkbox">
-                        <p class="font-thin text-sm">Meniggal Dunia</p>
-                    </div>
-                    <div class="flex flex-col">
-                        <p class="text-[13px]">jam</p>
-                        <select id="timeSelect2"
-                            class="border rounded  w-[100px] relative p-1 text-[12px] ml-3 ring-blue-300 ring-1 duration-150 hover:ring-blue-500 hover:ring-2">
+                    <div id="pemulang4">
 
-                        </select>
+                        <div class="flex flex-col mb-2">
+                            <p class="font-thin mb-2">Ruangan</p>
+                            <select
+                                class="border rounded p-1 text-[12px]  ring-blue-300 ring-1 duration-150 hover:ring-blue-500 hover:ring-2 w-[300px] ml-8 mb-2">
+                                <option value="Aben Bagja Cahya Nandika, A.Md.RMIK" class="bg-main-gray-0 text-white">
+                                    Ruangan A
+                                </option>
+                                <option class="bg-main-gray-0 text-white">
+                                    Ruangan B
+                                </option>
+                                <option class="bg-main-gray-0 text-white">
+                                    Ruangan C
+                                </option>
+                                <option " class=" bg-main-gray-0 text-white">
+                                    Ruangan D
+                                </option>
+                                <option class="bg-main-gray-0 text-white">
+                                    LABORATORIUM PATALOGI KLINIK
+                                </option>
+                                <option v" class="bg-main-gray-0 text-white">
+                                    Instalasi Laboratorium
+                                </option>
+                                <option class="bg-main-gray-0 text-white">
+                                    ICU/ICVCU
+                                </option>
+                            </select>
+                            <div class="flex">
+                                <input type="checkbox">
+                                <p class="font-thin">Pulang</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col mb-2">
+                            <p class="font-thin mb-2">Kontrol</p>
+                            <select
+                                class="border rounded p-1 text-[12px]  ring-blue-300 ring-1 duration-150 hover:ring-blue-500 hover:ring-2 w-[300px] ml-8 mb-2">
+                                <option value="Aben Bagja Cahya Nandika, A.Md.RMIK" class="bg-main-gray-0 text-white">
+                                    Angiography Intervention / PCI Package </option>
+                                <option class="bg-main-gray-0 text-white">
+                                    Diagnostic / Coronary Angiography
+                                </option>
+                                <option class="bg-main-gray-0 text-white">
+                                    Percutaneous Coronary Intervention (PCI)
+                                </option>
+                            </select>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox">
+                            <p class="font-thin text-sm">Obat Pulang</p>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox">
+                            <p class="font-thin text-sm">Laboratorium</p>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox">
+                            <p class="font-thin text-sm">Radiologi</p>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <input type="checkbox">
+                            <p class="font-thin text-sm">Pindah Rumah Sakit</p>
+                        </div>
+                        <div class="flex flex-col mb-2">
+                            <p class="font-thin text-sm">Alasan</p>
+                            <input type="text"
+                                class="ring-1 ml-8 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[300px] font-thin text-base" />
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <input type="checkbox">
+                            <p class="font-thin text-sm">Pulang Paksa</p>
+                        </div>
+                        <div class="flex flex-col mb-2">
+                            <p class="font-thin text-sm">Alasan</p>
+                            <input type="text"
+                                class="ring-1 ml-8 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[300px] font-thin text-base" />
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <input type="checkbox">
+                            <p class="font-thin text-sm">Meniggal Dunia</p>
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="text-[13px]">jam</p>
+                            <select id="timeSelect2"
+                                class="border rounded  w-[100px] relative p-1 text-[12px] ml-3 ring-blue-300 ring-1 duration-150 hover:ring-blue-500 hover:ring-2">
+
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="flex justify-end flex-col absolute -top-10 right-10">
@@ -1221,15 +1267,18 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full hidden" id="content-pemberian-komunikasi" data-content="content-pemberian-komunikasi">
-                <div class="bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center">
+            <div class="w-full hidden min-h-screen" id="content-pemberian-komunikasi"
+                data-content="content-pemberian-komunikasi">
+                <div class="bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center justify-between">
                     <div class="">
                         <h1 class="text-white">
                             Pemberian Komunikasi, Informasi dan Edukasi (KIE)
                         </h1>
                     </div>
+                    <button id="komunikasi" class="text-white p-1 bg-main-gray-0 cursor-pointer rounded w-10">?</button>
+
                 </div>
-                <div class="relative -top-32 ml-[240px] mt-4">
+                <div class="relative -top-32 ml-[240px] mt-4" id="komunikasi1">
                     <div class="flex flex-col mb-2">
                         <h3 class="font-bold text-sm">Saya telah diberikan kounikasi informasidan edukasi oleh
                             petugas
@@ -1322,15 +1371,17 @@
                 </div>
             </div>
             <div class="w-full hidden" id="content-asuhan-keperawatan" data-content="content-asuhan-keperawatan">
-                <div class="bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center">
+                <div class="bg-main-blue-0 h-12 ml-[220px] relative -top-32 flex items-center  justify-between">
                     <div class="">
                         <h1 class="text-white ml-4">
                             Asuhan Keperawatan Instalasi Gawat Darurat
                         </h1>
                     </div>
+                    <button id="asuhan" class="text-white p-1 bg-main-gray-0 cursor-pointer rounded w-10">?</button>
+
                 </div>
-                <div class="relative -top-32">
-                    <table class="flex flex-wrap-2 ml-[220px] mt-2">
+                <div class="relative -top-32 ">
+                    <table class="flex flex-wrap-2 ml-[220px] mt-2" id="asuhan1">
                         <tr>
                             <th class="px-1">
                                 <p class="font-bold text-[18px]">Masalah Keperawatan</p>
@@ -2106,6 +2157,211 @@
                 <div class="h-40"></div>
             </div>
 </body>
-<script src="script.js"></script>
+<script src="script.js">
+
+</script>
+<script>
+    const umum = document.getElementById("umum");
+    const nyeri = document.getElementById("nyeri")
+    const klasifikasi = document.getElementById("klasifikasi")
+    const vital = document.getElementById("vital");
+    const anamnesa = document.getElementById("anamnesa");
+    const fisik = document.getElementById("fisik")
+    const penunjang = document.getElementById("penunjang")
+    const komunikasi = document.getElementById("komunikasi")
+    const asuhan = document.getElementById("asuhan")
+    const pemulang = document.getElementById("pemulang")
+    console.log(nyeri)
+    umum.addEventListener('click', () => {
+        const wt = new WebTour();
+        const steps = [
+            {
+                //•	pemeriksa ( kanan )
+                element: '#step_1',
+                title: '',
+                content: 'nama orang yang melakukan pemeriksaan',
+                placement: 'left-start',
+            },
+            {
+                //•	jam ( kanan )
+                element: '.step_2',
+                title: '',
+                content: 'waktu ketika pemeriksaan dilakukan',
+                placement: 'top',
+            },
+            {
+                //•	jalan napas A- kesadaran D ( atas kiri)
+                element: '#step_3',
+                title: '',
+                content: 'Memberikan penjelasan tentang bagaimana keadaan si pasien',
+                placement: 'left-end',
+            },
+        ];
+        wt.setSteps(steps);
+        wt.start();
+    });
+    nyeri.addEventListener("click", () => {
+        const wt = new WebTour();
+        const steps = [
+            {
+                //•	0 – 10 ( atas kiri)
+                element: '#nyeri_1',
+                title: '',
+                content: 'Skala yang menunjukkan seberapa seriusnya penyakit yang dialami oleh pasien',
+                placement: 'top-start',
+            }
+        ]
+        wt.setSteps(steps);
+        wt.start();
+    })
+    klasifikasi.addEventListener("click", () => {
+        const wt = new WebTour();
+        const steps = [
+            {
+                //klasifikasi triage
+                element: '#klasifikasiTriage',
+                title: '',
+                content: 'informasi tentang tingkat keadaan darurat atau prioritas pasien',
+                placement: 'right-start',
+            },
+        ];
+        wt.setSteps(steps);
+        wt.start();
+    })
+    vital.addEventListener("click", () => {
+        const wt = new WebTour();
+        const steps = [
+            {
+                //•	TD – suhu ( atas kiri)
+                element: '#tanda_vital',
+                title: '',
+                content: 'Form mengenai kondisi tubuh pasien',
+                placement: 'bottom-start',
+            },
+        ];
+        wt.setSteps(steps);
+        wt.start();
+    })
+    anamnesa.addEventListener("click", () => {
+        const wt = new WebTour();
+        const steps = [
+            {
+                //•	TD – suhu ( atas kiri)
+                element: '#anamnesa_1',
+                title: '',
+                content: 'Form mengenai kondisi tubuh pasien',
+                placement: 'top',
+            },
+
+        ];
+
+        wt.setSteps(steps);
+        wt.start();
+    })
+    fisik.addEventListener("click", () => {
+        const wt = new WebTour();
+        const steps = [
+            {
+                //•	Tanggal – total ( bawah kiri)
+                element: '#fisik1',
+                title: '',
+                content: 'Berisi informasi mengenai status kondisi anggota badan pasien',
+                placement: 'bottom',
+            },
+            {
+                //•	Kepala – neurologis ( kiri )
+                element: '#fisik2',
+                title: '',
+                content: 'Berisi informasi mengenai hasil dari pemeriksaan yang dilakukan kepada pasien',
+                placement: 'top',
+            },
+
+        ];
+
+        wt.setSteps(steps);
+        wt.start();
+    })
+    penunjang.addEventListener("click", () => {
+        const wt = new WebTour();
+        const steps = [
+            {
+                //•	Laboratorium – diagnosa banding ( atas kiri)
+                element: '#penunjang1',
+                title: '',
+                content: 'Ini adalah informasi tentang tes khusus yang membantu dokter memahami lebih banyak tentang kondisi kesehatan seseorang',
+                placement: 'top',
+            },
+
+        ];
+
+        wt.setSteps(steps);
+        wt.start();
+    })
+    komunikasi.addEventListener("click", () => {
+        const wt = new WebTour();
+        const steps = [
+            {
+                //•	Saya telah … - keluarga pasien ( kanan atas )
+                element: '#komunikasi1',
+                title: '',
+                content: 'Tanda bukti mengenai komunikasi kepada keluarga pasien oleh pihak rumah sakit',
+                placement: 'left',
+            },
+        ];
+
+        wt.setSteps(steps);
+        wt.start();
+    })
+    asuhan.addEventListener("click", () => {
+        const wt = new WebTour();
+        const steps = [
+            {
+                //satu halaman penuh :)
+                element: '#asuhan1',
+                title: '',
+                content: 'Catatan pasien selama dirawat',
+                placement: 'top-start',
+            },
+        ];
+
+        wt.setSteps(steps);
+        wt.start();
+    })
+    pemulang.addEventListener("click", () => {
+        const wt = new WebTour();
+        const steps = [
+            {
+                //•	Tanggal ( kanan )
+                element: '#pemulang1',
+                title: '',
+                content: 'Kapan informasi ini dibuat',
+                placement: 'right-start',
+            },
+            {
+                //•	Diagnosa akhir ( kanan )
+                element: '#pemulang2',
+                title: '',
+                content: 'Dugaan penyakit yang dialami pasien selama dirawat',
+                placement: 'right-start',
+            },
+            {
+                //•	Td – suhu ( atas kiri )
+                element: '#pemulang3',
+                title: '',
+                content: 'TD sampai dengan suhu menampilkan kondisi terakhir pasien saat pindah/pulang',
+                placement: 'left-start',
+            },
+            {
+                //•	Mrs ruangan – meninggal dunia jam ( kanan atas )
+                element: '#pemulang4',
+                title: '',
+                content: 'Alasan dan informasi tambahan terkait kepulangan/pemindahan pasien',
+                placement: 'left',
+            },
+        ];
+        wt.setSteps(steps);
+        wt.start();
+    })
+</script>
 
 </html>

@@ -13,9 +13,11 @@
         href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@400;500;700&display=swap"
         rel="stylesheet">
     <link rel="icon" href="/public/transmedic-logo.png">
+    <link rel="stylesheet" href="https://unpkg.com/webtour@1.1.0/dist/webtour.min.css">
+    <script src="https://unpkg.com/webtour@1.1.0/dist/webtour.min.js"></script>
 </head>
 
-<body class="font-comfortaa">
+<body class="font-comfortaa min-h-screen">
     <header class="bg-main-gray-0 w-full py-1 flex justify-between items-center">
         <div class="flex  mx-2 ">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="white">
@@ -26,6 +28,10 @@
                 <h1 class="font-semibold text-[30px] text-white">TRANS<span class="text-red-500">M</span>EDIC</h1>
                 <p class="text-white italic text-[15px]">E-Healthcare / RS TRANSMEDIC</p>
             </div>
+        </div>
+        <div class="flex justify-end">
+            <button id="petunjuk"
+                class="bg-main-gray-0 p-1 rounded hover:bg-gray-400 duration-500 text-white">?</button>
         </div>
     </header>
     <div class="bg-main-blue-0 flex items-center py-1">
@@ -127,18 +133,43 @@
                 class="object-contain w-3 h-3 filter brightness-0 invert">
         </div>
     </div>
-    <div class=" mt-2 flex gap-3 justify-end mx-4 mb-10">
-        <a href="./TriagePasien/index.html"
+    <div class=" mt-2 flex gap-3 justify-end mx-4 mb-1 ">
+        <a href="./TriagePasien/index.html" id="step_1"
             class="bg-main-blue-0 p-1 rounded text-white text-center text-[20px] w-[400px]">
             Lihat Triage
         </a>
-        <button class="bg-main-blue-0 p-1 rounded text-white text-[20px]">Registrasi</button>
+        <button id="step_2" class="bg-main-blue-0 p-1 rounded text-white text-[20px]">Registrasi</button>
     </div>
 </body>
 <script src="../js/dataTriageIgd.js"></script>
 <script>
     document.getElementById('DateInput').value = new Date().toISOString().slice(0, 10)
     document.getElementById('DateInput2').value = new Date().toISOString().slice(0, 10)
+
+    window.onload = () => {
+        document.getElementById("petunjuk").addEventListener('click', () => {
+            const wt = new WebTour();
+
+            const steps = [
+                {
+                    //Lihat triage ( kiri )
+                    element: '#step_1',
+                    title: '',
+                    content: 'Melihat informasi mengenai triage yang sudah ada',
+                    placement: 'top',
+                },
+                {
+                    //Registrasi ( bawah ) 
+                    element: '#step_2',
+                    title: '',
+                    content: 'meregistrasi pasien',
+                    placement: 'top-end',
+                },
+            ];
+            wt.setSteps(steps);
+            wt.start();
+        })
+    }
 </script>
 
 </html>
