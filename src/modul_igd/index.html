@@ -72,24 +72,10 @@
 
             <div class="dropdown w-full">
                 <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400"
-                    onclick="toggleDropdown()">Modul Registrasi</button>
-                <div class="dropdown-content w-full transition-transform opacity-0 transform scale-y-0 origin-top ease-in-out duration-300"
-                    id="myDropdown">
-                    <div class="hover:bg-blue-400 ml-2 flex">
-                        <span class="material-symbols-outlined w-[20%]"> person_add </span>
-                        <a href="/Registrasi pasien/Pendaftaran pasien baru/Registrasi_Pasien_Baru.html"
-                            class="w-full font-light">Pasien Baru</a>
-                    </div>
-                    <div class="hover:bg-blue-400 ml-2 flex">
-                        <span class="material-symbols-outlined w-[20%]"> how_to_reg </span>
-                        <a href="/Registrasi pasien/Pendaftaran pasien lama/pasienlama.html">Pasien Lama</a>
-                    </div>
-                </div>
-                <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400"
-                    onclick="toggleDropdown2()">Modul
+                    onclick="toggleDropdown()">Modul
                     Igd</button>
                 <div class="dropdown-content w-full transition-transform opacity-0 transform scale-y-0 origin-top ease-in-out duration-300"
-                    id="myDropdown1">
+                    id="myDropdown">
                     <div class="hover:bg-blue-400 ml-2 flex">
                         <span class="material-symbols-outlined w-[20%]"> person_add </span>
                         <a href="/src/modul_igd/" class="w-full font-light">Data Pasien</a>
@@ -272,11 +258,7 @@
         dropdownContent.classList.toggle("scale-y-100");
         dropdownContent.classList.toggle("scale-y-0");
     }
-    function toggleDropdown2() {
-        dropdownContent1.classList.toggle("opacity-100");
-        dropdownContent1.classList.toggle("scale-y-100");
-        dropdownContent1.classList.toggle("scale-y-0");
-    }
+
 
     // Close the dropdown if the user clicks outside of it
     window.addEventListener("click", function (event) {

@@ -1,652 +1,709 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transmedic | Detail Biaya</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link rel="icon" href="https://apps.transmedic.co.id:2200/app/images/favicon.ico" />
+    <link rel="stylesheet" href="./dist/output.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css"
+      integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Transmedic | Detail Biaya</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-  <link rel="icon" href="https://apps.transmedic.co.id:2200/app/images/favicon.ico" />
-  <link rel="stylesheet" href="css/style.css" />
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
-  </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css"
-    integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/webtour@1.1.0/dist/webtour.min.css" />
+    <script src="https://unpkg.com/webtour@1.1.0/dist/webtour.min.js"></script>
+  </head>
 
-  <link rel="stylesheet" href="https://unpkg.com/webtour@1.1.0/dist/webtour.min.css" />
-  <script src="https://unpkg.com/webtour@1.1.0/dist/webtour.min.js"></script>
-</head>
-
-<body class="font-comfortaa overflow-x-hidden">
-  <!-- navbar -->
-  <nav class="bg-[#28292b] text-white p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-    <div class="flex mt-1">
-      <img src="/img/Menu Logo.png" class="mt-1 w-9 h-12 pt--5 pb-3" alt="" />
-      <div class="flex flex-col">
-        <span class="text-3xl font-Comfortaa font-semibold">
-          <a class="text-white mt-2 ml-3" href="#">TRANS<a href="#" class="text-[#FE0000] font-semibold">M</a><a href=""
-              class="font-semibold">EDIC</a></a>
-        </span>
-        <span class="ml-4 italic">E-Healthcare / RS TRANSMEDIC</span>
+  <body class="font-comfortaa overflow-x-hidden">
+    <!-- navbar -->
+    <nav class="bg-black border-b-2 border-b-black text-white p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div class="flex mt-1">
+        <div class="vector" id="vector">
+          <img id="toggleSidebar" class="w-10 h-12 pb-1 fill-white" src="./img/Menu Logo.png" />
+        </div>
+        <div class="flex flex-col">
+          <span class="text-3xl font-Comfortaa font-bold">
+            <a class="text-white mt-2 ml-3" href="#">TRANS<a href="#" class="text-[#FE0000] font-semibold">M</a><a href="" class="font-bold">EDIC</a></a>
+          </span>
+          <span class="ml-4 italic">E-Healthcare / RS TRANSMEDIC</span>
+        </div>
+        <div class="absolute right-4 py-3">
+          <button class="px-2 py-2 w-10 h-11 bg-[#363940] rounded-md text-lg" id="tour">?</button>
+          <span class="px-2 py-2 bg-[#363940] rounded-md text-lg">ABOUT</span>
+        </div>
       </div>
-      <div class="absolute right-4 py-3">
-        <button class="px-2 py-2 w-10 h-11 bg-[#363940] rounded-md text-lg" id="tour">?</button>
-        <span class="px-2 py-2 bg-[#363940] rounded-md text-lg">ABOUT</span>
+    </nav>
+
+    <aside class="bg-gray-800 w-72 fixed inset-y-0 left-0 transform -translate-x-full transition-transform z-30 duration-300 ease-in-out" id="sidebar">
+      <!-- Sidebar Content -->
+      <div class="p-4 text-white">
+        <!-- Navigation -->
+        <div class="flex items-center">
+          <span class="material-symbols-outlined text-white text-4xl mr-4">
+            <a id="close">menu</a>
+          </span>
+          <p class="font-poppins font-semibold w-full">Navigasi</p>
+        </div>
+        <br />
+
+        <div class="dropdown w-full">
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400" onclick="toggleDropdown()">
+            <a href="../modul_daftar_tagihan_non_layanan/public2/daftar_non_layanan.html"> Daftar Tagihan Non Layanan</a>
+          </button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4" onclick="toggleDropdown2()"><a href="../modul_daftarTagihanPasien/daftar_tagihan_pasien.html"> Daftar Tagihan Pasien</a></button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4" onclick="toggleDropdown2()">
+            <a href="../../modul_daftarTagihanPasien/daftar_tagihan_pasien.html"> Daftar Pasien Yang Masih Dirawat</a>
+          </button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4" onclick="toggleDropdown2()"><a href="../../modul_daftarTagihanPasien/daftar_tagihan_pasien.html"> Daftar Penerimaan SBM</a></button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4" onclick="toggleDropdown2()"><a href="../modul_daftar_resep_pasien/Daftar-resep-pasien.html"> Daftar Resep Pasien</a></button>
+        </div>
+      </div>
+    </aside>
+    <!-- end navbar -->
+
+    <!-- header -->
+    <div class="bg-[#41abf2] p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <p class="text-white text-center text-3xl font-bold">Rincian Tagihan</p>
+    </div>
+    <!-- end header -->
+
+    <!-- form input -->
+    <div class="border-b border-blue-500 table-fixed">
+      <div class="flex gap-3 mt-2">
+        <div class="flex flex-col ml-2">
+          <label for="No RM" class="text-sm">No registrasi</label>
+          <input type="text" class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-24 h-7 bg-gray-200 hover:bg-white" />
+          <p class="-mt-6 ml-1 text-gray-500">2308000183</p>
+        </div>
+        <div class="flex flex-col">
+          <label for="Nama Pasien" class="text-sm">No rm</label>
+          <input type="text" class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-24 h-7 bg-gray-200 hover:bg-white" />
+          <p class="-mt-6 ml-2 text-gray-500">00003522</p>
+        </div>
+        <div class="flex flex-col">
+          <label for="Nama Pasien" class="text-sm">Nama pasien</label>
+          <input type="text" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-52 h-7 bg-gray-200 hover:bg-white" />
+          <p class="-mt-6 ml-2 text-gray-500">IHSAN HAFIZH</p>
+        </div>
+        <div class="flex flex-col">
+          <label for="Nama Ayah Kandung" class="text-sm">Jenis kelamin</label>
+          <input type="text" class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-32 h-7 bg-gray-200 hover:bg-white" />
+          <p class="-mt-6 ml-1 text-gray-500">Laki-Laki</p>
+        </div>
+        <div class="flex flex-col">
+          <label for="Alamat" class="text-sm">Umur</label>
+          <input type="text" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-52 h-7 bg-gray-200 hover:bg-white" />
+          <p class="-mt-6 ml-1 text-gray-500">18 Tahun, 9 Bulan</p>
+        </div>
+        <div class="flex flex-col">
+          <label for="Alamat" class="text-sm">Tgl lahir</label>
+          <input type="text" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[212px] h-7 bg-gray-200 hover:bg-white" />
+          <p class="-mt-6 ml-2 text-gray-500">28-Sep-2005 07:00</p>
+        </div>
+        <div class="flex flex-col">
+          <label for="Nama Ayah Kandung" class="text-sm">Agama</label>
+          <input type="text" class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-28 h-7 bg-gray-200 hover:bg-white" />
+          <p class="-mt-6 ml-2 text-gray-500">ISLAM</p>
+        </div>
+        <div class="flex flex-col">
+          <label for="Alamat" class="text-sm">Telepon</label>
+          <input type="text" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[195px] h-7 bg-gray-200 hover:bg-white" />
+          <p class="-mt-6 ml-2 text-gray-500"></p>
+        </div>
+      </div>
+
+      <div class="flex gap-3 w-full mt-5">
+        <div class="flex flex-col ml-2">
+          <label for="No RM" class="text-sm">Keluarga</label>
+          <input type="text" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 bg-gray-200 hover:bg-white w-52 h-7" />
+        </div>
+        <div class="flex flex-col">
+          <label for="Nama Pasien" class="text-sm">Tanggal masuk</label>
+          <input type="text" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-56 h-7 bg-gray-200 hover:bg-white" />
+          <p class="-mt-6 ml-2 text-gray-500">28-Aug-2023</p>
+        </div>
+        <div class="flex flex-col">
+          <label for="Nama Pasien" class="text-sm">Tanggal pulang</label>
+          <input type="text" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[218px] h-7 bg-gray-200 hover:bg-white" />
+          <p class="-mt-6 ml-2 text-gray-500">28-Aug-2023</p>
+        </div>
+        <div class="flex flex-col">
+          <label for="Nama Ayah Kandung" class="text-sm">Ruangan terakhir</label>
+          <input type="text" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-80 h-7 bg-gray-200 hover:bg-white" />
+          <p class="-mt-6 ml-2 text-gray-500">POLI UMUM</p>
+        </div>
+        <div class="flex flex-col">
+          <label for="Alamat" class="text-sm">Kelas</label>
+          <input type="text" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-28 h-7 bg-gray-200 hover:bg-white" />
+          <p class="-mt-6 ml-2 text-gray-500">Non Kelas</p>
+        </div>
+        <div class="flex flex-col">
+          <label for="Alamat" class="text-sm">Kelompok pasien </label>
+          <input type="text" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[197px] h-7 bg-gray-200 hover:bg-white" />
+          <p class="-mt-6 ml-2 text-gray-500">Umum/Pribadi</p>
+        </div>
+      </div>
+
+      <div class="flex gap-3 mt-2 w-full mb-5">
+        <div class="flex flex-col ml-2 w-full">
+          <label for="No RM" class="text-sm">Alamat</label>
+          <input type="text" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[785px] h-7 bg-gray-200 hover:bg-white" />
+          <p class="-mt-6 ml-2 text-gray-500">Komplek Griya Mitra Posindo BLOK B4 NO 10</p>
+        </div>
+        <div class="flex flex-col">
+          <label for="Nama Pasien" class="text-sm">Status</label>
+          <input type="text" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[215px] h-7 bg-gray-200 hover:bg-white" />
+          <p class="-mt-6 ml-2 text-gray-500">LAMA</p>
+        </div>
+        <div class="flex flex-col w-full">
+          <label for="Nama Pasien" class="text-sm">Penjamin</label>
+          <input type="text" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[314px] h-7 bg-gray-200 hover:bg-white" />
+          <p class="-mt-6 ml-2 text-gray-500">-</p>
+        </div>
       </div>
     </div>
-  </nav>
-  <!-- end navbar -->
+    <!-- end form input -->
 
-  <!-- header -->
-  <div class="bg-[#41abf2] p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-    <p class="text-white text-center text-3xl font-bold">Rincian Tagihan</p>
-  </div>
-  <!-- end header -->
+    <!-- button atas -->
 
-  <!-- form input -->
-  <div class="border-b border-blue-500 table-fixed">
-    <div class="flex gap-3 mt-2">
-      <div class="flex flex-col ml-2">
-        <label for="No RM" class="text-sm">No registrasi</label>
-        <input type="text"
-          class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-24 h-7 bg-gray-200 hover:bg-white" />
-        <p class="-mt-6 ml-1 text-gray-500">2308000183</p>
+    <div class="flex gap-1 ml-2 mt-3 text-[13px]">
+      <div class="px-1" id="step_1">
+        <button class="bg-[#41abf2] text-white h-7 w-[112px] border rounded" type="search">
+          <img src="img/stethoscope.png" class="h-4 w-4 -mb-4 ml-2" />
+          <p class="ml-2">Layanan</p>
+        </button>
       </div>
-      <div class="flex flex-col">
-        <label for="Nama Pasien" class="text-sm">No rm</label>
-        <input type="text"
-          class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-24 h-7 bg-gray-200 hover:bg-white" />
-        <p class="-mt-6 ml-2 text-gray-500">00003522</p>
+      <div class="px-1" id="step_2">
+        <button class="bg-[#41abf2] text-white h-7 w-[112px] border rounded" type="search">
+          <img src="img/file.png" class="h-4 w-4 -mb-4 ml-2" />
+          <p class="ml-2">Resep</p>
+        </button>
       </div>
-      <div class="flex flex-col">
-        <label for="Nama Pasien" class="text-sm">Nama pasien</label>
-        <input type="text"
-          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-52 h-7 bg-gray-200 hover:bg-white" />
-        <p class="-mt-6 ml-2 text-gray-500">IHSAN HAFIZH</p>
-      </div>
-      <div class="flex flex-col">
-        <label for="Nama Ayah Kandung" class="text-sm">Jenis kelamin</label>
-        <input type="text"
-          class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-32 h-7 bg-gray-200 hover:bg-white" />
-        <p class="-mt-6 ml-1 text-gray-500">Laki-Laki</p>
-      </div>
-      <div class="flex flex-col">
-        <label for="Alamat" class="text-sm">Umur</label>
-        <input type="text"
-          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-52 h-7 bg-gray-200 hover:bg-white" />
-        <p class="-mt-6 ml-1 text-gray-500">18 Tahun, 9 Bulan</p>
-      </div>
-      <div class="flex flex-col">
-        <label for="Alamat" class="text-sm">Tgl lahir</label>
-        <input type="text"
-          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[212px] h-7 bg-gray-200 hover:bg-white" />
-        <p class="-mt-6 ml-2 text-gray-500">28-Sep-2005 07:00</p>
-      </div>
-      <div class="flex flex-col">
-        <label for="Nama Ayah Kandung" class="text-sm">Agama</label>
-        <input type="text"
-          class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-28 h-7 bg-gray-200 hover:bg-white" />
-        <p class="-mt-6 ml-2 text-gray-500">ISLAM</p>
-      </div>
-      <div class="flex flex-col">
-        <label for="Alamat" class="text-sm">Telepon</label>
-        <input type="text"
-          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[195px] h-7 bg-gray-200 hover:bg-white" />
-        <p class="-mt-6 ml-2 text-gray-500"></p>
+      <div class="w-full ml-[400px] flex">
+        <label for="Nama Pasien" class="text-md mr-8">Ruangan</label>
+        <input type="text" class="ring-1 rounded focus:outline-none focus:ring-blue-600 focus:border-blue-300 w-[325px] h-7 border-blue-500 hover:bg-white focus:bg-white" />
+        <label for="Jenis kelamin" class="text-md ml-5">Filter</label>
+        <input type="text" class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[151px] h-7 border-blue-500 hover:bg-white ml-11 focus:bg-white focus:ring-blue-600" />
       </div>
     </div>
+    <!-- end button atas -->
 
-    <div class="flex gap-3 w-full mt-5">
-      <div class="flex flex-col ml-2">
-        <label for="No RM" class="text-sm">Keluarga</label>
-        <input type="text"
-          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 bg-gray-200 hover:bg-white w-52 h-7" />
-      </div>
-      <div class="flex flex-col">
-        <label for="Nama Pasien" class="text-sm">Tanggal masuk</label>
-        <input type="text"
-          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-56 h-7 bg-gray-200 hover:bg-white" />
-        <p class="-mt-6 ml-2 text-gray-500">28-Aug-2023</p>
-      </div>
-      <div class="flex flex-col">
-        <label for="Nama Pasien" class="text-sm">Tanggal pulang</label>
-        <input type="text"
-          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[218px] h-7 bg-gray-200 hover:bg-white" />
-        <p class="-mt-6 ml-2 text-gray-500">28-Aug-2023</p>
-      </div>
-      <div class="flex flex-col">
-        <label for="Nama Ayah Kandung" class="text-sm">Ruangan terakhir</label>
-        <input type="text"
-          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-80 h-7 bg-gray-200 hover:bg-white" />
-        <p class="-mt-6 ml-2 text-gray-500">POLI UMUM</p>
-      </div>
-      <div class="flex flex-col">
-        <label for="Alamat" class="text-sm">Kelas</label>
-        <input type="text"
-          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-28 h-7 bg-gray-200 hover:bg-white" />
-        <p class="-mt-6 ml-2 text-gray-500">Non Kelas</p>
-      </div>
-      <div class="flex flex-col">
-        <label for="Alamat" class="text-sm">Kelompok pasien </label>
-        <input type="text"
-          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[197px] h-7 bg-gray-200 hover:bg-white" />
-        <p class="-mt-6 ml-2 text-gray-500">Umum/Pribadi</p>
-      </div>
+    <!-- tebel -->
+    <div class="border border-gray-500 border-b-gray-600 bg-[#313235] mt-4">
+      <button class="py-1 pl-1 ml-2 text-white border rounded mt-1 mb-1 p-1 hover:bg-[#41abf2]">Export To Excel</button>
+      <p class="border-t border-gray-500 text-white text-sm p-2">Tarik untuk mengkelompokan data</p>
     </div>
-
-    <div class="flex gap-3 mt-2 w-full mb-5">
-      <div class="flex flex-col ml-2 w-full">
-        <label for="No RM" class="text-sm">Alamat</label>
-        <input type="text"
-          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[785px] h-7 bg-gray-200 hover:bg-white" />
-        <p class="-mt-6 ml-2 text-gray-500">Komplek Griya Mitra Posindo BLOK B4 NO 10</p>
-      </div>
-      <div class="flex flex-col">
-        <label for="Nama Pasien" class="text-sm">Status</label>
-        <input type="text"
-          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[215px] h-7 bg-gray-200 hover:bg-white" />
-        <p class="-mt-6 ml-2 text-gray-500">LAMA</p>
-      </div>
-      <div class="flex flex-col w-full">
-        <label for="Nama Pasien" class="text-sm">Penjamin</label>
-        <input type="text"
-          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[314px] h-7 bg-gray-200 hover:bg-white" />
-        <p class="-mt-6 ml-2 text-gray-500">-</p>
-      </div>
-    </div>
-  </div>
-  <!-- end form input -->
-
-  <!-- button atas -->
-
-  <div class="flex gap-1 ml-2 mt-3 text-[13px]">
-    <div class="px-1" id="step_1">
-      <button class="bg-[#41abf2] text-white h-7 w-[112px] border rounded" type="search">
-        <img src="/img/stethoscope.png" class="h-4 w-4 -mb-4 ml-2" />
-        <p class="ml-2">Layanan</p>
-      </button>
-    </div>
-    <div class="px-1" id="step_2">
-      <button class="bg-[#41abf2] text-white h-7 w-[112px] border rounded" type="search">
-        <img src="/img/file.png" class="h-4 w-4 -mb-4 ml-2" />
-        <p class="ml-2">Resep</p>
-      </button>
-    </div>
-    <div class="w-full ml-[400px] flex">
-      <label for="Nama Pasien" class="text-md mr-8">Ruangan</label>
-      <input type="text"
-        class="ring-1 rounded focus:outline-none focus:ring-blue-600 focus:border-blue-300 w-[325px] h-7 border-blue-500 hover:bg-white focus:bg-white" />
-      <label for="Jenis kelamin" class="text-md ml-5">Filter</label>
-      <input type="text"
-        class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[151px] h-7 border-blue-500 hover:bg-white ml-11 focus:bg-white focus:ring-blue-600" />
-    </div>
-  </div>
-  <!-- end button atas -->
-
-  <!-- tebel -->
-  <div class="border border-gray-500 border-b-gray-600 bg-[#313235] mt-4">
-    <button class="py-1 pl-1 ml-2 text-white border rounded mt-1 mb-1 p-1 hover:bg-[#41abf2]">Export To Excel</button>
-    <p class="border-t border-gray-500 text-white text-sm p-2">Tarik untuk mengkelompokan data</p>
-  </div>
-  <div class="overflow-x-auto">
-    <table class="w-full table-zebra table-fixed text-left border font-thin text-sm">
-      <tr class="text-center text-white font-light bg-[#313235]">
-        <th class="border border-gray-500 w-12 p-4"><img src="/img/check.png" /></th>
-        <th class="border border-gray-500 w-32 p-2">Tanggal</th>
-        <th class="border border-gray-500 w-48 p-2">Nama Pelayanan</th>
-        <th class="border border-gray-500 w-24 p-2">Kelas</th>
-        <th class="border border-gray-500 w-48 p-2">Dokter</th>
-        <th class="border border-gray-500 w-8 p-2">P</th>
-        <th class="border border-gray-500 w-44 p-2">Ruangan</th>
-        <th class="border border-gray-500 w-14 p-2">Qty</th>
-        <th class="border border-gray-500 w-36 p-2">Harga</th>
-        <th class="border border-gray-500 w-36 p-2">Tarif Klaim</th>
-        <th class="border border-gray-500 w-36 p-2">Harga Diskon</th>
-        <th class="border border-gray-500 w-28 p-2">Jasa</th>
-        <th class="border border-gray-500 w-36 p-2">Total</th>
-        <th class="border border-gray-500 w-24 p-2">Status Cito</th>
-        <th class="border border-gray-500 w-36 p-2">NoStruk/NoSbm</th>
-      </tr>
-
-      <!-- Data data -->
-      <div class="overflow-y-auto">
-        <tr class="font-light text-black text-center hover:bg-blue-400 hover:text-white">
-          <td class="border border-gray-500 p-5"><input type="checkbox" class="text-center" /></td>
-          <td class="border border-gray-500 p-5 truncate">28-Aug-2023 11:40</td>
-          <td class="border border-gray-500 p-5">Administrasi Rawat Jalan Poliklinik</td>
-          <td class="border border-gray-500 p-5">Non Kelas</td>
-          <td class="border border-gray-500 p-5 uppercase">dr. Muhammad Fajarulhuda, MARS</td>
-          <td class="border border-gray-500 p-5"></td>
-          <td class="border border-gray-500 p-5">POLI UMUM</td>
-          <td class="border border-gray-500 p-5">1</td>
-          <td class="border border-gray-500 p-5">50,000,00</td>
-          <td class="border border-gray-500 p-5">0.00</td>
-          <td class="border border-gray-500 p-5">0.00</td>
-          <td class="border border-gray-500 p-5">0.00</td>
-          <td class="border border-gray-500 p-5">50,000,00</td>
-          <td class="border border-gray-500 p-5"></td>
-          <td class="border border-gray-500 p-5">S000071376 / RV-23080000012</td>
+    <div class="overflow-x-auto">
+      <table class="w-full table-zebra table-fixed text-left border font-thin text-sm">
+        <tr class="text-center text-white font-light bg-[#313235]">
+          <th class="border border-gray-500 w-12 p-4"><img src="/img/check.png" /></th>
+          <th class="border border-gray-500 w-32 p-2">Tanggal</th>
+          <th class="border border-gray-500 w-48 p-2">Nama Pelayanan</th>
+          <th class="border border-gray-500 w-24 p-2">Kelas</th>
+          <th class="border border-gray-500 w-48 p-2">Dokter</th>
+          <th class="border border-gray-500 w-8 p-2">P</th>
+          <th class="border border-gray-500 w-44 p-2">Ruangan</th>
+          <th class="border border-gray-500 w-14 p-2">Qty</th>
+          <th class="border border-gray-500 w-36 p-2">Harga</th>
+          <th class="border border-gray-500 w-36 p-2">Tarif Klaim</th>
+          <th class="border border-gray-500 w-36 p-2">Harga Diskon</th>
+          <th class="border border-gray-500 w-28 p-2">Jasa</th>
+          <th class="border border-gray-500 w-36 p-2">Total</th>
+          <th class="border border-gray-500 w-24 p-2">Status Cito</th>
+          <th class="border border-gray-500 w-36 p-2">NoStruk/NoSbm</th>
         </tr>
-        <tr class="font-light text-black text-center hover:bg-blue-400 hover:text-white">
-          <td class="border border-gray-500 p-5"><input type="checkbox" class="text-center" /></td>
-          <td class="border border-gray-500 p-5 truncate">28-Aug-2023 11:40</td>
-          <td class="border border-gray-500 p-5">Administrasi Rawat Jalan Poliklinik</td>
-          <td class="border border-gray-500 p-5">Non Kelas</td>
-          <td class="border border-gray-500 p-5 uppercase">dr. Muhammad Fajarulhuda, MARS</td>
-          <td class="border border-gray-500 p-5"></td>
-          <td class="border border-gray-500 p-5">POLI UMUM</td>
-          <td class="border border-gray-500 p-5">1</td>
-          <td class="border border-gray-500 p-5">50,000,00</td>
-          <td class="border border-gray-500 p-5">0.00</td>
-          <td class="border border-gray-500 p-5">0.00</td>
-          <td class="border border-gray-500 p-5">0.00</td>
-          <td class="border border-gray-500 p-5">50,000,00</td>
-          <td class="border border-gray-500 p-5"></td>
-          <td class="border border-gray-500 p-5">S000071376 / RV-23080000012</td>
-        </tr>
-        <tr class="font-light text-black text-center hover:bg-blue-400 hover:text-white">
-          <td class="border border-gray-500 p-5"><input type="checkbox" class="text-center" /></td>
-          <td class="border border-gray-500 p-5 truncate">28-Aug-2023 11:40</td>
-          <td class="border border-gray-500 p-5">Administrasi Rawat Jalan Poliklinik</td>
-          <td class="border border-gray-500 p-5">Non Kelas</td>
-          <td class="border border-gray-500 p-5 uppercase">dr. Muhammad Fajarulhuda, MARS</td>
-          <td class="border border-gray-500 p-5"></td>
-          <td class="border border-gray-500 p-5">POLI UMUM</td>
-          <td class="border border-gray-500 p-5">1</td>
-          <td class="border border-gray-500 p-5">50,000,00</td>
-          <td class="border border-gray-500 p-5">0.00</td>
-          <td class="border border-gray-500 p-5">0.00</td>
-          <td class="border border-gray-500 p-5">0.00</td>
-          <td class="border border-gray-500 p-5">50,000,00</td>
-          <td class="border border-gray-500 p-5"></td>
-          <td class="border border-gray-500 p-5">S000071376 / RV-23080000012</td>
-        </tr>
-      </div>
-    </table>
-  </div>
-  <!-- end tabel -->
 
-  <!-- Pagination -->
-  <div class="bg-main-gray-0">
-    <div class="bg-main-gray-0 py-[7px] flex items-center gap-2">
-      <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
-        <i class="fa fa-solid fa-backward-step text-white"></i>
-      </div>
-      <div class="rounded-full border w-6 h-6 flex hover:bg-main-blue-0 items-center justify-center">
-        <i class="fa fa-solid fa-play text-white fa-rotate-180"></i>
-      </div>
-      <div class="rounded-full border w-6 h-6 flex items-center justify-center">
-        <h2 class="text-white">1</h2>
-      </div>
-      <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
-        <i class="fa fa-solid fa-play text-white"></i>
-      </div>
-      <div class="rounded-full border w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
-        <i class="fa fa-solid fa-forward-step text-white"></i>
-      </div>
-      <span class="text-white absolute right-3">1 - 3 of 3 items</span>
+        <!-- Data data -->
+        <div class="overflow-y-auto">
+          <tr class="font-light text-black text-center hover:bg-blue-400 hover:text-white">
+            <td class="border border-gray-500 p-5"><input type="checkbox" class="text-center" /></td>
+            <td class="border border-gray-500 p-5 truncate">28-Aug-2023 11:40</td>
+            <td class="border border-gray-500 p-5">Administrasi Rawat Jalan Poliklinik</td>
+            <td class="border border-gray-500 p-5">Non Kelas</td>
+            <td class="border border-gray-500 p-5 uppercase">dr. Muhammad Fajarulhuda, MARS</td>
+            <td class="border border-gray-500 p-5"></td>
+            <td class="border border-gray-500 p-5">POLI UMUM</td>
+            <td class="border border-gray-500 p-5">1</td>
+            <td class="border border-gray-500 p-5">50,000,00</td>
+            <td class="border border-gray-500 p-5">0.00</td>
+            <td class="border border-gray-500 p-5">0.00</td>
+            <td class="border border-gray-500 p-5">0.00</td>
+            <td class="border border-gray-500 p-5">50,000,00</td>
+            <td class="border border-gray-500 p-5"></td>
+            <td class="border border-gray-500 p-5">S000071376 / RV-23080000012</td>
+          </tr>
+          <tr class="font-light text-black text-center hover:bg-blue-400 hover:text-white">
+            <td class="border border-gray-500 p-5"><input type="checkbox" class="text-center" /></td>
+            <td class="border border-gray-500 p-5 truncate">28-Aug-2023 11:40</td>
+            <td class="border border-gray-500 p-5">Administrasi Rawat Jalan Poliklinik</td>
+            <td class="border border-gray-500 p-5">Non Kelas</td>
+            <td class="border border-gray-500 p-5 uppercase">dr. Muhammad Fajarulhuda, MARS</td>
+            <td class="border border-gray-500 p-5"></td>
+            <td class="border border-gray-500 p-5">POLI UMUM</td>
+            <td class="border border-gray-500 p-5">1</td>
+            <td class="border border-gray-500 p-5">50,000,00</td>
+            <td class="border border-gray-500 p-5">0.00</td>
+            <td class="border border-gray-500 p-5">0.00</td>
+            <td class="border border-gray-500 p-5">0.00</td>
+            <td class="border border-gray-500 p-5">50,000,00</td>
+            <td class="border border-gray-500 p-5"></td>
+            <td class="border border-gray-500 p-5">S000071376 / RV-23080000012</td>
+          </tr>
+          <tr class="font-light text-black text-center hover:bg-blue-400 hover:text-white">
+            <td class="border border-gray-500 p-5"><input type="checkbox" class="text-center" /></td>
+            <td class="border border-gray-500 p-5 truncate">28-Aug-2023 11:40</td>
+            <td class="border border-gray-500 p-5">Administrasi Rawat Jalan Poliklinik</td>
+            <td class="border border-gray-500 p-5">Non Kelas</td>
+            <td class="border border-gray-500 p-5 uppercase">dr. Muhammad Fajarulhuda, MARS</td>
+            <td class="border border-gray-500 p-5"></td>
+            <td class="border border-gray-500 p-5">POLI UMUM</td>
+            <td class="border border-gray-500 p-5">1</td>
+            <td class="border border-gray-500 p-5">50,000,00</td>
+            <td class="border border-gray-500 p-5">0.00</td>
+            <td class="border border-gray-500 p-5">0.00</td>
+            <td class="border border-gray-500 p-5">0.00</td>
+            <td class="border border-gray-500 p-5">50,000,00</td>
+            <td class="border border-gray-500 p-5"></td>
+            <td class="border border-gray-500 p-5">S000071376 / RV-23080000012</td>
+          </tr>
+        </div>
+      </table>
     </div>
-  </div>
-  <!-- end Pagination -->
+    <!-- end tabel -->
 
-  <!-- tabel tagihan -->
-  <div class="flex flex-row col-span-2 w-full mx-3">
+    <!-- Pagination -->
+    <div class="bg-main-gray-0">
+      <div class="bg-main-gray-0 py-[7px] flex items-center gap-2">
+        <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+          <i class="fa fa-solid fa-backward-step text-white"></i>
+        </div>
+        <div class="rounded-full border w-6 h-6 flex hover:bg-main-blue-0 items-center justify-center">
+          <i class="fa fa-solid fa-play text-white fa-rotate-180"></i>
+        </div>
+        <div class="rounded-full border w-6 h-6 flex items-center justify-center">
+          <h2 class="text-white">1</h2>
+        </div>
+        <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+          <i class="fa fa-solid fa-play text-white"></i>
+        </div>
+        <div class="rounded-full border w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+          <i class="fa fa-solid fa-forward-step text-white"></i>
+        </div>
+        <span class="text-white absolute right-3">1 - 3 of 3 items</span>
+      </div>
+    </div>
+    <!-- end Pagination -->
+
+    <!-- tabel tagihan -->
+    <div class="flex flex-row col-span-2 w-full mx-3">
+      <div class="flex flex-col">
+        <div class="flex flex-row col-span-4 items-center mt-12 text-[12px] gap-3 ml-3">
+          <div id="step_3">
+            <button class="bg-[#41abf2] text-white h-7 w-40 border rounded" type="search">
+              <img src="img/stethoscope.png" class="h-4 w-4 -mb-4 ml-1" />
+              <p class="ml-4"><a href="input_tindakan.html">Input Tindakan</a></p>
+            </button>
+          </div>
+          <div id="step_4">
+            <button class="bg-[#41abf2] text-white h-7 w-36 border rounded" type="search"><img src="img/trash.png" class="h-4 w-4 -mb-4 ml-1" />Hapus</button>
+          </div>
+          <div id="step_5">
+            <button class="bg-[#41abf2] text-white h-7 w-36 border rounded" type="search">
+              <img src="img/group.png" class="h-4 w-4 -mb-4 ml-1" />
+              <p class="ml-3">Detail Dokter</p>
+            </button>
+          </div>
+          <div id="step_6">
+            <button class="bg-[#41abf2] text-white h-7 w-36 border rounded" type="search">
+              <img src="img/tablet.png" class="h-4 w-4 -mb-4 ml-1" />
+              <p class="ml-3">Ubah Tanggal</p>
+            </button>
+          </div>
+        </div>
+
+        <!-- button ke 2 -->
+        <div class="flex flex-row col-span-4 items-center mt-3 text-[12px] gap-3 ml-3">
+          <div id="step_7">
+            <button class="bg-[#41abf2] text-white h-7 w-40 border rounded" type="search">
+              <img src="img/dollar-bill.png" class="h-4 w-4 -mb-4 ml-1" />
+              <p class="ml-4">Komponen Harga</p>
+            </button>
+          </div>
+          <div id="step_8">
+            <button class="bg-[#FE0000] text-white h-7 w-36 border rounded" type="search">
+              <img src="img/printing.png" class="h-4 w-4 -mb-4 ml-2" />
+              <p class="ml-4">Kwitansi Total</p>
+            </button>
+          </div>
+          <div id="step_9">
+            <button class="bg-[#41abf2] text-white h-9 w-36 border rounded" type="search">
+              <img src="img/printing.png" class="h-4 w-4 -mb-4 ml-2 mt-1" />
+              <p class="ml-4">Surat Total Biaya</p>
+              <p class="-mt-1 ml-2">Perawatan</p>
+            </button>
+          </div>
+          <div id="step_10">
+            <button class="bg-[#41abf2] text-white h-7 w-36 border rounded" type="search">
+              <img src="img/calculator.png" class="h-4 w-4 -mb-4 ml-2 mt-1" />
+              <p class="ml-4">Konversi Harga</p>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-rows-2 grid-cols-3 mt-4 ml-5 border-t-8 border-[#41abf2] text-sm">
+        <div class="border border-[#41abf2] h-[120px] w-56 p-1">
+          <p class="font-bold">Total tagihan</p>
+          <p>Rp. 3,037,879.89</p>
+          <p class="mt-1 font-bold">Jumlah deposit</p>
+          <p>Rp. 0.00</p>
+        </div>
+        <div class="border border-[#41abf2] p-2">
+          <p class="font-bold">Total dibayar</p>
+          <p>Rp. 3,037,879.89</p>
+          <p class="mt-1 font-bold">Sisa tagihan</p>
+          <p>Rp. 0.00</p>
+        </div>
+        <div class="border border-[#41abf2] p-2">
+          <p class="font-bold">Jumlah diskon</p>
+          <p>Rp. 0.00</p>
+          <p class="mt-1 font-bold">Total klaim</p>
+          <p>Rp. 0.00</p>
+        </div>
+        <div class="border border-[#41abf2] p-2">
+          <p class="font-bold">Total layanan</p>
+          <p>Layanan : 3</p>
+          <p class="mt-1 font-bold">Total resep</p>
+          <p>Resep : 0</p>
+        </div>
+        <div class="border border-[#41abf2] p-2">
+          <p class="font-bold">Sewa alat</p>
+          <p>Rp. 0.00</p>
+        </div>
+        <div class=""></div>
+      </div>
+    </div>
+    <!-- end tabel -->
+
+    <!-- button footer -->
     <div class="flex flex-col">
-      <div class="flex flex-row col-span-4 items-center mt-12 text-[12px] gap-3 ml-3">
-        <div id="step_3">
-          <button class="bg-[#41abf2] text-white h-7 w-40 border rounded" type="search">
-            <img src="/img/stethoscope.png" class="h-4 w-4 -mb-4 ml-1" />
-            <p class="ml-4"><a href="input_tindakan.html">Input Tindakan</a></p>
+      <div class="flex flex-row col-span-12 items-center mt-2 text-[12px] gap-2 ml-2">
+        <div id="step_11">
+          <button class="bg-[#41abf2] text-white h-8 w-52 border rounded" type="search"><img src="img/printing.png" class="h-4 w-4 -mb-4 ml-2" />Bukti Layanan Jasa</button>
+        </div>
+        <div id="step_12">
+          <button class="bg-[#41abf2] text-white h-8 w-56 border rounded" type="search">
+            <img src="img/printing.png" class="h-4 w-4 -mb-4 mx-3" />
+            <p class="ml-5">Bukti Layanan Per Tindakan</p>
           </button>
         </div>
-        <div id="step_4">
-          <button class="bg-[#41abf2] text-white h-7 w-36 border rounded" type="search"><img src="/img/trash.png"
-              class="h-4 w-4 -mb-4 ml-1" />Hapus</button>
-        </div>
-        <div id="step_5">
-          <button class="bg-[#41abf2] text-white h-7 w-36 border rounded" type="search">
-            <img src="/img/group.png" class="h-4 w-4 -mb-4 ml-1" />
-            <p class="ml-3">Detail Dokter</p>
+        <div id="step_13">
+          <button class="bg-[#41abf2] text-white h-8 w-28 border rounded" type="search">
+            <img src="img/printing.png" class="h-4 w-4 -mb-4 ml-2" />
+            <p class="ml-3">Bukti</p>
+            <p class="-mt-1 ml-4">Layanan</p>
           </button>
         </div>
-        <div id="step_6">
-          <button class="bg-[#41abf2] text-white h-7 w-36 border rounded" type="search">
-            <img src="/img/tablet.png" class="h-4 w-4 -mb-4 ml-1" />
-            <p class="ml-3">Ubah Tanggal</p>
+        <div id="step_14">
+          <button class="bg-[#41abf2] text-white h-8 w-28 border rounded" type="search">
+            <img src="img/printing.png" class="h-4 w-4 -mb-4 ml-2" />
+            <p class="ml-6">Rincian</p>
+            <p class="-mt-1 ml-4">Rekap</p>
           </button>
         </div>
-      </div>
-
-      <!-- button ke 2 -->
-      <div class="flex flex-row col-span-4 items-center mt-3 text-[12px] gap-3 ml-3">
-        <div id="step_7">
-          <button class="bg-[#41abf2] text-white h-7 w-40 border rounded" type="search">
-            <img src="/img/dollar-bill.png" class="h-4 w-4 -mb-4 ml-1" />
-            <p class="ml-4">Komponen Harga</p>
+        <div id="step_15">
+          <button class="bg-[#FE0000] text-white h-8 w-24 border rounded" type="search">
+            <img src="img/printing.png" class="h-4 w-4 -mb-4 ml-2" />
+            <p class="ml-3">Biling</p>
           </button>
         </div>
-        <div id="step_8">
-          <button class="bg-[#FE0000] text-white h-7 w-36 border rounded" type="search">
-            <img src="/img/printing.png" class="h-4 w-4 -mb-4 ml-2" />
-            <p class="ml-4">Kwitansi Total</p>
+        <div id="step_16">
+          <button class="bg-[#FE0000] text-white h-8 w-24 border rounded" type="search">
+            <img src="img/printing.png" class="h-4 w-4 -mb-4 ml-2" />
+            <p class="ml-4">Biling</p>
+            <p class="-mt-1 ml-2">BPJS</p>
           </button>
         </div>
-        <div id="step_9">
-          <button class="bg-[#41abf2] text-white h-9 w-36 border rounded" type="search">
-            <img src="/img/printing.png" class="h-4 w-4 -mb-4 ml-2 mt-1" />
-            <p class="ml-4">Surat Total Biaya</p>
-            <p class="-mt-1 ml-2">Perawatan</p>
+        <div id="step_17">
+          <button class="bg-[#41abf2] text-white h-8 w-24 border rounded" type="search">
+            <img src="img/Menu Logo.png" class="h-4 w-4 -mb-4 ml-2" />
+            <p class="ml-4">Rekap</p>
+            <p class="-mt-1 ml-2">Billing</p>
           </button>
         </div>
-        <div id="step_10">
-          <button class="bg-[#41abf2] text-white h-7 w-36 border rounded" type="search">
-            <img src="/img/calculator.png" class="h-4 w-4 -mb-4 ml-2 mt-1" />
-            <p class="ml-4">Konversi Harga</p>
+        <div id="step_18">
+          <button class="bg-[#41abf2] text-white h-8 w-24 border rounded" type="search">
+            <img src="img/Menu Logo.png" class="h-4 w-4 -mb-4 ml-2" />
+            <p class="ml-4">Billing</p>
+            <p class="-mt-1 ml-2">Total</p>
+          </button>
+        </div>
+        <div id="step_19">
+          <button class="bg-[#41abf2] text-white h-8 w-28 border rounded" type="search">
+            <img src="img/diagram.png" class="h-4 w-4 -mb-4 ml-2" />
+            <p class="ml-3">Billing</p>
+            <p class="-mt-1 ml-2">Selisih Kelas</p>
+          </button>
+        </div>
+        <div id="step_20">
+          <button class="bg-[#41abf2] text-white h-8 w-[112px] border rounded" type="search">
+            <img src="img/file.png" class="h-4 w-4 -mb-4 ml-2" />
+            <p class="ml-2">Rincian</p>
+            <p class="-mt-1 ml-2">Obat</p>
           </button>
         </div>
       </div>
     </div>
-    <div class="grid grid-rows-2 grid-cols-3 mt-4 ml-5 border-t-8 border-[#41abf2] text-sm">
-      <div class="border border-[#41abf2] h-[120px] w-56 p-1">
-        <p class="font-bold">Total tagihan</p>
-        <p>Rp. 3,037,879.89</p>
-        <p class="mt-1 font-bold">Jumlah deposit</p>
-        <p>Rp. 0.00</p>
-      </div>
-      <div class="border border-[#41abf2] p-2">
-        <p class="font-bold">Total dibayar</p>
-        <p>Rp. 3,037,879.89</p>
-        <p class="mt-1 font-bold">Sisa tagihan</p>
-        <p>Rp. 0.00</p>
-      </div>
-      <div class="border border-[#41abf2] p-2">
-        <p class="font-bold">Jumlah diskon</p>
-        <p>Rp. 0.00</p>
-        <p class="mt-1 font-bold">Total klaim</p>
-        <p>Rp. 0.00</p>
-      </div>
-      <div class="border border-[#41abf2] p-2">
-        <p class="font-bold">Total layanan</p>
-        <p>Layanan : 3</p>
-        <p class="mt-1 font-bold">Total resep</p>
-        <p>Resep : 0</p>
-      </div>
-      <div class="border border-[#41abf2] p-2">
-        <p class="font-bold">Sewa alat</p>
-        <p>Rp. 0.00</p>
-      </div>
-      <div class=""></div>
-    </div>
-  </div>
-  <!-- end tabel -->
 
-  <!-- button footer -->
-  <div class="flex flex-col">
-    <div class="flex flex-row col-span-12 items-center mt-2 text-[12px] gap-2 ml-2">
-      <div id="step_11">
-        <button class="bg-[#41abf2] text-white h-8 w-52 border rounded" type="search"><img src="/img/printing.png"
-            class="h-4 w-4 -mb-4 ml-2" />Bukti Layanan Jasa</button>
-      </div>
-      <div id="step_12">
-        <button class="bg-[#41abf2] text-white h-8 w-56 border rounded" type="search">
-          <img src="/img/printing.png" class="h-4 w-4 -mb-4 mx-3" />
-          <p class="ml-5">Bukti Layanan Per Tindakan</p>
-        </button>
-      </div>
-      <div id="step_13">
-        <button class="bg-[#41abf2] text-white h-8 w-28 border rounded" type="search">
-          <img src="/img/printing.png" class="h-4 w-4 -mb-4 ml-2" />
-          <p class="ml-3">Bukti</p>
-          <p class="-mt-1 ml-4">Layanan</p>
-        </button>
-      </div>
-      <div id="step_14">
-        <button class="bg-[#41abf2] text-white h-8 w-28 border rounded" type="search">
-          <img src="/img/printing.png" class="h-4 w-4 -mb-4 ml-2" />
-          <p class="ml-6">Rincian</p>
-          <p class="-mt-1 ml-4">Rekap</p>
-        </button>
-      </div>
-      <div id="step_15">
-        <button class="bg-[#FE0000] text-white h-8 w-24 border rounded" type="search">
-          <img src="/img/printing.png" class="h-4 w-4 -mb-4 ml-2" />
-          <p class="ml-3">Biling</p>
-        </button>
-      </div>
-      <div id="step_16">
-        <button class="bg-[#FE0000] text-white h-8 w-24 border rounded" type="search">
-          <img src="/img/printing.png" class="h-4 w-4 -mb-4 ml-2" />
-          <p class="ml-4">Biling</p>
-          <p class="-mt-1 ml-2">BPJS</p>
-        </button>
-      </div>
-      <div id="step_17">
-        <button class="bg-[#41abf2] text-white h-8 w-24 border rounded" type="search">
-          <img src="/img/Menu Logo.png" class="h-4 w-4 -mb-4 ml-2" />
-          <p class="ml-4">Rekap</p>
-          <p class="-mt-1 ml-2">Billing</p>
-        </button>
-      </div>
-      <div id="step_18">
-        <button class="bg-[#41abf2] text-white h-8 w-24 border rounded" type="search">
-          <img src="/img/Menu Logo.png" class="h-4 w-4 -mb-4 ml-2" />
-          <p class="ml-4">Billing</p>
-          <p class="-mt-1 ml-2">Total</p>
-        </button>
-      </div>
-      <div id="step_19">
-        <button class="bg-[#41abf2] text-white h-8 w-28 border rounded" type="search">
-          <img src="/img/diagram.png" class="h-4 w-4 -mb-4 ml-2" />
-          <p class="ml-3">Billing</p>
-          <p class="-mt-1 ml-2">Selisih Kelas</p>
-        </button>
-      </div>
-      <div id="step_20">
-        <button class="bg-[#41abf2] text-white h-8 w-[112px] border rounded" type="search">
-          <img src="/img/file.png" class="h-4 w-4 -mb-4 ml-2" />
-          <p class="ml-2">Rincian</p>
-          <p class="-mt-1 ml-2">Obat</p>
-        </button>
+    <div class="flex flex-col float-right">
+      <div class="flex flex-row col-span-12 items-center mt-2 text-[13px] gap-2 mr-1">
+        <div id="step_21">
+          <button class="bg-[#41abf2] text-white h-8 w-52 border rounded" type="search"><img src="img/printing.png" class="h-4 w-4 -mb-4 ml-2" />Biling Asuransi</button>
+        </div>
+        <div id="step_22">
+          <button class="bg-[#41abf2] text-white h-8 w-[217px] border rounded" type="search"><img src="img/printing.png" class="h-4 w-4 -mb-4 ml-2" />Rekap Biling Ruangan</button>
+        </div>
+        <div id="step_23">
+          <button class="bg-[#ff2a2a] text-white h-8 w-28 border rounded" type="search">
+            <img src="img/arrow.png" class="h-4 w-4 -mb-4 ml-2" />
+            <p class="ml-3"><a href="daftar_tagihan_pasien.html">Kembali</a></p>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
+    <div class="h-16"></div>
+    <script>
+      document.getElementById('tour').addEventListener('click', function () {
+        const wt = new WebTour();
+        const steps = [
+          {
+            //tombol layanan
+            element: '#step_1',
+            title: '',
+            content: 'berfungsi untuk melihat data layanan yang sudah diberikan.',
+            placement: 'right-start',
+          },
+          {
+            //tombol resep
+            element: '#step_2',
+            title: '',
+            content: 'berfungsi untuk melihat data resep obat yang sudah diberikan.',
+            placement: 'right-start',
+          },
+          {
+            //tombol input tindakan
+            element: '#step_3',
+            title: '',
+            content:
+              'Berfungsi untuk menambahkan tindakan baru yang mungkin belum tercatat. Anda bisa memasukkan: Tanggal layanan,Nama layanan,Harga,Harga yang dijamin,Jumlah,Jenis pelaksana,Petugas pelaksana,Setelah itu, cukup klik tombol "Tambah Tindakan”. Jika perlu, Anda juga bisa menghapus semuanya dengan tombol "Hapus Semua".',
+            placement: 'right-end',
+          },
+          {
+            // Tombol HAPUS
+            element: '#step_4',
+            title: '',
+            content: 'Tombol ini digunakan hanya untuk menghapus pelayanan.',
+            placement: 'right-start',
+          },
+          {
+            // Tombol DETAIL DOKTER
+            element: '#step_5',
+            title: '',
+            content: 'Berfungsi untuk melihat informasi rinci tentang dokter yang menangani layanan.',
+            placement: 'right-start',
+          },
+          {
+            //Tombol UBAH TANGGAL
+            element: '#step_6',
+            title: '',
+            content: 'Berfungsi untuk mengganti tanggal layanan.',
+            placement: 'right-start',
+          },
+          {
+            //Tombol KOMPONEN HARGA
+            element: '#step_7',
+            title: '',
+            content: 'Berfungsi untuk melihat bagian-bagian harga dari layanan.',
+            placement: 'right-start',
+          },
+          {
+            //Tombol KWITANSI TOTAL
+            element: '#step_8',
+            title: '',
+            content: 'Berfungsi untuk melihat kwitansi total dari semua layanan.',
+            placement: 'right-start',
+          },
+          {
+            // Tombol SURAT TOTAL BIAYA PERAWATAN
+            element: '#step_9',
+            title: '',
+            content: 'Untuk melihat total biaya atau surat tagihan pasien.',
+            placement: 'right-start',
+          },
+          {
+            //Tombol KONVERSI HARGA
+            element: '#step_10',
+            title: '',
+            content: 'Berfungsi Untuk melihat konversi harga',
+            placement: 'right-start',
+          },
+          {
+            // Tombol BUKTI LAYANAN JASA
+            element: '#step_11',
+            title: '',
+            content: 'Berfungsi untuk melihat bukti dari layanan yang diterima oleh pasien.',
+            placement: 'right-end',
+          },
+          {
+            //  tombol BUKTI LAYANAN PER TINDAKAN
+            element: '#step_12',
+            title: '',
+            content: 'Berfungsi untuk melihat bukti dari layanan per tindakan.',
+            placement: 'right-end',
+          },
+          {
+            //tombol BUKTI LAYANAN
+            element: '#step_13',
+            title: '',
+            content: ' Berfungsi untuk melihat bukti layanan yang sudah diberikan.',
+            placement: 'right-end',
+          },
+          {
+            //RINCIAN REKAP
+            element: '#step_14',
+            title: '',
+            content: 'Berfungsi untuk melihat rincian ringkasan dari layanan yang diberikan kepada pasien.',
+            placement: 'right-end',
+          },
+          {
+            //Tombol BILLING
+            element: '#step_15',
+            title: '',
+            content: 'Berfungsi untuk melihat tagihan yang harus dibayar oleh pasien.',
+            placement: 'right-end',
+          },
+          {
+            //Tombol BILLING BPJS
+            element: '#step_16',
+            title: '',
+            content: 'Berfungsi untuk melihat tagihan yang harus dibayar dengan bpjs.',
+            placement: 'right-end',
+          },
+          {
+            //Tombol REKAP BILLING
+            element: '#step_17',
+            title: '',
+            content: 'Berfungsi untuk melihat data rekap billing ',
+            placement: 'right-end',
+          },
+          {
+            // Tombol BILLING TOTAL
+            element: '#step_18',
+            title: '',
+            content: 'Berfungsi untuk melihat billing total',
+            placement: 'left-end',
+          },
+          {
+            //Tombol BILLING SELISIH KELAS
+            element: '#step_19',
+            title: '',
+            content: 'Berfungsi Jika terjadi perubahan kelas, tagihan yang diterima akan berbeda. Ini tergantung pada kelas tempat pasien tinggal.',
+            placement: 'left-end',
+          },
+          {
+            //Tombol RINCIAN OBAT
+            element: '#step_20',
+            title: '',
+            content: 'Berfungsi untuk melihat rincian obat yang diberikan kepada pasien',
+            placement: 'left-end',
+          },
+          {
+            //Tombol BILLING ASURANSI
+            element: '#step_21',
+            title: '',
+            content: 'Berfungsi untuk melihat billing yang dibayar oleh asuransi.',
+            placement: 'left-end',
+          },
+          {
+            //Tombol REKAP BILLING RUANGAN
+            element: '#step_22',
+            title: '',
+            content: 'Berfungsi untuk melihat tagihan dari ruangan yang ditempati pasien.',
+            placement: 'left-end',
+          },
+          {
+            // Tombol KEMBALI
+            element: '#step_23',
+            title: '',
+            content: 'Berfungsi untuk kembali ke halaman sebelumnya.',
+            placement: 'left-end',
+          },
+        ];
 
-  <div class="flex flex-col float-right">
-    <div class="flex flex-row col-span-12 items-center mt-2 text-[13px] gap-2 mr-1">
-      <div id="step_21">
-        <button class="bg-[#41abf2] text-white h-8 w-52 border rounded" type="search"><img src="/img/printing.png"
-            class="h-4 w-4 -mb-4 ml-2" />Biling Asuransi</button>
-      </div>
-      <div id="step_22">
-        <button class="bg-[#41abf2] text-white h-8 w-[217px] border rounded" type="search"><img src="/img/printing.png"
-            class="h-4 w-4 -mb-4 ml-2" />Rekap Biling Ruangan</button>
-      </div>
-      <div id="step_23">
-        <button class="bg-[#ff2a2a] text-white h-8 w-28 border rounded" type="search">
-          <img src="/img/arrow.png" class="h-4 w-4 -mb-4 ml-2" />
-          <p class="ml-3"><a href="daftar_tagihan_pasien.html">Kembali</a></p>
-        </button>
-      </div>
-    </div>
-  </div>
-  <div class="h-16"></div>
-  <script>
-    document.getElementById('tour').addEventListener('click', function () {
-      const wt = new WebTour();
-      const steps = [
-        {
-          //tombol layanan
-          element: '#step_1',
-          title: '',
-          content: 'berfungsi untuk melihat data layanan yang sudah diberikan.',
-          placement: 'right-start',
-        },
-        {
-          //tombol resep
-          element: '#step_2',
-          title: '',
-          content: 'berfungsi untuk melihat data resep obat yang sudah diberikan.',
-          placement: 'right-start',
-        },
-        {
-          //tombol input tindakan
-          element: '#step_3',
-          title: '',
-          content:
-            'Berfungsi untuk menambahkan tindakan baru yang mungkin belum tercatat. Anda bisa memasukkan: Tanggal layanan,Nama layanan,Harga,Harga yang dijamin,Jumlah,Jenis pelaksana,Petugas pelaksana,Setelah itu, cukup klik tombol "Tambah Tindakan”. Jika perlu, Anda juga bisa menghapus semuanya dengan tombol "Hapus Semua".',
-          placement: 'right-end',
-        },
-        {
-          // Tombol HAPUS
-          element: '#step_4',
-          title: '',
-          content: 'Tombol ini digunakan hanya untuk menghapus pelayanan.',
-          placement: 'right-start',
-        },
-        {
-          // Tombol DETAIL DOKTER
-          element: '#step_5',
-          title: '',
-          content: 'Berfungsi untuk melihat informasi rinci tentang dokter yang menangani layanan.',
-          placement: 'right-start',
-        },
-        {
-          //Tombol UBAH TANGGAL
-          element: '#step_6',
-          title: '',
-          content: 'Berfungsi untuk mengganti tanggal layanan.',
-          placement: 'right-start',
-        },
-        {
-          //Tombol KOMPONEN HARGA
-          element: '#step_7',
-          title: '',
-          content: 'Berfungsi untuk melihat bagian-bagian harga dari layanan.',
-          placement: 'right-start',
-        },
-        {
-          //Tombol KWITANSI TOTAL
-          element: '#step_8',
-          title: '',
-          content: 'Berfungsi untuk melihat kwitansi total dari semua layanan.',
-          placement: 'right-start',
-        },
-        {
-          // Tombol SURAT TOTAL BIAYA PERAWATAN
-          element: '#step_9',
-          title: '',
-          content: 'Untuk melihat total biaya atau surat tagihan pasien.',
-          placement: 'right-start',
-        },
-        {
-          //Tombol KONVERSI HARGA
-          element: '#step_10',
-          title: '',
-          content: 'Berfungsi Untuk melihat konversi harga',
-          placement: 'right-start',
-        },
-        {
-          // Tombol BUKTI LAYANAN JASA
-          element: '#step_11',
-          title: '',
-          content: 'Berfungsi untuk melihat bukti dari layanan yang diterima oleh pasien.',
-          placement: 'right-end',
-        },
-        {
-          //  tombol BUKTI LAYANAN PER TINDAKAN
-          element: '#step_12',
-          title: '',
-          content: 'Berfungsi untuk melihat bukti dari layanan per tindakan.',
-          placement: 'right-end',
-        },
-        {
-          //tombol BUKTI LAYANAN
-          element: '#step_13',
-          title: '',
-          content: ' Berfungsi untuk melihat bukti layanan yang sudah diberikan.',
-          placement: 'right-end',
-        },
-        {
-          //RINCIAN REKAP
-          element: '#step_14',
-          title: '',
-          content: 'Berfungsi untuk melihat rincian ringkasan dari layanan yang diberikan kepada pasien.',
-          placement: 'right-end',
-        },
-        {
-          //Tombol BILLING
-          element: '#step_15',
-          title: '',
-          content: 'Berfungsi untuk melihat tagihan yang harus dibayar oleh pasien.',
-          placement: 'right-end',
-        },
-        {
-          //Tombol BILLING BPJS
-          element: '#step_16',
-          title: '',
-          content: 'Berfungsi untuk melihat tagihan yang harus dibayar dengan bpjs.',
-          placement: 'right-end',
-        },
-        {
-          //Tombol REKAP BILLING
-          element: '#step_17',
-          title: '',
-          content: 'Berfungsi untuk melihat data rekap billing ',
-          placement: 'right-end',
-        },
-        {
-          // Tombol BILLING TOTAL
-          element: '#step_18',
-          title: '',
-          content: 'Berfungsi untuk melihat billing total',
-          placement: 'left-end',
-        },
-        {
-          //Tombol BILLING SELISIH KELAS
-          element: '#step_19',
-          title: '',
-          content: 'Berfungsi Jika terjadi perubahan kelas, tagihan yang diterima akan berbeda. Ini tergantung pada kelas tempat pasien tinggal.',
-          placement: 'left-end',
-        },
-        {
-          //Tombol RINCIAN OBAT
-          element: '#step_20',
-          title: '',
-          content: 'Berfungsi untuk melihat rincian obat yang diberikan kepada pasien',
-          placement: 'left-end',
-        },
-        {
-          //Tombol BILLING ASURANSI
-          element: '#step_21',
-          title: '',
-          content: 'Berfungsi untuk melihat billing yang dibayar oleh asuransi.',
-          placement: 'left-end',
-        },
-        {
-          //Tombol REKAP BILLING RUANGAN
-          element: '#step_22',
-          title: '',
-          content: 'Berfungsi untuk melihat tagihan dari ruangan yang ditempati pasien.',
-          placement: 'left-end',
-        },
-        {
-          // Tombol KEMBALI
-          element: '#step_23',
-          title: '',
-          content: 'Berfungsi untuk kembali ke halaman sebelumnya.',
-          placement: 'left-end',
-        },
-      ];
+        wt.setSteps(steps);
+        wt.start();
+      });
+    </script>
 
-      wt.setSteps(steps);
-      wt.start();
-    });
-  </script>
-</body>
+    <script>
+      const sidebar = document.getElementById('sidebar');
+      const toggleSidebarButton = document.getElementById('toggleSidebar');
+      const closeSidebarButton = document.getElementById('close');
+      const mainContentOverlay = document.getElementById('mainContentOverlay');
+      const dropdownContent = document.getElementById('myDropdown');
+      const dropdownContent1 = document.getElementById('myDropdown1');
 
+      toggleSidebarButton.addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+        mainContentOverlay.style.display = 'block';
+      });
+
+      closeSidebarButton.addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+        mainContentOverlay.style.display = 'none';
+      });
+
+      // Close sidebar when clicking outside
+      document.addEventListener('click', (event) => {
+        if (!sidebar.contains(event.target) && event.target !== toggleSidebarButton) {
+          sidebar.classList.add('-translate-x-full');
+          mainContentOverlay.style.display = 'none';
+        }
+      });
+
+      function toggleDropdown() {
+        dropdownContent.classList.toggle('opacity-100');
+        dropdownContent.classList.toggle('scale-y-100');
+        dropdownContent.classList.toggle('scale-y-0');
+      }
+      function toggleDropdown2() {
+        dropdownContent1.classList.toggle('opacity-100');
+        dropdownContent1.classList.toggle('scale-y-100');
+        dropdownContent1.classList.toggle('scale-y-0');
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.addEventListener('click', function (event) {
+        if (!event.target.matches('.dropbtn')) {
+          if (dropdownContent.classList.contains('opacity-100')) {
+            toggleDropdown();
+          }
+        }
+      });
+    </script>
+  </body>
 </html>
