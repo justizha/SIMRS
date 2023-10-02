@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transmedic | Input</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="icon" href="https://apps.transmedic.co.id:2200/app/images/favicon.ico" />
+  <link rel="stylesheet" href="/dist/output.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css"
+    integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://unpkg.com/webtour@1.1.0/dist/webtour.min.css" />
+  <script src="https://unpkg.com/webtour@1.1.0/dist/webtour.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-comfortaa overflow-x-hidden">
+  <!-- navbar -->
+  <nav class="bg-[#28292b] text-white p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div class="flex mt-1">
+      <img src="../../img/Menu Logo.png" class="mt-1 w-10 h-11 pt--6 pb-3" alt="" />
+      <div class="flex flex-col">
+        <span class="text-3xl font-Comfortaa font-bold">
+          <a class="text-white mt-2 ml-3" href="#">TRANS<a href="#" class="text-[#FE0000] font-semibold">M</a><a href=""
+              class="font-bold">EDIC</a></a>
+        </span>
+        <span class="ml-4 italic">E-Healthcare / RS TRANSMEDIC</span>
+      </div>
+      <div class="absolute right-4 py-3">
+        <button class="px-2 py-2 w-10 h-11 bg-[#363940] rounded-md text-lg" id="tour">?</button>
+        <span class="px-2 py-2 bg-[#363940] rounded-md text-lg">ABOUT</span>
+      </div>
+    </div>
+  </nav>
+  <!-- end navbar -->
+
+  <div class="bg-[#41abf2] p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <p class="text-white text-center text-3xl font-bold">Input Tagihan</p>
+  </div>
+
+  <div class="flex flex-wrap-12 -mx-1 mb-1 mt-3.5 ml-0">
+    <div class="w-56 ml-4 " id="step_1">
+      <label class="ml-0 block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-last-name"> Tgl transaksi
+      </label>
+      <input
+        class="ml-0 block w-56 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600 col-span-2"
+        type="date" />
+    </div>
+
+    <div class="w-56 ml-3" id="step_2">
+      <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-last-name"> Nama pelanggan
+      </label>
+      <input
+        class=" block w-56 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600"
+        type="text" />
+    </div>
+
+    <div class="w-32 ml-3" id="step_3">
+      <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-last-name"> No telepon </label>
+      <input
+        class="w-32 block text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600"
+        type="text" />
+    </div>
+
+    <div class="w-56 ml-3" id="step_4">
+      <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-first-name"> Kelompok transaksi
+      </label>
+      <select name="pasien"
+        class="w-56 block text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600">
+        <option class="bg-[#313235] text-white" value="" selected disabled hidden></option>
+        <option class="bg-[#313235] text-white" value="">PELAYANAN IN APOTEK</option>
+        <option class="bg-[#313235] text-white" value="">PELAYANAN OUT UMUM</option>
+        <option class="bg-[#313235] text-white" value="">PELAYANAN LAUNDRY</option>
+        <option class="bg-[#313235] text-white" value="">PELAYANAN OUT PAYROLL</option>
+        <option class="bg-[#313235] text-white" value="">PELAYANAN GIZI</option>
+        <option class="bg-[#313235] text-white" value="">PELAYANAN AMBULAN</option>
+        <option class="bg-[#313235] text-white" value="">PELAYANAN IN PRODUK</option>
+        <option class="bg-[#313235] text-white" value="">PELAYANAN DIKLAT</option>
+        <option class="bg-[#313235] text-white" value="">PELAYANAN TATA USAHA</option>
+      </select>
+    </div>
+
+    <div class="w-56 ml-3" id="step_5">
+      <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-first-name"> Kelompok pasien
+      </label>
+      <select name="pasien"
+        class="block w-56 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600">
+        <option class="bg-[#313235] text-white" value="" selected disabled hidden></option>
+        <option class="bg-[#313235] text-white" value="">AsuransiK</option>
+        <option class="bg-[#313235] text-white" value="">BPJS</op>
+        <option class="bg-[#313235] text-white" value="">Karyawan</option>
+        <option class="bg-[#313235] text-white" value="">Perusahaan</option>
+        <option class="bg-[#313235] text-white" value="">Umum/Pribadi</option>
+      </select>
+    </div>
+
+    <div class="w-52 ml-3 mr-3" id="step_6">
+      <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-first-name"> Penjamin </label>
+      <select name="pasien"
+        class="block w-52 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600">
+        <option class="bg-[#313235] text-white" value="" selected disabled hidden></option>
+        <option class="bg-[#313235] text-white" value="">-</option>
+        <option class="bg-[#313235] text-white" value="">3M</op>
+        <option class="bg-[#313235] text-white" value="">3M Indonesia ,PT</option>
+        <option class="bg-[#313235] text-white" value="">828 Souvenir Spesialist</option>
+        <option class="bg-[#313235] text-white" value="">Abadi Berkat Perkasa, PT</option>
+        <option class="bg-[#313235] text-white" value="">Abadi Nusa Usaha Semesta.PT</option>
+        <option class="bg-[#313235] text-white" value="">ABBOT</option>
+        <option class="bg-[#313235] text-white" value="">ABBOT INDONESIA</option>
+        <option class="bg-[#313235] text-white" value="">ABBOT INDONESIA, PT</option>
+        <option class="bg-[#313235] text-white" value="">ABBOT BEAR</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="bg-[#41abf2] p-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 font-bold">
+    <p class="text-white text-1xl text-left pt-1 ml-2 font-bold">Rincian Tagihan</p>
+  </div>
+
+  <div class="flex flex-wrap-12 -mx-1 mb-1 mt-3.5 ml-0">
+    <div class="w-full px-3 -ml-1 -mt-3  mr-[955px]">
+      <label class="block tracking-wide text-gray-700 text-1 font-bold mb-1" for="grid-last-name"> Layanan </label>
+      <input
+        class=" block w-full text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600"
+        type="text" />
+    </div>
+  </div>
+
+
+  <!-- Tabel -->
+  <table class="border-collapse font-thin text-[12px] mr-[959px] ml-2">
+    <tr class="text-left text-white font-light h-6 bg-slate-700">
+      <th class="border border-gray-500 bg-main-gray-0  hover:bg-[#41abf2] w-[855px] text-center p-2">Nama Layanan</th>
+      <th class="border border-gray-500 bg-main-gray-0 w-4 p-2"></th>
+    </tr>
+  </table>
+  <!-- end table -->
+
+  <!-- Pagination -->
+  <div class="bg-main-gray-0 mr-[959px] ml-2">
+    <div class="bg-main-gray-0 py-[7px] flex items-center gap-2">
+      <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+        <i class="fa fa-solid fa-backward-step text-white"></i>
+      </div>
+      <div class="rounded-full border w-6 h-6 flex hover:bg-main-blue-0 items-center justify-center">
+        <i class="fa fa-solid fa-play text-white fa-rotate-180"></i>
+      </div>
+      <div class="rounded-full border w-6 h-6 flex items-center justify-center">
+        <h2 class="text-white">1</h2>
+      </div>
+      <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+        <i class="fa fa-solid fa-play text-white"></i>
+      </div>
+      <div class="rounded-full border w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+        <i class="fa fa-solid fa-forward-step text-white"></i>
+      </div>
+      <span class=" absolute ml-64 text-[12px] text-gray-200">Tidak ada data</span>
+    </div>
+  </div>
+  <!-- end Pagination  -->
+
+  <!-- konten -->
+  <div class="flex flex-wrap-12 mx-1 h-[273px] -mt-32 -ml-15 border  border-blue-500 ml-[400px] ">
+    <div class="mr-[950px] flex flex-initial ml-1 mt-6 m-2 w-full">
+      <input type="checkbox" class="-mt-[240px]">
+      <label for="" class="ml-2 -mt-3">Paket</label>
+
+      <div class="w-full flex flex-col row-span-7">
+        <div class="w-full flex flex-row row-span-5 mt-3 -ml-16">
+          <div class="w-full px-3 -ml-1">
+            <label class="w-full block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-last-name"> No
+            </label>
+            <input
+              class=" block w-16 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none bg-gray-200 focus:bg-white focus:border-purple-400 focus:ring-blue-600"
+              type="text" />
+          </div>
+
+          <div class="px-3 -ml-10" id="step_7">
+            <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-last-name"> Layanan
+            </label>
+            <input
+              class="w-72 block text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600"
+              type="text" />
+          </div>
+
+          <div class="px-3 -ml-1" id="step_8">
+            <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-last-name"> Keterangan
+            </label>
+            <input
+              class="w-[530px] block text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600"
+              type="text" />
+          </div>
+        </div>
+
+        <div class="w-full flex flex-row row-span-5 mt-3 -ml-16">
+          <div class="w-32 ml-3 h-[60px]" id="step_9">
+            <label class="w-full block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-last-name"> Qty
+            </label>
+            <input
+              class=" block w-16 text-gray-700 border border-blue-500 rounded-md py-1 text-xm h-8 focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600"
+              type="text" />
+            <p class="ml-[53px] -mt-7">1</p>
+          </div>
+
+          <div class="w-full flex flex-col row-span-5 -mt-8 float lef">
+            <div class="mr-[950px] flex flex-initial ml-1 mt-10 m-2 w-full ">
+              <input type="checkbox" class="-mt-2">
+              <label for="" class="ml-2 -mt-2 text-gray-700 font-bold">Qty Perorang / Perkilometer</label>
+            </div>
+
+            <input
+              class="w-72 ml-3 block text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600"
+              type="text" />
+            <p class="ml-[276px] -mt-7">1</p>
+
+            <div class="w-36  ml-[313px] -mt-[59px]" id="step_10">
+              <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-last-name"> Harga
+              </label>
+              <input
+                class="w-36 block text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600"
+                type="text" />
+            </div>
+
+            <div class="w-36  ml-[470px] -mt-[62px]" id="step_11">
+              <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-last-name"> Total
+              </label>
+              <input
+                class="w-36 block text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600"
+                type="text" />
+            </div>
+            <!-- button footer -->
+            <div class="flex flex-wrap-2 gap-3 ml-[625px] -mt-9">
+              <div class="px-1" id="step_12">
+                <button class="bg-[#41abf2] text-white font-bold text-[12px] py-1 px-7 border rounded mt-1 h-9"
+                  type="search">+</button>
+              </div>
+              <div class="px- 1" id="step_13">
+                <button class="bg-[#41abf2] text-white font-bold text-[12px] py-1 px-7 border rounded mt-1 h-9"
+                  type="search">-</button>
+              </div>
+              <div class="px-1 mr-1" id="step_14">
+                <button class="bg-[#41abf2] text-white font-bold text-[12px] py-1 px-7 border rounded mt-1 h-9"
+                  type="search">..</button>
+              </div>
+            </div>
+            <div class="w-full flex flex-col -ml-[82px] mt-4 row-span-5">
+              <div class="overflow-x-auto">
+                <table class="w-full table-zebra table-fixed text-left border font-thin text-sm ml">
+                  <tr class="text-center text-white font-light bg-[#313235] justify-normal ml-4">
+                    <th class="border border-gray-500 w-10 p-2">No</th>
+                    <th class="border border-gray-500 w-48 p-2">Tagihan</th>
+                    <th class="border border-gray-500 w-36 p-2">Keterangan</th>
+                    <th class="border border-gray-500 w-12 p-2">Qty</th>
+                    <th class="border border-gray-500 w-32 p-2">Qty Per Org/Per Km</th>
+                    <th class="border border-gray-500 w-20 p-2">Harga</th>
+                    <th class="border border-gray-500 w-20 p-2">Total</th>
+                    <th class="border border-gray-500 w-6 p-2"></th>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <!-- Pagination -->
+            <div class="bg-main-gray-0 w-full mr-[90px] -ml-[82px]">
+              <div class="bg-main-gray-0 py-[7px] flex items-center gap-2">
+                <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+                  <i class="fa fa-solid fa-backward-step text-white"></i>
+                </div>
+                <div class="rounded-full border w-6 h-6 flex hover:bg-main-blue-0 items-center justify-center">
+                  <i class="fa fa-solid fa-play text-white fa-rotate-180"></i>
+                </div>
+                <div class="rounded-full border w-6 h-6 flex items-center justify-center">
+                  <h2 class="text-white">0</h2>
+                </div>
+                <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+                  <i class="fa fa-solid fa-play text-white"></i>
+                </div>
+                <div class="rounded-full border w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+                  <i class="fa fa-solid fa-forward-step text-white"></i>
+                </div>
+                <span class="text-white absolute right-3">Tidak ada data</span>
+              </div>
+            </div>
+            <!-- end Pagination  -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- end konten -->
+
+  <!-- form input -->
+  <div class="table-fixed h-36">
+    <div class="flex gap-3 mt-2 float-right ">
+      <div class="flex flex-col mr-[490px]">
+        <label for="Nama Pasien" class="text-sm">Keterangan</label>
+        <input type="text"
+          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[300px] h-7 mt-1 hover:bg-white" />
+        <p class="-mt-6 ml-2">-</p>
+      </div>
+      <div class="flex flex-col mr-2">
+        <label for="Nama Ayah Kandung" class="text-sm">Total billing</label>
+        <input type="text"
+          class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[140px] h-7 mt-1 bg-gray-200 hover:bg-white" />
+      </div>
+    </div>
+  </div>
+
+  <div class="px- 1 float-right mr-1 -mt-16">
+    <button class="bg-[#41abf2] text-white font-bold w-36 text-[12px] py-1 px-7 border rounded mt-1 h-8"
+      type="search"><a href="#">Simpan</a></button>
+  </div>
+
+  <script>
+    document.getElementById('tour').addEventListener('click', function () {
+      const wt = new WebTour();
+      const steps = [
+        {
+          //tanggal transanksi 
+          element: '#step_1',
+          title: '',
+          content: 'berfungsi untuk memasukan tanggal berapa transaksi dilakukan',
+          placement: 'right-start',
+        },
+        {
+          //nama pelanggan
+          element: '#step_2',
+          title: '',
+          content: 'berfungsi untuk memasukan nama pelanggan',
+          placement: 'right-start',
+        },
+        {
+          //no telepon
+          element: '#step_3',
+          title: '',
+          content: 'berfungsi untuk memasukan no telepon',
+          placement: 'right-start',
+        },
+        {
+          //kelompok transaksi  
+          element: '#step_4',
+          title: '',
+          content: 'berfungsi untuk memasukan kelompok transaksi yang digunakan',
+          placement: 'right-start',
+        },
+        {
+          //kelompok pasien 
+          element: '#step_5',
+          title: '',
+          content: 'berfungsi untuk memasukan kelompok pasien',
+          placement: 'left-start',
+        },
+        {
+          // penjamin
+          element: '#step_6',
+          title: '',
+          content: 'berfungsi untuk memasukan penjamin pasien',
+          placement: 'left-start',
+        },
+        {
+          //layanan 
+          element: '#step_7',
+          title: '',
+          content: 'kolom ini di isi dengan nama layanan',
+          placement: 'right-start',
+        },
+        {
+          //keterangan
+          element: '#step_8',
+          title: '',
+          content: 'kolom ini diisi jika ada keterangan tambahan.',
+          placement: 'left-start',
+        },
+        {
+          //qty(kuantitas) 
+          element: '#step_9',
+          title: '',
+          content: 'berfungsi untuk memasukan ada berapa kuantitas dari layanan',
+          placement: 'right-start',
+        },
+        {
+          //harga
+          element: '#step_10',
+          title: '',
+          content: 'berfungsi untuk memasukan harga.',
+          placement: 'left-start',
+        },
+        {
+          //total 
+          element: '#step_11',
+          title: '',
+          content: 'berfungsi untuk memasukan total harga',
+          placement: 'left-start',
+        },
+        {
+          //  tombol plus/tambah
+          element: '#step_12',
+          title: '',
+          content: ' berfungsi untuk menambahkan layanan yang sudah di masukan ke kolom sebelumnya.',
+          placement: 'left-end',
+        },
+        {
+          //  tombol minus/kurang  
+          element: '#step_13',
+          title: '',
+          content: 'berfungsi untuk mengurangi atau menghapus layanan.',
+          placement: 'left-end',
+        },
+        {
+          //   tombol simpan 
+          element: '#step_14',
+          title: '',
+          content: 'berfungsi untuk menyimpan layanan yang sudah ditambahkan.',
+          placement: 'left-end',
+        },
+      ];
+      wt.setSteps(steps);
+      wt.start();
+    });
+  </script>
+</body>
+
+</html>

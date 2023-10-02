@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transmedic | Pengembalian Deposit</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="icon" href="https://apps.transmedic.co.id:2200/app/images/favicon.ico" />
+  <link rel="stylesheet" href="/dist/output.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/webtour@1.1.0/dist/webtour.min.css" />
+  <script src="https://unpkg.com/webtour@1.1.0/dist/webtour.min.js"></script>
+</head>
+
+<body class="font-comfortaa">
+  <!-- navbar -->
+  <nav class="bg-[#28292b] text-white p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div class="flex mt-1">
+      <img src="../img/Menu Logo.png" class="mt-1 w-10 h-11 pt--6 pb-3" alt="" />
+      <div class="flex flex-col">
+        <span class="text-3xl font-Comfortaa font-bold">
+          <a class="text-white mt-2 ml-3" href="#">TRANS<a href="#" class="text-[#FE0000] font-semibold">M</a><a href=""
+              class="font-bold">EDIC</a></a>
+        </span>
+        <span class="ml-4 italic">E-Healthcare / RS TRANSMEDIC</span>
+      </div>
+      <div class="absolute right-4 py-3">
+        <button class="px-2 py-2 w-10 h-11 bg-[#363940] rounded-md text-lg" id="tour">?</button>
+        <span class="px-2 py-2 bg-[#363940] rounded-md text-lg">ABOUT</span>
+      </div>
+    </div>
+  </nav>
+  <!-- end navbar -->
+
+  <!-- header -->
+  <div class="bg-[#41abf2] p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <p class="text-white text-left text-2xl font-semibold">Pengembalian Deposit</p>
+  </div>
+  <!-- end header -->
+
+  <!-- form input -->
+  <div class="table-fixed">
+    <div class="flex gap-3 mt-2">
+      <div class="flex flex-col ml-4">
+        <label for="No RM" class="text-sm">No pendaftaran</label>
+        <input type="text"
+          class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-32 bg-gray-200 h-7 mt-1 0bg-gray-20 hover:bg-white" />
+        <p class="-mt-6 ml-1 text-gray-500">2303001121</p>
+      </div>
+      <div class="flex flex-col">
+        <label for="Nama Pasien" class="text-sm">No CM</label>
+        <input type="text"
+          class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-24 h-7 mt-1 bg-gray-200 hover:bg-white" />
+        <p class="-mt-6 ml-2 text-gray-500">00000170</p>
+      </div>
+      <div class="flex flex-col">
+        <label for="Nama Pasien" class="text-sm">Nama pasien</label>
+        <input type="text"
+          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[300px] h-7 mt-1 bg-gray-200 hover:bg-white" />
+        <p class="-mt-6 ml-2 text-gray-500">IHSAN HAFIZH</p>
+      </div>
+      <div class="flex flex-col">
+        <label for="Nama Ayah Kandung" class="text-sm">Jenis kelamin</label>
+        <input type="text"
+          class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-[147px] h-7 mt-1 bg-gray-200 hover:bg-white" />
+        <p class="-mt-6 ml-1 text-gray-500">LAKI-LAKI</p>
+      </div>
+      <div class="flex flex-col">
+        <label for="Alamat" class="text-sm">Jenis penjamin</label>
+        <input type="text"
+          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[300px] h-7 mt-1 bg-gray-200 hover:bg-white" />
+        <p class="-mt-6 ml-1 text-gray-500">Umum/Pribadi</p>
+      </div>
+      <div class="flex flex-col">
+        <label for="Alamat" class="text-sm">Umur</label>
+        <input type="text"
+          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[300px] h-7 mt-1 bg-gray-200 hover:bg-white" />
+        <p class="-mt-6 ml-2 text-gray-700">18 Tahun, 1 Bulan, 1 Hari</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- judul -->
+  <div class="bg-[#41abf2] p-1 sm:grid-cols-2 mt-6 md:grid-cols-3 lg:grid-cols-4 gap-4 font-bold">
+    <p class="text-white text-1xl text-left pt-1 ml-2 font-bold">Daftar Tagihan Pasien</p>
+  </div>
+  <!-- end judul -->
+
+  <!-- Tabel -->
+  <table class="w-full border-collapse border font-thin text-[12px] border-slate-200">
+    <tr class="text-center text-white font-light bg-slate-700">
+      <th class="border border-slate-600 hover:bg-[#41abf2] w-[205px] p-2">Layanan</th>
+      <th class="border border-slate-600 hover:bg-[#41abf2] w-[72px] p-2">Jumlah</th>
+      <th class="border border-slate-600 hover:bg-[#41abf2] w-52 p-2">Harga</th>
+      <th class="border border-slate-600 hover:bg-[#41abf2] w-44 p-2">Harga Diskon</th>
+      <th class="border border-slate-600 hover:bg-[#41abf2] w-44 p-2">Total</th>
+    </tr>
+  </table>
+
+  <div class="overflow-y-auto h-80 border-b border-[#41abf2]">
+    <table class="w-full border-collapse table-fixed border font-thin text-[12px] border-slate-200">
+      <tr class="font-light text-black text-right hover:bg-[#41abf2]">
+        <td class="border w-[330px] p-2">
+          <p class="float-left">Tzxhree Way with Extension - Aximed</p>
+        </td>
+        <td class="border w-[116px] p-2">1</td>
+        <td class="border w-[335px] p-2">Rp. 12,534.00</td>
+        <td class="border w-[284px] p-2">Rp. 0.00</td>
+        <td class="border p-2">Rp. 12,534.00</td>
+      </tr>
+      <tr class="text-right font-light text-black bg-gray-100 hover:bg-[#41abf2]">
+        <td class="border p-2">
+          <p class="float-left">Pasang Infus</p>
+        </td>
+        <td class="border p-2 truncate">1</td>
+        <td class="border p-2">Rp. 105,000.00</td>
+        <td class="border p-2">Rp. 0.00</td>
+        <td class="border p-2">Rp. 105,000.00</td>
+      </tr>
+      <tr class="font-light text-black text-right hover:bg-[#41abf2]">
+        <td class="border p-2">
+          <p class="float-left">Tzxhree Way with Extension - Aximed</p>
+        </td>
+        <td class="border p-2 truncate">1</td>
+        <td class="border p-2">Rp. 12,534.00</td>
+        <td class="border p-2">Rp. 0.00</td>
+        <td class="border p-2">Rp. 12,534.00</td>
+      </tr>
+      <tr class="text-right font-light text-black bg-gray-100 hover:bg-[#41abf2]">
+        <td class="border p-2">
+          <p class="float-left">Pasang Infus</p>
+        </td>
+        <td class="border p-2 truncate">1</td>
+        <td class="border p-2">Rp. 105,000.00</td>
+        <td class="border p-2">Rp. 0.00</td>
+        <td class="border p-2">Rp. 105,000.00</td>
+      </tr>
+      <tr class="font-light text-black text-right hover:bg-[#41abf2]">
+        <td class="border p-2">
+          <p class="float-left">Tzxhree Way with Extension - Aximed</p>
+        </td>
+        <td class="border p-2 truncate">1</td>
+        <td class="border p-2">Rp. 12,534.00</td>
+        <td class="border p-2">Rp. 0.00</td>
+        <td class="border p-2">Rp. 12,534.00</td>
+      </tr>
+      <tr class="text-right font-light text-black bg-gray-100 hover:bg-[#41abf2]">
+        <td class="border p-2">
+          <p class="float-left">Pasang Infus</p>
+        </td>
+        <td class="border p-2 truncate">1</td>
+        <td class="border p-2">Rp. 105,000.00</td>
+        <td class="border p-2">Rp. 0.00</td>
+        <td class="border p-2">Rp. 105,000.00</td>
+      </tr>
+      <tr class="font-light text-black text-right hover:bg-[#41abf2]">
+        <td class="border p-2">
+          <p class="float-left">Tzxhree Way with Extension - Aximed</p>
+        </td>
+        <td class="border p-2 truncate">1</td>
+        <td class="border p-2">Rp. 12,534.00</td>
+        <td class="border p-2">Rp. 0.00</td>
+        <td class="border p-2">Rp. 12,534.00</td>
+      </tr>
+      <tr class="text-right font-light text-black bg-gray-100 hover:bg-[#41abf2]">
+        <td class="border p-2">
+          <p class="float-left">Pasang Infus</p>
+        </td>
+        <td class="border p-2 truncate">1</td>
+        <td class="border p-2">Rp. 105,000.00</td>
+        <td class="border p-2">Rp. 0.00</td>
+        <td class="border p-2">Rp. 105,000.00</td>
+      </tr>
+      <tr class="font-light text-black text-right hover:bg-[#41abf2]">
+        <td class="border p-2">
+          <p class="float-left">Tzxhree Way with Extension - Aximed</p>
+        </td>
+        <td class="border p-2 truncate">1</td>
+        <td class="border p-2">Rp. 12,534.00</td>
+        <td class="border p-2">Rp. 0.00</td>
+        <td class="border p-2">Rp. 12,534.00</td>
+      </tr>
+      <tr class="text-right font-light text-black bg-gray-100 hover:bg-[#41abf2]">
+        <td class="border p-2">
+          <p class="float-left">Pasang Infus</p>
+        </td>
+        <td class="border p-2 truncate">1</td>
+        <td class="border p-2">Rp. 105,000.00</td>
+        <td class="border p-2">Rp. 0.00</td>
+        <td class="border p-2">Rp. 105,000.00</td>
+      </tr>
+      <tr class="font-light text-black text-right hover:bg-[#41abf2]">
+        <td class="border p-2">
+          <p class="float-left">Tzxhree Way with Extension - Aximed</p>
+        </td>
+        <td class="border p-2 truncate">1</td>
+        <td class="border p-2">Rp. 12,534.00</td>
+        <td class="border p-2">Rp. 0.00</td>
+        <td class="border p-2">Rp. 12,534.00</td>
+      </tr>
+      <tr class="text-right font-light text-black bg-gray-100 hover:bg-[#41abf2]">
+        <td class="border p-2">
+          <p class="float-left">Pasang Infus</p>
+        </td>
+        <td class="border p-2 truncate">1</td>
+        <td class="border p-2">Rp. 105,000.00</td>
+        <td class="border p-2">Rp. 0.00</td>
+        <td class="border p-2">Rp. 105,000.00</td>
+      </tr>
+    </table>
+  </div>
+  <!-- end tabel -->
+
+  <!-- menu -->
+  <div class="flex flex-col col-span-1 w-[680px] float-right mr-4">
+    <div class="bg-[#41abf2] mt-2 w-full h-7 flex flex-row col-span-2">
+      <p class="text-white text-[14px] ml-1 mt-1">Data</p>
+    </div>
+    <div class="w-full grid grid-cols-2 gap-3 border border-main-blue-0 pt-3">
+      <div class="flex flex-col w-full ml-3">
+        <label class="text-sm font-bold">Total Tagihan</label>
+        <input type="text"
+          class="block w-80 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600 bg-gray-300 hover:bg-white" />
+        <p class="text-gray-500 -mt-6 ml-[240px] text-sm">3560687.55</p>
+      </div>
+      <div class="flex flex-col w-full">
+        <label class="text-sm font-bold">Total Deposit</label>
+        <input type="text"
+          class="block w-80 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600 bg-gray-300 hover:bg-white" />
+        <p class="text-gray-500 -mt-6 ml-[260px] text-sm">2145000</p>
+      </div>
+      <div class="flex flex-col w-full ml-[346px] mb-5">
+        <label class="text-sm font-bold">Jumlah pengembalian</label>
+        <input type="text"
+          class="block w-80 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600" />
+        <p class="text-gray-500 -mt-6 ml-[173px] text-sm">-1415687.5499999998</p>
+      </div>
+    </div>
+  </div>
+  <!-- end menu -->
+
+  <div class="flex flex-col float-right ml-[400px] mr-3">
+    <div class="flex flex-row col-span-12 items-center mt-2 text-[12px] gap-2 ml-2">
+      <div class="" id="step_1">
+        <button class="bg-[#41abf2] text-white h-8 w-32 text-center border rounded" type="search"><a
+            href="bayar.html">Bayar</a></button>
+      </div>
+      <div class="" id="step_2">
+        <button class="bg-[#41abf2] text-white h-8 w-28 text-center border rounded" type="search"><a
+            href="daftar_tagihan_pasien.html">Kembali</a></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="h-80"></div>
+
+  <script>
+    document.getElementById('tour').addEventListener('click', function () {
+      const wt = new WebTour();
+      const steps = [
+        {
+          // bayar
+          element: '#step_1',
+          title: '',
+          content: 'berfungsi untuk membayar tagihan dengan deposit yang dibayar di awal jika tagihan harganya lebih kecil maka sisa deposit akan dikembalikan',
+          placement: 'left-end',
+        },
+        {
+          //kembali
+          element: '#step_2',
+          title: '',
+          content: 'berfungsi unutk kembali ke halaman selanjutnya.',
+          placement: 'left-end',
+        },
+      ];
+
+      wt.setSteps(steps);
+      wt.start();
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transmedic | Input Tindakan</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="icon" href="https://apps.transmedic.co.id:2200/app/images/favicon.ico" />
+  <link rel="stylesheet" href="/dist/output.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css"
+    integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://unpkg.com/webtour@1.1.0/dist/webtour.min.css" />
+  <script src="https://unpkg.com/webtour@1.1.0/dist/webtour.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-comfortaa">
+  <!-- navbar -->
+  <nav class="bg-[#28292b] text-white p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div class="flex mt-1">
+      <img src="../img/Menu Logo.png" class="mt-1 w-9 h-12 pt--5 pb-3" alt="" />
+      <div class="flex flex-col">
+        <span class="text-3xl font-Comfortaa font-semibold">
+          <a class="text-white mt-2 ml-3" href="#">TRANS<a href="#" class="text-[#FE0000] font-semibold">M</a><a href=""
+              class="font-semibold">EDIC</a></a>
+        </span>
+        <span class="ml-4 italic">E-Healthcare / RS TRANSMEDIC</span>
+      </div>
+      <div class="absolute right-4 py-3">
+        <button class="px-2 py-2 w-10 h-11 bg-[#363940] rounded-md text-lg" id="tour">?</button>
+        <span class="px-2 py-2 bg-[#363940] rounded-md text-lg">ABOUT</span>
+      </div>
+    </div>
+  </nav>
+  <!-- end navbar -->
+
+  <!-- header -->
+  <div class="bg-[#41abf2] p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <p class="text-white text-left text-2xl font-bold">Data Pasien</p>
+  </div>
+  <button class="float-right -mt-[61px] mx-3">
+    <div class="bg-slate-200 rounded-full w-20 h-20 flex justify-center items-center shadow">
+      <div class="p-2 bg-green-300 rounded-full w-14 h-14 shadow-md flex items-center justify-center">
+        <img src="https://apps.transmedic.co.id:2200/app/stylesheets/cetak.png" alt="" width="40px">
+      </div>
+    </div>
+  </button>
+  <!-- end header -->
+
+  <!-- form input -->
+  <div class="table-fixed">
+    <div class="flex gap-3 mt-2 font-bold">
+      <div class="flex flex-col ml-2">
+        <label for="No RM" class="text-sm">No registrasi</label>
+        <input type="text"
+          class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-24 h-7 bg-gray-200 hover:bg-white" />
+        <p class="-mt-6 ml-1 text-gray-500">2308000183</p>
+      </div>
+      <div class="flex flex-col">
+        <label for="Nama Pasien" class="text-sm">No rekam medis</label>
+        <input type="text"
+          class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-52 h-7 bg-gray-200 hover:bg-white" />
+        <p class="-mt-6 ml-2 text-gray-500">00003522</p>
+      </div>
+      <div class="flex flex-col">
+        <label for="Nama Pasien" class="text-sm">Nama pasien</label>
+        <input type="text"
+          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-52 h-7 bg-gray-200 hover:bg-white" />
+        <p class="-mt-6 ml-2 text-gray-500">IHSAN HAFIZH</p>
+      </div>
+      <div class="flex flex-col">
+        <label for="Nama Ayah Kandung" class="text-sm">Tanggal registrasi</label>
+        <input type="text"
+          class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-52 h-7 bg-gray-200 hover:bg-white" />
+        <p class="-mt-6 ml-1 text-gray-500">2023-03-14 09:49:52</p>
+      </div>
+      <div class="flex flex-col">
+        <label for="Alamat" class="text-sm">Jenis kelamin</label>
+        <input type="text"
+          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-32 h-7 bg-gray-200 hover:bg-white" />
+        <p class="-mt-6 ml-1 text-gray-500">LAKI-LAKI</p>
+      </div>
+      <div class="flex flex-col">
+        <label for="Alamat" class="text-sm">Tanggal lahir</label>
+        <input type="text"
+          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[212px] h-7 bg-gray-200 hover:bg-white" />
+        <p class="-mt-6 ml-2 text-gray-500">28-Sep-2005 07:00</p>
+      </div>
+      <div class="flex flex-col">
+        <label for="Nama Ayah Kandung" class="text-sm">Ruangan</label>
+        <input type="text"
+          class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-52 h-7 bg-gray-200 hover:bg-white" />
+        <p class="-mt-6 ml-2 text-gray-500">Poliklinik Kardiologi</p>
+      </div>
+    </div>
+
+    <div class="flex gap-3 mt-2 w-full mb-5">
+      <div class="flex flex-col ml-2 w-full">
+        <label for="No RM" class="text-sm">Alamat</label>
+        <input type="text"
+          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[420px] h-7 bg-gray-200 hover:bg-white" />
+        <p class="-mt-6 ml-2 text-gray-500">Komplek Griya Mitra Posindo BLOK B4 NO 10</p>
+      </div>
+      <div class="flex flex-col w-full">
+        <label for="Nama Pasien" class="text-sm">Kelas</label>
+        <input type="text"
+          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[110px] h-7 bg-gray-200 hover:bg-white" />
+        <p class="-mt-6 ml-2 text-gray-500">Non Kelas</p>
+      </div>
+      <div class="flex flex-col -ml-[115px] w-full">
+        <label for="Nama Pasien" class="text-sm">Titip kelas / kelas rawat</label>
+        <input type="text"
+          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-52 h-7 bg-gray-200 hover:bg-white" />
+      </div>
+      <div class="flex flex-col w-full -ml-5    ">
+        <label for="Nama Pasien" class="text-sm">Pendidikan</label>
+        <input type="text"
+          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[200px] h-7 bg-gray-200 hover:bg-white" />
+        <p class="-mt-6 ml-2 text-gray-500">S1</p>
+      </div>
+      <div class="flex flex-col w-full -ml-5">
+        <label for="Nama Pasien" class="text-sm">Jenis pelayanan</label>
+        <input type="text"
+          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[130px] h-7 bg-gray-200 hover:bg-white" />
+        <p class="-mt-6 ml-2 text-gray-500">REGULER</p>
+      </div>
+      <div class="flex flex-col w-full -ml-24 ">
+        <label for="Nama Pasien" class="text-sm">Jenis pasien</label>
+        <input type="text"
+          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[210px] h-7 bg-gray-200 hover:bg-white" />
+        <p class="-mt-6 ml-2 text-gray-500">Umum/Pribadi</p>
+      </div>
+    </div>
+
+    <div class="flex font-bold ml-[1140px] -mt-3">
+      <div class="flex flex-col">
+        <label for="Nama Ayah Kandung" class="text-sm">Penjamin</label>
+        <input type="text"
+          class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-52 h-7 bg-gray-200 hover:bg-white" />
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- end form input -->
+
+  <!-- header -->
+  <div class="bg-[#41abf2] p-4 mt-2">
+    <p class="text-white text-left text-2xl font-bold">Tindakan</p>
+  </div>
+  <!-- end header -->
+
+  <!-- form -->
+  <div class="mt-2 ml-1 w-20" id="step_1">
+    <input type="checkbox" class="ring-blue-[#41abf2] ring-1"> Paket
+  </div>
+
+  <div class="table-fixed">
+    <div class="flex gap-2 mt-3 font-bold">
+      <div class="flex flex-col ml-2 w-64" id="step_2">
+        <label for="No RM" class="text-sm">tanggal pelayanan</label>
+        <input type="date"
+          class=" ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-52 h-7 hover:bg-white" />
+      </div>
+      <div class="flex flex-col w-full ml-1" id="step_3">
+        <label for="Nama Pasien" class="text-sm">Nama pelayanan</label>
+        <select name="pasien"
+          class="block w-96 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600">
+          <option class="bg-[#313235] text-white" value=""></option>
+          <option class="bg-[#313235] text-white" value="">Homecare</option>
+          <option class="bg-[#313235] text-white" value="">Instalasi Cathlab Dan Kamar Bedah</option>
+          <option class="bg-[#313235] text-white" value="">Instalasi Farmasi</option>
+          <option class="bg-[#313235] text-white" value="">Instalasi Gawat Darurat</option>
+          <option class="bg-[#313235] text-white" value="">Instalasi Laboratorium</option>
+          <option class="bg-[#313235] text-white" value="">Instalasi Radiologi Dan Imaging</option>
+          <option class="bg-[#313235] text-white" value="">Instalasi Rawat Inap Dan Perawatan Intensif</option>
+          <option class="bg-[#313235] text-white" value="">Instalasi Rawat Jalan Dan Rehabilitasi Medik</option>
+        </select>
+      </div>
+      <div class="flex flex-col w-52 ml-1" id="step_4">
+        <label for="Nama Pasien" class="text-sm">Harga</label>
+        <input type="text"
+          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-52 h-7 hover:bg-white" />
+      </div>
+      <div class="flex flex-col w-28 ml-1">
+        <label for="Nama Ayah Kandung" class="text-sm">Hrg Dijamin</label>
+        <input type="text"
+          class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-28 h-7 hover:bg-white" />
+      </div>
+      <div class="flex flex-col w-28 ml-1" id="step_5">
+        <label for="Alamat" class="text-sm">Jumlah</label>
+        <input type="text"
+          class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-28 h-7 hover:bg-white" />
+      </div>
+      <div class="flex flex-col w-full" id="step_6">
+        <label class="text-sm ml-4">Status cito</label>
+        <p class="ml-7 mt-1 ">Tidak</p>
+        <input type="radio" class="-ml-[225px] -mt-5">
+        <p class="ml-[132px] -mt-4">Ya</p>
+        <input type="radio" class="-ml-[15px] -mt-5">
+      </div>
+    </div>
+  </div>
+
+  <div class="flex gap-3 mt-2 w-full mb-6">
+    <div class="flex flex-col ml-2 w-52" id="step_7">
+      <label for="No RM" class="text-sm">Jenis Pelaksana</label>
+      <select name="pasien"
+        class="block w-52 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600">
+        <option class="bg-[#313235] text-white" value=""></option>
+        <option class="bg-[#313235] text-white" value="">Homecare</option>
+        <option class="bg-[#313235] text-white" value="">Instalasi Cathlab Dan Kamar Bedah</option>
+        <option class="bg-[#313235] text-white" value="">Instalasi Farmasi</option>
+        <option class="bg-[#313235] text-white" value="">Instalasi Gawat Darurat</option>
+        <option class="bg-[#313235] text-white" value="">Instalasi Laboratorium</option>
+        <option class="bg-[#313235] text-white" value="">Instalasi Radiologi Dan Imaging</option>
+        <option class="bg-[#313235] text-white" value="">Instalasi Rawat Inap Dan Perawatan Intensif</option>
+        <option class="bg-[#313235] text-white" value="">Instalasi Rawat Jalan Dan Rehabilitasi Medik</option>
+      </select>
+    </div>
+    <div class="flex flex-col w-[510px]" id="step_8">
+      <label for="Nama Pasien" class="text-sm">Petugas Pelaksana</label>
+      <input type="text"
+        class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[510px] h-7 hover:bg-white" />
+      <img src="../img/Addd.png" class="h-7 w-7 ml-[520px] -mt-7">
+    </div>
+  </div>
+  <div class="ml-[900px] w-56 -mt-12" id="step_9">
+    <input type="checkbox" class="ring-blue-[#41abf2] ring-1"> Dilakukan Oleh Perawat
+  </div>
+  <!-- button -->
+  <div class="flex flex-wrap-2 gap-3 float-right">
+    <div class="px- 1" id="step_10">
+      <button class="bg-[#41abf2] text-white font-bold text-[12px] py-1 px-7 w-52 border rounded mt-1 h-9"
+        type="search"><a href="index4.html"><i class="fa fa-plus font-bold -ml-36"></i>
+          <p class="-mt-4">Tambah Tindakan</p>
+        </a></button>
+    </div>
+    <div class="px-1 mr-1" id="step_11">
+      <button class="bg-[#ff2359] text-white font-bold text-[12px] w-52 py-1 px-7 border rounded mt-1 h-9"
+        type="search"><a href="index1.html"><i class="fa fa-trash -ml-28"></i>
+          <p class="-mt-4">Hapus Semua</p>
+        </a></button>
+    </div>
+  </div>
+  <!-- end button -->
+
+  <!-- Tabel -->
+  <table class="border-collapse border font-thin text-sm border-slate-200  w-full mt-12">
+    <tr class="text-center text-white font-light h-10 bg-main-gray-0">
+      <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-12 p-2"></th>
+      <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-16 p-2">Tanggal</th>
+      <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-7 p-2">Jam</th>
+      <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-80 p-2">Tindakan</th>
+      <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-52 p-2">Harga Netto</th>
+      <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-16  p-2">Qty</th>
+      <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-48 p-2">SubTotal</th>
+      <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-24 p-2">Cito</th>
+      <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-36 p-2"></th>
+      <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-4 p-2"></th>
+    </tr>
+
+    <div class="overflow-y-auto">
+      <tr class="text-center text-white font-light h-10 w-full bg-main-gray-0">
+        <td class="border border-gray-500 border-b-white p-5"></td>
+        <td class="border border-gray-500 border-b-white p-5"></td>
+        <td class="border border-gray-500 border-b-white p-5"></td>
+        <td class="border border-gray-500 border-b-white p-5"></td>
+        <td class="border border-gray-500 border-b-white p-5"></td>
+        <td class="border border-gray-500 border-b-white p-5"></td>
+        <td class="border border-gray-500 border-b-white p-5"></td>
+        <td class="border border-gray-500 border-b-white p-5"></td>
+        <td class="border border-gray-500 border-b-white p-5"></td>
+        <td class="border border-gray-500 border-b-white p-5"></td>
+      </tr>
+  </table>
+  <!-- end table -->
+
+  <!-- Pagination -->
+  <div class="bg-main-gray-0">
+    <div class="bg-main-gray-0 py-[7px] flex items-center gap-2">
+      <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+        <i class="fa fa-solid fa-backward-step text-white"></i>
+      </div>
+      <div class="rounded-full border w-6 h-6 flex hover:bg-main-blue-0 items-center justify-center">
+        <i class="fa fa-solid fa-play text-white fa-rotate-180"></i>
+      </div>
+      <div class="rounded-full border w-6 h-6 flex items-center justify-center">
+        <h2 class="text-white">1</h2>
+      </div>
+      <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+        <i class="fa fa-solid fa-play text-white"></i>
+      </div>
+      <div class="rounded-full border w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+        <i class="fa fa-solid fa-forward-step text-white"></i>
+      </div>
+      <div class="flex">
+        <select name="pasien"
+          class="block w-16 ml-6 text-white bg-main-gray-0 border border-gray-500 rounded-md py-1 hover:bg-main-blue-0">
+          <option class="bg-[#313235] text-[12px] text-white">Semuanya</option>
+          <option class="bg-[#313235] text-white">5</option>
+          <option class="bg-[#313235] text-white">10</option>
+          <option class="bg-[#313235] text-white">20</option>
+        </select>
+        <p class=" ml-2 text-white text-sm mt-1">data per halaman</p>
+      </div>
+      <span class="text-white absolute right-3">Tidak ada data<i class="fa fa-refresh ml-2"></i>
+    </div>
+  </div>
+  <!-- end Pagination -->
+
+  <!-- isi -->
+
+  <div class="flex flex-col">
+    <p class=" mt-5 ml-2 text-[14px]">** Kuning : Tarif Berdasarkan Penjamin</p>
+    <div class="border border-black w-80 h-10 rounded-xl ml-[1020px] -mt-9">
+      <p class="mt-2 ml-2">Total</p>
+    </div>
+  </div>
+  <!-- end isi -->
+
+  <!-- button -->
+  <div class="flex flex-wrap-2 gap-3 mt-4 float-right">
+    <div class="px- 1" id="step_12">
+      <button class="bg-[#41abf2] text-white font-bold text-[12px] py-1 px-7 w-52 border rounded mt-1 h-9"
+        type="search"><a href="index4.html"><i class="fa fa-arrow-left font-bold -ml-36 mt-1"></i>
+          <p class="-mt-4"><a href="detail_biaya.html">Kembali</a></p>
+        </a></button>
+    </div>
+    <div class="px-1 mr-1" id="step_13">
+      <button class="bg-[#05B72A] text-white font-bold text-[12px] w-52 py-1 px-7 border rounded mt-1 h-9"
+        type="search"><a href="#"><i class="fa fa-save -ml-28"></i>
+          <p class="-mt-4">Simpan</p>
+        </a></button>
+    </div>
+  </div>
+  <!-- end button -->
+
+  <!-- Tabel -->
+  <table class="border-collapse border font-thin text-sm mt-16 h-52 border-slate-200 w-full">
+    <tr class="text-center text-white font-light bg-main-gray-0">
+      <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-3 p-2"></th>
+      <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-16 p-2">Tanggal</th>
+      <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-7 p-2">Jam</th>
+      <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-80 p-2">Tindakan</th>
+      <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-52 p-2">Harga Netto</th>
+      <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-16  p-2">Qty</th>
+      <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-48 p-2">Total</th>
+      <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-3 p-2"></th>
+    </tr>
+
+    <!-- Data data -->
+    <div class="overflow-y-auto ">
+      <tr class="font-light text-black text-center h-8 hover:bg-blue-400 hover:text-gray-700">
+        <td class="border"></td>
+        <td class="border truncate">14-03-2023</td>
+        <td class="border">12.04</td>
+        <td class="border border-b-[#ffff00] bg-[#ffff00] text-left">Echocardiography (USG Cardiac)</td>
+        <td class="border uppercase">Rp. 1,100,000.00</td>
+        <td class="border">1</td>
+        <td class="border text-right">1,100,000.00</td>
+        <td class="border"></td>
+      </tr>
+      <tr class="font-light text-black text-center h-8 hover:bg-blue-400 hover:text-gray-700">
+        <td class="border"></td>
+        <td class="border truncate">14-03-2023</td>
+        <td class="border">12.04</td>
+        <td class="border border-b-[#ffff00] bg-[#ffff00] text-left">ECG (Electrocardiography)</td>
+        <td class="border uppercase">Rp. 150,000.00</td>
+        <td class="border">1</td>
+        <td class="border text-right">150,000.00</td>
+        <td class="border"></td>
+      </tr>
+      <tr class="font-light text-black text-center h-8 hover:bg-blue-400 hover:text-gray-700">
+        <td class="border"></td>
+        <td class="border truncate">14-03-2023</td>
+        <td class="border">12.04</td>
+        <td class="border border-b-[#ffff00] bg-[#ffff00] text-left"> Administrasi Rawat Jalan Poliklinik</td>
+        <td class="border uppercase">Rp. 50,000.00</td>
+        <td class="border">1</td>
+        <td class="border text-right">50,000.00</td>
+        <td class="border"></td>
+      </tr>
+      <tr class="font-light text-black text-center h-8 hover:bg-blue-400 hover:text-gray-700">
+        <td class="border"></td>
+        <td class="border truncate">14-03-2023</td>
+        <td class="border">12.04</td>
+        <td class="border border-b-[#ffff00] bg-[#ffff00] text-left"> Konsultasi Dokter Spesialis</td>
+        <td class="border uppercase">Rp. 150,000.00</td>
+        <td class="border">1</td>
+        <td class="border text-right">150,000.00</td>
+        <td class="border"></td>
+      </tr>
+      <tr class="font-light text-black text-center h-8 hover:bg-blue-400 hover:text-gray-700">
+        <td class="border"></td>
+        <td class="border truncate">14-03-2023</td>
+        <td class="border">12.04</td>
+        <td class="border border-b-[#ffff00] bg-[#ffff00] text-left">Jasa Sarana Poliklinik Spesialis</td>
+        <td class="border uppercase">Rp. 30,000.00</td>
+        <td class="border">1</td>
+        <td class="border text-right">30,000.00</td>
+        <td class="border"></td>
+      </tr>
+  </table>
+  <!-- end data -->
+
+  <!-- Pagination -->
+  <div class="bg-main-gray-0">
+    <div class="bg-main-gray-0 py-[7px] flex items-center gap-2">
+      <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+        <i class="fa fa-solid fa-backward-step text-white"></i>
+      </div>
+      <div class="rounded-full border w-6 h-6 flex hover:bg-main-blue-0 items-center justify-center">
+        <i class="fa fa-solid fa-play text-white fa-rotate-180"></i>
+      </div>
+      <div class="rounded-full border w-6 h-6 flex items-center justify-center">
+        <h2 class="text-white">1</h2>
+      </div>
+      <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+        <i class="fa fa-solid fa-play text-white"></i>
+      </div>
+      <div class="rounded-full border w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+        <i class="fa fa-solid fa-forward-step text-white"></i>
+      </div>
+      <div class="flex">
+        <select name="pasien"
+          class="block w-16 ml-6 text-white bg-main-gray-0 border border-gray-500 rounded-md py-1 hover:bg-main-blue-0">
+          <option class="bg-[#313235] text-[12px] text-white">Semuanya</option>
+          <option class="bg-[#313235] text-white">5</option>
+          <option class="bg-[#313235] text-white">10</option>
+          <option class="bg-[#313235] text-white">20</option>
+        </select>
+        <p class=" ml-2 text-white text-sm mt-1">data per halaman</p>
+      </div>
+      <span class="text-white absolute right-3">NaN - NaN of 5 items<i class="fa fa-refresh ml-2"></i>
+    </div>
+  </div>
+  <!-- end Pagination -->
+  <div class="h-5"></div>
+
+  <script>
+    document.getElementById('tour').addEventListener('click', function () {
+      const wt = new WebTour();
+      const steps = [
+        {
+          //checkbox paket
+          element: '#step_1',
+          title: '',
+          content: 'digunakan jika layanan yang digunakan berbentuk paket',
+          placement: 'right-start',
+        },
+        {
+          //tanggal pelayanan
+          element: '#step_2',
+          title: '',
+          content: 'berfungsi untuk memasukan tanggal pelayanan yang diberikan ',
+          placement: 'right-start',
+        },
+        {
+          //nama pelayanan
+          element: '#step_3',
+          title: '',
+          content: 'berfungsi untuk memasukan nama pelayanan yang diberikan ',
+          placement: 'right-start',
+        },
+        {
+          //harga
+          element: '#step_4',
+          title: '',
+          content: 'berfungsi untuk memasukan harga dari pelayanan',
+          placement: 'right-start',
+        },
+        {
+          //jumlah
+          element: '#step_5',
+          title: '',
+          content: 'berfungsi untuk melihat jumlah pelayanan',
+          placement: 'left-end',
+        },
+        {
+          //status cito
+          element: '#step_6',
+          title: '',
+          content: 'berfungsi untuk mengelompokan pelayanan tersebut cito atau bukan',
+          placement: 'left-end',
+        },
+        {
+          //jenis pelaksana
+          element: '#step_7',
+          title: '',
+          content: 'berfungsi untuk memilih jenis pelaksana dari pelayanan',
+          placement: 'right-start',
+        },
+        {
+          //petugas pelaksana
+          element: '#step_8',
+          title: '',
+          content: 'berfungsi untuk memilih dan memasukan petugas pelaksana dari pelayanan',
+          placement: 'right-start',
+        },
+        {
+          //checkbox dilakukan oleh perawat
+          element: '#step_9',
+          title: '',
+          content: 'di centang jika pelayanan dilakukan oleh perawat',
+          placement: 'left-end',
+        },
+        {
+          //tombol tambah tindakan
+          element: '#step_10',
+          title: '',
+          content: 'berfungsi untuk menambah tindakan',
+          placement: 'left-end',
+        },
+        {
+          //hapus semua 
+          element: '#step_11',
+          title: '',
+          content: 'berfungsi untuk menghapus tindakan',
+          placement: 'left-end',
+        },
+        {
+          //kembali
+          element: '#step_12',
+          title: '',
+          content: 'berfungsi untuk kembali ke halaman sebelumnya',
+          placement: 'left-end',
+        },
+        {
+          //simpan
+          element: '#step_13',
+          title: '',
+          content: 'berfungsi untuk menyimpan layanan yang barusan ditambahkan',
+          placement: 'left-end',
+        },
+      ];
+
+      wt.setSteps(steps);
+      wt.start();
+    });
+  </script>
+</body>
+
+</html>

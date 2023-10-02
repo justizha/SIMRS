@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Transmedic | Bayar</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="icon" href="https://apps.transmedic.co.id:2200/app/images/favicon.ico" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/dist/output.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css"
+    integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://unpkg.com/webtour@1.1.0/dist/webtour.min.css" />
+  <script src="https://unpkg.com/webtour@1.1.0/dist/webtour.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen overflow-x-hidden font-comfortaa">
+  <!-- navbar -->
+  <nav class="bg-[#28292b] text-white p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div class="flex mt-1">
+      <img src="../../img/Menu Logo.png" class="mt-1 w-10 h-11 pt--6 pb-3" alt="" />
+      <div class="flex flex-col">
+        <span class="text-3xl font-Comfortaa font-bold">
+          <a class="text-white mt-2 ml-3" href="#">TRANS<a href="#" class="text-[#FE0000] font-semibold">M</a><a href=""
+              class="font-bold">EDIC</a></a>
+        </span>
+        <span class="ml-4 italic">E-Healthcare / RS TRANSMEDIC</span>
+      </div>
+      <div class="absolute right-4 py-3">
+        <button class="px-2 py-2 w-10 h-11 bg-[#363940] rounded-md text-lg" id="tour">?</button>
+        <span class="px-2 py-2 bg-[#363940] rounded-md text-lg">ABOUT</span>
+      </div>
+    </div>
+  </nav>
+  <!-- end navbar -->
+
+  <div class="py-2 text-white" style="background-color: #41abf2">
+    <div class="container ml-4 text-justify text-3xl font-light" style="font-family: 'Poppins', sans-serif">Pembayaran
+      Tagihan Non Layanan</div>
+  </div>
+
+  <div class="flex flex-wrap-12 -mx-3 mb-1 ml-4 mt-2">
+    <div class="w-full px-3 fl">
+      <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-last-name"> Nama
+        Pelanggan</label>
+      <input
+        class="block w-full text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600"
+        type="text" />
+    </div>
+
+    <!-- <div class="flex flex-wrap-12 -mx-3 mb-1 ml-4"> -->
+    <div class="w-full px-3 fl">
+      <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-last-name"> Kelompok
+        transaksi</label>
+      <input
+        class="block w-full text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600"
+        type="text" />
+    </div>
+
+    <div class="w-full px-3 fl">
+      <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-last-name"> Kelompok
+        pasien</label>
+      <input
+        class="block w-full text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600"
+        type="text" />
+    </div>
+
+    <div class="w-full px-3 fl">
+      <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-last-name"> Penjamin</label>
+      <input
+        class="block w-full text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600"
+        type="text" />
+    </div>
+
+    <div class="w-full px-3 fl mt-8">
+      <input type="checkbox" />
+      <label for="">Piutang</label>
+    </div>
+  </div>
+
+  <div class="py-1 mt-4 text-white" style="background-color: #41abf2">
+    <div class="container ml-4 text-justify font-light" style="font-family: 'Poppins', sans-serif">Rincian Layanan</div>
+  </div>
+
+  <div class="overflow-x-auto">
+    <table class="w-full table-zebra table-fixed text-left border font-thin text-sm">
+      <tr class="text-center text-white font-light bg-[#313235]">
+        <th class="border border-gray-500 w-72 p-2 text-justify">Tagihan</th>
+        <th class="border border-gray-500 w-72 p-2 text-justify">Keterangan</th>
+        <th class="border border-gray-500 w-10 p-2 text-justify">Qty</th>
+        <th class="border border-gray-500 w-36 p-2 text-justify">Qty Per Org/ Per Km</th>
+        <th class="border border-gray-500 w-20 p-2 text-justify">Harga</th>
+        <th class="border border-gray-500 w-20 p-2 text-justify">Jasa</th>
+        <th class="border border-gray-500 w-20 p-2 text-justify">Diskon</th>
+        <th class="border border-gray-500 w-20 p-2 text-justify">Total</th>
+      </tr>
+
+      <tr class="font-light text-black text-right hover:bg-[#41abf2]">
+        <td class="border w-[330px] p-2">
+          <p class="float-left">EPERISONE 50 MG TABLET</p>
+        </td>
+        <td class="border w-[116px] p-2"></td>
+        <td class="border w-[335px] p-2">10</td>
+        <td class="border w-[284px] p-2"></td>
+        <td class="border p-2">1588</td>
+        <td class="border p-2">0</td>
+        <td class="border p-2">0</td>
+        <td class="border p-2">0</td>
+      </tr>
+      <tr class="text-right font-light text-black bg-gray-100 hover:bg-[#41abf2]">
+        <td class="border p-2">
+          <p class="float-left">ALPENTIN, GABAPENTIN 100 MG KAPSUL</p>
+        </td>
+        <td class="border p-2 truncate"></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"></td>
+        <td class="border p-2">1868</td>
+        <td class="border p-2">0</td>
+        <td class="border p-2">0</td>
+        <td class="border p-2">0</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="flex flex-wrap-12 -mx-0 mb-1 ml-96 mt-2">
+    <div class="w-full px-3 fl ml-72">
+      <label class="block tracking-wide text-gray-700 text-1 text-left font-bold mb-2" for="grid-last-name"> Total
+        billing</label>
+      <input
+        class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[300px] h-7 mt-1 bg-gray-200 hover:bg-white" />
+      <p class="-mt-6 ml-2 text-gray-500" />
+      73210
+    </div>
+    <div class="w-full px-3 fl">
+      <label class="block tracking-wide text-gray-700 text-1 text-left font-bold mb-2" for="grid-last-name"> Total
+        diskon</label>
+      <input
+        class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[300px] h-7 mt-1 bg-gray-200 hover:bg-white" />
+      <p class="-mt-6 ml-2 text-gray-500" />
+      0
+    </div>
+  </div>
+
+  <div class="flex flex-wrap-12 -mx-0 mb-1 ml-96 mt-3">
+    <div class="w-full px-3 fl ml-72">
+      <label class="block tracking-wide text-gray-700 text-1 text-left font-bold mb-2" for="grid-last-name"> Total harus
+        dibayar </label>
+      <input
+        class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[300px] h-7 mt-1 bg-gray-200 hover:bg-white" />
+      <p class="-mt-6 ml-2 text-gray-500" />
+      73210
+    </div>
+    <div class="w-full px-3">
+      <label class="block tracking-wide text-gray-700 text-1 text-left font-bold mb-2" for="grid-last-name"> Total
+        dijamin </label>
+      <input
+        class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300 w-[300px] h-7 mt-1 bg-gray-200 hover:bg-white" />
+      <p class="-mt-6 ml-2 text-gray-500" />
+    </div>
+  </div>
+
+  <!-- button footer -->
+  <div class="flex flex-wrap-2 gap-3 float-right mt-16 mr-10">
+    <div class="px-1" id="step_1">
+      <button class="bg-[#41abf2] text-white font-bold w-32 text-[12px] mt-1 h-8 py-1 px-7 border rounded"
+        type="search"><a href="daftar_non_layanan.html">Kembali</a></button>
+    </div>
+    <div class="px-1" id="step_2">
+      <button class="bg-[#41abf2] text-white font-bold w-32 text-[12px] h-8 mt-1 px-7 border rounded"
+        type="search">Diskon</button>
+    </div>
+    <div class="px- 1" id="step_3">
+      <button class="bg-[#41abf2] text-white font-bold w-32 text-[12px] py-1 px-7 border rounded mt-1 h-8"
+        type="search"><a href="bayar_tagihan_non_layanan.html">Bayar</a></button>
+    </div>
+  </div>
+  <div class="h-64"></div>
+
+  <script>
+    document.getElementById('tour').addEventListener('click', function () {
+      const wt = new WebTour();
+      const steps = [
+        {
+          //tombol kembali
+          element: '#step_1',
+          title: '',
+          content: 'berfungsi untuk kembali ke halaman sebelumnya',
+          placement: 'top-end',
+        },
+        {
+          //tombol diskon
+          element: '#step_2',
+          title: '',
+          content: 'Berfungsi untuk menginput diskon',
+          placement: 'top-end',
+        },
+        {
+          //tombol bayar1
+          element: '#step_3',
+          title: '',
+          content: 'Berfungsi untuk membayar tagihan pasien.',
+          placement: 'top-end',
+        },
+      ];
+
+      wt.setSteps(steps);
+      wt.start();
+    });
+  </script>
+</body>
+
+</html>
