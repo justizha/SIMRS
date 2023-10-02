@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="./img/icon-removebg.png">
+</head>
+<body class="font-['poppins']">
+  <nav class="bg-white border-b-2 mx-3 border-b-black text-white p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div class="flex mt-1">
+      <div class="vector" id="vector">
+        <a href="#">
+        <button id="MobileMenuBtn"><img class="w-10 h-12 pb-1 fill-white" src="./img/navbar.png" alt="" onclick="Open()" ></button>
+        </a>
+      </div>
+        <div class="flex flex-col mb-2 mt-1">
+            <span class="text-3xl font-bold">
+                <a class="text-black ml-3" href="#">TRANS<a href="#" class="text-red-600 font-bold">M</a><a href="" class="font-bold text-black">EDIC</a></a>
+            </span>
+        </div>
+        <div class="absolute right-4 py-3 text-black font-bold">
+          <a href="../Home/home.html"><span class="px-5 py-2 rounded-md text-lg">HOME</span></a>
+          <a href="#About"><span class="px-6 py-2 rounded-md text-lg">ABOUT</span></a>
+          <a href="#FAQ"><span class="px-3 py-2 rounded-md text-lg">FAQ</span></a>
+        </div>
+  </div>
+</nav>
+<div class="bg-gray-50 z-10 absolute top-0 shadow left-0 h-screen w-52  transform -translate-x-full transition-transform duration-300 ease-in-out border-r font-['poppins']" id="mobile-menu">
+  <div class="text-center text-3xl font-bold mt-4">transmedic<span class="text-center text-4xl font-bold text-red-600">.</span></div>
+  <ul class="list-none p-2 items-center mt-5">
+    <a href="../../Registrasi pasien/registrasi.html"><li class="font-medium flex items-center gap-1 rounded-md px-4 duration-300 cursor-pointer hover:bg-gray-200 text-xl py-2"><img class="w-6 h-6" src="./img/reg.png" alt="">Registrasi</li></a>
+    <a href="../../Layanan medik/perawat.html"><li class="font-medium flex items-center gap-1 rounded-md px-4 duration-300 cursor-pointer hover:bg-gray-200 text-xl py-2"><img class="w-6 h-6" src="./img/hospital-bed.png" alt="">Perawat</li></a>
+    <a href="../Home/farmasi.html"><li class="font-medium flex items-center gap-1 rounded-md px-4 duration-300 cursor-pointer hover:bg-gray-200 text-xl py-2"><img class="w-6 h-6" src="./img/obat.png" alt="">Farmasi</li></a>
+    <a href="../Home/kasir.html"><li class="font-medium flex items-center gap-1 rounded-md px-4 duration-300 cursor-pointer hover:bg-gray-200 text-xl py-2"><img class="w-6 h-6" src="./img/cashier-machine.png" alt="">Kasir</li></a>
+    <a href="../Home/laboratorium.html"><li class="font-medium flex items-center gap-1 rounded-md px-4 duration-300 cursor-pointer hover:bg-gray-200 text-xl py-2"><img class="w-6 h-6" src="./img/science.png" alt="">Laboratorium</li></a>
+  </ul>
+</div>
+
+<div>
+  <h1 class="text-6xl font-black text-red-600 text-center mt-40"> Organize All of Your Hospital</h1>
+  <h1 class="text-6xl font-black text-red-600 text-center mt-3">Information With Only One Platform</h1>
+  <h2 class="text-xl font-medium text-gray-600 text-center mt-5">no more information delay in your hospital system with more than 60+ module to organizing your data</h2>
+</div>
+
+<hr class="mt-36 mx-20 h-px bg-gray-200 border-0 dark:bg-gray-600 ">
+
+<section id="About">
+<div class="font-poppins text-left p-24 text-3xl font-bold">About<span class="text-center text-4xl font-bold text-red-600">.</span>
+  <h2 class="font-poppins text-red-600 text-3xl font-bold p-7 mt-5">Latar Belakang</h2>
+  <p class="px-7 text-lg text-gray-600 font-medium font-poppins ">Jasa medika transmedic adalah perusahaan yang menyediakan layanan dan solusi dalam pemanfaatan Sistem Informasi yang tepat dan terintegrasi khususnya di bidang kesehatan (Sistem Informasi Manajemen Rumah Sakit/SIMRS) dan pendidikan. Dengan memadukan pengalaman dan pemahaman yang telah teruji, kami mampu memberikan solusi yang berkualitas untuk memenuhi segala kebutuhan Bisnis Anda.Tim kami terdiri lebih dari 150 programmer yang berpengalaman dalam merancang solusi terbaik untuk klien kami.</p>
+
+  <div class="p-7 mt-5">
+  <h2 class="font-poppins text-red-600 text-3xl font-bold">Apakah visi dan misi kami?</h2>
+  <p class="text-xl text-gray-600 font-bold mt-5">Visi</p>
+  <p class="text-xl text-gray-600 font-medium mt-2">Menjadi perusahaan yang dapat memberikan, menyediakan dan mengembangkan solusi Informasi Teknologi (IT) yang tepat untuk seluruh klien dan fasilitas kesehatan di Indonesia.</p>
+  <p class="text-xl text-gray-600 font-bold mt-5">Misi</p>
+  <ul class="list-disc list-inside items-center mt-5">
+    <li class="text-gray-600 font-medium text-xl">Menjadi pembuat dan pengembang piranti lunak SIMRS dan kesehatan paripurna yang bermutu dan sesuai dengan harapan pelanggan</li>
+    <li class="text-gray-600 font-medium text-xl">Memberikan pelayanan jasa konsultasi dalam bidang SIMRS dan kesehatan.</li>
+    <li class="text-gray-600 font-medium text-xl">Memberikan solusi dalam penggunaan SIMRS dan kesehatan.</li>
+    <li class="text-gray-600 font-medium text-xl">Menjadi wahana pendidikan dan penelitian dalam bidang SIMRS dan Kesehatan.</li>
+  </ul>
+  </div>
+
+  <div class="p-7 mt-5">
+    <h2 class="font-poppins text-red-600 text-3xl font-bold">Apa nilai-nilai kami</h2>
+    <p class="text-xl text-gray-600 font-medium mt-5">Nilai-nilai kami adalah keselamatan, kenyamanan, dan profesionalisme. Kami selalu mengutamakan keselamatan dan kenyamanan pasien, dan kami selalu memberikan layanan yang profesional.</p>
+    </div>
+
+    <div class="p-7 mt-5 ">
+      <h2 class="font-poppins text-red-600 text-3xl font-bold">Apa produk dan layanan yang kami tawarkan?</h2>
+      <p class="text-xl text-gray-600 font-medium mt-5">SIMRS, RME, Telemedicine, E-Klinik, PACS, HRIS, LIS, Nurse Assistant, Kios-K, MEDISis</p>
+      <ul class="list-disc list-inside items-center mt-5">
+    <li class="text-gray-600 font-medium text-xl">Kami adalah reseller resmi dan terpercaya untuk software, aplikasi, lisensi Microsoft, Kaspersky Antivirus, Zimbra Mail Server, dan lain-lain.</li>
+    <li class="text-gray-600 font-medium text-xl">Kami membantu Anda dalam membangun aplikasi yang didesain spesifik dan khusus mulai dari sistem informasi berbasis desktop, web hingga mobile Android dan iOS untuk memenuhi kebutuhan bisnis Anda.</li>
+  </ul>
+  </div>
+
+  <div class="p-7 mt-5">
+    <h2 class="font-poppins text-red-600 text-3xl font-bold">Siapa saja partner kami?
+    </h2>
+    <p class="text-xl text-gray-600 font-medium mt-5">PT Pesona Scientific & Pesona Satwa, RSJP Paramarta, BPJS, Arogaya AI. WE+Insurance Marketplace, Anta Medica, NEC, DELL, BNI, OCBC NISP, SAMSUNG, Telkom Indonesia, SATUSEHAT, TeMP.</p>
+    </div>
+
+    <div class="p-7 mt-5">
+      <h2 class="font-poppins text-red-600 text-3xl font-bold">Siapa saja klien kami?</h2>
+      <p class="text-xl text-gray-600 font-medium mt-5">PT Pesona Scientific & Pesona Satwa, RSJP Paramarta, BPJS, Arogaya AI. WE+Insurance Marketplace, Anta Medica, NEC, DELL, BNI, OCBC NISP, SAMSUNG, Telkom Indonesia, SATUSEHAT, TeMP.</p>
+      </div>
+
+      <div class="p-7 mt-5">
+        <h2 class="font-poppins text-red-600 text-3xl font-bold">Apa saja penghargaan yang telah kami raih?</h2>
+        <p class="text-xl text-gray-600 font-medium mt-5">PT Pesona Scientific & Pesona Satwa, RSJP Paramarta, BPJS, Arogaya AI. WE+Insurance Marketplace, Anta Medica, NEC, DELL, BNI, OCBC NISP, SAMSUNG, Telkom Indonesia, SATUSEHAT, TeMP.</p>
+        <ul class="list-disc list-inside items-center mt-5">
+          <li class="text-gray-600 font-medium text-xl">Tahun 2017 sesudah menggunakan SIMRS menargetkan pendapatan sebesar Rp.215 miliar, realisasinya melebihi target mencapai Rp. 247 miliar.</li>
+          <li class="text-gray-600 font-medium text-xl">Mendapatkan Perhargaan “Public Service of the year 2018” dan “Marketeer of the Year Surabaya Marketing Champion 2018”.</li>
+          <li class="text-gray-600 font-medium text-xl">“The Inspiring and Innovative Hospital 2018” Penghargaan karena sukses melakukan inovasi-inovasi berbasis digital dalam pelayanan, sehingga mampu mengoptimalkan pelayanan kepada masyarakat.</li>
+          <li class="text-gray-600 font-medium text-xl">Top Digital Award 2021” TOP DIGITAL Implementation 2021.</li>
+        </ul>
+        </div>
+      
+        <div class="p-7 mt-5">
+          <h2 class="font-poppins text-red-600 text-3xl font-bold">Apa yang dikatakan klien tentang kami?</h2>
+          <p class="text-xl text-gray-600 font-medium mt-5">Klien kami mengatakan bahwa kami adalah perusahaan yang memberikan layanan yang berkualitas, profesional, dan terjangkau. Mereka juga mengatakan bahwa kami selalu mengutamakan keselamatan dan kenyamanan pasien.</p>
+          </div>
+        
+          <div class="p-7 mt-5">
+            <h2 class="font-poppins text-red-600 text-3xl font-bold">Bagaimana cara menghubungi kami?</h2>
+            <p class="text-xl text-gray-600 font-medium mt-5">Anda dapat menghubungi kami melalui telepon, email, atau website kami. Kami akan dengan senang hati menjawab pertanyaan Anda dan memberikan informasi lebih lanjut tentang layanan kami.</p>
+            </div>
+</div>
+</section>
+
+<hr class="mt-5 mx-20 h-px bg-gray-200 border-0 dark:bg-gray-600 ">
+
+<section id="FAQ">
+<div class="font-poppins text-left p-24 text-3xl font-bold">FAQ<span class="text-center text-4xl font-bold text-red-600">.</span>
+  <h2 class="font-poppins text-red-600 text-3xl font-bold p-7 mt-5">Apa itu SIMRS?</h2>
+  <p class="px-7 text-xl text-gray-600 font-medium font-poppins ">Sistem Informasi Rumah Sakit (SIMRS) adalah suatu sistem teknologi informasi komunikasi yang memproses dan mengintegrasikan seluruh alur proses pelayanan Rumah Sakit dalam bentuk jaringan koordinasi, pelaporan dan prosedur administrasi untuk memperoleh informasi secara tepat dan akurat, dan merupakan bagian dari Sistem Informasi Kesehatan.</p>
+
+  
+  <div class="p-7 mt-5 ">
+    <h2 class="font-poppins text-red-600 text-3xl font-bold">Modul apa saja yang terdapat dalam website ini?</h2>
+    <p class="text-xl text-gray-600 font-medium mt-5">Dalam website ini terdapat beberapa modul seperti :</p>
+    <ul class="list-disc list-inside items-center mt-5">
+  <li class="text-gray-600 font-medium text-xl">modul registrasi</li>
+  <li class="text-gray-600 font-medium text-xl">modul kasir</li>
+  <li class="text-gray-600 font-medium text-xl">modul perawat</li>
+  <li class="text-gray-600 font-medium text-xl">modul laboratium</li>
+</ul>
+</div>
+
+<div class="p-7 mt-5 ">
+    <h2 class="font-poppins text-red-600 text-3xl font-bold">Apa yang dimaksud dengan KIOSK?</h2>
+    <p class="text-xl text-gray-600 font-medium mt-5">KIOSK adalah sebuah mesin yang dapat memudahkan pasien rumah sakit untuk:</p>
+    <ul class="list-disc list-inside items-center mt-5">
+  <li class="text-gray-600 font-medium text-xl">Pendaftaran dan check-in</li>
+  <li class="text-gray-600 font-medium text-xl">Jadwal dan janji temu</li>
+  <li class="text-gray-600 font-medium text-xl">Informasi kesehatan</li>
+  <li class="text-gray-600 font-medium text-xl">Pembayaran dan klaim asuransi</li>
+  <li class="text-gray-600 font-medium text-xl">Pendaftaran keadaan darurat</li>
+  <li class="text-gray-600 font-medium text-xl">Pengisian resep obat</li>
+</ul>
+</div>
+
+<div class="p-7 mt-5">
+  <h2 class="font-poppins text-red-600 text-3xl font-bold">Apakah saya harus menginput semua data pasien?</h2>
+  <p class="text-xl text-gray-600 font-medium mt-5">Perawat harus menginput semua data pasien jika datanya lengkap tapi jika tidak diharapkan form yang bertanda bintang merah harus di isi.</p>
+  </div>
+
+  <div class="p-7 mt-5">
+    <h2 class="font-poppins text-red-600 text-3xl font-bold">Apakah data yang sudah di input bisa dihapus?</h2>
+    <p class="text-xl text-gray-600 font-medium mt-5">Itu bisa dilakukan jika data yang diinput ada yang salah atau bisa dilakukan pengeditan data.</p>
+    </div>
+
+  </section>
+
+
+  
+</body>
+<script >
+   const mobileMenuBtn = document.getElementById("MobileMenuBtn");
+const mobile = document.getElementById("mobile-menu");
+
+mobileMenuBtn.addEventListener("click", () => {
+    mobile.classList.toggle("translate-x-0");
+});
+
+// Add a click event listener to the document to close the sidebar when clicking outside of it
+document.addEventListener("click", (event) => {
+    if (!mobileMenuBtn.contains(event.target) && !mobile.contains(event.target)) {
+        mobile.classList.remove("translate-x-0");
+    }
+});
+
+</script>
+</html>

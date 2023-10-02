@@ -8,7 +8,7 @@ const data = [
         Alamat :"Bandung 29",
         NoTelp : "005945894",
         NoHP : "09086930",
-    },
+    },    
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
@@ -18,7 +18,7 @@ const data = [
         Alamat :"Bandung 29",
         NoTelp : "005945894",
         NoHP : "09086930",
-    },
+    },    
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
@@ -28,7 +28,7 @@ const data = [
         Alamat :"Bandung 29",
         NoTelp : "005945894",
         NoHP : "09086930",
-    },
+    },    
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
@@ -38,7 +38,7 @@ const data = [
         Alamat :"Bandung 29",
         NoTelp : "005945894",
         NoHP : "09086930",
-    },
+    },    
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
@@ -48,7 +48,7 @@ const data = [
         Alamat :"Bandung 29",
         NoTelp : "005945894",
         NoHP : "09086930",
-    },
+    },    
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
@@ -58,7 +58,7 @@ const data = [
         Alamat :"Bandung 29",
         NoTelp : "005945894",
         NoHP : "09086930",
-    },
+    },    
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
@@ -68,7 +68,7 @@ const data = [
         Alamat :"Bandung 29",
         NoTelp : "005945894",
         NoHP : "09086930",
-    },
+    },    
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
@@ -78,7 +78,7 @@ const data = [
         Alamat :"Bandung 29",
         NoTelp : "005945894",
         NoHP : "09086930",
-    },
+    },    
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
@@ -88,7 +88,7 @@ const data = [
         Alamat :"Bandung 29",
         NoTelp : "005945894",
         NoHP : "09086930",
-    },
+    },    
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
@@ -98,7 +98,7 @@ const data = [
         Alamat :"Bandung 29",
         NoTelp : "005945894",
         NoHP : "09086930",
-    },
+    },    
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
@@ -108,7 +108,7 @@ const data = [
         Alamat :"Bandung 29",
         NoTelp : "005945894",
         NoHP : "09086930",
-    },
+    },    
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
@@ -118,7 +118,7 @@ const data = [
         Alamat :"Bandung 29",
         NoTelp : "005945894",
         NoHP : "09086930",
-    },
+    },    
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
@@ -128,7 +128,7 @@ const data = [
         Alamat :"Bandung 29",
         NoTelp : "005945894",
         NoHP : "09086930",
-    },
+    },    
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
@@ -138,7 +138,7 @@ const data = [
         Alamat :"Bandung 29",
         NoTelp : "005945894",
         NoHP : "09086930",
-    },
+    },    
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
@@ -148,7 +148,7 @@ const data = [
         Alamat :"Bandung 29",
         NoTelp : "005945894",
         NoHP : "09086930",
-    },
+    },    
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
@@ -158,7 +158,7 @@ const data = [
         Alamat :"Bandung 29",
         NoTelp : "005945894",
         NoHP : "09086930",
-    },
+    },    
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
@@ -168,7 +168,7 @@ const data = [
         Alamat :"Jalan Pesantren No. 48-D RT.07 RW.08 Kelurahan Sukamiskin Kecamatan Arcamanik Bandung - 40293",
         NoTelp : "005945894",
         NoHP : "09086930",
-    },
+    },    
     {
         NoRekamMedis : "0001",
         NamaPasien : "Test0001",
@@ -178,8 +178,8 @@ const data = [
         Alamat :"Bandung 29",
         NoTelp : "005945894",
         NoHP : "09086930",
-    },
-]
+    },    
+]    
 
 document.addEventListener('DOMContentLoaded', function () {
     const dataLoop = document.getElementById('dataLoop');
@@ -192,13 +192,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 const cell = document.createElement('td');
                 cell.textContent = item[key];
                 row.appendChild(cell);
-            }
-        }
+            }    
+        }    
         if (index % 2 === 0) {
             row.classList.add('bg-gray-100'); 
-        }
+        }    
         dataLoop.appendChild(row);
-    });
-});
+    });    
+});    
 
 

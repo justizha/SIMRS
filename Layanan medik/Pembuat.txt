@@ -1,0 +1,9 @@
+Jojo	: Modul Layanan medik >  Daf.pas.raw.jalan
+
+Melvin	: Modul Layanan medik >  Daf.pas.raw.jalan
+
+Alif	: Modul Layanan medik >  Daf.pas.raw.inap >  Tampilan awal
+
+Hanifah	: Modul Layanan medik >  Daf.pas.raw.inap >  Rekam medis dan navigasi
+
+Radit	: Modul Layanan medik >  Daf.pas.raw.inap >  EMR, Vital sign, Resep elektronik

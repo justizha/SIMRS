@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/webtour@1.1.0/dist/webtour.min.css">
+    <script src="https://unpkg.com/webtour@1.1.0/dist/webtour.min.js"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="../img/icon-removebg.png" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Rawat Jalan</title>
+</head>
+
+
+
+<body class="min-h-screen font-['Comfortaa'] z-10">
+    <!-- Navbar Hitam -->
+    <header>
+        <nav class="bg-black border-b-2 border-b-black text-white p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div class="flex mt-1">
+              <div class="vector" id="vector">
+                <img id="toggleSidebar" class="w-10 h-12 pb-1 fill-white cursor-pointer" src="../img/menu.svg" alt="" />
+              </div>
+              <div class="flex flex-col">
+                <span class="text-3xl font-Comfortaa font-bold">
+                  <a class="text-white mt-2 ml-3" href="#">TRANS<a href="#" class="text-[#FE0000] font-semibold">M</a><a href="" class="font-bold">EDIC</a></a>
+                </span>
+                <span class="ml-4 italic">E-Healthcare / RS TRANSMEDIC</span>
+              </div>
+              <div class="absolute right-4 py-3 font-bold" id="navbarButtons">
+                <a href="../../Dashboard/Home/home.html">
+                    <span class="px-5 py-4 rounded-md text-lg">HOME</span>
+                  </a>
+                  <a href="../../Dashboard/About/about.html#About">
+                    <span class="px-6 py-2 rounded-md text-lg">ABOUT</span>
+                  </a>
+                  <a href="../../Dashboard/About/about.html#FAQ">
+                    <span class="px-3 py-2 rounded-md text-lg">FAQ</span>
+                  </a>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+            <!-- Sidebar -->
+            <aside
+            class="bg-gray-800 w-72 fixed inset-y-0 left-0 transform -translate-x-full transition-transform z-30 duration-300 ease-in-out"
+            id="sidebar">
+            <!-- Sidebar Content -->
+            <div class="p-4 text-white">
+                <!-- Navigation -->
+                <div class="flex items-center">
+                    <span class="material-symbols-outlined text-white text-4xl mr-4">
+                        <a id="close">menu</a>
+                    </span>
+                    <p class="font-poppins font-semibold w-full">Navigasi</p>
+                </div>
+                <br>
+
+                <div class="dropdown w-full">
+                    <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400"
+                        onclick="toggleDropdown()">Modul Perawat
+                    </button>
+                    <div class="dropdown-content w-full transition-transform opacity-0 transform scale-y-0 origin-top ease-in-out duration-300"
+                        id="myDropdown">
+                        <div class="hover:bg-blue-400 ml-2 flex">
+                            <span class="material-symbols-outlined w-[20%]">
+                                inpatient
+                            </span>
+                            <a href="./Rawat_Jalan_Tabel.html" class="w-full font-light">Daftar Pasien Rawat Jalan</a>
+                        </div>
+                        <div class="hover:bg-blue-400 ml-2 flex">
+                            <span class="material-symbols-outlined w-[20%]">
+                                short_stay
+                            </span>
+                            <a href="../Daftar pasien rawat inap/Daftar_Pasien_Rawat_Inap.html" class="w-full font-light">Daftar Pasien Rawat Inap</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="z-10" id="mainContent">
+            <!-- Your main content goes here -->
+        </main>
+
+        <!-- Dark Overlay for Main Content -->
+        <div class="fixed inset-0 bg-black opacity-50 z-20" id="mainContentOverlay" style="display: none;"></div>
+
+    <!-- Navbar Biru -->
+    <div class="bg-[#41ABF2] text-white p-1 relative">
+        <p class="p-2 text-3xl">Daftar Pasien Rawat Jalan</p>
+        <a href="javascript:void(0)" onclick="torutial()" class="bg-gray-600 rounded-md py-2 text-white my-1.5 text-2xl bottom-1 w-12 h-11 text-center font-bold absolute right-1 m-2 hover:bg-gray-500">?</a>
+      </div>
+
+    <!-- Input Searching Berdasarkan -->
+    <div class="flex flex-row font-poppins m-2.5 mb-3" id="searching">
+        <!-- Input Tanggal Masuk -->
+        <div>
+            <label for="tglmasuk"><span class="text-black block font-semibold mb-1 ml-0.5">Tanggal Masuk</span>
+                <input type="datetime-local" id="tglmasuk"
+                    class="px-2 w-52 h-8 block mr-2.5 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200">
+        </div>
+
+        <div>
+            <input type="datetime-local"
+                class="px-2 w-52 mt-[28px] h-8 block border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200">
+        </div>
+
+        <!-- No RM -->
+        <div>
+            <label for="norm"><span class="text-black block font-semibold mb-1 ml-2.5">No RM</span>
+                <input type="text" id="noregis"
+                    class="px-2 w-36 h-8 mx-2.5 block border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200">
+        </div>
+
+        <!-- Nomor Registrasi -->
+        <div>
+            <label for="noregis"><span class="text-black block font-semibold mb-1 ml-0.5">Nomor Registrasi</span>
+                <input type="text" id="noregis"
+                    class="px-2 w-52 h-8 block border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200">
+        </div>
+
+        <!-- Nama Pasien -->
+        <div>
+            <label for="namapasien"><span class="text-black block font-semibold mb-1 ml-2.5">Nama Pasien</span>
+                <input type="text" id="namapasien"
+                    class="px-2 w-52 h-8 block border mx-2.5 border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200">
+        </div>
+
+        <!--Nama Ruangan-->
+        <div>
+            <label for="ruangan"><span class="text-black block font-semibold mb-1 ml-0.5">Nama Ruangan</span>
+                <select
+                    class="px-1 w-52 h-8 block border border-blue-500 rounded-md focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200">
+                    <option class="bg-slate-700" selected disabled hidden>Pilih Ruangan...</option>
+                    <option class="bg-slate-700 text-white">BE Ambulance</option>
+                    <option class="bg-slate-700 text-white">ET ICU/ICVCU</option>
+                    <option class="bg-slate-700 text-white">ET IGD</option>
+                    <option class="bg-slate-700 text-white">ET RAJAL</option>
+                    <option class="bg-slate-700 text-white">ET RANAP</option>
+                    <option class="bg-slate-700 text-white">FARMASI</option>
+                    <option class="bg-slate-700 text-white">Hemato Onkologi Medis</option>
+                    <option class="bg-slate-700 text-white">IGD</option>
+                </select>
+        </div>
+
+        <div class="bg-slate-700 rounded-lg ml-3 flex justify-center items-center h-7 w-7 mt-[30px]">
+            <span class="material-symbols-outlined text-white">
+                search
+            </span>
+        </div>
+    </div>
+
+    <!-- Table Pasien -->
+    <div class="m-2 grid grid-cols-4 gap-2" id="table">
+
+        <!-- Table Data -->
+        <div class="bg-slate-800 w-full mr-2 border border-blue-400 col-span-3">
+            <!-- Export To Excel -->
+            <div class="w-full border border-slate-600">
+                <!-- Buttonnya -->
+                <div class="ml-1 w-40 h-8 border border-slate-500 rounded-lg my-1 flex items-center hover:bg-blue-400">
+                    <i class="p-0.5 m-1 ml-2 flex fa fa-file-text text-white"></i>
+                    <span class="ml-0.5 text-white flex items-center text-sm font-poppins">Eksport To Excel</span>
+                </div>
+            </div>
+
+            <!-- Butuh Java Script -->
+            <div class="w-full border border-slate-600">
+                <p class="text-white my-1 mx-1 font-poppins">Tarik untuk mengelompokan data</p>
+            </div>
+
+            <!-- Table head nya -->
+            <div class="flex">
+                <div class="overflow-x-auto">
+                    <table class="table-auto border-collapse border-spacing-0 w-full">
+                        <tr class="text-white font-poppins text-xs h-10">
+                            <td class="border border-slate-600"></td>
+                            <td class="border border-slate-600"></td>
+                            <td class="border border-slate-600 hover:bg-blue-400 overflow-auto ">
+                                <div class="block resize-x overflow-auto">No</div>
+                            </td>
+                            <td class="border border-slate-600 hover:bg-blue-400 overflow-auto">
+                                <div class="block resize-x overflow-auto">Tgl Registrasi</div>
+                            </td>
+                            <td class="border border-slate-600 hover:bg-blue-400 overflow-auto">
+                                <div class="block resize-x overflow-auto">Jam Pelayanan</div>
+                            </td>
+                            <td class="border border-slate-600 hover:bg-blue-400 overflow-auto">
+                                <div class="block resize-x overflow-auto">No RM</div>
+                            </td>
+                            <td class="border border-slate-600 hover:bg-blue-400 overflow-auto">
+                                <div class="block resize-x overflow-auto">No Registrasi</div>
+                            </td>
+                            <td class="border border-slate-600 hover:bg-blue-400 overflow-auto">
+                                <div class="block resize-x overflow-auto">Nama Pasien</div>
+                            </td>
+                            <td class="border border-slate-600 hover:bg-blue-400 overflow-auto">
+                                <div class="block resize-x overflow-auto">Tgl Lahir</div>
+                            </td>
+                            <td class="border border-slate-600 hover:bg-blue-400 overflow-auto">
+                                <div class="block resize-x overflow-auto">Umur</div>
+                            </td>
+                            <td class="border border-slate-600 hover:bg-blue-400 overflow-auto">
+                                <div class="block resize-x overflow-auto">Dokter</div>
+                            </td>
+                            <td class="border border-slate-600 hover:bg-blue-400 overflow-auto">
+                                <div class="block resize-x overflow-auto">Dokter Residen</div>
+                            </td>
+                            <td class="border border-slate-600 hover:bg-blue-400 overflow-auto">
+                                <div class="block resize-x overflow-auto">Jenis Kelamin</div>
+                            </td>
+                            <td class="border border-slate-600 hover:bg-blue-400 overflow-auto">
+                                <div class="block resize-x overflow-auto">Tipe Pembayaran</div>
+                            </td>
+                            <td class="border border-slate-600 hover:bg-blue-400 overflow-auto">
+                                <div class="block resize-x overflow-auto">Kelas</div>
+                            </td>
+                            <td class="border border-slate-600 hover:bg-blue-400 overflow-auto">
+                                <div class="block resize-x overflow-auto">Kelas Ditanggung</div>
+                            </td>
+                            <td class="border border-slate-600 hover:bg-blue-400 overflow-auto">
+                                <div class="block resize-x overflow-auto">Alamat</div>
+                            </td>
+                            <td class="border border-slate-600 hover:bg-blue-400 overflow-auto">
+                                <div class="block resize-x overflow-auto">Kode Diagnosa</div>
+                            </td>
+                            <td class="border border-slate-600 hover:bg-blue-400 overflow-auto">
+                                <div class="block resize-x overflow-auto">Panggil</div>
+                            </td>
+                            <td class="border border-slate-600 hover:bg-blue-400 overflow-auto">
+                                <div class="block resize-x overflow-auto">Status</div>
+                            </td>
+                            <td class="border border-slate-600 hover:bg-blue-400 overflow-auto">
+                                <div class="block resize-x overflow-auto">Mobile JKN</div>
+                            </td>
+                            <td class="border border-slate-600 hover:bg-blue-400 overflow-auto">
+                                <div class="block resize-x overflow-auto">Status JKN</div>
+                            </td>
+                            <td class="border border-slate-600 hover:bg-blue-400 overflow-auto">
+                                <div class="block resize-x overflow-auto">No Reservasi</div>
+                            </td>
+                            <td class="border border-slate-600 hover:bg-blue-400 overflow-auto">
+                                <div class="block resize-x overflow-auto">Panggil Ulang</div>
+                            </td>
+                        </tr>
+
+                        <!-- Isinya -->
+                        <tr class="bg-white hover:bg-red-200">
+                            <td class="border border-slate-600 w-auto">
+                                <div class="m-2 bg-green-400 text-white rounded-md px-1 h-6 w-[60px]">Panggil</div>
+                            </td>
+                            <td class="border border-slate-600 text-black">✔</td>
+                            <td class="border border-slate-600">1</td>
+                            <td class="border border-slate-600">25-08-2023</td>
+                            <td class="border border-slate-600">02.28</td>
+                            <td class="border border-slate-600">2345677</td>
+                            <td class="border border-slate-600">08291833</td>
+                            <td class="border border-slate-600">Adit Radi</td>
+                            <td class="border border-slate-600">11 September 2006</td>
+                            <td class="border border-slate-600">16</td>
+                            <td class="border border-slate-600">Dr. Rohayani</td>
+                            <td class="border border-slate-600"></td>
+                            <td class="border border-slate-600">Laki - Laki</td>
+                            <td class="border border-slate-600">Umum / Pribadi</td>
+                            <td class="border border-slate-600">Kelas A</td>
+                            <td class="border border-slate-600"></td>
+                            <td class="border border-slate-600">Jl. Atletik XIII No. 5, Arcamanik, Bandung</td>
+                            <td class="border border-slate-600">021292929</td>
+                            <td class="border border-slate-600">
+                                <div class="bg-green-400 rounded-lg flex items-center text-white h-7 w-7">
+                                    <span class="text-white material-symbols-outlined m-0.5">
+                                        call
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="border border-slate-600">
+                                <div class="bg-green-400 rounded-sm flex items-center text-white h-7 w-8">
+                                    Baik
+                                </div>
+                            </td>
+                            <td class="border border-slate-600"></td>
+                            <td class="border border-slate-600"></td>
+                            <td class="border border-slate-600 truncate">02919210</td>
+                            <td class="border border-slate-600">
+                                <div class="bg-green-400 rounded-lg flex items-center text-white h-7 w-7">
+                                    <span class="text-white material-symbols-outlined m-0.5">
+                                        call
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="bg-slate-800 border border-slate-600 w-10">.</div>
+            </div>
+
+            <div class="flex items-center">
+                <!-- Paginate -->
+                <div class="w-[88%] bg-slate-800 rounded-none">
+                    <div class="my-1 ml-1">
+                        <nav class="block">
+                            <ul class="flex pl-0 rounded list-none flex-wrap">
+                                <li>
+                                    <a href="#"
+                                        class="hover:bg-cyan-600 first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-slate-400 text-white">
+                                        << </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="hover:bg-cyan-600 first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-slate-400 text-white">
+                                        < </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="bg-cyan-600 active ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative text-white active:bg-cyan-600">
+                                        0
+                                    </a>
+                                </li>
+                                <a href="#"
+                                    class=" hover:bg-cyan-600 first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-slate-400 text-white">
+                                    >
+                                </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="hover:bg-cyan-600 first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-slate-400 text-white">
+                                        >>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <p class="text-slate-200 font-poppins text-sm">1 - 1 of 1 items</p>
+            </div>
+        </div>
+
+        <!-- Table Telepon -->
+        <div class="bg-slate-800 border border-blue-400 h-28">
+            <!-- Butuh Java Script -->
+            <div class="w-full border border-slate-600">
+                <p class="text-white my-1 mx-1 font-poppins text-sm">Tarik untuk mengelompokan data</p>
+            </div>
+
+            <!-- Table Phone -->
+            <div class="flex">
+                <table class="table-fixed w-full">
+                    <tr class="text-white font-poppins text-xs overflow-hidden">
+                        <td class="border border-slate-600 truncate hover:bg-blue-400 w-24 h-10">No Antri</td>
+                        <td class="border border-slate-600 truncate hover:bg-blue-400 w-20 h-10">Pasien</td>
+                        <td class="border border-slate-600 truncate hover:bg-blue-400 w-20 h-10">Panggil</td>
+                    </tr>
+
+                    <tr class="font-poppins text-xs overflow-hidden bg-white hover:bg-red-200">
+                        <td class="border border-slate-600 truncate">1</td>
+                        <td class="border border-slate-600 truncate">08291833 - Adit Radit</td>
+                        <td class="border border-slate-600 truncate" id="memanggil">
+                            <div class="bg-green-400 rounded-lg flex items-center h-7 w-7">
+                                <span class="text-white material-symbols-outlined m-0.5">
+                                    call
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- DIV Kosong -->
+                <div class="bg-slate-800 border border-slate-600 w-5">.</div>
+            </div>
+
+            <div class="flex items-center bg-slate-800">
+                <!-- Paginate -->
+                <div class="w-[65%] bg-slate-800 rounded-none">
+                    <div class="my-1 ml-1">
+                        <nav class="block">
+                            <ul class="flex rounded list-none flex-wrap">
+                                <li>
+                                    <a href="#"
+                                        class="hover:bg-cyan-600 first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-slate-400 text-white">
+                                        << </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="hover:bg-cyan-600 first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-slate-400 text-white">
+                                        < </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="bg-cyan-600 active ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative text-white active:bg-cyan-600">
+                                        0
+                                    </a>
+                                </li>
+                                <a href="#"
+                                    class=" hover:bg-cyan-600 first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-slate-400 text-white">
+                                    >
+                                </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="hover:bg-cyan-600 first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-slate-400 text-white">
+                                        >>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <p class="text-slate-200 font-poppins text-xs">1 - 1 of 1 items</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- LIST OF BUTTON -->
+    <div id="button">
+        <span class="grid grid-cols-6 gap-4 mx-2 mt-4   ">
+            <p class="font-semibold col-start-5 w-full">Jml Row</p>
+            <p class="font-semibold col-start-6 w-full">Ruangan Antrian</p>
+        </span>
+
+        <div class="my-5 mx-3 grid grid-cols-6 gap-4 mt-0.5">
+            <div class="bg-blue-400 rounded-lg flex items-center text-white h-8">
+                <div class="flex justify-start">
+                    <span class="text-white material-symbols-outlined m-1.5">
+                        stethoscope
+                    </span>
+                </div>
+                <div class="flex justify-center w-full">
+                    <p>Pengkajian Medis</p>
+                </div>
+            </div>
+
+            <div class="bg-blue-400 rounded-lg flex items-center text-white h-8">
+                <div class="flex justify-start">
+                    <span class="text-white material-symbols-outlined m-1.5">
+                        person
+                    </span>
+                </div>
+                <div class="flex justify-center w-full">
+                    <p>Pilih Dokter</p>
+                </div>
+            </div>
+
+        <a href="../EMR/EMR.html">
+            <div class="bg-red-400 rounded-lg flex items-center text-white h-8" id="emr">
+                <div class="flex justify-start">
+                    <span class="text-white material-symbols-outlined m-1.5">
+                        stethoscope
+                    </span>
+                </div>
+                <div class="flex justify-center w-full">
+                    <p>EMR</p>
+                </div>
+            </div>
+        </a>
+
+            <div class="bg-blue-400 rounded-lg flex items-center text-white h-8">
+                <div class="flex justify-start">
+                    <span class="text-white material-symbols-outlined m-1.5">
+                        call
+                    </span>
+                </div>
+                <div class="flex justify-center w-full">
+                    <p>Input Insiden Internal</p>
+                </div>
+            </div>
+
+            <div>
+                <input type="text" id="rows"
+                    class="px-2 w-28 block border border-blue-500 rounded-md py-0.5 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600"
+                    value="200">
+            </div>
+
+            <div>
+                <select id="ruangan"
+                    class="h-7 w-full block border border-b-2 border-blue-500 rounded-md focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600">
+                    <option class="bg-slate-700" selected disabled hidden></option>
+                    <option class="bg-slate-700 text-white">Clinic 01</option>
+                    <option class="bg-slate-700 text-white">Clinic 02</option>
+                    <option class="bg-slate-700 text-white">Clinic 03</option>
+                    <option class="bg-slate-700 text-white">Clinic 04</option>
+                    <option class="bg-slate-700 text-white">Clinic 05</option>
+                    <option class="bg-slate-700 text-white">Clinic 06</option>
+                    <option class="bg-slate-700 text-white">RUANG PERAWAT</option>
+                    <option class="bg-slate-700 text-white">RUANG DIAGNOSTIK</option>
+                </select>
+            </div>
+
+            <div class="bg-blue-400 rounded-lg flex items-center text-white h-8">
+                <div class="flex justify-start">
+                    <span class="text-white material-symbols-outlined m-1.5">
+                        print
+                    </span>
+                </div>
+                <div class="flex justify-center w-full">
+                    <p>Surat Sakit</p>
+                </div>
+            </div>
+
+            <div class="bg-blue-400 rounded-lg flex items-center text-white h-8" id="sehat">
+                <div class="flex justify-start">
+                    <span class="text-white material-symbols-outlined m-1.5">
+                        print
+                    </span>
+                </div>
+                <div class="flex justify-center w-full">
+                    <p>Surat Sehat</p>
+                </div>
+            </div>
+
+            <div class="bg-blue-400 rounded-lg flex items-center text-white h-8">
+                <div class="flex justify-start">
+                    <span class="text-white material-symbols-outlined mx-1.5">
+                        print
+                    </span>
+                </div>
+                <div class="flex justify-center w-full">
+                    <p>Surat Dokter</p>
+                </div>
+            </div>
+
+            <div class="bg-green-400 rounded-lg flex items-center text-white h-8">
+                <div class="flex justify-start">
+                    <span class="text-white material-symbols-outlined mx-1.5">
+                        print
+                    </span>
+                </div>
+                <div class="flex justify-center w-full">
+                    <p>Perjanjian Kontrol</p>
+                </div>
+            </div>
+
+            <div class="bg-blue-400 rounded-lg flex items-center text-white h-8">
+                <div class="flex justify-start">
+                    <span class="text-white material-symbols-outlined m-1.5">
+                        hotel
+                    </span>
+                </div>
+                <div class="flex justify-center w-full">
+                    <p>Meninggal</p>
+                </div>
+            </div>
+
+            <div class="bg-blue-400 rounded-lg flex items-center text-white h-8">
+                <div class="flex justify-start">
+                    <span class="text-white material-symbols-outlined m-1.5">
+                        print
+                    </span>
+                </div>
+                <div class="flex justify-center w-full">
+                    <p>Surat Pengatar Keluar</p>
+                </div>
+            </div>
+
+            <div class="bg-green-600 rounded-lg flex items-center text-white h-8" id="panggilnurse">
+                <div class="flex justify-start">
+                    <span class="text-white material-symbols-outlined m-1.5">
+                        call
+                    </span>
+                </div>
+                <div class="flex justify-center w-full">
+                    <p>Panggil Perawat</p>
+                </div>
+            </div>
+
+            <div class="bg-green-600 rounded-lg flex items-center justify-center text-white h-8">
+                <p>Selesai</p>
+            </div>
+
+            <div class="bg-green-200 rounded-lg flex items-center text-white h-8">
+                <div class="flex justify-start">
+                    <span class="text-white material-symbols-outlined m-1.5">
+                        sync
+                    </span>
+                </div>
+                <div class="flex justify-center w-full">
+                    <p class="text-black">SATUSEHAT</p>
+                </div>
+            </div>
+
+            <div class="bg-red-500 rounded-lg flex items-center text-white h-8" id="pulang">
+                <div class="flex justify-start">
+                    <span class="text-white material-symbols-outlined m-1.5">
+                        home
+                    </span>
+                </div>
+                <div class="flex justify-center w-full">
+                    <p>Pulang</p>
+                </div>
+            </div>
+
+            <div class="bg-blue-400 rounded-lg flex items-center text-white h-8">
+                <div class="flex justify-start">
+                    <span class="text-white material-symbols-outlined m-1.5">
+                        stethoscope
+                    </span>
+                </div>
+                <div class="flex justify-center w-full">
+                    <p>Detail Registrasi</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const wt = new WebTour({ borderRadius: 20, width: '500px' });
+        const steps = [
+            {
+                element: '#step_1',
+                title: 'Selamat Datang',
+                content: 'Untuk memulai tutorial penggunaan aplikasi SIMRS, Anda dapat mengetuk tombol "?" yang terletak di kanan atas. Masukkan data pasien sesuai dengan identitas yang berlaku.',
+                placement: 'bottom',
+            },
+            {
+                element: '#step_2',
+                title: 'Note',
+                content: 'Sebelum ke daftar pasien rawat jalan, pastikan anda telah melakukan registrasi pasien rawat jalan pada HIS Registrasi',
+                placement: 'bottom',
+            },
+        ];
+
+        wt.setSteps(steps);
+        wt.start();
+
+        function torutial() {
+            const steps = [
+                {
+                    element: '#searching',
+                    title: 'Cari Pasien',
+                    content: `Cari data pasien rawat jalan yang sebelumnya sudah didaftarkan pada halaman registrasi dengan mengisi salah satu kolom yang tersedia di atas.<br><br> Jika Anda ingin mencari data pasien berdasarkan nama, masukkan nama pasien pada kolom "Nama Pasien" dan klik ikon pencarian (search) yang ada di paling kanan. Begitu juga, jika Anda ingin mencari data pasien dengan menggunakan data lainnya, cukup masukkan data tersebut pada kolom yang sesuai.`,
+                    placement: 'bottom',
+                },
+                {
+                    element: '#table',
+                    title: 'Pilih Pasien',
+                    content: 'Pada bagian ini, adalah data yang muncul setelah Anda mencari data pasien pada bagian sebelumnya, dan Anda dapat memilih salah satu data pasien yang sesuai dengan yang Anda cari dengan cara mengkliknya.',
+                    placement: 'bottom',
+                },
+                {
+                    element: '#button',
+                    title: 'Mengelola Pasien',
+                    content: 'Langkah-langkah ini membantu dalam mengelola pasien dan catatan medis mereka dengan baik selama proses perawatan. Pastikan untuk mengikuti prosedur yang ditetapkan oleh fasilitas kesehatan yang Anda gunakan.',
+                    placement: 'top',
+                },
+                {
+                    element: '#ruangan',
+                    title: '1. Pilih ruang antrian',
+                    content: ``,
+                    placement: 'left-start',
+                },
+                {
+                    element: '#memanggil',
+                    title: '2. Klik tombol "Panggil" untuk memanggil pasien.',
+                    content: ``,
+                    placement: 'left-start',
+                },
+                {
+                    element: '#panggilnurse',
+                    title: 'Memanggil Perawat',
+                    content: `Klik tombol "Panggil Perawat" untuk memanggil perawat yang akan melayani pasien.`,
+                    placement: 'top-start',
+                },
+                {
+                    element: '#emr',
+                    title: 'Pengumpulan Data',
+                    content: `Setelah pemeriksaan, tekan tombol "EMR" (Electronic Medical Record) dan pilih menu "Vital Sign" untuk memasukkan data kuantitatif seperti tekanan darah, suhu tubuh, denyut nadi, dan lainnya.`,
+                    placement: 'top',
+                },
+                {
+                    element: '#sehat',
+                    title: 'Pencetakan Surat',
+                    content: `Anda dapat mencetak beberapa surat yang sudah disediakan dengan mengeklik tombol yang tersedia di bawah.`,
+                    placement: 'top',
+                },
+                {
+                    element: '#pulang',
+                    title: 'Memulangkan Pasien',
+                    content: `Jika pasien telah selesai dalam pemeriksaan, tekan tombol "Pulang" untuk menyelesaikan kunjungan pasien.`,
+                    placement: 'top',
+                },
+            ];
+
+            wt.setSteps(steps);
+            wt.start();
+        }
+
+                // JavaScript code for toggling the sidebar and dropdown
+                const sidebar = document.getElementById('sidebar');
+            const toggleSidebarButton = document.getElementById('toggleSidebar');
+            console.log(sidebar)
+            const closeSidebarButton = document.getElementById('close');
+            const mainContentOverlay = document.getElementById('mainContentOverlay');
+            const dropdownContent = document.getElementById('myDropdown');
+
+            toggleSidebarButton.addEventListener('click', () => {
+                ;
+                sidebar.classList.toggle('-translate-x-full');
+                mainContentOverlay.style.display = 'block';
+            });
+
+            closeSidebarButton.addEventListener('click', () => {
+                sidebar.classList.toggle('-translate-x-full');
+                mainContentOverlay.style.display = 'none';
+            });
+
+            // Close sidebar when clicking outside
+            document.addEventListener('click', (event) => {
+                if (!sidebar.contains(event.target) && event.target !== toggleSidebarButton) {
+                    sidebar.classList.add('-translate-x-full');
+                    mainContentOverlay.style.display = 'none';
+                }
+            });
+
+            function toggleDropdown() {
+                dropdownContent.classList.toggle('opacity-100');
+                dropdownContent.classList.toggle('scale-y-100');
+                dropdownContent.classList.toggle('scale-y-0');
+            }
+
+            // Close the dropdown if the user clicks outside of it
+            window.addEventListener('click', function (event) {
+                if (!event.target.matches('.dropbtn')) {
+                    if (dropdownContent.classList.contains('opacity-100')) {
+                        toggleDropdown();
+                    }
+                }
+            });
+    </script>
+</body>
+
+</html>

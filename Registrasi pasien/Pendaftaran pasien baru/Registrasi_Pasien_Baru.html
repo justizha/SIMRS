@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/webtour@1.1.0/dist/webtour.min.css" />
+    <script src="https://unpkg.com/webtour@1.1.0/dist/webtour.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="icon" type="image/x-icon" href="../img/icon-removebg.png" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Registrasi Pasien Baru</title>
+  </head>
+
+  <body class="min-h-screen font-['Comfortaa'] z-10">
+    <!-- Navbar Hitam -->
+    <header>
+      <nav class="bg-black border-b-2 border-b-black text-white p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="flex mt-1">
+          <div class="vector" id="vector">
+            <img id="toggleSidebar" class="w-10 h-12 pb-1 fill-white" src="../img/menu.svg" alt="" />
+          </div>
+          <div class="flex flex-col">
+            <span class="text-3xl font-Comfortaa font-bold">
+              <a class="text-white mt-2 ml-3" href="#">TRANS<a href="#" class="text-[#FE0000] font-semibold">M</a><a href="" class="font-bold">EDIC</a></a>
+            </span>
+            <span class="ml-4 italic">E-Healthcare / RS TRANSMEDIC</span>
+          </div>
+          <div class="absolute right-4 py-3 font-bold" id="navbarButtons">
+            <a href="../../Dashboard/Home/home.html">
+              <span class="px-5 py-4 rounded-md text-lg">HOME</span>
+            </a>
+            <a href="../../Dashboard/About/about.html#About">
+              <span class="px-6 py-2 rounded-md text-lg">ABOUT</span>
+            </a>
+            <a href="../../Dashboard/About/about.html#FAQ">
+              <span class="px-3 py-2 rounded-md text-lg">FAQ</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="bg-gray-800 w-72 fixed inset-y-0 left-0 transform -translate-x-full transition-transform z-30 duration-300 ease-in-out" id="sidebar">
+      <!-- Sidebar Content -->
+      <div class="p-4 text-white">
+        <!-- Navigation -->
+        <div class="flex items-center">
+          <span class="material-symbols-outlined text-white text-4xl mr-4">
+            <a id="close">menu</a>
+          </span>
+          <p class="font-poppins font-semibold w-full">Navigasi</p>
+        </div>
+        <br />
+
+        <div class="dropdown w-full">
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400" onclick="toggleDropdown()">Modul Registrasi</button>
+          <div class="dropdown-content w-full transition-transform opacity-0 transform scale-y-0 origin-top ease-in-out duration-300" id="myDropdown">
+            <div class="hover:bg-blue-400 ml-2 flex">
+              <span class="material-symbols-outlined w-[20%]"> person_add </span>
+              <a href="./Registrasi_Pasien_Baru.html" class="w-full font-light">Pasien Baru</a>
+            </div>
+            <div class="hover:bg-blue-400 ml-2 flex">
+              <span class="material-symbols-outlined w-[20%]"> how_to_reg </span>
+              <a href="../Pendaftaran pasien lama/pasienlama.html" class="w-full font-light">Pasien Lama</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="z-10" id="mainContent">
+      <!-- Your main content goes here -->
+    </main>
+
+    <!-- Dark Overlay for Main Content -->
+    <div class="fixed inset-0 bg-black opacity-50 z-20" id="mainContentOverlay" style="display: none"></div>
+
+    <!-- Navbar Biru -->
+    <div class="bg-[#41ABF2] text-white p-1 relative">
+      <p class="p-2 text-3xl">Pendaftaran Pasien</p>
+      <img src="img/user.png" alt="" onclick="alert('Tambah User')" class="absolute right-[70px] top-[80px]" />
+      <a href="javascript:void(0)" onclick="torutial()" class="bg-gray-600 rounded-md py-2 text-white my-1.5 text-2xl bottom-1 w-12 h-11 text-center font-bold absolute right-1 m-2 hover:bg-gray-500">?</a>
+    </div>
+
+    <!-- 2 Box (Demografi & Geografi) -->
+    <div class="m-2 grid grid-cols-2 gap-2 min-h-screen">
+      <!-- Demografi -->
+      <div class="bg-white border border-slate-100 shadow">
+        <p class="font-poppins font-medium text-3xl m-1">Demografi</p>
+        <span class="w-full bg-blue-400 block h-[2px]"></span>
+
+        <!-- Gambar Pasien -->
+        <div class="flex mr-2">
+          <div class="rounded-lg border border-slate-300 w-72 h-80 mt-7 ml-2 flex justify-center items-center">
+            <img src="../img/avatar.jpg" class="m-5 w-36" />
+          </div>
+
+          <div class="ml-3 w-full">
+            <!-- NIK -->
+            <div class="mb-2" id="nikdahulu">
+              <span class="text-black block font-medium mb-1 ml-0.5">NIK <span class="text-red-600">*</span></span>
+              <div class="flex w-full">
+                <input type="text" id="nik" class="px-2 w-72 h-8 block border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200" />
+                <!-- Checkbox -->
+                <div class="flex items-center ml-3">
+                  <input type="checkbox" />
+                  <span class="ml-2 font-medium">Cek NIK</span>
+                </div>
+              </div>
+            </div>
+
+            <div id="merah">
+              <!-- Nama Pasien -->
+              <div class="mb-2">
+                <span class="text-black block font-medium mb-1 ml-0.5">Nama Pasien <span class="text-red-600">*</span></span>
+                <input type="text" id="nama" class="px-2 w-full h-8 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200" />
+              </div>
+
+              <div class="grid grid-cols-2 gap-2.5">
+                <!-- Tempat Lahir -->
+                <div>
+                  <span class="text-black block font-medium mb-1 ml-0.5">Tempat Lahir <span class="text-red-600">*</span></span>
+                  <input type="text" class="px-2 w-full h-8 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200" />
+                </div>
+
+                <!-- Tanggal Lahir -->
+                <div>
+                  <span class="text-black block font-medium mb-1 ml-0.5">Tgl Lahir <span class="text-red-600">*</span></span>
+                  <input type="date " class="px-2 w-full h-8 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200" />
+                </div>
+
+                <!-- Jenis Kelamin -->
+                <div>
+                  <span class="text-black block font-medium mb-1 ml-0.5">Jenis Kelamin <span class="text-red-600">*</span></span>
+                  <select class="px-1 w-full h-8 block border border-b-2 border-blue-500 rounded-md focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200">
+                    <option class="bg-slate-700" selected disabled hidden></option>
+                    <option class="bg-slate-700 text-white">LAKI - LAKI</option>
+                    <option class="bg-slate-700 text-white">PEREMPUAN</option>
+                    <option class="bg-slate-700 text-white">TIDAK DAPAT DITENTUKAN</option>
+                    <option class="bg-slate-700 text-white">TIDAK DIKETAHUI</option>
+                    <option class="bg-slate-700 text-white">TIDAK MENGISI</option>
+                  </select>
+                </div>
+
+                <!-- Agama -->
+                <div>
+                  <span class="text-black block font-medium mb-1 ml-0.5">Agama</span>
+                  <select class="px-1 w-full h-8 block border border-b-2 border-blue-500 rounded-md focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200">
+                    <option class="bg-slate-700" selected disabled hidden></option>
+                    <option class="bg-slate-700 text-white">ISLAM</option>
+                    <option class="bg-slate-700 text-white">KRISTEN PROTESTAN</option>
+                    <option class="bg-slate-700 text-white">HINDU</option>
+                    <option class="bg-slate-700 text-white">BUDDHA</option>
+                    <option class="bg-slate-700 text-white">KONGHUCU</option>
+                    <option class="bg-slate-700 text-white">KATHOLIK</option>
+                    <option class="bg-slate-700 text-white">LAINNYA</option>
+                  </select>
+                </div>
+
+                <!-- Status Perkawinan -->
+                <div>
+                  <span class="text-black block font-medium mb-1 ml-0.5">Status Perkawinan</span>
+                  <select class="px-1 w-full h-8 block border border-b-2 border-blue-500 rounded-md focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200">
+                    <option class="bg-slate-700" selected disabled hidden></option>
+                    <option class="bg-slate-700 text-white">BELUM KAWIN</option>
+                    <option class="bg-slate-700 text-white">KAWIN</option>
+                    <option class="bg-slate-700 text-white">CERAI HIDUP</option>
+                    <option class="bg-slate-700 text-white">CERAI MATI</option>
+                  </select>
+                </div>
+
+                <!-- Golongan Darah -->
+                <div>
+                  <span class="text-black block font-medium mb-1 ml-0.5">Golongan Darah</span>
+                  <select class="px-1 w-full h-8 block border border-b-2 border-blue-500 rounded-md focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200">
+                    <option class="bg-slate-700" selected disabled hidden></option>
+                    <option class="bg-slate-700 text-white">-</option>
+                    <option class="bg-slate-700 text-white">A</option>
+                    <option class="bg-slate-700 text-white">B</option>
+                    <option class="bg-slate-700 text-white">O</option>
+                    <option class="bg-slate-700 text-white">AB</option>
+                    <option class="bg-slate-700 text-white">A-</option>
+                    <option class="bg-slate-700 text-white">B-</option>
+                    <option class="bg-slate-700 text-white">O-</option>
+                    <option class="bg-slate-700 text-white">AB-</option>
+                    <option class="bg-slate-700 text-white">A+</option>
+                    <option class="bg-slate-700 text-white">B+</option>
+                    <option class="bg-slate-700 text-white">O+</option>
+                    <option class="bg-slate-700 text-white">AB+</option>
+                    <option class="bg-slate-700 text-white">TIDAK TAHU</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Inputan dibawah avatar -->
+        <div class="grid grid-cols-3 gap-2.5 ml-1.5 mt-3 mr-2" id="informasiTambahan">
+          <!-- Pendidikan -->
+          <div class="col-start-1">
+            <span class="text-black block font-medium mb-1 ml-0.5">Pendidikan</span>
+            <select class="px-1 w-full h-8 block border border-b-2 border-blue-500 rounded-md focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200">
+              <option class="bg-slate-700" selected disabled hidden></option>
+              <option class="bg-slate-700 text-white">TIDAK SEKOLAH</option>
+              <option class="bg-slate-700 text-white">SD</option>
+              <option class="bg-slate-700 text-white">SLTP</option>
+              <option class="bg-slate-700 text-white">SLTA</option>
+              <option class="bg-slate-700 text-white">D1 - D3 SEDERAJAT</option>
+              <option class="bg-slate-700 text-white">D4</option>
+              <option class="bg-slate-700 text-white">S1</option>
+              <option class="bg-slate-700 text-white">S2</option>
+              <option class="bg-slate-700 text-white">S3</option>
+            </select>
+          </div>
+
+          <!-- Pekerjaan -->
+          <div class="col-start-1">
+            <span class="text-black block font-medium mb-1 ml-0.5">Pekerjaan</span>
+            <select class="px-1 w-full h-8 block border border-b-2 border-blue-500 rounded-md focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200">
+              <option class="bg-slate-700" selected disabled hidden></option>
+              <option class="bg-slate-700 text-white">PENSIUNAN</option>
+              <option class="bg-slate-700 text-white">TIDAK BEKERJA</option>
+              <option class="bg-slate-700 text-white">PNS</option>
+              <option class="bg-slate-700 text-white">TNI/POLRI</option>
+              <option class="bg-slate-700 text-white">BUMN</option>
+              <option class="bg-slate-700 text-white">PEGAWAI SWASTA</option>
+              <option class="bg-slate-700 text-white">WIRAUSAHA</option>
+            </select>
+          </div>
+
+          <!-- Etnis -->
+          <div>
+            <span class="text-black block font-medium mb-1 ml-0.5">Etnis</span>
+            <select class="px-1 w-full h-8 block border border-b-2 border-blue-500 rounded-md focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200">
+              <option class="bg-slate-700" selected disabled hidden></option>
+              <option class="bg-slate-700 text-white">-</option>
+              <option class="bg-slate-700 text-white">JAWA</option>
+              <option class="bg-slate-700 text-white">SUNDA</option>
+              <option class="bg-slate-700 text-white">MADURA</option>
+              <option class="bg-slate-700 text-white">MANADO</option>
+              <option class="bg-slate-700 text-white">BALI</option>
+              <option class="bg-slate-700 text-white">DAYAK</option>
+              <option class="bg-slate-700 text-white">BETAWI</option>
+              <option class="bg-slate-700 text-white">*TRIAL</option>
+              <option class="bg-slate-700 text-white">PAPUA</option>
+              <option class="bg-slate-700 text-white">AMBON</option>
+              <option class="bg-slate-700 text-white">PADANG</option>
+              <option class="bg-slate-700 text-white">ACEH</option>
+              <option class="bg-slate-700 text-white">BUGIS</option>
+              <option class="bg-slate-700 text-white">MAKASAR</option>
+              <option class="bg-slate-700 text-white">MELAYU</option>
+              <option class="bg-slate-700 text-white">TIONGHOA</option>
+              <option class="bg-slate-700 text-white">ARAB</option>
+              <option class="bg-slate-700 text-white">KAILI</option>
+              <option class="bg-slate-700 text-white">INDONESIA</option>
+              <option class="bg-slate-700 text-white">BATAK</option>
+              <option class="bg-slate-700 text-white">BANJAR</option>
+              <option class="bg-slate-700 text-white">*TRIAL *TRIAL</option>
+              <option class="bg-slate-700 text-white">ULUN LAMPUNG</option>
+              <option class="bg-slate-700 text-white">EROPA</option>
+              <option class="bg-slate-700 text-white">ASMAT</option>
+              <option class="bg-slate-700 text-white">ATONI</option>
+              <option class="bg-slate-700 text-white">MATAUS</option>
+              <option class="bg-slate-700 text-white">BOJO</option>
+              <option class="bg-slate-700 text-white">BENGKULU</option>
+            </select>
+          </div>
+
+          <!-- Kebangsaan -->
+          <div>
+            <span class="text-black block font-medium mb-1 ml-0.5">Kebangsaan</span>
+            <select class="px-1 w-full h-8 block border border-b-2 border-blue-500 rounded-md focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200">
+              <option class="bg-slate-700" selected disabled hidden></option>
+              <option class="bg-slate-700 text-white">WNI</option>
+              <option class="bg-slate-700 text-white">WNA</option>
+            </select>
+          </div>
+
+          <!-- Negara -->
+          <div class="col-start-1">
+            <span class="text-black block font-medium mb-1 ml-0.5">Negara</span>
+            <select class="px-1 w-full h-8 block border border-b-2 border-blue-500 rounded-md focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200">
+              <option class="bg-slate-700 text-white">BRUNEI DARUSSALAM</option>
+              <option class="bg-slate-700 text-white">FILIPINA</option>
+              <option class="bg-slate-700 text-white" selected>INDONESIA</option>
+              <option class="bg-slate-700 text-white">KAMBOJA</option>
+              <option class="bg-slate-700 text-white">LAOS</option>
+              <option class="bg-slate-700 text-white">MALAYSIA</option>
+              <option class="bg-slate-700 text-white">MYANMAR</option>
+              <option class="bg-slate-700 text-white">SINGAPURA</option>
+              <option class="bg-slate-700 text-white">THAILAND</option>
+              <option class="bg-slate-700 text-white">VIETNAM</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Nomor Identitas -->
+        <span class="w-full bg-slate-100 block h-[2px] mt-2"></span>
+        <div id="nomoridentitas">
+          <div>
+            <p class="font-poppins font-medium text-3xl m-1">Nomor Identitas</p>
+            <span class="w-full bg-blue-400 block h-[2px]"></span>
+          </div>
+
+          <!-- Inputan Inputannya -->
+          <div class="m-2 gap-0.5 grid">
+            <!-- NO BPJS -->
+            <div class="my-2 grid grid-cols-3">
+              <div>
+                <span class="text-black block font-medium mb-1 ml-0.5">No BPJS</span>
+              </div>
+              <div class="col-span-2">
+                <input type="text" class="px-2 w-full h-8 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200" />
+              </div>
+            </div>
+
+            <!-- NO ASURANSI LAIN -->
+            <div class="my-2 grid grid-cols-3">
+              <div>
+                <span class="text-black block font-medium mb-1 ml-0.5">No Asuransi Lain</span>
+              </div>
+              <div class="col-span-2">
+                <input type="text" class="px-2 w-full h-8 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200" />
+              </div>
+            </div>
+
+            <!-- Jenis Identitas -->
+            <div class="my-2 grid grid-cols-3">
+              <div>
+                <span class="text-black block font-medium mb-1 ml-0.5">Jenis Identitas</span>
+              </div>
+              <div class="col-span-2">
+                <select class="px-1 w-full h-8 block border border-b-2 border-blue-500 rounded-md focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200">
+                  <option class="bg-slate-700 text-white" selected disabled hidden></option>
+                  <option class="bg-slate-700 text-white">KTP</option>
+                  <option class="bg-slate-700 text-white">Paspor</option>
+                  <option class="bg-slate-700 text-white">SIM A</option>
+                  <option class="bg-slate-700 text-white">SIM C</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- NO IDENTITAS -->
+            <div class="my-2 grid grid-cols-3">
+              <div>
+                <span class="text-black block font-medium mb-1 ml-0.5">No Identitas</span>
+              </div>
+              <div class="col-span-2">
+                <input type="text" class="px-2 w-full h-8 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200" />
+              </div>
+            </div>
+
+            <!-- Penanggung Jawab Pasien -->
+            <div class="my-2 grid grid-cols-3">
+              <div>
+                <span class="text-black block font-medium mb-1 ml-0.5">Penanggung Jawab Pasien</span>
+              </div>
+
+              <div class="flex w-full items-center">
+                <input type="checkbox" onclick="hide()" />
+                <span class="ml-2 font-medium">Isi Penanggung Jawab</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Penutup Demografi -->
+      </div>
+
+      <!-- Geografi -->
+      <div class="border border-slate-100">
+        <div id="geografi">
+          <p class="font-poppins font-medium text-3xl m-1">Geografi</p>
+          <span class="w-full bg-blue-400 block h-[2px]"></span>
+
+          <!-- INPUTANNYA -->
+          <div class="grid grid-cols-3 gap-2.5 m-2">
+            <!-- Alamat -->
+            <div class="col-span-3">
+              <span class="text-black block font-medium mb-1">Alamat <span class="text-red-600">*</span></span>
+              <textarea class="px-2 w-full h-20 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200 resize-none"></textarea>
+            </div>
+
+            <!-- Kode Pos -->
+            <div>
+              <span class="text-black block font-medium mb-1">Kode Pos</span>
+              <input type="text" class="px-2 w-full h-8 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200" />
+            </div>
+
+            <!-- Kelurahan -->
+            <div class="col-span-2">
+              <span class="text-black block font-medium mb-1">Kelurahan <span class="text-red-600">*</span></span>
+              <select class="px-1 w-full h-8 block border border-b-2 border-blue-500 rounded-md focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200">
+                <option class="bg-slate-700" selected disabled hidden></option>
+                <option class="bg-slate-700 text-white">SUKAMISKIN, Arcamanik, Kota Bandung, Jawa Barat</option>
+                <option class="bg-slate-700 text-white">PASIRHUNI, Cimaung, Kab. Bandung, Jawa Barat</option>
+              </select>
+            </div>
+
+            <!-- Kecamatan -->
+            <div>
+              <span class="text-black block font-medium mb-1">Kecamatan</span>
+              <select class="px-1 w-full h-8 block border border-b-2 border-blue-500 rounded-md focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200">
+                <span class="text-black block font-medium mb-1">Kecamatan</span>
+                <option class="bg-slate-700" selected disabled hidden></option>
+                <option class="bg-slate-700 text-white">ARCAMANIK</option>
+                <option class="bg-slate-700 text-white">CIMAUNG</option>
+              </select>
+            </div>
+
+            <!-- Kota Kabupaten -->
+            <div>
+              <span class="text-black block font-medium mb-1">Kota Kabupaten</span>
+              <select class="px-1 w-full h-8 block border border-b-2 border-blue-500 rounded-md focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200">
+                <option class="bg-slate-700" selected disabled hidden></option>
+                <option class="bg-slate-700 text-white">KOTA BANDUNG</option>
+                <option class="bg-slate-700 text-white">KAB. BANDUNG</option>
+              </select>
+            </div>
+
+            <!-- Propinsi -->
+            <div>
+              <span class="text-black block font-medium mb-1">Propinsi</span>
+              <select class="px-1 w-full h-8 block border border-b-2 border-blue-500 rounded-md focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200">
+                <option class="bg-slate-700" selected disabled hidden></option>
+                <option class="bg-slate-700 text-white">JAWA BARAT</option>
+                <option class="bg-slate-700 text-white">JAWA TENGAH</option>
+              </select>
+            </div>
+          </div>
+
+          <span class="w-full bg-slate-100 block h-[2px] mt-2"></span>
+        </div>
+        <!-- Informasi Tambahan -->
+        <div id="informasi">
+          <div>
+            <p class="font-poppins font-medium text-3xl m-1">Informasi Tambahan</p>
+            <span class="w-full bg-blue-400 block h-[2px]"></span>
+          </div>
+
+          <!-- Inputan Informasi Tambahan -->
+          <div class="m-2 grid">
+            <!-- Nomor Telepon -->
+            <div class="my-2 grid grid-cols-3">
+              <div>
+                <span class="text-black block font-medium mb-1 ml-0.5">No Telepon</span>
+              </div>
+              <div class="col-span-2">
+                <input type="text" class="px-2 w-full h-8 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200" />
+              </div>
+            </div>
+
+            <!-- Nomor HP -->
+            <div class="my-2 grid grid-cols-3">
+              <div>
+                <span class="text-black block font-medium mb-1 ml-0.5">No. HP / Ponsel <span class="text-red-600">*</span></span>
+              </div>
+              <div class="col-span-2">
+                <input type="text" class="px-2 w-full h-8 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200" />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="my-2 grid grid-cols-3">
+              <div>
+                <span class="text-black block font-medium mb-1 ml-0.5">Email</span>
+              </div>
+              <div class="col-span-2">
+                <input type="text" class="px-2 w-full h-8 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200" />
+              </div>
+            </div>
+
+            <!-- Nama Ayah -->
+            <div class="my-2 grid grid-cols-3">
+              <div>
+                <span class="text-black block font-medium mb-1 ml-0.5">Nama Ayah</span>
+              </div>
+              <div class="col-span-2">
+                <input type="text" class="px-2 w-full h-8 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200" />
+              </div>
+            </div>
+
+            <!-- Nama Ibu -->
+            <div class="my-2 grid grid-cols-3">
+              <div>
+                <span class="text-black block font-medium mb-1 ml-0.5">Nama Ibu </span>
+              </div>
+              <div class="col-span-2">
+                <input type="text" class="px-2 w-full h-8 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200" />
+              </div>
+            </div>
+
+            <!-- Nama Keluarga -->
+            <div class="my-2 grid grid-cols-3">
+              <div>
+                <span class="text-black block font-medium mb-1 ml-0.5">Nama Keluarga</span>
+              </div>
+              <div class="col-span-2">
+                <input type="text" class="px-2 w-full h-8 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200" />
+              </div>
+            </div>
+
+            <!-- Nama Suami/Istri -->
+            <div class="my-2 grid grid-cols-3">
+              <div>
+                <span class="text-black block font-medium mb-1 ml-0.5">Nama Suami/Istri </span>
+              </div>
+              <div class="col-span-2">
+                <input type="text" class="px-2 w-full h-8 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Penutup Geografi -->
+      </div>
+    </div>
+
+    <!-- Isi Penanggung Jawab (Required) -->
+    <div class="m-2" id="penanggungjawab" style="display: none">
+      <div class="border border-slate-100 shadow">
+        <p class="font-poppins font-medium text-3xl m-1">Penanggung Jawab Pasien</p>
+        <span class="w-full bg-blue-400 block h-[2px]"></span>
+
+        <!-- Isi -->
+        <div class="grid grid-cols-2 m-1 gap-2.5">
+          <!-- Kiri -->
+          <div>
+            <!-- Nama Penanggung Jawab -->
+            <div class="mb-2">
+              <span class="text-black block font-medium mb-1 ml-0.5">Nama Penanggung Jawab</span>
+              <input type="text" class="px-2 w-full h-8 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200" />
+            </div>
+
+            <!-- Hubungan Dengan Pasien -->
+            <div class="mb-2">
+              <span class="text-black block font-medium mb-1 ml-0.5">Hubungan Dengan Pasien</span>
+              <input type="text" class="px-2 w-full h-8 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200" />
+            </div>
+
+            <!-- Other -->
+            <div class="grid grid-cols-3 gap-2">
+              <!-- No Telepon -->
+              <div>
+                <span class="text-black block font-medium mb-1 ml-0.5">No Telepon</span>
+                <input type="text" class="px-2 w-full h-8 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200" />
+              </div>
+
+              <!-- Bahasa Sehari-hari -->
+              <div>
+                <span class="text-black block font-medium mb-1 ml-0.5">Bahasa Sehari-hari</span>
+                <input type="text" class="px-2 w-full h-8 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200" />
+              </div>
+
+              <!-- Jenis Kelamin -->
+              <div>
+                <span class="text-black block font-medium mb-1 ml-0.5">Jenis Kelamin</span>
+                <select class="px-1 w-full h-8 block border border-b-2 border-blue-500 rounded-md focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200">
+                  <option class="bg-slate-700" selected disabled hidden></option>
+                  <option class="bg-slate-700 text-white">LAKI - LAKI</option>
+                  <option class="bg-slate-700 text-white">PEREMPUAN</option>
+                  <option class="bg-slate-700 text-white">TIDAK DAPAT DITENTUKAN</option>
+                  <option class="bg-slate-700 text-white">TIDAK DIKETAHUI</option>
+                  <option class="bg-slate-700 text-white">TIDAK MENGISI</option>
+                </select>
+              </div>
+
+              <!-- Umur -->
+              <div>
+                <span class="text-black block font-medium mb-1 ml-0.5">Umur</span>
+                <input type="text" class="px-2 w-full h-8 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200" />
+              </div>
+
+              <!-- Pekerjaan -->
+              <div class="col-span-2">
+                <span class="text-black block font-medium mb-1 ml-0.5">Pekerjaan</span>
+                <select class="px-1 w-full h-8 block border border-b-2 border-blue-500 rounded-md focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200">
+                  <option class="bg-slate-700" selected disabled hidden></option>
+                  <option class="bg-slate-700 text-white">PENSIUNAN</option>
+                  <option class="bg-slate-700 text-white">TIDAK BEKERJA</option>
+                  <option class="bg-slate-700 text-white">PNS</option>
+                  <option class="bg-slate-700 text-white">TNI/POLRI</option>
+                  <option class="bg-slate-700 text-white">BUMN</option>
+                  <option class="bg-slate-700 text-white">PEGAWAI SWASTA</option>
+                  <option class="bg-slate-700 text-white">WIRAUSAHA</option>
+                </select>
+              </div>
+
+              <!-- Alat Penanggung Jawab -->
+              <div class="col-span-3">
+                <span class="text-black block font-medium mb-1 ml-0.5">Alat Penanggung Jawab</span>
+                <textarea class="px-2 w-full h-20 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200 resize-none"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kanan -->
+          <div>
+            <!-- Nama Dokter Pengirim -->
+            <div class="mb-2">
+              <span class="text-black block font-medium mb-1 ml-0.5">Nama Dokter Pengirim</span>
+              <input type="text" class="px-2 w-full h-8 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200" />
+            </div>
+
+            <!-- Alamat Dokter Pengirim -->
+            <div class="col-span-3">
+              <span class="text-black block font-medium mb-1 ml-0.5">Alamat Dokter Pengirim</span>
+              <textarea class="px-2 w-full h-20 border border-blue-500 rounded-md py-1 focus:ring-4 focus:ring-blue-200 focus:outline-none focus:border-purple-600 hover:ring-blue-200 resize-none"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button R&G -->
+    <div class="grid grid-cols-6 gap-2">
+      <!-- Red -->
+      <div class="bg-red-500 rounded-lg flex items-center text-white h-8 col-start-5" id="batal">
+        <div class="flex justify-start">
+          <span class="text-white material-symbols-outlined m-1.5"> sync </span>
+        </div>
+        <div class="flex justify-center w-full">
+          <p>Pulang</p>
+        </div>
+      </div>
+
+      <!-- Green -->
+      <div class="bg-green-500 rounded-lg flex items-center text-white h-8" id="simpan">
+        <div class="flex justify-start">
+          <span class="text-white material-symbols-outlined m-1.5"> save </span>
+        </div>
+        <div class="flex justify-center w-full">
+          <p>Simpan</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function hide() {
+        var x = document.getElementById("penanggungjawab");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+
+      // Webtour
+      const wt = new WebTour({ borderRadius: 20, width: "500px" });
+      const steps = [
+        {
+          element: "#step_1",
+          title: "Selamat Datang",
+          content: 'Untuk memulai tutorial penggunaan aplikasi SIMRS, Anda dapat mengetuk tombol "?" yang terletak di kanan atas. Masukkan data pasien sesuai dengan identitas yang berlaku.',
+          placement: "bottom",
+        },
+      ];
+
+      wt.setSteps(steps);
+      wt.start();
+
+      function torutial() {
+        const steps = [
+          {
+            element: "#nikdahulu",
+            title: "NIK",
+            content: 'Masukkan nomor NIK pasien yang sesuai dan centang pada kotak "Cek NIK" untuk melihat bahwa nomor NIK pasien sudah terdaftar, dan sebagian data pasien lainnya akan terisi secara otomatis. ',
+            placement: "bottom",
+          },
+          {
+            element: "#merah",
+            title: "Demografi",
+            content:
+              "Dalam mengisi data pasien, dahulukan kolom yang ditandai dengan bintang merah dan masukkan data pasien sesuai dengan kolom yang disediakan. Untuk kolom yang tidak diberi tanda bintang merah, boleh dikosongkan, tetapi lebih baik untuk diisi agar data dari pasien lengkap.",
+            placement: "right",
+          },
+          {
+            element: "#geografi",
+            title: "Geografi",
+            content:
+              "Dalam mengisi alamat pasien, prioritaskan kolom alamat dan kelurahan. Jika Anda mengisi kolom kelurahan, nama kelurahan yang lengkap akan muncul di bagian bawah kolom setelah Anda mengisi sebagian dari nama kelurahannya, dan data yang lainnya akan terisi secara otomatis.",
+            placement: "left",
+          },
+          {
+            element: "#informasi",
+            title: "Informasi Tambahan",
+            content: "Untuk informasi tambahan, hanya isi kolom No. HP (Nomor Handphone). Untuk kolom yang lainnya, bisa diisi atau tidak sesuai kebutuhan.",
+            placement: "left",
+          },
+          {
+            element: "#informasiTambahan",
+            title: "Data Tambahan",
+            content: "Pada bagian ini, Anda boleh mengisinya atau tidak, tetapi lebih baik mengisi datanya sesuai dengan kolom yang disediakan agar data pasien semakin lengkap.",
+            placement: "right",
+          },
+          {
+            element: "#nomoridentitas",
+            title: "Nomor Identitas",
+            content:
+              'Pada bagian ini juga boleh diisi atau tidak, dan untuk nomor BPJS akan terisi otomatis jika pada kotak "Cek NIK" di atasnya dicentang, dengan catatan pasien tersebut sudah terdaftar di BPJS. Jika Anda mencentang kotak "Penanggung Jawab Pasien," akan muncul kolom tambahan untuk diisi.',
+            placement: "right",
+          },
+          {
+            element: "#simpan",
+            title: "Simpan",
+            content: 'Klik tombol "Simpan" agar data pasien baru yang Anda isi masuk ke data pasien lama.',
+            placement: "top-end",
+          },
+        ];
+        wt.setSteps(steps);
+        wt.start();
+      }
+
+      // JavaScript code for toggling the sidebar and dropdown
+      const sidebar = document.getElementById("sidebar");
+      const toggleSidebarButton = document.getElementById("toggleSidebar");
+      const closeSidebarButton = document.getElementById("close");
+      const mainContentOverlay = document.getElementById("mainContentOverlay");
+      const dropdownContent = document.getElementById("myDropdown");
+
+      toggleSidebarButton.addEventListener("click", () => {
+        sidebar.classList.toggle("-translate-x-full");
+        mainContentOverlay.style.display = "block";
+      });
+
+      closeSidebarButton.addEventListener("click", () => {
+        sidebar.classList.toggle("-translate-x-full");
+        mainContentOverlay.style.display = "none";
+      });
+
+      // Close sidebar when clicking outside
+      document.addEventListener("click", (event) => {
+        if (!sidebar.contains(event.target) && event.target !== toggleSidebarButton) {
+          sidebar.classList.add("-translate-x-full");
+          mainContentOverlay.style.display = "none";
+        }
+      });
+
+      function toggleDropdown() {
+        dropdownContent.classList.toggle("opacity-100");
+        dropdownContent.classList.toggle("scale-y-100");
+        dropdownContent.classList.toggle("scale-y-0");
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.addEventListener("click", function (event) {
+        if (!event.target.matches(".dropbtn")) {
+          if (dropdownContent.classList.contains("opacity-100")) {
+            toggleDropdown();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

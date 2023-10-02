@@ -26,8 +26,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
-
-<body class="font-comfortaa min-h-screen">
+<body class="font-comfortaa">
     <header>
         <nav
             class="bg-black border-b-2 border-b-black text-white p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -86,38 +85,51 @@
                         <a href="/Registrasi pasien/Pendaftaran pasien lama/pasienlama.html">Pasien Lama</a>
                     </div>
                 </div>
+                <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400"
+                    onclick="toggleDropdown2()">Modul
+                    Igd</button>
+                <div class="dropdown-content w-full transition-transform opacity-0 transform scale-y-0 origin-top ease-in-out duration-300"
+                    id="myDropdown1">
+                    <div class="hover:bg-blue-400 ml-2 flex">
+                        <span class="material-symbols-outlined w-[20%]"> person_add </span>
+                        <a href="/src/modul_igd/" class="w-full font-light">Data Pasien</a>
+                    </div>
+                    <div class="hover:bg-blue-400 ml-2 flex">
+                        <span class="material-symbols-outlined w-[20%]"> how_to_reg </span>
+                        <a href="/src/modul_igd/DaftarTriage.html">Daftar Triage</a>
+                    </div>
+                </div>
             </div>
         </div>
     </aside>
-    <div class="bg-main-blue-0 flex items-center py-1 justify-between ">
-        <h1 class="text-white  text-[30px] ml-6">Daftar Pasien Triage Gawat Darurat</h1>
+    <div class="bg-main-blue-0 flex items-center py-1 justify-between">
+        <h1 class="text-white text-[30px] ml-6">Data Pasien</h1>
         <button class="bg-main-gray-0 p-1 mr-6 rounded w-10 h-10 text-white text-lg" id="petunjuk">?</button>
     </div>
     <section class="max-w-7xl relative z-0 mx-1 mt-1">
-        <div class="md:grid-cols-6 md:grid gap-3 flex-col ">
+        <div class="md:grid-cols-6 md:grid gap-3 flex-col">
             <div class="flex flex-col">
-                <label for="No RM" class="text-[14px] font-bold">Periode tanggal</label>
-                <input type="date"
-                    class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300"
-                    id="DateInput">
-            </div>
-            <div class="flex flex-col">
-                <label for="" class="text-white">Periode Tanggal</label>
-                <input type="date"
-                    class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 "
-                    id="DateInput2">
-            </div>
-            <div class="flex flex-col ">
-                <label for="No Rm" class=" text-md">No RM</label>
-                <input type="number" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
+                <label for="No RM" class=" text-md">No RM</label>
+                <input type="text"
+                    class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-full">
             </div>
             <div class="flex flex-col">
                 <label for="Nama Pasien" class=" text-md">Nama Pasien</label>
+                <input type="text"
+                    class="ring-1 rounded hover:shadow focus:outline-none focus:ring focus:border-blue-300 w-full ">
+            </div>
+            <div class="flex flex-col">
+                <label for="Nama Pasien" class=" text-md">Tanggal Lahir</label>
+                <input type="date" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
+            </div>
+            <div class="flex flex-col">
+                <label for="Nama Ayah Kandung" class=" text-md">Nama Ayah Kandung</label>
                 <input type="text" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
             </div>
             <div class="flex flex-col">
-                <label for="Alamat" class=" text-md">Tanggal Lahir</label>
-                <input type="text" class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full">
+                <label for="Alamat" class=" text-md">Alamat</label>
+                <input type="text"
+                    class="ring-1 rounded focus:outline-none focus:ring focus:border-blue-300  w-full lg:w-[350px]">
             </div>
             <div class="flex justify-end mr-6 mt-[23px]">
                 <button class="w-7 h-7 bg-main-gray-0 rounded"><i class="bi bi-arrow-clockwise text-white"></i></button>
@@ -129,45 +141,37 @@
     </div>
     <table class="bg-main-gray-0 w-full border-gray-600 border">
         <thead>
-            <th class="border border-gray-600 text-white text-[13px] w-[100px] hover:bg-main-blue-0 duration-150">No
+            <th class="border border-gray-600 text-white text-[13px] w-[122px] hover:bg-main-blue-0 duration-150">No
                 Rekam Medis</th>
-            <th class="border border-gray-600 text-white text-[13px] w-[260px] hover:bg-main-blue-0 duration-150">Nama
+            <th class="border border-gray-600 text-white text-[13px] w-[160px] hover:bg-main-blue-0 duration-150">Nama
                 Pasien</th>
-            <th class="border border-gray-600 text-white text-[13px] w-[140px] hover:bg-main-blue-0 duration-150 ">Jenis
+            <th class="border border-gray-600 text-white text-[13px]  hover:bg-main-blue-0 duration-150 ">Jenis
                 Kelamin
             </th>
-
-            <th class="border border-gray-600 text-white text-[13px] w-[140px] hover:bg-main-blue-0 duration-150">
-                Tanggal Lahir
+            <th class="border border-gray-600 text-white text-[13px] hover:bg-main-blue-0 duration-150">Nama Ayah
+                Kandung</th>
+            <th class="border border-gray-600 text-white text-[13px] hover:bg-main-blue-0 duration-150">Tanggal Lahir
             </th>
-            <th class="border border-gray-600 text-white text-[13px] w-[290px] hover:bg-main-blue-0 duration-150">
-                Alamat
-            </th>
-            <th class="border border-gray-600 text-white text-[13px] w-[140px] hover:bg-main-blue-0 duration-150">No
-                Telepon</th>
-            <th class="border border-gray-600 text-white text-[13px] w-[140px] hover:bg-main-blue-0 duration-150">No Emr
-            </th>
-            <th class="border border-gray-600 text-white text-[13px] w-[140px] hover:bg-main-blue-0 duration-150">Tgl
-                Emr</th>
-            <th class="border border-gray-600 text-white text-[13px] w-[130px] hover:bg-main-blue-0 duration-150">
-                Noregistrasi
-            </th>
-            <th class="w-[20px]">&nbsp;</th>
+            <th class="border border-gray-600 text-white text-[13px] hover:bg-main-blue-0 duration-150">Alamat</th>
+            <th class="border border-gray-600 text-white text-[13px] hover:bg-main-blue-0 duration-150">No Telepon</th>
+            <th class="border border-gray-600 text-white text-[13px] hover:bg-main-blue-0 duration-150">No HP</th>
+            <th class="">&nbsp;</th>
         </thead>
     </table>
     <div class="h-[300px] overflow-y-auto">
         <table class="w-full border">
             <colgroup>
-                <col style="width: 95px;" class="border border-gray-600 border-b">
-                <col style="width: 230px;" class="border border-gray-600">
-                <col style="width: 128px;" class="border border-gray-600">
-                <col style="width: 127px;" class="border border-gray-600">
-                <col style="width: 250px;" class="border border-gray-600">
-                <col style="width: 128px;" class="border border-gray-600">
-                <col style="width: 125px;" class="border border-gray-600">
-                <col style="width: 125px;" class="border border-gray-600">
+                <col style="width: 114px;" class="border border-gray-600 border-b">
+                <col style="width: 148px;" class="border border-gray-600">
+                <col style="width: 184px;" class="border border-gray-600">
+                <col style="width: 280px;" class="border border-gray-600">
+                <col style="width: 180px;" class="border border-gray-600">
+                <col style="width: 100px;" class="border border-gray-600">
+                <col style="width: 120px;" class="border border-gray-600">
+                <col style="width: 120px;" class="border border-gray-600">
             </colgroup>
             <tbody class="b border border-gray-600 text-[15px]" id="dataLoop">
+                <!-- Your table data goes here -->
             </tbody>
         </table>
     </div>
@@ -189,21 +193,33 @@
                 class="object-contain w-3 h-3 filter brightness-0 invert">
         </div>
     </div>
-    <div class=" mt-2 flex gap-3 justify-end mx-4 mb-1 ">
-        <a href="./TriagePasien/index.html" id="step_1"
-            class="bg-main-blue-0 p-1 rounded text-white text-center text-[20px] w-[400px]">
-            Lihat Triage
-        </a>
-        <button id="step_2" class="bg-main-blue-0 p-1 rounded text-white text-[20px]">Registrasi</button>
-    </div>
-</body>
-<script src="../js/dataTriageIgd.js"></script>
-<script>
-    document.getElementById('DateInput').value = new Date().toISOString().slice(0, 10)
-    document.getElementById('DateInput2').value = new Date().toISOString().slice(0, 10)
+    <div class=" mt-2 flex gap-3 justify-end mx-4">
 
+        <div class=" mt-2 flex gap-4 justify-end mx-4">
+            <div id="step_1" class="">
+                <button class="bg-main-blue-0  rounded text-white text-[20px] w-[400px]">
+                    Input Triage PasienBaru
+                </button>
+            </div>
+            <div id="step_2" class="">
+                <button class="bg-main-blue-0  rounded text-white text-[20px] w-[200px]">
+                    Input Triage
+                </button>
+            </div>
+        </div>
+        <section class="h-10">
+
+        </section>
+
+</body>
+<script type="module" src="../js/dataIgd.js">
+
+
+</script>
+<script>
+    const tour = document.getElementById("petunjuk");
     window.onload = () => {
-        document.getElementById("petunjuk").addEventListener('click', () => {
+        tour.addEventListener('click', () => {
             const wt = new WebTour();
 
             const steps = [
@@ -218,7 +234,7 @@
                     //Registrasi ( bawah ) 
                     element: '#step_2',
                     title: '',
-                    content: 'meregistrasi pasien',
+                    content: 'Membuat rekam medis elektronik ( EMR ) yang baru',
                     placement: 'top-end',
                 },
             ];
@@ -226,6 +242,52 @@
             wt.start();
         })
     }
+    const sidebar = document.getElementById("sidebar");
+    const toggleSidebarButton = document.getElementById("toggleSidebar");
+    const closeSidebarButton = document.getElementById("close");
+    const mainContentOverlay = document.getElementById("mainContentOverlay");
+    const dropdownContent = document.getElementById("myDropdown");
+    const dropdownContent1 = document.getElementById("myDropdown1");
+
+    toggleSidebarButton.addEventListener("click", () => {
+        sidebar.classList.toggle("-translate-x-full");
+        mainContentOverlay.style.display = "block";
+    });
+
+    closeSidebarButton.addEventListener("click", () => {
+        sidebar.classList.toggle("-translate-x-full");
+        mainContentOverlay.style.display = "none";
+    });
+
+    // Close sidebar when clicking outside
+    document.addEventListener("click", (event) => {
+        if (!sidebar.contains(event.target) && event.target !== toggleSidebarButton) {
+            sidebar.classList.add("-translate-x-full");
+            mainContentOverlay.style.display = "none";
+        }
+    });
+
+    function toggleDropdown() {
+        dropdownContent.classList.toggle("opacity-100");
+        dropdownContent.classList.toggle("scale-y-100");
+        dropdownContent.classList.toggle("scale-y-0");
+    }
+    function toggleDropdown2() {
+        dropdownContent1.classList.toggle("opacity-100");
+        dropdownContent1.classList.toggle("scale-y-100");
+        dropdownContent1.classList.toggle("scale-y-0");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.addEventListener("click", function (event) {
+        if (!event.target.matches(".dropbtn")) {
+            if (dropdownContent.classList.contains("opacity-100")) {
+                toggleDropdown();
+            }
+        }
+    });
+
+
 </script>
 
 </html>
