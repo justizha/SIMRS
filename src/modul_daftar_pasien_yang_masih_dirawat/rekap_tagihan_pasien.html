@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0" />
+    <title>Transmedic | Rekap Tagihan Pasien</title>
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/output.css" />
+    <link rel="stylesheet" href="https://unpkg.com/webtour@1.1.0/dist/webtour.min.css" />
+    <script src="https://unpkg.com/webtour@1.1.0/dist/webtour.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/webtour@1.1.0/dist/webtour.min.css" />
+    <script src="https://unpkg.com/webtour@1.1.0/dist/webtour.min.js"></script>
+    <link rel="icon" href="https://apps.transmedic.co.id:2200/app/images/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link rel="icon" href="https://apps.transmedic.co.id:2200/app/images/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css"
+      integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <style></style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="bg-black border-b-2 border-b-black text-white p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div class="flex mt-1">
+        <div class="vector" id="vector">
+          <img id="toggleSidebar" class="w-10 h-12 pb-1 fill-white" src="img/Menu Logo.png" />
+        </div>
+        <div class="flex flex-col">
+          <span class="text-3xl font-Comfortaa font-bold">
+            <a class="text-white mt-2 ml-3" href="#">TRANS<a href="#" class="text-[#FE0000] font-semibold">M</a><a href="" class="font-bold">EDIC</a></a>
+          </span>
+          <span class="ml-4 italic">E-Healthcare / RS TRANSMEDIC</span>
+        </div>
+        <div class="absolute right-4 py-3">
+          <button class="px-2 py-2 w-10 h-11 bg-[#363940] rounded-md text-lg" id="tour">?</button>
+          <span class="px-2 py-2 bg-[#363940] rounded-md text-lg"><a href="../../Dashboard/Home/home.html">Home</a></span>
+        </div>
+      </div>
+    </nav>
+
+    <aside class="bg-gray-800 w-72 fixed inset-y-0 left-0 transform -translate-x-full transition-transform z-30 duration-300 ease-in-out" id="sidebar">
+      <!-- Sidebar Content -->
+      <div class="p-4 text-white">
+        <!-- Navigation -->
+        <div class="flex items-center">
+          <span class="material-symbols-outlined text-white text-4xl mr-4">
+            <a id="close">menu</a>
+          </span>
+          <p class="font-poppins font-semibold w-full">Navigasi</p>
+        </div>
+        <br />
+
+        <div class="dropdown w-full">
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 text-left" onclick="toggleDropdown()">
+            <a href="../../src/modul_daftar_tagihan_non_layanan/public2/daftar_non_layanan.html"> Daftar Tagihan Non Layanan</a>
+          </button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()">
+            <a href="../../src/modul_daftarTagihanPasien/daftar_tagihan_pasien.html"> Daftar Tagihan Pasien</a>
+          </button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()">
+            <a href="../../src/modul_daftar_pasien_yang_masih_dirawat/daftar_pasien_yang_masih_di_rawat.html"> Daftar Pasien Yang Masih Dirawat</a>
+          </button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()"><a href="../../src/modul_daftar_penerimaan_sbm/daftar-sbm.html"> Daftar Penerimaan SBM</a></button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()">
+            <a href="../../src/modul_daftar_resep_pasien/daftar-resep-pasien.html"> Daftar Resep Pasien</a>
+          </button>
+        </div>
+      </div>
+    </aside>
+    <!-- end navbar -->
+
+    <div class="bg-biru">
+      <p class="text-white text-2xl font-extrabold py-3 pl-4">Rekap Tagihan Pasien</p>
+    </div>
+
+    <div class="grid grid-cols-12 gap-3 py-2 text-sm px-1.5">
+      <!-- Row Satu -->
+      <div class="">
+        <label for="noReg" class="block text-gray-700 font-extrabold">No Registrasi</label>
+        <input type="text" id="noReg" name="noReg" class="w-full border border-blue-500 rounded-md h-7 focus:outline-none focus:ring focus:border-blue-700" placeholder="2308000152" />
+      </div>
+      <div class="">
+        <label for="no_rm" class="block text-gray-700 font-extrabold">No RM</label>
+        <input disabled type="text" id="no_rm" name="no_rm" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="00003522" />
+      </div>
+      <div class="col-span-2">
+        <label for="nm_pas" class="block text-gray-700 font-extrabold">Nama Pasien</label>
+        <input disabled type="text" id="nm_pas" name="nm_pas" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="AN. ILHAM PAMUJI RAMDHANI" disabled="disabled" />
+      </div>
+      <div class="col-span-2">
+        <label for="jns" class="block text-gray-700 font-extrabold">Jenis Kelamin</label>
+        <input disabled type="text" id="jns" name="jns" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="LAKI-LAKI" />
+      </div>
+      <div class="col-span-2">
+        <label for="umur" class="block text-gray-700 font-extrabold">Umur</label>
+        <input disabled type="text" id="umur" name="umur" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="16 thn 11 bln 10 hari" />
+      </div>
+      <div class="col-span-2">
+        <label for="tgl" class="block text-gray-700 font-extrabold">Tanggal Lahir</label>
+        <input disabled type="text" id="tgl" name="tgl" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="20-Oct-2006" />
+      </div>
+      <div class="col-span-2">
+        <label for="agm" class="block text-gray-700 font-extrabold">Agama</label>
+        <input disabled type="text" id="agm" name="agm" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="" />
+      </div>
+
+      <!-- Row 2 -->
+      <div class="col-span-2">
+        <label for="tlp" class="block text-gray-700 font-extrabold">Telepon</label>
+        <input disabled type="text" id="tlp" name="tlp" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="081322104526" />
+      </div>
+      <div class="col-span-2">
+        <label for="klg" class="block text-gray-700 font-extrabold">Keluarga</label>
+        <input disabled type="text" id="klg" name="klg" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="" />
+      </div>
+      <div class="col-span-2">
+        <label for="tgl_msk" class="block text-gray-700 font-extrabold">Tanggal Masuk</label>
+        <input disabled type="text" id="tgl_msk" name="tgl_msk" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="16-Aug-2023 16:10" />
+      </div>
+      <div class="col-span-2">
+        <label for="tgl_plg" class="block text-gray-700 font-extrabold">Tanggal Pulang</label>
+        <input disabled type="text" id="tgl_plg" name="tgl_plg" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="" />
+      </div>
+      <div class="col-span-2">
+        <label for="rua_trk" class="block text-gray-700 font-extrabold">Ruangan Terakhir</label>
+        <input disabled type="text" id="rua_trk" name="rua_trk" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="RUANG A" />
+      </div>
+      <div class="col-span-2">
+        <label for="kls" class="block text-gray-700 font-extrabold">Kelas</label>
+        <input disabled type="text" id="kls" name="kls" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="Kelas II" />
+      </div>
+
+      <!-- Row 3 -->
+
+      <div class="col-span-2">
+        <label for="sts" class="block text-gray-700 font-extrabold">Status</label>
+        <input disabled type="text" id="sts" name="sts" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="LAMA" />
+      </div>
+      <div class="col-span-2">
+        <label for="klmp" class="block text-gray-700 font-extrabold">Kelompok Pasien</label>
+        <input disabled type="text" id="klmp" name="klmp" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="Umum/Pribadi" />
+      </div>
+      <div class="col-span-3">
+        <label for="pnjm" class="block text-gray-700 font-extrabold">Penjamin</label>
+        <input disabled type="text" id="pnjm" name="pnjm" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="" />
+      </div>
+      <div class="col-span-5">
+        <label for="almt" class="block text-gray-700 font-extrabold">Alamat</label>
+        <input disabled type="text" id="almt" name="almt" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="JAMBATAN 1 PUSPASARI RT 01/01" />
+      </div>
+    </div>
+
+    <!-- Tabel Utama -->
+    <table class="min-w-full bg-white border-t border-b">
+      <tr>
+        <td class="px-1.5 py-1.5 border-l border-r border-b text-white text-left text-xs leading-4 tracking-wider bg-abu" colspan="10">
+          <button class="bg-abu hover:bg-biru text-gray-800 font-semibold h-7 border border-gray-400 rounded-md shadow flex gap-1 p-1">
+            <div class="flex-1">
+              <i class="fa-regular fa-file-excel fa-lg" style="color: #ffffff"></i>
+            </div>
+            <div class="flex-2">
+              <p class="text-white">Export To Excel</p>
+            </div>
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td class="px-1.5 py-1.5 border-l border-r border-b text-white text-left text-xs leading-4 tracking-wider bg-abu" colspan="10">
+          <button class="bg-abu hover:bg-biru text-gray-800 font-semibold h-7 border border-gray-400 rounded-md shadow flex gap-1.5 p-1">
+            <div class="flex-1">
+              <i class="fa-solid fa-caret-up fa-2xs" style="color: #ffffff"></i>
+            </div>
+            <div class="flex-2">
+              <p class="text-white">Jenis</p>
+            </div>
+            <div class="flex-3">
+              <i class="fa-solid fa-xmark fa-lg" style="color: #ffffff"></i>
+            </div>
+          </button>
+        </td>
+      </tr>
+
+      <tr class="bg-abu border-b">
+        <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">
+          <div class="w-3"></div>
+        </td>
+        <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Deskripsi</td>
+        <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Kelas</td>
+        <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Jumlah</td>
+        <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Harga</td>
+        <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Harga Diskon</td>
+        <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Jasa</td>
+        <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Total</td>
+        <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">
+          <div class="w-5"></div>
+        </td>
+        <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider"></td>
+      </tr>
+
+      <tr>
+        <td class="px-1.5 py-1.5 border-l border-r border-b text-white text-left text-xs leading-4 tracking-wider bg-abu" colspan="10">
+          <button class="bg-abu text-gray-800 font-semibold h-7 border-gray-400 rounded-md shadow flex gap-1 p-1" disabled>
+            <div class="flex-1">
+              <i class="fa-solid fa-caret-down fa-lg" style="color: #ffffff"></i>
+            </div>
+            <div class="flex-2">
+              <p class="text-white">Layanan</p>
+            </div>
+          </button>
+        </td>
+      </tr>
+
+      <tbody>
+        <tr class="bg-white hover:bg-biru">
+          <td class="px-1.5 py-1.5 border-l border-r text-xs bg-abu">
+            <div class="w-3"></div>
+          </td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">RUANG A</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">Kelas II</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">2305001406</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">1</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">Rp. 0,00</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">Rp. 0,00</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">Rp. 0,00</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs flex">
+            <button class="bg-abu hover:bg-biru text-gray-800 font-semibold gap-1 h-7 border border-gray-400 rounded-md shadow flex pt-1 px-1" id="step_10">
+              <div class="flex-1">
+                <i class="fa-solid fa-magnifying-glass" style="color: #ffffff"></i>
+              </div>
+              <div class="flex-2">
+                <p class="text-white">Detail</p>
+              </div>
+            </button>
+          </td>
+          <td class="bg-abu"></td>
+        </tr>
+        <tr class="bg-abu border-b">
+          <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">
+            <div class="w-3"></div>
+          </td>
+          <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider" colspan="6">Total</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider" colspan="2">Rp. 0,00</td>
+
+          <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">
+            <div class="w-5"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="bg-abu flex">
+      <div class="flex-auto py-1 pl-1">
+        <button class="bg-abu hover:bg-biru text-gray-800 font-semibold w-7 h-7 border border-gray-400 rounded-full shadow">
+          <i class="fa-solid fa-backward-step fa-xs" style="color: #ffffff"></i>
+        </button>
+        <button class="bg-abu hover:bg-biru text-gray-800 font-semibold w-7 h-7 border border-gray-400 rounded-full shadow">
+          <i class="fa-sharp fa-solid fa-caret-left fa-xs" style="color: #ffffff"></i>
+        </button>
+        <button class="bg-biru hover:bg-biru text-gray-800 font-semibold w-7 h-7 border border-gray-400 rounded-full shadow">
+          <p class="text-white text-sm">1</p>
+        </button>
+        <button class="bg-abu hover:bg-biru text-gray-800 font-semibold w-7 h-7 border border-gray-400 rounded-full shadow">
+          <i class="fa-solid fa-caret-right fa-xs" style="color: #ffffff"></i>
+        </button>
+        <button class="bg-abu hover:bg-biru text-gray-800 font-semibold w-7 h-7 border border-gray-400 rounded-full shadow">
+          <i class="fa-solid fa-forward-step fa-xs" style="color: #ffffff"></i>
+        </button>
+      </div>
+      <div class="flex-auto text-right pt-2 pr-3">
+        <p class="text-white text-sm">Menampilkan 1 - 1 data dari 1 data</p>
+      </div>
+    </div>
+
+    <div class="mr-0 ml-auto w-1/2 my-2">
+      <fieldset class="border border-solid border-abu p-3 rounded-md">
+        <legend class="text-xs">Rincian Total</legend>
+        <div class="grid grid-rows-2 grid-flow-col gap-4">
+          <div class="">
+            <p class="text-sm font-extrabold">Total Tagihan</p>
+            <p class="text-sm">Rp. 0.00</p>
+          </div>
+          <div class="">
+            <p class="text-sm font-extrabold">Total Dibayar</p>
+            <p class="text-sm">Rp. 0.00</p>
+          </div>
+          <div class="">
+            <p class="text-sm font-extrabold">Jumlah Deposit</p>
+            <p class="text-sm">Rp. 0.00</p>
+          </div>
+          <div class="">
+            <p class="text-sm font-extrabold">Sisa Tagihan</p>
+            <p class="text-sm">Rp. 0.00</p>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="bottom-7 right-14 mt-4 float-right font-extrabold grid grid-rows-8 grid-flow-col gap-3">
+      <button class="bg-biru hover:bg-blue-500 text-white font-normal h-9 mx-auto rounded text-xs w-24" id="step_1">
+        <i class="fa-solid fa-stethoscope fa-sm" style="color: #ffffff"></i>
+        &nbsp;&nbsp;&nbsp;Input Tindakan
+      </button>
+      <button class="bg-biru hover:bg-blue-500 text-white font-normal h-9 mx-auto rounded text-xs w-24" id="step_2">
+        <i class="fa-regular fa-file-pdf fa-sm" style="color: #ffffff"></i>
+        &nbsp;&nbsp;&nbsp;Bukti Layanan
+      </button>
+      <button class="bg-biru hover:bg-blue-500 text-white font-normal h-9 mx-auto rounded text-xs w-24" id="step_3">
+        <i class="fa-regular fa-file-pdf fa-sm" style="color: #ffffff"></i>
+        &nbsp;&nbsp;&nbsp;Rincian Rekap
+      </button>
+      <button class="bg-biru hover:bg-blue-500 text-white font-normal h-9 mx-auto rounded text-xs w-24" id="step_4">
+        <i class="fa-regular fa-file-pdf fa-sm" style="color: #ffffff"></i>
+        &nbsp;&nbsp;&nbsp;Billing
+      </button>
+      <button class="bg-biru hover:bg-blue-500 text-white font-normal h-9 mx-auto rounded text-xs w-24" id="step_5">
+        <i class="fa-solid fa-bars fa-lg" style="color: #ffffff"></i>
+        &nbsp;&nbsp;&nbsp;Rekap Billing
+      </button>
+      <button class="bg-biru hover:bg-blue-500 text-white font-normal h-9 mx-auto rounded text-xs w-24" id="step_6">
+        <i class="fa-solid fa-bars fa-lg" style="color: #ffffff"></i>
+        &nbsp;&nbsp;&nbsp;Billing Total
+      </button>
+      <button class="bg-biru hover:bg-blue-500 text-white font-normal h-9 mx-auto rounded text-xs w-48" id="step_7">
+        <i class="fa-solid fa-arrow-down-short-wide fa-lg" style="color: #ffffff"></i>
+        &nbsp;&nbsp;&nbsp;Billing Selisih Kelas
+      </button>
+      <button class="bg-biru hover:bg-blue-500 text-white font-normal h-9 mx-auto rounded text-xs w-24" id="step_8">
+        <i class="fa-regular fa-paste fa-lg" style="color: #ffffff"></i>
+        &nbsp;&nbsp;&nbsp;Rincian Obat
+      </button>
+      <button class="bg-red-500 hover:bg-red-700 text-white font-normal h-9 mx-auto rounded text-xs w-28" id="step_9">
+        <i class="fa-solid fa-arrow-left fa-lg" style="color: #ffffff"></i>
+        &nbsp;&nbsp;&nbsp;<a href="daftar_pasien_yang_masih_di_rawat.html">Kembali</a>
+      </button>
+    </div>
+    <div class="h-48"></div>
+    <script>
+      document.getElementById('tour').addEventListener('click', function () {
+        const wt = new WebTour();
+        const steps = [
+          {
+            // Tombol input tindakan
+            element: '#step_1',
+            title: '',
+            content:
+              'Berfungsi untuk menambahkan tindakan baru yang mungkin belum tercatat. Anda bisa memasukkan tanggal layanan, nama layanan, harga, harga yang dijamin, jumlah, jenis pelaksana, petugas pelaksana. Setelah itu, cukup klik tombol "Tambah Tindakan". Jika perlu, Anda juga bisa menghapus semuanya dengan tombol "Hapus Semua".',
+            placement: 'top-start',
+          },
+          {
+            //Tombol BUKTI LAYANAN JASA
+            element: '#step_2',
+            title: '',
+            content: 'Berfungsi untuk melihat bukti dari layanan yang diterima oleh pasien.',
+            placement: 'top-start',
+          },
+          {
+            // Tombol RINCIAN REKAP
+            element: '#step_3',
+            title: '',
+            content: 'Berfungsi untuk melihat rincian ringkasan dari layanan yang diberikan kepada pasien.',
+            placement: 'top-start',
+          },
+          {
+            //Tombol BILLING
+            element: '#step_4',
+            title: '',
+            content: ' Berfungsi untuk melihat tagihan yang harus dibayar oleh pasien.',
+            placement: 'top-start',
+          },
+          {
+            //Tombol REKAP BILLING
+            element: '#step_5',
+            title: '',
+            content: 'Berfungsi untuk melihat data rekap billing.',
+            placement: 'top-start',
+          },
+          {
+            //Tombol BILLING TOTAL
+            element: '#step_6',
+            title: '',
+            content: ' Berfungsi untuk melihat billing total.',
+            placement: 'top-start',
+          },
+          {
+            //Tombol BILLING SELISIH KELAS
+            element: '#step_7',
+            title: '',
+            content: 'Berfungsi Jika terjadi perubahan kelas, tagihan yang diterima akan berbeda. Ini tergantung pada kelas tempat pasien tinggal.',
+            placement: 'top-start',
+          },
+          {
+            //Tombol RINCIAN OBAT
+            element: '#step_8',
+            title: '',
+            content: 'Berfungsi untuk melihat rincian obat yang diberikan kepada pasien.',
+            placement: 'top-end',
+          },
+          {
+            //Tombol kembali
+            element: '#step_9',
+            title: '',
+            content: 'Berfungsi untuk kembali ke halaman sebelumnya.',
+            placement: 'left-start',
+          },
+          {
+            //TOMBOL DETAIL disamping kanan data layanan/resep
+            element: '#step_10',
+            title: '',
+            content: 'Untuk melihat lebih detail pelayanan/resep yang diberikan kepada pasien.',
+            placement: 'top-end',
+          },
+        ];
+
+        wt.setSteps(steps);
+        wt.start();
+      });
+
+      const sidebar = document.getElementById('sidebar');
+      const toggleSidebarButton = document.getElementById('toggleSidebar');
+      const closeSidebarButton = document.getElementById('close');
+      const mainContentOverlay = document.getElementById('mainContentOverlay');
+      const dropdownContent = document.getElementById('myDropdown');
+      const dropdownContent1 = document.getElementById('myDropdown1');
+
+      toggleSidebarButton.addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+        mainContentOverlay.style.display = 'block';
+      });
+
+      closeSidebarButton.addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+        mainContentOverlay.style.display = 'none';
+      });
+
+      // Close sidebar when clicking outside
+      document.addEventListener('click', (event) => {
+        if (!sidebar.contains(event.target) && event.target !== toggleSidebarButton) {
+          sidebar.classList.add('-translate-x-full');
+          mainContentOverlay.style.display = 'none';
+        }
+      });
+
+      function toggleDropdown() {
+        dropdownContent.classList.toggle('opacity-100');
+        dropdownContent.classList.toggle('scale-y-100');
+        dropdownContent.classList.toggle('scale-y-0');
+      }
+      function toggleDropdown2() {
+        dropdownContent1.classList.toggle('opacity-100');
+        dropdownContent1.classList.toggle('scale-y-100');
+        dropdownContent1.classList.toggle('scale-y-0');
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.addEventListener('click', function (event) {
+        if (!event.target.matches('.dropbtn')) {
+          if (dropdownContent.classList.contains('opacity-100')) {
+            toggleDropdown();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

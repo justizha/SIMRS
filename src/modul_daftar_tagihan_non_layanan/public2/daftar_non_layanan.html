@@ -1,375 +1,349 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transmedic | Daftar Tagihan Non Layanan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link rel="icon" href="https://apps.transmedic.co.id:2200/app/images/favicon.ico" />
+    <link rel="stylesheet" href="dist/output.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css"
+      integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/webtour@1.1.0/dist/webtour.min.css" />
+    <script src="https://unpkg.com/webtour@1.1.0/dist/webtour.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Transmedic | Daftar Tagihan Non Layanan</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-  <link rel="icon" href="https://apps.transmedic.co.id:2200/app/images/favicon.ico" />
-  <link rel="stylesheet" href="dist/output.css" />
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
-  </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css"
-    integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://unpkg.com/webtour@1.1.0/dist/webtour.min.css" />
-  <script src="https://unpkg.com/webtour@1.1.0/dist/webtour.min.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body class="font-comfortaa overflow-x-hidden">
-  <!-- navbar -->
-  <nav
-            class="bg-black border-b-2 border-b-black text-white p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <div class="flex mt-1">
-                <div class="vector" id="vector">
-                    <img id="toggleSidebar" class="w-10 h-12 pb-1 fill-white" src="../img/Menu Logo.png"/>
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-3xl font-Comfortaa font-bold">
-                        <a class="text-white mt-2 ml-3" href="#">TRANS<a href="#"
-                                class="text-[#FE0000] font-semibold">M</a><a href="" class="font-bold">EDIC</a></a>
-                    </span>
-                    <span class="ml-4 italic">E-Healthcare / RS TRANSMEDIC</span>
-                </div>
-                <div class="absolute right-4 py-3">
-                  <button class="px-2 py-2 w-10 h-11 bg-[#363940] rounded-md text-lg" id="tour">?</button>
-                  <span class="px-2 py-2 bg-[#363940] rounded-md text-lg">ABOUT</span>
-                </div>
-            </div>
-        </nav>
-
-        <aside
-        class="bg-gray-800 w-72 fixed inset-y-0 left-0 transform -translate-x-full transition-transform z-30 duration-300 ease-in-out"
-        id="sidebar">
-        <!-- Sidebar Content -->
-        <div class="p-4 text-white">
-            <!-- Navigation -->
-            <div class="flex items-center">
-                <span class="material-symbols-outlined text-white text-4xl mr-4">
-                    <a id="close">menu</a>
-                </span>
-                <p class="font-poppins font-semibold w-full">Navigasi</p>
-            </div>
-            <br />
-
-            <div class="dropdown w-full">
-                <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 text-left"
-                    onclick="toggleDropdown()"><a href="../../modul_daftar_tagihan_non_layanan/public2/daftar_non_layanan.html"> Daftar Tagihan Non Layanan</a></button>
-                <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left"
-                    onclick="toggleDropdown2()"><a href="../../modul_daftarTagihanPasien/daftar_tagihan_pasien.html"> Daftar Tagihan Pasien</a>
-                    </button>
-                <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left"
-                    onclick="toggleDropdown2()"><a href="../../modul_daftarTagihanPasien/daftar_tagihan_pasien.html"> Daftar Pasien Yang Masih Dirawat</a>
-                    </button>
-                <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left"
-                    onclick="toggleDropdown2()"><a href="../../modul_daftarTagihanPasien/daftar_tagihan_pasien.html"> Daftar Penerimaan SBM</a>
-                    </button>
-                <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left"
-                    onclick="toggleDropdown2()"><a href="../../modul_daftarTagihanPasien/daftar_tagihan_pasien.html"> Daftar Resep Pasien</a>
-                    </button>
-            </div>
+  <body class="font-comfortaa overflow-x-hidden">
+    <!-- navbar -->
+    <nav class="bg-black border-b-2 border-b-black text-white p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div class="flex mt-1">
+        <div class="vector" id="vector">
+          <img id="toggleSidebar" class="w-10 h-12 pb-1 fill-white" src="../img/Menu Logo.png" />
         </div>
+        <div class="flex flex-col">
+          <span class="text-3xl font-Comfortaa font-bold">
+            <a class="text-white mt-2 ml-3" href="#">TRANS<a href="#" class="text-[#FE0000] font-semibold">M</a><a href="" class="font-bold">EDIC</a></a>
+          </span>
+          <span class="ml-4 italic">E-Healthcare / RS TRANSMEDIC</span>
+        </div>
+        <div class="absolute right-4 py-3">
+          <button class="px-2 py-2 w-10 h-11 bg-[#363940] rounded-md text-lg" id="tour">?</button>
+          <span class="px-2 py-2 bg-[#363940] rounded-md text-lg"><a href="../../../Dashboard/Home/home.html">Home</a></span>
+        </div>
+      </div>
+    </nav>
+
+    <aside class="bg-gray-800 w-72 fixed inset-y-0 left-0 transform -translate-x-full transition-transform z-30 duration-300 ease-in-out" id="sidebar">
+      <!-- Sidebar Content -->
+      <div class="p-4 text-white">
+        <!-- Navigation -->
+        <div class="flex items-center">
+          <span class="material-symbols-outlined text-white text-4xl mr-4">
+            <a id="close">menu</a>
+          </span>
+          <p class="font-poppins font-semibold w-full">Navigasi</p>
+        </div>
+        <br />
+
+        <div class="dropdown w-full">
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 text-left" onclick="toggleDropdown()">
+            <a href="../../modul_daftar_tagihan_non_layanan/public2/daftar_non_layanan.html"> Daftar Tagihan Non Layanan</a>
+          </button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()">
+            <a href="../../modul_daftarTagihanPasien/daftar_tagihan_pasien.html"> Daftar Tagihan Pasien</a>
+          </button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()">
+            <a href="../../modul_daftar_pasien_yang_masih_dirawat/daftar_pasien_yang_masih_di_rawat.html"> Daftar Pasien Yang Masih Dirawat</a>
+          </button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()"><a href="../../modul_daftar_penerimaan_sbm/daftar-sbm.html"> Daftar Penerimaan SBM</a></button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()"><a href="../../modul_daftar_resep_pasien/daftar-resep-pasien.html"> Daftar Resep Pasien</a></button>
+        </div>
+      </div>
     </aside>
-  <!-- end navbar -->
+    <!-- end navbar -->
 
-  <!-- header -->
-  <div class="bg-[#41abf2] p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-    <p class="text-white text-center text-3xl font-bold">Daftar Tagihan Non Layanan</p>
-  </div>
-  <!-- end header -->
-
-  <div class="flex flex-wrap-12  mb-1 w-[1013px] ml-4" id="step_1">
-    <div class="w-full px-3 -ml-5">
-      <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-last-name"> Nama
-        Pelanggan</label>
-      <input
-        class="block w-48 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600"
-        type="text" />
-      <p class="-mt-6 ml-1">IHSAAN HAFIZH</p>
+    <!-- header -->
+    <div class="bg-[#41abf2] p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <p class="text-white text-center text-3xl font-bold">Daftar Tagihan Non Layanan</p>
     </div>
-    <div class="">
-      <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-first-name">Status</label>
-      <select name="pasien"
-        class="block w-44 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600">
-        <option class="bg-[#313235] text-white" value="">Belum Bayar</option>
-        <option class="bg-[#313235] text-white" value="">Lunas</option>
+    <!-- end header -->
 
-      </select>
-    </div>
-    <div class="w-full ml-3">
-      <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-first-name"> Kelompok
-        transaksi</label>
-      <select name="pasien"
-        class="block w-72 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600">
-        <option class="bg-[#313235] text-white" value="" selected disabled hidden></option>
-        <option class="bg-[#313235] text-white" value="">PELAYANAN GAJI</option>
-        <option class="bg-[#313235] text-white" value="">PELAYANAN IN APOTEK</option>
-        <option class="bg-[#313235] text-white" value="">PELAYANAN OUT UMUM</option>
-        <option class="bg-[#313235] text-white" value="">PELAYANAN LAUNDRY</option>
-        <option class="bg-[#313235] text-white" value="">PELAYANAN OUR PAYROLL</option>
-        <option class="bg-[#313235] text-white" value="">PELAYANAN GIZI</option>
-        <option class="bg-[#313235] text-white" value="">PELAYANAN AMBULAN</option>
-        <option class="bg-[#313235] text-white" value="">PELAYANAN IN PRODUK</option>
-        <option class="bg-[#313235] text-white" value="">PELAYANAN OPNAME</option>
-      </select>
-    </div>
+    <div class="flex flex-wrap-12 mb-1 w-[1013px] ml-4">
+      <div class="flex flex-wrap-12 mb-1 w-[1013px] ml-4" id="step_1">
+        <div class="w-full px-3 -ml-5">
+          <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-last-name"> Nama Pelanggan</label>
+          <input class="block w-48 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600" type="text" />
+          <p class="-mt-6 ml-1">IHSAAN HAFIZH</p>
+        </div>
+        <div class="">
+          <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-first-name">Status</label>
+          <select name="pasien" class="block w-44 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600">
+            <option class="bg-[#313235] text-white" value="">Belum Bayar</option>
+            <option class="bg-[#313235] text-white" value="">Lunas</option>
+          </select>
+        </div>
+        <div class="w-full ml-3">
+          <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-first-name"> Kelompok transaksi</label>
+          <select name="pasien" class="block w-72 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600">
+            <option class="bg-[#313235] text-white" value="" selected disabled hidden></option>
+            <option class="bg-[#313235] text-white" value="">PELAYANAN GAJI</option>
+            <option class="bg-[#313235] text-white" value="">PELAYANAN IN APOTEK</option>
+            <option class="bg-[#313235] text-white" value="">PELAYANAN OUT UMUM</option>
+            <option class="bg-[#313235] text-white" value="">PELAYANAN LAUNDRY</option>
+            <option class="bg-[#313235] text-white" value="">PELAYANAN OUR PAYROLL</option>
+            <option class="bg-[#313235] text-white" value="">PELAYANAN GIZI</option>
+            <option class="bg-[#313235] text-white" value="">PELAYANAN AMBULAN</option>
+            <option class="bg-[#313235] text-white" value="">PELAYANAN IN PRODUK</option>
+            <option class="bg-[#313235] text-white" value="">PELAYANAN OPNAME</option>
+          </select>
+        </div>
 
-    <div class="flex flex-wrap-12 ml-[1px]">
-      <div class="w-full px-3">
-        <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-last-name"> Periode </label>
-        <input
-          class="block w-40 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600 col-span-2"
-          type="date" />
+        <div class="flex flex-wrap-12 ml-[1px]">
+          <div class="w-full px-3">
+            <label class="block tracking-wide text-gray-700 text-1 font-bold mb-2" for="grid-last-name"> Periode </label>
+            <input class="block w-40 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600 col-span-2" type="date" />
+          </div>
+          <div class="w-full px-4 -ml-4">
+            <input class="block w-40 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600 mt-8" type="date" />
+          </div>
+        </div>
       </div>
-      <div class="w-full px-4 -ml-4">
-        <input
-          class="block w-40 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600 mt-8"
-          type="date" />
-      </div>
-
       <div class="px2 p-5" id="step_2">
-        <button
-          class="bg-[#41abf2] hover:bg-blue-700 text-white text-[13px] h-8 font-bold py-1 w-32 mt-3 px-7 border rounded-md"
-          type="search">Cari</button>
+        <button class="bg-[#41abf2] hover:bg-blue-700 text-white text-[13px] h-8 font-bold py-1 w-32 mt-3 px-7 border rounded-md" type="search">Cari</button>
+      </div>
+      <div class="px2 p-5" id="step_3">
+        <button class="bg-[#41abf2] hover:bg-blue-700 text-white text-[13px] h-8 font-bold py-1 w-32 mt-3 px-7 border rounded-md -ml-4" type="search">Clear</button>
       </div>
     </div>
-    <div class="px2 p-5" id="step_3">
-      <button
-        class="bg-[#41abf2] hover:bg-blue-700 text-white text-[13px] h-8 font-bold py-1 w-32 mt-3 px-7 border rounded-md -ml-4"
-        type="search">Clear</button>
+
+    <div class="bg-[#41abf2] p-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 font-bold">
+      <p class="text-white text-1xl text-left pt-1 ml-2 font-bold">List Tagihan</p>
     </div>
-  </div>
-  </div>
+    <!-- end judul -->
 
-  <div class="bg-[#41abf2] p-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 font-bold">
-    <p class="text-white text-1xl text-left pt-1 ml-2 font-bold">List Tagihan</p>
-  </div>
-  <!-- end judul -->
-
-  <!-- tebel -->
-  <div class="border border-gray-500 border-b-gray-600 bg-[#313235]">
-    <button class="py-1 pl-1 ml-2 text-white border rounded mt-1 mb-1 p-1 hover:bg-[#41abf2]">Export To Excel</button>
-  </div>
-  <div class="overflow-x-auto" id="step_4">
-    <table class="w-full table-zebra table-fixed text-left border font-thin text-sm">
-      <tr class="text-center text-white font-light bg-[#313235]">
-        <th class="border border-gray-500 w-36 p-2">Tanggal</th>
-        <th class="border border-gray-500 w-36 p-2">Nama Pelanggan</th>
-        <th class="border border-gray-500 w-36 p-2">Kelompok pasien</th>
-        <th class="border border-gray-500 w-36 p-2">Penjamin</th>
-        <th class="border border-gray-500 w-48 p-2">Jenis Tagihan</th>
-        <th class="border border-gray-500 w-36 p-2">Jumlah</th>
-        <th class="border border-gray-500 w-36 p-2">Keterangan</th>
-        <th class="border border-gray-500 w-36 p-2">Status Tagihan</th>
-        <th class="border border-gray-500 w-36 p-2">Status</th>
-      </tr>
-
-      <!-- Data data -->
-      <div class="overflow-y-auto">
-        <tr class="font-light text-black text-center hover:bg-blue-400 hover:text-white">
-          <td class="border border-gray-500 p-5">28-Aug-2023</td>
-          <td class="border border-gray-500 p-5 uppercase">ihsaan hafizh</td>
-          <td class="border border-gray-500 p-5 truncate">null</td>
-          <td class="border border-gray-500 p-5">null</td>
-          <td class="border border-gray-500 p-5">PELAYANAN IN UMUM</td>
-          <td class="border border-gray-500 p-5 ">Rp. 18,570.00</td>
-          <td class="border border-gray-500 p-5">Penjualan Obat Bebas</td>
-          <td class="border border-gray-500 p-5">null</td>
-          <td class="border border-gray-500 p-5">Belum Lunas</td>
+    <!-- tebel -->
+    <div class="border border-gray-500 border-b-gray-600 bg-[#313235]">
+      <button class="py-1 pl-1 ml-2 text-white border rounded mt-1 mb-1 p-1 hover:bg-[#41abf2]">Export To Excel</button>
+    </div>
+    <div class="overflow-x-auto" id="step_4">
+      <table class="w-full table-zebra table-fixed text-left border font-thin text-sm">
+        <tr class="text-center text-white font-light bg-[#313235]">
+          <th class="border border-gray-500 w-36 p-2">Tanggal</th>
+          <th class="border border-gray-500 w-36 p-2">Nama Pelanggan</th>
+          <th class="border border-gray-500 w-36 p-2">Kelompok pasien</th>
+          <th class="border border-gray-500 w-36 p-2">Penjamin</th>
+          <th class="border border-gray-500 w-48 p-2">Jenis Tagihan</th>
+          <th class="border border-gray-500 w-36 p-2">Jumlah</th>
+          <th class="border border-gray-500 w-36 p-2">Keterangan</th>
+          <th class="border border-gray-500 w-36 p-2">Status Tagihan</th>
+          <th class="border border-gray-500 w-36 p-2">Status</th>
         </tr>
+
+        <!-- Data data -->
+        <div class="overflow-y-auto">
+          <tr class="font-light text-black text-center hover:bg-blue-400 hover:text-white">
+            <td class="border border-gray-500 p-5">28-Aug-2023</td>
+            <td class="border border-gray-500 p-5 uppercase">ihsaan hafizh</td>
+            <td class="border border-gray-500 p-5 truncate">null</td>
+            <td class="border border-gray-500 p-5">null</td>
+            <td class="border border-gray-500 p-5">PELAYANAN IN UMUM</td>
+            <td class="border border-gray-500 p-5">Rp. 18,570.00</td>
+            <td class="border border-gray-500 p-5">Penjualan Obat Bebas</td>
+            <td class="border border-gray-500 p-5">null</td>
+            <td class="border border-gray-500 p-5">Belum Lunas</td>
+          </tr>
+        </div>
+      </table>
+    </div>
+    <!-- end tabel -->
+
+    <!-- Pagination -->
+    <div class="bg-main-gray-0">
+      <div class="bg-main-gray-0 py-[7px] flex items-center gap-2">
+        <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+          <i class="fa fa-solid fa-backward-step text-white"></i>
+        </div>
+        <div class="rounded-full border w-6 h-6 flex hover:bg-main-blue-0 items-center justify-center">
+          <i class="fa fa-solid fa-play text-white fa-rotate-180"></i>
+        </div>
+        <div class="rounded-full border w-6 h-6 flex items-center justify-center">
+          <h2 class="text-white">1</h2>
+        </div>
+        <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+          <i class="fa fa-solid fa-play text-white"></i>
+        </div>
+        <div class="rounded-full border w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
+          <i class="fa fa-solid fa-forward-step text-white"></i>
+        </div>
+        <span class="text-white absolute right-3">1 - 3 of 3 items</span>
       </div>
-    </table>
-  </div>
-  <!-- end tabel -->
+    </div>
+    <!-- end Pagination  -->
 
-  <!-- Pagination -->
-  <div class="bg-main-gray-0">
-    <div class="bg-main-gray-0 py-[7px] flex items-center gap-2">
-      <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
-        <i class="fa fa-solid fa-backward-step text-white"></i>
+    <!-- form bawah -->
+    <div class="-mx-3 mb-10 w-96">
+      <div class="px-3 ml-3">
+        <label class="block tracking-wide text-gray-700 text-1 font-semibold mb-1" for="grid-last-name"> Keterangan</label>
+        <input class="block w-72 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600" type="text" />
       </div>
-      <div class="rounded-full border w-6 h-6 flex hover:bg-main-blue-0 items-center justify-center">
-        <i class="fa fa-solid fa-play text-white fa-rotate-180"></i>
+    </div>
+    <!-- end form bawah -->
+
+    <!-- button footer -->
+    <div class="flex flex-wrap-2 gap-3 float-right mt-7">
+      <div class="px-1" id="step_5">
+        <button class="bg-[#41abf2] text-white font-bold py-1 px-20 border rounded" type="search"><a href="bayar.html">Bayar</a></button>
       </div>
-      <div class="rounded-full border w-6 h-6 flex items-center justify-center">
-        <h2 class="text-white">1</h2>
+      <div class="px-1" id="step_6">
+        <button class="bg-[#41abf2] text-white font-bold py-1 px-20 border rounded" type="search"><a href="detail.html">Detail</a></button>
       </div>
-      <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
-        <i class="fa fa-solid fa-play text-white"></i>
+      <div class="px- 1" id="step_7">
+        <button class="bg-[#41abf2] text-white font-bold py-1 px-20 border rounded" type="search"><a href="input.html">Input</a></button>
       </div>
-      <div class="rounded-full border w-6 h-6 flex justify-center items-center hover:bg-main-blue-0">
-        <i class="fa fa-solid fa-forward-step text-white"></i>
+      <div class="px-1 mr-1" id="step_8">
+        <button class="bg-[#41abf2] text-white font-bold py-1 px-20 border rounded" type="search"><a href="edit.html">Edit</a></button>
       </div>
-      <span class="text-white absolute right-3">1 - 3 of 3 items</span>
+      <div class="px-1 mr-1" id="step_9">
+        <button class="bg-[#41abf2] text-white font-bold py-1 px-20 border rounded" type="search">Hapus</button>
+      </div>
     </div>
-  </div>
-  <!-- end Pagination  -->
+    <div class="h-24"></div>
 
-  <!-- form bawah -->
-  <div class=" -mx-3 mb-10 w-96">
-    <div class="px-3 ml-3">
-      <label class="block tracking-wide text-gray-700 text-1 font-semibold mb-1" for="grid-last-name">
-        Keterangan</label>
-      <input
-        class="block w-72 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600"
-        type="text" />
-    </div>
+    <script>
+      document.getElementById('tour').addEventListener('click', function () {
+        const wt = new WebTour();
+        const steps = [
+          {
+            //ini di semua form pencarian
+            element: '#step_1',
+            title: '',
+            content: 'Form di atas digunakan untuk mencari data pasien yang akan menjalani tindakan selanjutnya.',
+            placement: 'bottom-end',
+          },
+          {
+            //tombol cari
+            element: '#step_2',
+            title: '',
+            content: 'Tombol ini ditekan saat Anda telah mengisi salah satu atau semua formulir.',
+            placement: 'left-end',
+          },
+          {
+            //tombol clear
+            element: '#step_3',
+            title: '',
+            content: 'Fungsinya adalah untuk menghapus riwayat pencarian sebelumnya.',
+            placement: 'left-end',
+          },
+          {
+            //tabel list tagihan
+            element: '#step_4',
+            title: '',
+            content: 'Bagian ini memuat data pasien yang telah dicari sebelumnya di bagian atas. Contohnya, jika status diisi dengan "BELUM BAYAR", maka informasi mengenai pasien yang belum melakukan pembayaran akan ditampilkan di sini.',
+            placement: 'top-start',
+          },
+          {
+            //tombol bayar
+            element: '#step_5',
+            title: '',
+            content: 'Kita menggunakan tombol "Bayar" saat memilih data pasien yang belum membayar dan hendak melakukan pembayaran',
+            placement: 'top-end',
+          },
+          {
+            //tombol detail
+            element: '#step_6',
+            title: '',
+            content: 'Fungsinya adalah untuk mengubah data tagihan jika ada kesalahan atau kekurangan. Namun, perlu diingat bahwa tombol edit hanya berlaku untuk data tagihan yang belum dibayar.',
+            placement: 'top-end',
+          },
+          {
+            //tombol input
+            element: '#step_7',
+            title: '',
+            content: 'Ini digunakan untuk memasukkan data tagihan pasien yang belum terdaftar atau memiliki data yang perlu dimasukkan, seperti tanggal transaksi, harga, dan lainnya.',
+            placement: 'top-end',
+          },
+          {
+            //tombol edit
+            element: '#step_8',
+            title: '',
+            content: 'Fungsinya adalah untuk mengubah data tagihan jika ada kesalahan atau kekurangan. Namun, perlu diingat bahwa tombol edit hanya berlaku untuk data tagihan yang belum dibayar.',
+            placement: 'top-end',
+          },
+          {
+            //tombol hapus
+            element: '#step_9',
+            title: '',
+            content: 'Fungsinya adalah menghapus data yang salah atau tidak diperlukan.',
+            placement: 'left-end',
+          },
+        ];
 
-  </div>
-  <!-- end form bawah -->
-
-  <!-- button footer -->
-  <div class="flex flex-wrap-2 gap-3 float-right mt-7">
-    <div class="px-1" id="step_5">
-      <button class="bg-[#41abf2] text-white font-bold py-1 px-20 border rounded" type="search"><a
-          href="bayar.html">Bayar</a></button>
-    </div>
-    <div class="px-1" id="step_6">
-      <button class="bg-[#41abf2] text-white font-bold py-1 px-20 border rounded" type="search"><a
-          href="detail.html">Detail</a></button>
-    </div>
-    <div class="px- 1" id="step_7">
-      <button class="bg-[#41abf2] text-white font-bold py-1 px-20 border rounded" type="search"><a
-          href="input.html">Input</a></button>
-    </div>
-    <div class="px-1 mr-1" id="step_8">
-      <button class="bg-[#41abf2] text-white font-bold py-1 px-20 border rounded" type="search"><a
-          href="edit.html">Edit</a></button>
-    </div>
-    <div class="px-1 mr-1" id="step_9">
-      <button class="bg-[#41abf2] text-white font-bold py-1 px-20 border rounded" type="search">Hapus</button>
-    </div>
-  </div>
-  <div class="h-24"></div>
-
-  <script>
-    document.getElementById('tour').addEventListener('click', function () {
-      const wt = new WebTour();
-      const steps = [
-        {
-          //ini di semua form pencarian 
-          element: '#step_1',
-          title: '',
-          content: 'Form di atas digunakan untuk mencari data pasien yang akan menjalani tindakan selanjutnya.',
-          placement: 'bottom-end',
-        },
-        {
-          //tombol cari
-          element: '#step_2',
-          title: '',
-          content: 'Tombol ini ditekan saat Anda telah mengisi salah satu atau semua formulir.',
-          placement: 'left-end',
-        },
-        {
-          //tombol clear
-          element: '#step_3',
-          title: '',
-          content: 'Fungsinya adalah untuk menghapus riwayat pencarian sebelumnya.',
-          placement: 'left-end',
-        },
-        {
-          //tabel list tagihan 
-          element: '#step_4',
-          title: '',
-          content: 'Bagian ini memuat data pasien yang telah dicari sebelumnya di bagian atas. Contohnya, jika status diisi dengan "BELUM BAYAR", maka informasi mengenai pasien yang belum melakukan pembayaran akan ditampilkan di sini.',
-          placement: 'top-start',
-        },
-        {
-          //tombol bayar 
-          element: '#step_5',
-          title: '',
-          content: 'Kita menggunakan tombol "Bayar" saat memilih data pasien yang belum membayar dan hendak melakukan pembayaran',
-          placement: 'top-end',
-        },
-        {
-          //tombol detail 
-          element: '#step_6',
-          title: '',
-          content: 'Fungsinya adalah untuk mengubah data tagihan jika ada kesalahan atau kekurangan. Namun, perlu diingat bahwa tombol edit hanya berlaku untuk data tagihan yang belum dibayar.',
-          placement: 'top-end',
-        },
-        {
-          //tombol input
-          element: '#step_7',
-          title: '',
-          content: 'Ini digunakan untuk memasukkan data tagihan pasien yang belum terdaftar atau memiliki data yang perlu dimasukkan, seperti tanggal transaksi, harga, dan lainnya.',
-          placement: 'top-end',
-        },
-        {
-          //tombol edit
-          element: '#step_8',
-          title: '',
-          content: 'Fungsinya adalah untuk mengubah data tagihan jika ada kesalahan atau kekurangan. Namun, perlu diingat bahwa tombol edit hanya berlaku untuk data tagihan yang belum dibayar.',
-          placement: 'top-end',
-        },
-        {
-          //tombol hapus 
-          element: '#step_9',
-          title: '',
-          content: 'Fungsinya adalah menghapus data yang salah atau tidak diperlukan.',
-          placement: 'left-end',
-        },
-      ];
-
-      wt.setSteps(steps);
-      wt.start();
-    });
-  </script>
-
-<script>
-
-  const sidebar = document.getElementById("sidebar");
-      const toggleSidebarButton = document.getElementById("toggleSidebar");
-      const closeSidebarButton = document.getElementById("close");
-      const mainContentOverlay = document.getElementById("mainContentOverlay");
-      const dropdownContent = document.getElementById("myDropdown");
-      const dropdownContent1 = document.getElementById("myDropdown1");
-  
-      toggleSidebarButton.addEventListener("click", () => {
-          sidebar.classList.toggle("-translate-x-full");
-          mainContentOverlay.style.display = "block";
+        wt.setSteps(steps);
+        wt.start();
       });
-  
-      closeSidebarButton.addEventListener("click", () => {
-          sidebar.classList.toggle("-translate-x-full");
-          mainContentOverlay.style.display = "none";
+    </script>
+
+    <script>
+      const sidebar = document.getElementById('sidebar');
+      const toggleSidebarButton = document.getElementById('toggleSidebar');
+      const closeSidebarButton = document.getElementById('close');
+      const mainContentOverlay = document.getElementById('mainContentOverlay');
+      const dropdownContent = document.getElementById('myDropdown');
+      const dropdownContent1 = document.getElementById('myDropdown1');
+
+      toggleSidebarButton.addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+        mainContentOverlay.style.display = 'block';
       });
-  
+
+      closeSidebarButton.addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+        mainContentOverlay.style.display = 'none';
+      });
+
       // Close sidebar when clicking outside
-      document.addEventListener("click", (event) => {
-          if (!sidebar.contains(event.target) && event.target !== toggleSidebarButton) {
-              sidebar.classList.add("-translate-x-full");
-              mainContentOverlay.style.display = "none";
-          }
+      document.addEventListener('click', (event) => {
+        if (!sidebar.contains(event.target) && event.target !== toggleSidebarButton) {
+          sidebar.classList.add('-translate-x-full');
+          mainContentOverlay.style.display = 'none';
+        }
       });
-  
+
       function toggleDropdown() {
-          dropdownContent.classList.toggle("opacity-100");
-          dropdownContent.classList.toggle("scale-y-100");
-          dropdownContent.classList.toggle("scale-y-0");
+        dropdownContent.classList.toggle('opacity-100');
+        dropdownContent.classList.toggle('scale-y-100');
+        dropdownContent.classList.toggle('scale-y-0');
       }
       function toggleDropdown2() {
-          dropdownContent1.classList.toggle("opacity-100");
-          dropdownContent1.classList.toggle("scale-y-100");
-          dropdownContent1.classList.toggle("scale-y-0");
+        dropdownContent1.classList.toggle('opacity-100');
+        dropdownContent1.classList.toggle('scale-y-100');
+        dropdownContent1.classList.toggle('scale-y-0');
       }
-  
-      // Close the dropdown if the user clicks outside of it
-      window.addEventListener("click", function (event) {
-          if (!event.target.matches(".dropbtn")) {
-              if (dropdownContent.classList.contains("opacity-100")) {
-                  toggleDropdown();
-              }
-          }
-      });
-  
-        </script>
-</body>
 
+      // Close the dropdown if the user clicks outside of it
+      window.addEventListener('click', function (event) {
+        if (!event.target.matches('.dropbtn')) {
+          if (dropdownContent.classList.contains('opacity-100')) {
+            toggleDropdown();
+          }
+        }
+      });
+    </script>
+  </body>
 </html>

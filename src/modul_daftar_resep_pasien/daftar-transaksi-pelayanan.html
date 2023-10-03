@@ -1,0 +1,525 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transmedic</title>
+  <link href="dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="icon" href="https://apps.transmedic.co.id:2200/app/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="https://unpkg.com/webtour@1.1.0/dist/webtour.min.css" />
+  <script src="https://unpkg.com/webtour@1.1.0/dist/webtour.min.js"></script>
+  <style>
+    .tab-content {
+            transition: transform 0.8s ease-in-out;
+            transform: translateX(0);
+        }
+
+    .tab-hidden {
+      transform: translateX(-200%);
+    }
+  </style>
+</head>
+<body class="min-h-screen font-[comfortaa]">
+    <!-- navbar -->
+    <nav class="bg-black border-b-2 border-b-black text-white p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div class="flex mt-1">
+        <div class="vector" id="vector">
+          <img id="toggleSidebar" class="w-10 h-12 pb-1 fill-white" src="img/Menu Logo.png" />
+        </div>
+        <div class="flex flex-col">
+          <span class="text-3xl font-Comfortaa font-bold">
+            <a class="text-white mt-2 ml-3" href="#">TRANS<a href="#" class="text-[#FE0000] font-semibold">M</a><a href="" class="font-bold">EDIC</a></a>
+          </span>
+          <span class="ml-4 italic">E-Healthcare / RS TRANSMEDIC</span>
+        </div>
+        <div class="absolute right-4 py-3">
+          <button class="px-2 py-2 w-10 h-11 bg-[#363940] rounded-md text-lg" id="tour">?</button>
+          <span class="px-2 py-2 bg-[#363940] rounded-md text-lg"><a href="../../Dashboard/Home/home.html">Home</a></span>
+        </div>
+      </div>
+    </nav>
+  
+    <aside class="bg-gray-800 w-72 fixed inset-y-0 left-0 transform -translate-x-full transition-transform z-30 duration-300 ease-in-out" id="sidebar">
+      <!-- Sidebar Content -->
+      <div class="p-4 text-white">
+        <!-- Navigation -->
+        <div class="flex items-center">
+          <span class="material-symbols-outlined text-white text-4xl mr-4">
+            <a id="close">menu</a>
+          </span>
+          <p class="font-poppins font-semibold w-full">Navigasi</p>
+        </div>
+        <br />
+  
+        <div class="dropdown w-full">
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 text-left" onclick="toggleDropdown()">
+            <a href="../modul_daftar_tagihan_non_layanan/public2/daftar_non_layanan.html"> Daftar Tagihan Non Layanan</a>
+          </button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()">
+            <a href="../modul_daftarTagihanPasien/daftar_tagihan_pasien.html"> Daftar Tagihan Pasien</a>
+          </button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()">
+            <a href="../../src/modul_daftar_pasien_yang_masih_dirawat/daftar_pasien_yang_masih_di_rawat.html"> Daftar Pasien Yang Masih Dirawat</a>
+          </button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()">
+            <a href="../../src/modul_daftar_penerimaan_sbm/daftar-sbm.html"> Daftar Penerimaan SBM</a>
+          </button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()"><a href="../modul_daftar_resep_pasien/Daftar-resep-pasien.html"> Daftar Resep Pasien</a></button>
+        </div>
+      </div>
+    </aside>
+    <!-- end navbar -->
+    <div class="w-full">
+      <div class="w-full py-4 bg-blue-400 justify-center m-auto flex">
+        <h1 class="text-white text-3xl font-bold">Transaksi Pelayanan Apotik</h1>
+      </div>
+
+      <!-- form input -->
+
+      <div class=" flex flex-col w-[980px] h-auto float-left">
+        <div class="bg-[#41abf2] mt-2 w-full h-7 flex flex-row ">
+          <p class="text-white text-[14px] ml-1 mt-1">Data Pasien</p>
+        </div>
+        <div class="w-full grid grid-rows-2 gap-1 border border-blue-500 ">
+            <div class="border-blue-500 table-fixed">
+        <div class="h-20 w-full">
+            <div class="grid grid-cols-9">
+                <div class="ml-2">
+                  <div class="flex">
+                    <div class="flex pt-4">
+                      <div class="pl-2">
+                          <div class="flex items-center">
+                              <label class="block tracking-wide text-base ml-2 pb-1">
+                                  No.MR
+                              </label>
+                          </div>
+                          <input class="block w-[180px] bg-[#e4e3e3] text-black border border-blue-500 py-1 px-2 text-sm rounded-md  leading-tight hover:bg-white placeholder:text-[#4c5356]" disabled type="text" placeholder="00001068">
+                      </div>
+                    </div>
+                    <div class="flex pt-4">
+                      <div class="pl-2">
+                          <label class="block tracking-wide text-base pb-1">
+                              Kelas
+                          </label>
+                          <input class="block w-[180px] bg-[#e4e3e3] text-white border border-blue-500 py-1 px-2 text-sm rounded-md leading-tight hover:bg-white placeholder:text-[#4c5356]" disabled type="text" placeholder="Non kelas">
+                      </div>
+                    </div>
+                    <div class="flex pt-4">
+                      <div class="pl-2">
+                          <label class="block tracking-wide text-base pb-1">
+                              Tgl. Resgistrasi
+                          </label>
+                          <input class="block w-[250px] bg-[#e4e3e3] text-white border border-blue-500 py-1 px-2 text-sm rounded-md leading-tight hover:bg-white placeholder:text-[#4c5356]" disabled type="text" placeholder="2022-02-03 09:39:31">
+                      </div>
+                    </div>
+                    <div class="flex pt-4">
+                      <div class="pl-2">
+                          <label class="block tracking-wide text-base pb-1">
+                              Jenis Penjamin
+                          </label>
+                          <input class="block w-[300px] bg-[#e4e3e3] text-white border border-blue-500 py-1 px-2 text-sm rounded-md leading-tight hover:bg-white placeholder:text-[#4c5356]" disabled type="text" placeholder="RS JANTUNG DAN PEMBULUH DARAH">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <div class="flex pt-3">
+                      <div class="pl-2">
+                          <div class="flex items-center">
+                              <label class="block tracking-wide text-base ml-2 pb-1">
+                                  Nama Pasien
+                              </label>
+                          </div>
+                          <input class="block w-[250px] bg-[#e4e3e3] text-black border border-blue-500 py-1 px-2 text-sm rounded-md  leading-tight hover:bg-white placeholder:text-[#4c5356]" disabled type="text" placeholder="ALISYA KAMILLIA">
+                      </div>
+                    </div>
+                    <div class="flex pt-3">
+                      <div class="pl-2">
+                          <label class="block tracking-wide text-base pb-1">
+                              Jenis Kelamin
+                          </label>
+                          <input class="block w-[200px] bg-[#e4e3e3] text-white border border-blue-500 py-1 px-2 text-sm rounded-md leading-tight hover:bg-white placeholder:text-[#4c5356]" disabled type="text" placeholder="PEREMPUAN">
+                      </div>
+                    </div>
+                    <div class="flex pt-3">
+                      <div class="pl-2">
+                          <label class="block tracking-wide text-base pb-1">
+                              Umur
+                          </label>
+                          <input class="block w-[250px] bg-[#e4e3e3] text-white border border-blue-500 py-1 px-2 text-sm rounded-md leading-tight hover:bg-white placeholder:text-[#4c5356]" disabled type="text" placeholder="17 thn 0 bln 0 hari">
+                      </div>
+                    </div>
+                    <div class="flex pt-3">
+                      <div class="pl-2">
+                          <label class="block tracking-wide text-base pb-1">
+                              Kelompok Pasien
+                          </label>
+                          <input class="block w-[200px] bg-[#e4e3e3] text-white border border-blue-500 py-1 px-2 text-sm rounded-md leading-tight hover:bg-white placeholder:text-[#4c5356]" disabled type="text" placeholder="BPJS">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+ </div>
+ <!-- end menu-->
+
+    <div class="flex flex-col col-span-1 w-[350px] h-24 float-right">
+      <div class="bg-[#41abf2] mt-2 w-full h-7 flex flex-row col-span-2">
+        <p class="text-white text-[14px] ml-1 mt-1">Pengkajian</p>
+      </div>
+      <div class="w-full grid grid-rows-2 gap-1 border border-blue-500 pt-3">
+        <div class="flex flex-col w-full ml-3">
+          <label class="text-sm font-bold">Berat Badan</label>
+          <div class="flex ml">
+            <input type="text" class="block w-48 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600 bg-gray-300 hover:bg-white"/>
+            <p class="ml-2">kg</p>
+          </div>
+        </div>
+        <div class="flex flex-col w-full p-3">
+          <label class="text-sm font-bold">Status Alergi</label>
+          <input type="text" class="block w-80 text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600 bg-gray-300 hover:bg-white" />
+        </div>
+      </div>
+    </div>
+        <tbody id="dataLoop">
+        </tbody>
+      </table>
+    </div>
+
+    <div class="w-full">
+      <div class="w-full py-4 bg-white justify-start m-auto flex">
+        <a class="text-gray-500 text-sm ml-5 font-bold tab-link cursor-pointer" href="#DaftarResep">DAFTAR RESEP</a>
+        <a class="text-gray-500 text-sm ml-5 font-bold tab-link cursor-pointer" href="#ObatKronis">DAFTAR RESEP OBAT KRONIS</a>
+      </div>
+    </div>
+<div class="tab-content " id="DaftarResep">
+
+  <div class="border border-gray-500 border-b-gray-600 bg-[#363940] ">
+    <button class="py-1 pl-1 ml-2 text-white text-sm mt-1 mb-1 p-1 bg-[#363940] hover:bg-[#41abf2]">
+       Tarik untuk pengelompokan data</button>
+  </div>
+            <!-- Tabel -->
+      <table class="border-collapse border font-thin text-xs border-slate-200  w-full ">
+        <tr class="text-center text-white font-light h-10 bg-[#363940]">
+          <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-1 p-2"></th>
+          <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-1 p-2">No</th>
+          <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-24 p-2">Tgl Pelayanan</th>
+          <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-24 p-2">No.Registrasi</th>
+          <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-5 p-2">No.Resep</th>
+          <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-48 p-2">Depo</th>
+          <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-48 p-2">R/ke</th>
+          <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-16 p-2">Kemasan</th>
+          <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-48 p-2">Deskripsi</th>
+          <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-44 p-2">Satuan</th>
+          <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-28 p-2">Qty</th>
+          <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-36 p-2">Harga Satuan</th>
+          <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-28 p-2">Harga Diskon</th>
+          <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-28 p-2">Jasa</th>
+          <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-44 p-2">Total</th>
+          <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-28 p-2">Kronis</th>
+          <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-36 p-2">No Struk</th>
+          <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-28 p-2">Tgl Exp</th>
+          <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-28 p-2">Cito</th>
+        </tr>
+
+        <div class="">
+          <tr class="text-left text-black font-medium text-sm h-10 w-full hover:bg-blue-400 hover:text-white">
+            <td class="p-5"><input type="checkbox"></td>
+            <td class="border border-gray-500    border-b-white p-3">1</td>
+            <td class="border border-gray-500    border-b-white p-3">2022-02-04 06:36:10</td>
+            <td class="border border-gray-500    border-b-white p-3">2202000060</td>
+            <td class="border border-gray-500    border-b-white p-3">O/2202/00003</td>
+            <td class="border border-gray-500    border-b-white p-3">Farmasi</td>
+            <td class="border border-gray-500    border-b-white p-3">1</td>
+            <td class="border border-gray-500    border-b-white p-3">Non Racikan</td>
+            <td class="border border-gray-500    border-b-white p-3">Metformin HCl Tablet 500 mg</td>
+            <td class="border border-gray-500    border-b-white p-3">Tablet</td>
+            <td class="border border-gray-500    border-b-white p-3">21</td>
+            <td class="border border-gray-500    border-b-white p-3">400.00</td>
+            <td class="border border-gray-500    border-b-white p-3">0.00</td>
+            <td class="border border-gray-500    border-b-white p-3">0.00</td>
+            <td class="border border-gray-500    border-b-white p-3">8,400.00	</td>
+            <td class="border border-gray-500    border-b-white p-3">✔</td>
+            <td class="border border-gray-500    border-b-white p-3">S000066045</td>
+            <td class="border border-gray-500    border-b-white p-3">2024-11-29 17:00:00</td>
+            <td class="border border-gray-500    border-b-white p-3"></td>
+          </tr>
+      </table>
+      <!-- end table -->
+          <tbody id="dataLoop">
+          </tbody>
+        </table>
+    </div>
+
+      <!-- pagination -->
+      <div class="overflow-y-auto">
+        <div class="bg-[#363940]">
+          <div class="bg-main-gray-0 py-[7px] flex items-center gap-2 ">
+            <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-[#41abf2] ">
+              <i class="fa fa-solid fa-backward-step text-white"></i>
+            </div>
+            <div class="rounded-full border w-6 h-6 flex hover:bg-[#41abf2]  items-center justify-center">
+              <i class="fa fa-solid fa-play text-white fa-rotate-180"></i>
+            </div>
+            <div class="rounded-full border w-6 h-6 flex items-center justify-center">
+              <h2 class="text-white">1</h2>
+            </div>
+            <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-[#41abf2]">
+              <i class="fa fa-solid fa-play text-white"></i>
+            </div>
+            <div class="rounded-full border w-6 h-6 flex justify-center items-center hover:bg-[#41abf2]">
+              <i class="fa fa-solid fa-forward-step text-white"></i>
+            </div>
+            <span class="text-white absolute right-3">1 - 3 of 3 items</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-6 gap-2 p-5 text-xs float-none -mt-5">
+      <div class="my-3 flex flex-col w-full" id="step_1">
+          <label class="" for=""></label>
+          <button class="btn bg-[#41ABF2] rounded text-white px-5  py-1 hover:bg-blue-600">
+            <i class="fa fa-solid"></i>Cetak Resep</button>
+          </div>
+        <div class="my-3 flex flex-col w-full" id="step_2">
+          <label class="" for=""></label>
+          <button class="btn bg-[#41ABF2] rounded text-white px-5 py-1 hover:bg-blue-600">
+            <i class="fa fa-solid"></i>Cetak SEP</button>
+        </div>
+        <div class="my-3 flex flex-col w-full" id="step_3">
+          <label class="" for=""></label>
+          <button class="btn bg-[#41ABF2] rounded text-white px-5 py-1 hover:bg-blue-600">
+            <i class="fa fa-solid"></i>Cetak Label Identitas</button>
+        </div>
+        <div class="my-3 flex flex-col w-full" id="step_4">
+          <label class="" for=""></label>
+          <button class="btn bg-[#41ABF2] rounded text-white px-5 py-1 hover:bg-blue-600">
+            <i class="fa fa-solid"></i>Cetak Rekap label</button>
+        </div>
+        <div class="my-3 flex flex-col w-full" id="step_5">
+          <label class="" for=""></label>
+          <button class="btn bg-[#41ABF2] rounded text-white px-5 py-1 hover:bg-blue-600">
+            <i class="fa fa-solid"></i>Cetak Label Resep</button>
+        </div>
+        <div class="my-3 flex flex-col w-full" id="step_6">
+          <label class="" for=""></label>
+          <button class="btn bg-[#41ABF2] rounded text-white px-5 py-1 hover:bg-blue-600">
+            <i class="fa fa-solid"></i>Cetak Label Biru</button>
+        </div>
+      </div>
+
+    <div class="grid grid-cols-6 gap-2 p-5 text-xs float-none -mt-14">
+    <div class="my-3 flex flex-col w-full " id="step_7">
+        <label class="" for=""></label>
+        <button class="btn bg-[#41ABF2] rounded text-white px-5  py-1 hover:bg-blue-600">
+          <i class="fa fa-solid"></i>Cetak Nomor Antrian</button>
+        </div>
+      <div class="my-3 flex flex-col w-full" id="step_8">
+        <label class="" for=""></label>
+        <button class="btn bg-[#41ABF2] rounded text-white px-5 py-1 hover:bg-blue-600">
+          <i class="fa fa-solid"></i>Kembali</button>
+      
+      </div>
+      </div>
+</div>
+     
+<div class="tab-content" id="ObatKronis">
+  <div class="border border-gray-500 border-b-gray-600 bg-[#363940] ">
+    <button class="py-1 pl-1 ml-2 text-white text-sm mt-1 mb-1 p-1 bg-[#363940] hover:bg-[#41abf2]">
+       Tarik untuk pengelompokan data</button></div>
+          <!-- Tabel -->
+    <table class="border-collapse border font-thin text-xs border-slate-200  w-full ">
+      <tr class="text-center text-white font-light h-10 bg-[#363940]">
+        <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-1 p-2"></th>
+        <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-1 p-2">No</th>
+        <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-24 p-2">Tgl Pelayanan</th>
+        <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-24 p-2">No.Registrasi</th>
+        <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-5 p-2">No.Resep</th>
+        <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-48 p-2">Depo</th>
+        <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-20 p-2">R/ke</th>
+        <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-16 p-2">Kemasan</th>
+        <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-48 p-2">Deskripsi</th>
+        <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-44 p-2">Satuan</th>
+        <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-28 p-2">Qty</th>
+        <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-36 p-2">Harga Satuan</th>
+        <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-28 p-2">Harga Diskon</th>
+        <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-28 p-2">Jasa</th>
+        <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-28 p-2">Total</th>
+        <th class="border border-slate-600 border-b-white hover:bg-[#41abf2] w-36 p-2">No Struk</th>
+        
+      </tr>
+
+      <div class="">
+        <tr class="text-left text-black font-medium text-sm h-10 w-full hover:bg-blue-400 hover:text-white">
+          <td class="p-5"><input type="checkbox"></td>
+          <td class="border border-gray-500 border-b-white p-3">1</td>
+          <td class="border border-gray-500 border-b-white p-3">2022-02-04 06:36:10</td>
+          <td class="border border-gray-500 border-b-white p-3">2202000060</td>
+          <td class="border border-gray-500 border-b-white p-3">O/2202/00003</td>
+          <td class="border border-gray-500 border-b-white p-3">Farmasi</td>
+          <td class="border border-gray-500 border-b-white p-3">1</td>
+          <td class="border border-gray-500 border-b-white p-3">Non Racikan</td>
+          <td class="border border-gray-500 border-b-white p-3">Metformin HCl Tablet 500 mg</td>
+          <td class="border border-gray-500 border-b-white p-3">Tablet</td>
+          <td class="border border-gray-500 border-b-white p-3">21</td>
+          <td class="border border-gray-500 border-b-white p-3">400.00</td>
+          <td class="border border-gray-500 border-b-white p-3">00.0</td>
+          <td class="border border-gray-500 border-b-white p-3">00.0</td>
+          <td class="border border-gray-500 border-b-white p-3">8,400.00</td>
+          <td class="border border-gray-500 border-b-white p-3"></td>
+        </tr>
+    </table>
+    <!-- end table -->
+        <tbody id="dataLoop">
+        </tbody>
+      </table>
+
+    <!-- pagination -->
+    <div class="overflow-y-auto">
+      <div class="bg-[#363940]">
+        <div class="bg-main-gray-0 py-[7px] flex items-center gap-2 ">
+          <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-[#41abf2] ">
+            <i class="fa fa-solid fa-backward-step text-white"></i>
+          </div>
+          <div class="rounded-full border w-6 h-6 flex hover:bg-[#41abf2]  items-center justify-center">
+            <i class="fa fa-solid fa-play text-white fa-rotate-180"></i>
+          </div>
+          <div class="rounded-full border w-6 h-6 flex items-center justify-center">
+            <h2 class="text-white">1</h2>
+          </div>
+          <div class="border rounded-full w-6 h-6 flex justify-center items-center hover:bg-[#41abf2]">
+            <i class="fa fa-solid fa-play text-white"></i>
+          </div>
+          <div class="rounded-full border w-6 h-6 flex justify-center items-center hover:bg-[#41abf2]">
+            <i class="fa fa-solid fa-forward-step text-white"></i>
+          </div>
+          <span class="text-white absolute right-3">1 - 3 of 3 items</span>
+        </div>
+      </div>
+    </div>
+
+</div>
+<script src="./js/script.js"></script>
+  <script>
+    document.getElementById("tour").addEventListener('click', function () {
+      const wt = new WebTour();
+      const steps = [
+     {
+        //1)	Cetak resep ( kanan )
+        element: '#step_1',            
+        title: '',         
+        content: 'Mencetak daftar resep obat',    
+        placement: 'top-start',      
+    },
+    {
+        //2)	Cetak SEP ( kiri )
+        element: '#step_2',            
+        title: '',         
+        content: 'Mencetak lembar Surat Eligibilitas Peserta ( SEP )',    
+        placement: 'top-start',      
+    },
+    {
+        //3)	Cetak label identitas ( kiri )
+        element: '#step_3',            
+        title: '',         
+        content: 'Mencetak label  dengan informasi identitas pasien',    
+        placement: 'top-start',      
+    },
+    {
+        //4)	Cetak rekap label ( kiri )
+        element: '#step_4',            
+        title: '',         
+        content: 'Mencetak ringkasan label',    
+        placement: 'top-start',      
+    },
+    {
+        //5)	Cetak label resep ( kiri )
+        element: '#step_5',            
+        title: '',         
+        content: 'Mencetak label untuk resep obat',    
+        placement: 'top-start',      
+    },
+    {
+        //6)	Cetak label biru ( kiri )
+        element: '#step_6',            
+        title: '',         
+        content: 'Mencetak label biru',    
+        placement: 'left-start',      
+    },
+    {
+        //7)	Cetak nomor antrian ( atas )
+        element: '#step_7',            
+        title: '',         
+        content: 'Mencetak nomor antrian',    
+        placement: 'top-start',      
+    },
+    {
+        //8)	Kembali ( atas )
+        element: '#step_8',            
+        title: '',         
+        content: 'Kembali ke halaman sebelumnya',    
+        placement: 'top-start',      
+    },
+  ];
+
+wt.setSteps(steps);
+wt.start();
+});
+    </script>
+
+<script>
+  const sidebar = document.getElementById('sidebar');
+  const toggleSidebarButton = document.getElementById('toggleSidebar');
+  const closeSidebarButton = document.getElementById('close');
+  const mainContentOverlay = document.getElementById('mainContentOverlay');
+  const dropdownContent = document.getElementById('myDropdown');
+  const dropdownContent1 = document.getElementById('myDropdown1');
+
+  toggleSidebarButton.addEventListener('click', () => {
+    sidebar.classList.toggle('-translate-x-full');
+    mainContentOverlay.style.display = 'block';
+  });
+
+  closeSidebarButton.addEventListener('click', () => {
+    sidebar.classList.toggle('-translate-x-full');
+    mainContentOverlay.style.display = 'none';
+  });
+
+  // Close sidebar when clicking outside
+  document.addEventListener('click', (event) => {
+    if (!sidebar.contains(event.target) && event.target !== toggleSidebarButton) {
+      sidebar.classList.add('-translate-x-full');
+      mainContentOverlay.style.display = 'none';
+    }
+  });
+
+  function toggleDropdown() {
+    dropdownContent.classList.toggle('opacity-100');
+    dropdownContent.classList.toggle('scale-y-100');
+    dropdownContent.classList.toggle('scale-y-0');
+  }
+  function toggleDropdown2() {
+    dropdownContent1.classList.toggle('opacity-100');
+    dropdownContent1.classList.toggle('scale-y-100');
+    dropdownContent1.classList.toggle('scale-y-0');
+  }
+
+  // Close the dropdown if the user clicks outside of it
+  window.addEventListener('click', function (event) {
+    if (!event.target.matches('.dropbtn')) {
+      if (dropdownContent.classList.contains('opacity-100')) {
+        toggleDropdown();
+      }
+    }
+  });
+</script>
+    
+</body>
+</html>

@@ -23,51 +23,53 @@
 
 <body class="font-comfortaa">
   <!-- navbar -->
-  <nav
-  class="bg-black border-b-2 border-b-black text-white p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-  <div class="flex mt-1">
+  <nav class="bg-black border-b-2 border-b-black text-white p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div class="flex mt-1">
       <div class="vector" id="vector">
-          <img id="toggleSidebar" class="w-10 h-12 pb-1 fill-white" src="./img/Menu Logo.png"/>
+        <img id="toggleSidebar" class="w-10 h-12 pb-1 fill-white" src="img/Menu Logo.png" />
       </div>
       <div class="flex flex-col">
-          <span class="text-3xl font-Comfortaa font-bold">
-              <a class="text-white mt-2 ml-3" href="#">TRANS<a href="#"
-                      class="text-[#FE0000] font-semibold">M</a><a href="" class="font-bold">EDIC</a></a>
-          </span>
-          <span class="ml-4 italic">E-Healthcare / RS TRANSMEDIC</span>
+        <span class="text-3xl font-Comfortaa font-bold">
+          <a class="text-white mt-2 ml-3" href="#">TRANS<a href="#" class="text-[#FE0000] font-semibold">M</a><a href="" class="font-bold">EDIC</a></a>
+        </span>
+        <span class="ml-4 italic">E-Healthcare / RS TRANSMEDIC</span>
       </div>
       <div class="absolute right-4 py-3">
         <button class="px-2 py-2 w-10 h-11 bg-[#363940] rounded-md text-lg" id="tour">?</button>
-        <span class="px-2 py-2 bg-[#363940] rounded-md text-lg">ABOUT</span>
+        <span class="px-2 py-2 bg-[#363940] rounded-md text-lg"><a href="../../../Dashboard/Home/home.html">Home</a></span>
       </div>
-  </div>
-</nav>
-
-<aside class="bg-gray-800 w-72 fixed inset-y-0 left-0 transform -translate-x-full transition-transform z-30 duration-300 ease-in-out" id="sidebar">
-  <!-- Sidebar Content -->
-  <div class="p-4 text-white">
-    <!-- Navigation -->
-    <div class="flex items-center">
-      <span class="material-symbols-outlined text-white text-4xl mr-4">
-        <a id="close">menu</a>
-      </span>
-      <p class="font-poppins font-semibold w-full">Navigasi</p>
     </div>
-    <br />
+  </nav>
 
-    <div class="dropdown w-full">
-      <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400" onclick="toggleDropdown()">
-        <a href="../modul_daftar_tagihan_non_layanan/public2/daftar_non_layanan.html"> Daftar Tagihan Non Layanan</a>
-      </button>
-      <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4" onclick="toggleDropdown2()"><a href="../modul_daftarTagihanPasien/daftar_tagihan_pasien.html"> Daftar Tagihan Pasien</a></button>
-      <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4" onclick="toggleDropdown2()">
-        <a href="../../modul_daftarTagihanPasien/daftar_tagihan_pasien.html"> Daftar Pasien Yang Masih Dirawat</a>
-      </button>
-      <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4" onclick="toggleDropdown2()"><a href="../../modul_daftarTagihanPasien/daftar_tagihan_pasien.html"> Daftar Penerimaan SBM</a></button>
-      <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4" onclick="toggleDropdown2()"><a href="../modul_daftar_resep_pasien/Daftar-resep-pasien.html"> Daftar Resep Pasien</a></button>
+  <aside class="bg-gray-800 w-72 fixed inset-y-0 left-0 transform -translate-x-full transition-transform z-30 duration-300 ease-in-out" id="sidebar">
+    <!-- Sidebar Content -->
+    <div class="p-4 text-white">
+      <!-- Navigation -->
+      <div class="flex items-center">
+        <span class="material-symbols-outlined text-white text-4xl mr-4">
+          <a id="close">menu</a>
+        </span>
+        <p class="font-poppins font-semibold w-full">Navigasi</p>
+      </div>
+      <br />
+
+      <div class="dropdown w-full">
+        <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 text-left" onclick="toggleDropdown()">
+          <a href="../../src/modul_daftar_tagihan_non_layanan/public2/daftar_non_layanan.html"> Daftar Tagihan Non Layanan</a>
+        </button>
+        <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()">
+          <a href="../../src/modul_daftarTagihanPasien/daftar_tagihan_pasien.html"> Daftar Tagihan Pasien</a>
+        </button>
+        <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()">
+          <a href="../../src/modul_daftar_pasien_yang_masih_dirawat/daftar_pasien_yang_masih_di_rawat.html"> Daftar Pasien Yang Masih Dirawat</a>
+        </button>
+        <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()"><a href="../../src/modul_daftar_penerimaan_sbm/daftar-sbm.html"> Daftar Penerimaan SBM</a></button>
+        <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()">
+          <a href="../../src/modul_daftar_resep_pasien/daftar-resep-pasien.html"> Daftar Resep Pasien</a>
+        </button>
+      </div>
     </div>
-  </div>
-</aside>
+  </aside>
   <!-- end navbar -->
 
   <div class="py-2 text-white" style="background-color: #41abf2">

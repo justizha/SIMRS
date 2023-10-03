@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transmedic | Bayar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link rel="icon" href="https://apps.transmedic.co.id:2200/app/images/favicon.ico" />
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/output.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css"
+      integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/webtour@1.1.0/dist/webtour.min.css" />
+    <script src="https://unpkg.com/webtour@1.1.0/dist/webtour.min.js"></script>
+  </head>
+  <body class="min-h-[960px] font-comfortaa">
+<!-- navbar -->
+<nav class="bg-black border-b-2 border-b-black text-white p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+  <div class="flex mt-1">
+    <div class="vector" id="vector">
+      <img id="toggleSidebar" class="w-10 h-12 pb-1 fill-white" src="img/Menu Logo.png" />
+    </div>
+    <div class="flex flex-col">
+      <span class="text-3xl font-Comfortaa font-bold">
+        <a class="text-white mt-2 ml-3" href="#">TRANS<a href="#" class="text-[#FE0000] font-semibold">M</a><a href="" class="font-bold">EDIC</a></a>
+      </span>
+      <span class="ml-4 italic">E-Healthcare / RS TRANSMEDIC</span>
+    </div>
+    <div class="absolute right-4 py-3">
+      <button class="px-2 py-2 w-10 h-11 bg-[#363940] rounded-md text-lg" id="tour">?</button>
+      <span class="px-2 py-2 bg-[#363940] rounded-md text-lg"><a href="../../Dashboard/Home/home.html">Home</a></span>
+    </div>
+  </div>
+</nav>
+
+<aside class="bg-gray-800 w-72 fixed inset-y-0 left-0 transform -translate-x-full transition-transform z-30 duration-300 ease-in-out" id="sidebar">
+  <!-- Sidebar Content -->
+  <div class="p-4 text-white">
+    <!-- Navigation -->
+    <div class="flex items-center">
+      <span class="material-symbols-outlined text-white text-4xl mr-4">
+        <a id="close">menu</a>
+      </span>
+      <p class="font-poppins font-semibold w-full">Navigasi</p>
+    </div>
+    <br />
+
+    <div class="dropdown w-full">
+      <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 text-left" onclick="toggleDropdown()">
+        <a href="../../src/modul_daftar_tagihan_non_layanan/public2/daftar_non_layanan.html"> Daftar Tagihan Non Layanan</a>
+      </button>
+      <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()">
+        <a href="../../src/modul_daftarTagihanPasien/daftar_tagihan_pasien.html"> Daftar Tagihan Pasien</a>
+      </button>
+      <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()">
+        <a href="../../src/modul_daftar_pasien_yang_masih_dirawat/daftar_pasien_yang_masih_di_rawat.html"> Daftar Pasien Yang Masih Dirawat</a>
+      </button>
+      <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()"><a href="../../src/modul_daftar_penerimaan_sbm/daftar-sbm.html"> Daftar Penerimaan SBM</a></button>
+      <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()">
+        <a href="../../src/modul_daftar_resep_pasien/daftar-resep-pasien.html"> Daftar Resep Pasien</a>
+      </button>
+    </div>
+  </div>
+</aside>
+<!-- end navbar -->
+
+    <!-- header -->
+    <div class="bg-[#41abf2] p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <p class="text-white text-center text-3xl font-bold">Penerimaan Pembayaran</p>
+    </div>
+    <!-- end header -->
+
+    <!-- menu -->
+    <div class="flex flex-col col-span-1 w-[880px] ml-[242px] ">
+      <div class="w-full grid grid-cols-2 gap-3 border border-main-blue-0 h-80 pt-3 mt-4">
+        <div class="flex flex-col w-full ml-3" >
+          <label class="text-sm font-bold">Total Tagihan</label>
+          <input type="text" class="block w-[420px] text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600 bg-gray-300 hover:bg-white" />
+          <p class="text-gray-500 -mt-6 ml-[273px] text-sm">-1415687.5499999998</p>
+        </div>
+        <div class="flex flex-col h-12 w-[420px]" id="step_1">
+          <label class="text-sm font-bold">Tgl Bayar</label>
+          <input type="date" class="block w-[420px] text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600" />
+        </div>
+        <div class="flex flex-col ml-3 h-12 w-[420px] -mt-12">
+          <label class="text-sm font-bold">Jumlah Bayar</label>
+          <input type="text" class="block w-[420px] text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600 bg-gray-300 hover:bg-white" />
+          <p class="text-gray-500 -mt-6 ml-[273px] text-sm">-1415687.5499999998</p>
+        </div>
+        <div class="flex flex-col -mt-9 h-12 w-[420px]" id="step_2">
+          <label class="text-sm font-bold">Cara Bayar</label>
+          <select name="pasien" class="block w-[420px] text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600">
+            <option class="bg-[#313235] text-white" value=""></option>
+            <option class="bg-[#313235] text-white" value="">Homecare</option>
+            <option class="bg-[#313235] text-white" value="">Instalasi Cathlab Dan Kamar Bedah</option>
+            <option class="bg-[#313235] text-white" value="">Instalasi Farmasi</option>
+            <option class="bg-[#313235] text-white" value="">Instalasi Gawat Darurat</option>
+            <option class="bg-[#313235] text-white" value="">Instalasi Laboratorium</option>
+            <option class="bg-[#313235] text-white" value="">Instalasi Radiologi Dan Imaging</option>
+            <option class="bg-[#313235] text-white" value="">Instalasi Rawat Inap Dan Perawatan Intensif</option>
+            <option class="bg-[#313235] text-white" value="">Instalasi Rawat Jalan Dan Rehabilitasi Medik</option>
+          </select>
+        </div>
+
+        <div class="flex flex-col w-full mb-5 -mt-14 ml-3">
+          <label class="text-sm font-bold">Terbilang</label>
+          <input type="text" class="block w-[420px] h-12 text-gray-700 border border-blue-500 py-1 text-xm leading-tight focus:bg-white focus:border-purple-400 focus:ring-blue-600" />
+        </div>
+        <div class="flex flex-col  h-12 w-[420px] mb-5 -mt-10" id="step_3">
+          <label class="text-sm font-bold">Nominal</label>
+          <input type="text" class="block w-[420px] text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:bg-white focus:border-purple-400 focus:ring-blue-600" />
+        </div>
+        <div class="flex flex-col mb-5 -mt-11">
+          <button class="bg-[#41abf2] text-white ml-[446px] font-bold text-sm w-40 py-1 h-8 border rounded" type="search"  id="step_4"><a href="index1.html">Tambah Bayar</a></button>
+        </div>
+      </div>
+    </div>
+    <!-- end menu -->
+
+    <!-- tabel -->
+    <div class="bg-[#41abf2] p-1 mt-6  w-[880px] ml-[242px] h-7 font-bold">
+      <p class="text-white text-[13px] text-left pt-1 ml-1 font-bold -mt-1">Daftar Bayar</p>
+    </div>
+
+    <!-- Tabel -->
+    <table class="border-collapse border font-thin text-[12px] border-slate-200  w-[880px] ml-[242px]">
+      <tr class="text-left text-white font-light h-6 bg-slate-700">
+        <th class="border border-slate-600 hover:bg-[#41abf2] w-16 p-2"></th>
+        <th class="border border-slate-600 hover:bg-[#41abf2] w-[855px] p-2">Cara Bayar</th>
+        <th class="border border-slate-600 hover:bg-[#41abf2] w-[155px] p-2">Nominal</th>
+        <th class="border border-slate-600 hover:bg-[#41abf2] w-48 p-2">Action</th>
+        <th class="border border-slate-600 hover:bg-[#41abf2] w-4 p-2"></th>
+      </tr>
+    </table>
+    <!-- end table -->
+
+    <!-- menu -->
+    <div class="flex flex-col col-span-1 w-[430px] ml-[685px] mt-2 h-80 mr-4">
+      <div class="bg-[#41abf2] mt-2 w-full h-9 flex flex-row col-span-2">
+        <p class="text-white text-[14px] ml-1 mt-1">Total</p>
+      </div>
+      <div class="w-full grid grid-cols-2 gap-3 border border-main-blue-0 h-20 pt-3 ">
+        <div class="flex flex-col w-full ml-3 -mt-2">
+          <label class="text-sm font-bold">Total bayar</label>
+          <input type="text" class="block w-[380px] text-gray-700 border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600 bg-gray-300 hover:bg-white" />
+          <p class="text-gray-500 -mt-6 ml-[370px] text-sm">0</p>
+        </div>
+        </div>
+      </div>
+    </div>
+    <!-- end menu -->
+
+    <div class="flex flex-col col-span-1 w-[425px] h-32 mr-4 -mt-[319px] ml-[247px]">
+        <div class="bg-[#41abf2] mt-2 w-full h-9 flex flex-row col-span-2">
+          <p class="text-white text-[14px] ml-1 mt-1">Detail</p>
+        </div> 
+        <div class="w-full grid grid-cols-2 gap-3 border border-main-blue-0 h-20 pt-3">
+          <div class="flex flex-col ml-3 h-12 w-[380px] -mt-2" id="step_5">
+            <label class="text-sm font-bold">Sudah terima dari</label>
+            <input type="text" class="block w-[380px] border border-blue-500 rounded-md py-1 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600 hover:bg-white" />
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- button footer -->
+
+      <!-- button footer -->
+    <div class="flex flex-wrap-2 gap-3 float-right mt-7" >
+        <div class="px-1" id="step_7">
+            <button class="bg-[#238a2a] text-white h-8 w-36 border rounded" type="search"><img src="img/printing.png" class="h-4 w-4 -mb-4 ml-2"  />Cetak</button>
+        </div>
+        <div class="px-1" id="step_8">
+            <button class="bg-[#a2ac21] text-white h-8 w-52 border rounded" type="search"><img src="img/printing.png" class="h-4 w-4 -mb-4 ml-2"  />Asuransi Web+</button>
+        </div>
+        <div class="px- 1" id="step_6">
+            <button class="bg-[#41abf2] text-white h-8 w-36 border rounded" type="search"><img src="img/file.png" class="h-4 w-4 -mb-4 ml-2" />Simpan</button>
+        </div>
+        <div class="px-1 mr-1" id="step_9">
+            <button class="bg-[#FE0000] text-white h-8 w-36 border rounded" type="search"><img src="img/arrow.png" class="h-4 w-4 -mb-4 ml-2" /><a href="daftar_pasien_yang_masih_di_rawat.html">Kembali</a></button>
+        </div>
+      </div>
+      
+      <script>
+      document.getElementById('tour').addEventListener('click', function () {
+        const wt = new WebTour();
+        const steps = [
+    {
+        //form tanggal bayar 
+        element: '#step_1',            
+        title: '',         
+        content: 'isi tanggal saat dilakukan pembayaran',    
+        placement: 'left-end',      
+    },
+    {
+        //form dropdown cara bayar 
+        element: '#step_2',            
+        title: '',         
+        content: 'berfungsi untuk memilih cara pembayaran contohnya tunai atau transfer bank',     
+        placement: 'left-end',       
+    },
+    {
+        //form nominal 
+        element: '#step_3',            
+        title: '',         
+        content: 'berfungsi untuk memasukan nominal yang harus dibayar',     
+        placement: 'left-end',       
+    },
+    {
+        //tombol tambah bayar 
+        element: '#step_4',            
+        title: '',         
+        content: 'untuk menambahkan nominal yang harus dibayar ke daftar bayar',    
+        placement: 'top-end',      
+    },
+    {
+        //form sudah diterima
+        element: '#step_5',            
+        title: '',         
+        content: 'form ini di isi dengan pembayaran sudah diterima dari siapa',     
+        placement: 'right-start',       
+    },
+    {
+        //tombol simpan
+        element: '#step_6',            
+        title: '',         
+        content: 'berfungsi untuk menyimpan data yang sudah  diisi sebelumnya',     
+        placement: 'left-end',       
+    },
+    {
+       //tombol cetak 
+        element: '#step_7',            
+        title: '',         
+        content: 'berfungsi untuk mencetak kwitansi pembayaran',    
+        placement: 'left-end',      
+    },
+    {
+        //tombol asuransi we+
+        element: '#step_8',            
+        title: '',         
+        content: 'berfungsi jika pembayaran akan menggunakan asuransi',     
+        placement: 'left-end',       
+    },
+    {
+        //tombol kembali
+        element: '#step_9',            
+        title: '',         
+        content: 'berfungsi untuk kembali ke halaman sebelumnya',     
+        placement: 'left-end',       
+    },
+    ];
+
+wt.setSteps(steps);
+wt.start();
+});
+
+const sidebar = document.getElementById('sidebar');
+      const toggleSidebarButton = document.getElementById('toggleSidebar');
+      const closeSidebarButton = document.getElementById('close');
+      const mainContentOverlay = document.getElementById('mainContentOverlay');
+      const dropdownContent = document.getElementById('myDropdown');
+      const dropdownContent1 = document.getElementById('myDropdown1');
+
+      toggleSidebarButton.addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+        mainContentOverlay.style.display = 'block';
+      });
+
+      closeSidebarButton.addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+        mainContentOverlay.style.display = 'none';
+      });
+
+      // Close sidebar when clicking outside
+      document.addEventListener('click', (event) => {
+        if (!sidebar.contains(event.target) && event.target !== toggleSidebarButton) {
+          sidebar.classList.add('-translate-x-full');
+          mainContentOverlay.style.display = 'none';
+        }
+      });
+
+      function toggleDropdown() {
+        dropdownContent.classList.toggle('opacity-100');
+        dropdownContent.classList.toggle('scale-y-100');
+        dropdownContent.classList.toggle('scale-y-0');
+      }
+      function toggleDropdown2() {
+        dropdownContent1.classList.toggle('opacity-100');
+        dropdownContent1.classList.toggle('scale-y-100');
+        dropdownContent1.classList.toggle('scale-y-0');
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.addEventListener('click', function (event) {
+        if (!event.target.matches('.dropbtn')) {
+          if (dropdownContent.classList.contains('opacity-100')) {
+            toggleDropdown();
+          }
+        }
+      });
+
+      </script>
+  </body>
+</html>

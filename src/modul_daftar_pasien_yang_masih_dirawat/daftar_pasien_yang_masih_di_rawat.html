@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0" />
+    <title>Transmedic | Daftar Resep Pasien</title>
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="https://unpkg.com/webtour@1.1.0/dist/webtour.min.css" />
+    <script src="https://unpkg.com/webtour@1.1.0/dist/webtour.min.js"></script>
+    <link rel="stylesheet" href="css/output.css" />
+    <link rel="icon" href="https://apps.transmedic.co.id:2200/app/images/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link rel="icon" href="https://apps.transmedic.co.id:2200/app/images/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css"
+      integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="min-h-screen">
+    <!-- navbar -->
+    <nav class="bg-black border-b-2 border-b-black text-white p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div class="flex mt-1">
+        <div class="vector" id="vector">
+          <img id="toggleSidebar" class="w-10 h-12 pb-1 fill-white" src="img/Menu Logo.png" />
+        </div>
+        <div class="flex flex-col">
+          <span class="text-3xl font-Comfortaa font-bold">
+            <a class="text-white mt-2 ml-3" href="#">TRANS<a href="#" class="text-[#FE0000] font-semibold">M</a><a href="" class="font-bold">EDIC</a></a>
+          </span>
+          <span class="ml-4 italic">E-Healthcare / RS TRANSMEDIC</span>
+        </div>
+        <div class="absolute right-4 py-3">
+          <button class="px-2 py-2 w-10 h-11 bg-[#363940] rounded-md text-lg" id="tour">?</button>
+          <span class="px-2 py-2 bg-[#363940] rounded-md text-lg"><a href="../../Dashboard/Home/home.html">Home</a></span>
+        </div>
+      </div>
+    </nav>
+
+    <aside class="bg-gray-800 w-72 fixed inset-y-0 left-0 transform -translate-x-full transition-transform z-30 duration-300 ease-in-out" id="sidebar">
+      <!-- Sidebar Content -->
+      <div class="p-4 text-white">
+        <!-- Navigation -->
+        <div class="flex items-center">
+          <span class="material-symbols-outlined text-white text-4xl mr-4">
+            <a id="close">menu</a>
+          </span>
+          <p class="font-poppins font-semibold w-full">Navigasi</p>
+        </div>
+        <br />
+
+        <div class="dropdown w-full">
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 text-left" onclick="toggleDropdown()">
+            <a href="../../src/modul_daftar_tagihan_non_layanan/public2/daftar_non_layanan.html"> Daftar Tagihan Non Layanan</a>
+          </button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()">
+            <a href="../../src/modul_daftarTagihanPasien/daftar_tagihan_pasien.html"> Daftar Tagihan Pasien</a>
+          </button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()">
+            <a href="../../src/modul_daftar_pasien_yang_masih_dirawat/daftar_pasien_yang_masih_di_rawat.html"> Daftar Pasien Yang Masih Dirawat</a>
+          </button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()"><a href="../../src/modul_daftar_penerimaan_sbm/daftar-sbm.html"> Daftar Penerimaan SBM</a></button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()">
+            <a href="../../src/modul_daftar_resep_pasien/daftar-resep-pasien.html"> Daftar Resep Pasien</a>
+          </button>
+        </div>
+      </div>
+    </aside>
+    <!-- end navbar -->
+    <div class="text-center bg-biru">
+      <p class="text-white text-2xl font-extrabold py-3">Daftar Pasien Yang Masih Dirawat</p>
+    </div>
+    <div class="m-2 float-right">
+      <form class="flex flex-nowrap gap-4" id="step_1">
+        <div class="w-28">
+          <label for="noReg" class="block text-gray-700">No Reg</label>
+          <input type="text" id="noReg" name="noReg" class="w-28 border border-blue-500 rounded-md h-7 px-1 focus:outline-none focus:ring focus:border-blue-700" />
+        </div>
+        <div class="w-52">
+          <label for="nama" class="block text-gray-700">Nama</label>
+          <input type="text" id="nama" name="nama" class="border border-blue-500 rounded-md h-7 px-1 focus:outline-none focus:ring focus:border-blue-700 w-52" />
+        </div>
+        <div class="w-52">
+          <label for="nama" class="block text-gray-700">Ruangan</label>
+          <select name="pasien" class="block w-56 text-gray-700 border border-blue-500 rounded-md h-7 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600">
+            <option class="bg-abu text-white" value="" selected disabled hidden></option>
+            <option class="bg-abu text-white" value="">Asuransi</option>
+            <option class="bg-abu text-white" value="">BPJS</option>
+            <option class="bg-abu text-white" value="">Karyawan</option>
+            <option class="bg-abu text-white" value="">Perusahaan</option>
+            <option class="bg-abu text-white" value="">Umum/Pribadi</option>
+          </select>
+        </div>
+        <div class="w-full mt-6 ml-4">
+          <button type="submit" class="text-xs bg-biru hover:bg-blue-500 text-white py-2 px-8 rounded-md focus:outline-none focus:ring focus:border-blue-700" id="step_2">Cari</button>
+          <button type="reset" class="text-xs bg-biru hover:bg-blue-500 text-white py-2 px-8 rounded-md focus:outline-none focus:ring focus:border-gray-600" id="step_3">Clear</button>
+        </div>
+      </form>
+    </div>
+
+    <table class="min-w-full bg-white border-t border-b">
+      <tr>
+        <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider" colspan="10" style="background-color: #41abf2">Daftar Pasien</td>
+      </tr>
+      <tr style="background-color: #363940">
+        <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Tanggal Masuk</td>
+        <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Tanggal Pulang</td>
+        <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">No RM</td>
+        <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">No Reg</td>
+        <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Nama Pasien</td>
+        <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Ruangan</td>
+        <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Jenis Asuransi</td>
+        <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Status Pasien</td>
+        <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Status</td>
+      </tr>
+
+      <tbody id="step_4">
+        <tr class="bg-white hover:bg-biru">
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">21-May-2023</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">-</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">00003401</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">2305001406</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">PASIEN TEST 00003401</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">RUANG A</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">BPJS</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">LAMA</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">Belum Verifikasi</td>
+        </tr>
+        <tr class="bg-gray-100">
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">22-May-2023</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">-</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">00003451</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">2305001516</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">PASIEN TEST 00003451</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">HCU</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">BPJS</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs"></td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">Belum Verifikasi</td>
+        </tr>
+        <tr class="bg-white">
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">23-May-2023</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">-</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">00003459</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">2305001568</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">PASIEN TEST 00003459</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">RUANG H</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">BPJS</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">BARU</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">Belum Verifikasi</td>
+        </tr>
+        <tr class="bg-gray-100">
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">23-May-2023</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">-</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">00003459</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">2305001568</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">PASIEN TEST 00003459</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">RUANG H</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">BPJS</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">BARU</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">Belum Verifikasi</td>
+        </tr>
+        <tr class="bg-white">
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">23-May-2023</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">-</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">00003265</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">2305001575</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">PASIEN TEST 00003265</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">RUANG H</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">BPJS</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs"></td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">Belum Verifikasi</td>
+        </tr>
+        <tr class="bg-gray-100">
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">23-May-2023</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">-</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">00001691</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">2305001576</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">PASIEN TEST 00001691</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">RUANG H</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">BPJS</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs"></td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">Belum Verifikasi</td>
+        </tr>
+        <tr class="bg-white">
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">24-May-2023</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">-</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">00003468</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">2305001618</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">PASIEN TEST 00003468</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">RUANG H</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">BPJS</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs"></td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">Belum Verifikasi</td>
+        </tr>
+        <tr class="bg-gray-100">
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">26-Jun-2023</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">-</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">00003476</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">2306000024</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">PASIEN TEST 00003476</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">RUANG ISOLASI</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">BPJS</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">BARU</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">Belum Verifikasi</td>
+        </tr>
+        <tr class="bg-white">
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">26-Jun-2023</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">-</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">00003476</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">2306000024</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">PASIEN TEST 00003476</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">RUANG ISOLASI</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">BPJS</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">BARU</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">Belum Verifikasi</td>
+        </tr>
+        <tr class="bg-gray-100">
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">25-Jul-2023</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">-</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">00003479</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">2307000022</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">ADE</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">RUANG B</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">Umum/Pribadi</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">BARU</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">Belum Verifikasi</td>
+        </tr>
+        <tr class="bg-white">
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">26-Jul-2023</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">-</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">00003486</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">2307000033</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">AYU FAZAR ULFANI</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">RUANG A</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">Umum/Pribadi</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">BARU</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">Belum Verifikasi</td>
+        </tr>
+        <tr class="bg-gray-100">
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">28-Jul-2023</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">-</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">00003489</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">2307000041</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">TESTING2</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">RUANG ISOLASI</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">Umum/Pribadi</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">LAMA</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">Belum Verifikasi</td>
+        </tr>
+        <tr class="bg-white">
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">01-Aug-2023</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">-</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">00003495</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">2308000003</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">NN. AGIYA PRAMESWARI BY NY</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">RUANG B</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">Umum/Pribadi</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">BARU</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-xs">Belum Verifikasi</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="bg-abu flex">
+      <div class="flex-auto py-1 pl-1">
+        <button class="bg-abu hover:bg-biru text-gray-800 font-semibold w-7 h-7 border border-gray-400 rounded-full shadow">
+          <i class="fa-solid fa-backward-step fa-xs" style="color: #ffffff"></i>
+        </button>
+        <button class="bg-abu hover:bg-biru text-gray-800 font-semibold w-7 h-7 border border-gray-400 rounded-full shadow">
+          <i class="fa-sharp fa-solid fa-caret-left fa-xs" style="color: #ffffff"></i>
+        </button>
+        <button class="bg-biru hover:bg-biru text-gray-800 font-semibold w-7 h-7 border border-gray-400 rounded-full shadow">
+          <p class="text-white text-sm">1</p>
+        </button>
+        <button class="bg-abu hover:bg-biru text-gray-800 font-semibold w-7 h-7 border border-gray-400 rounded-full shadow">
+          <i class="fa-solid fa-caret-right fa-xs" style="color: #ffffff"></i>
+        </button>
+        <button class="bg-abu hover:bg-biru text-gray-800 font-semibold w-7 h-7 border border-gray-400 rounded-full shadow">
+          <i class="fa-solid fa-forward-step fa-xs" style="color: #ffffff"></i>
+        </button>
+      </div>
+      <div class="flex-auto text-right pt-2 pr-3">
+        <p class="text-white text-sm">1 - 20 of 28 items</p>
+      </div>
+    </div>
+
+    <div class="float-right mt-3 bottom-7 right-14">
+      <button class="bg-biru hover:bg-blue-500 text-white font-normal py-1.5 mx-auto rounded text-xs w-36" id="step_5"><a href="rekap_tagihan_pasien.html">Rekap Tagihan</a></button>
+      <button class="bg-biru hover:bg-blue-500 text-white font-normal py-1.5 mx-auto rounded text-xs w-36" id="step_6"><a href="detail.html">Detail</a></button>
+      <button class="bg-biru hover:bg-blue-500 text-white font-normal py-1.5 mx-auto rounded text-xs w-36" id="step_7"><a href="penyetoran_deposit.html">Bayar Deposit</a></button>
+      <button class="bg-biru hover:bg-blue-500 text-white font-normal py-1.5 mx-auto rounded text-xs w-36">Perbaharui</button>
+      <button class="bg-biru hover:bg-blue-500 text-white font-normal py-1.5 mx-auto rounded text-xs w-36" id="step_8"><a href="verifikasi_tagihan.html">Verifikasi</a></button>
+      <button class="bg-biru hover:bg-blue-500 text-white font-normal py-1.5 mx-auto rounded text-xs w-36">Detail Verifikasi</button>
+    </div>
+    <div class="h-24"></div>
+
+    <script>
+      document.getElementById('tour').addEventListener('click', function () {
+        const wt = new WebTour({ autoscroll: false });
+
+        const steps = [
+          {
+            //semua form di atas
+            element: '#step_1',
+            title: '',
+            content: 'Berfungsi untuk mencari data pasien dan mengisinya sesuai dengan pasien yang ingin dilihat datanya.',
+            placement: 'left-start',
+          },
+          {
+            //Tombol cari
+            element: '#step_2',
+            title: '',
+            content: 'Tombol ini digunakan ketika salah satu dari form no reg,nama atau ruangan sudah di isi.',
+            placement: 'left-start',
+          },
+          {
+            //Tombol clear
+            element: '#step_3',
+            title: '',
+            content: ' berfungsi untuk menghapus riwayat pencarian sebelumnya.',
+            placement: 'left-start',
+          },
+          {
+            //tabel daftar pasien
+            element: '#step_4',
+            title: '',
+            content: 'Semua data akan yang dicari akan muncul tabel ini.',
+            placement: 'top-start',
+          },
+          {
+            // Tombol rekap tagihan
+            element: '#step_5',
+            title: '',
+            content: 'Tombol ini berfungsi untuk melihat rekap tagihan yang perlu dibayar oleh pasien. Tagihan ini mungkin akan bertambah karena pasien masih dalam perawatan',
+            placement: 'top-start',
+          },
+          {
+            // Tombol detail
+            element: '#step_6',
+            title: '',
+            content: 'Tombol ini berfungsi untuk melihat data pasien dengan lebih detail',
+            placement: 'top-start',
+          },
+          {
+            // Tombol bayar deposit
+            element: '#step_7',
+            title: '',
+            content: 'Tombol ini berfungsi ketika pasien akan membayar deposit',
+            placement: 'top-start',
+          },
+          {
+            // Tombol verifikasi
+            element: '#step_8',
+            title: '',
+            content: 'Tombol ini berfungsi untuk memverifikasi data pasien',
+            placement: 'left-end',
+          },
+        ];
+
+        wt.setSteps(steps);
+        wt.start();
+      });
+
+      const sidebar = document.getElementById('sidebar');
+      const toggleSidebarButton = document.getElementById('toggleSidebar');
+      const closeSidebarButton = document.getElementById('close');
+      const mainContentOverlay = document.getElementById('mainContentOverlay');
+      const dropdownContent = document.getElementById('myDropdown');
+      const dropdownContent1 = document.getElementById('myDropdown1');
+
+      toggleSidebarButton.addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+        mainContentOverlay.style.display = 'block';
+      });
+
+      closeSidebarButton.addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+        mainContentOverlay.style.display = 'none';
+      });
+
+      // Close sidebar when clicking outside
+      document.addEventListener('click', (event) => {
+        if (!sidebar.contains(event.target) && event.target !== toggleSidebarButton) {
+          sidebar.classList.add('-translate-x-full');
+          mainContentOverlay.style.display = 'none';
+        }
+      });
+
+      function toggleDropdown() {
+        dropdownContent.classList.toggle('opacity-100');
+        dropdownContent.classList.toggle('scale-y-100');
+        dropdownContent.classList.toggle('scale-y-0');
+      }
+      function toggleDropdown2() {
+        dropdownContent1.classList.toggle('opacity-100');
+        dropdownContent1.classList.toggle('scale-y-100');
+        dropdownContent1.classList.toggle('scale-y-0');
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.addEventListener('click', function (event) {
+        if (!event.target.matches('.dropbtn')) {
+          if (dropdownContent.classList.contains('opacity-100')) {
+            toggleDropdown();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

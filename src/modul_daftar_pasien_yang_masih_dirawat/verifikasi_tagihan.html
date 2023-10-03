@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0" />
+    <title>Transmedic | Verifikasi Tagihan</title>
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/output.css" />
+    <link rel="stylesheet" href="https://unpkg.com/webtour@1.1.0/dist/webtour.min.css" />
+    <script src="https://unpkg.com/webtour@1.1.0/dist/webtour.min.js"></script>
+    <link rel="icon" href="https://apps.transmedic.co.id:2200/app/images/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link rel="icon" href="https://apps.transmedic.co.id:2200/app/images/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css"
+      integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <style></style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="bg-black border-b-2 border-b-black text-white p-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div class="flex mt-1">
+        <div class="vector" id="vector">
+          <img id="toggleSidebar" class="w-10 h-12 pb-1 fill-white" src="img/Menu Logo.png" />
+        </div>
+        <div class="flex flex-col">
+          <span class="text-3xl font-Comfortaa font-bold">
+            <a class="text-white mt-2 ml-3" href="#">TRANS<a href="#" class="text-[#FE0000] font-semibold">M</a><a href="" class="font-bold">EDIC</a></a>
+          </span>
+          <span class="ml-4 italic">E-Healthcare / RS TRANSMEDIC</span>
+        </div>
+        <div class="absolute right-4 py-3">
+          <button class="px-2 py-2 w-10 h-11 bg-[#363940] rounded-md text-lg" id="tour">?</button>
+          <span class="px-2 py-2 bg-[#363940] rounded-md text-lg"><a href="../../Dashboard/Home/home.html">Home</a></span>
+        </div>
+      </div>
+    </nav>
+
+    <aside class="bg-gray-800 w-72 fixed inset-y-0 left-0 transform -translate-x-full transition-transform z-30 duration-300 ease-in-out" id="sidebar">
+      <!-- Sidebar Content -->
+      <div class="p-4 text-white">
+        <!-- Navigation -->
+        <div class="flex items-center">
+          <span class="material-symbols-outlined text-white text-4xl mr-4">
+            <a id="close">menu</a>
+          </span>
+          <p class="font-poppins font-semibold w-full">Navigasi</p>
+        </div>
+        <br />
+
+        <div class="dropdown w-full">
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 text-left" onclick="toggleDropdown()">
+            <a href="../../src/modul_daftar_tagihan_non_layanan/public2/daftar_non_layanan.html"> Daftar Tagihan Non Layanan</a>
+          </button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()">
+            <a href="../../src/modul_daftarTagihanPasien/daftar_tagihan_pasien.html"> Daftar Tagihan Pasien</a>
+          </button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()">
+            <a href="../../src/modul_daftar_pasien_yang_masih_dirawat/daftar_pasien_yang_masih_di_rawat.html"> Daftar Pasien Yang Masih Dirawat</a>
+          </button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()"><a href="../../src/modul_daftar_penerimaan_sbm/daftar-sbm.html"> Daftar Penerimaan SBM</a></button>
+          <button class="dropbtn w-full font-light border-b border-b-gray-500 hover:bg-blue-400 mt-4 text-left" onclick="toggleDropdown2()">
+            <a href="../../src/modul_daftar_resep_pasien/daftar-resep-pasien.html"> Daftar Resep Pasien</a>
+          </button>
+        </div>
+      </div>
+    </aside>
+    <!-- end navbar -->
+
+    <div class="bg-biru text-center">
+      <p class="text-white text-2xl font-extrabold py-3 pl-4">Verifikasi Tagihan</p>
+    </div>
+
+    <div class="grid grid-cols-12 gap-3 py-2 text-sm px-1.5 border border-biru pb-4 mb-5">
+      <!-- Row Satu -->
+      <div class="col-span-2">
+        <label for="no_rm" class="block text-gray-700 font-extrabold">No Rekam Medik</label>
+        <input disabled type="text" id="no_rm" name="no_rm" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="00003522" />
+      </div>
+      <div class="col-span-2">
+        <label for="no_reg" class="block text-gray-700 font-extrabold">No Registrasi</label>
+        <input disabled type="text" id="no_reg" name="no_reg" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="2308000152" disabled="disabled" />
+      </div>
+      <div class="col-span-3">
+        <label for="nm_pas" class="block text-gray-700 font-extrabold">Nama Pasien</label>
+        <input disabled type="text" id="nm_pas" name="nm_pas" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="AN. ILHAM PAMUJI RAMDHANI" disabled="disabled" />
+      </div>
+      <div class="col-span-2">
+        <label for="kls_rwt" class="block text-gray-700 font-extrabold">Kelas Rawat Kelamin</label>
+        <input disabled type="text" id="kls_rwt" name="kls_rwt" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="Kelas II" />
+      </div>
+      <div class="col-span-3">
+        <label for="pnjm" class="block text-gray-700 font-extrabold">Penjamin</label>
+        <input disabled type="text" id="pnjm" name="pnjm" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="16 thn 11 bln 10 hari" />
+      </div>
+
+      <!-- Row 2 -->
+      <div class="col-span-3">
+        <label for="tgl_plg" class="block text-gray-700 font-extrabold">Tanggal Pulang</label>
+        <input disabled type="text" id="tgl_plg" name="tgl_plg" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="081322104526" />
+      </div>
+      <div class="col-span-3">
+        <label for="no_reg_as" class="block text-gray-700 font-extrabold">No registrasi asuransi </label>
+        <input disabled type="text" id="no_reg_as" name="no_reg_as" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="-" />
+      </div>
+      <div class="col-span-3">
+        <label for="jns_pas" class="block text-gray-700 font-extrabold">Jenis pasien </label>
+        <input disabled type="text" id="jns_pas" name="jns_pas" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="Umum/Pribadi" />
+      </div>
+      <div class="col-span-3">
+        <label for="kls_pnjm" class="block text-gray-700 font-extrabold">Kelas Penjamin</label>
+        <input disabled type="text" id="kls_pnjm" name="kls_pnjm" class="w-full border bg-gray-300 border-blue-500 rounded-md h-7 focus:outline-none focus:ring hover:bg-white" placeholder="-" />
+      </div>
+    </div>
+
+    <div class="flex gap-5 px-3 mb-6 border-b-2">
+      <button class="h-12 border-b-2 border-red-600" id="step_1">
+        <p class="uppercase text-biru">layanan</p>
+      </button>
+      <button id="step_2">
+        <a href="verifikasi_tagihan_resep.html">
+          <p class="uppercase text-gray-700">Resep</p>
+        </a>
+      </button>
+    </div>
+
+    <div class="flex gap-96 px-6">
+      <div class="flex gap-2 mr-56 pb-5" id="step_3">
+        <input type="checkbox" name="Verifikasi" id="Verifikasi" class="to-biru" />
+        <p class="text-xs">Verifikasi Semua</p>
+      </div>
+
+      <div class="flex gap-10 float-right">
+        <div class="w-96 flex gap-4" id="step_4">
+          <label for="nama" class="block text-gray-700">Ruang</label>
+          <select name="pasien" class="block w-80 text-gray-700 border border-blue-500 rounded-md h-7 text-xm leading-tight focus:outline-none focus:bg-white focus:border-purple-400 focus:ring-blue-600">
+            <option class="bg-abu text-white" value="" selected disabled hidden></option>
+            <option class="bg-abu text-white" value="">Ruang A</option>
+          </select>
+        </div>
+        <div class="w-52 flex gap-4">
+          <label for="nama" class="block text-gray-700">Filter</label>
+          <input type="text" id="nama" name="nama" class="border border-blue-500 rounded-md h-7 px-1 focus:outline-none focus:ring focus:border-blue-700 w-32" />
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-4 overflow-scroll outline outline-offset-2 outline-1 outline-biru">
+      <table class="min-w-full bg-white border-t border-b w-12" style="width: 125%">
+        <tr class="bg-abu border-b">
+          <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">
+            <div class="w-3"></div>
+          </td>
+          <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Tanggal</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Nama Pelayanan</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Kelas</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Dokter</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Ruangan</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Qty</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Harga</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Harga Dijamin</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Harga Diskon</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Jasa</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">Total</td>
+          <td class="px-1.5 py-1.5 border-l border-r text-white text-left text-xs leading-4 tracking-wider">NoStruk/NoSbm</td>
+        </tr>
+
+        <tbody>
+          <tr class="bg-biru hover:bg-blue-700">
+            <td class="px-1.5 py-1.5 border-l border-r text-xs">
+              <input type="checkbox" name="checkboxchk" id="step_5" />
+            </td>
+            <td class="px-1.5 py-1.5 border-l border-r text-xs">23-Aug-2023 16:27</td>
+            <td class="px-1.5 py-1.5 border-l border-r text-xs">Administrasi</td>
+            <td class="px-1.5 py-1.5 border-l border-r text-xs">Kelas II</td>
+            <td class="px-1.5 py-1.5 border-l border-r text-xs">-</td>
+            <td class="px-1.5 py-1.5 border-l border-r text-xs">RUANG A</td>
+            <td class="px-1.5 py-1.5 border-l border-r text-xs">1</td>
+            <td class="px-1.5 py-1.5 border-l border-r text-xs">0.00</td>
+            <td class="px-1.5 py-1.5 border-l border-r text-xs">0.00</td>
+            <td class="px-1.5 py-1.5 border-l border-r text-xs">0.00</td>
+            <td class="px-1.5 py-1.5 border-l border-r text-xs">0.00</td>
+            <td class="px-1.5 py-1.5 border-l border-r text-xs"></td>
+            <td class="px-1.5 py-1.5 border-l border-r text-xs">/</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Tabel Utama -->
+
+    <div class="mr-0 ml-auto w-full my-2 border border-biru border-t-8">
+      <div class="grid grid-cols-2 gap-4 p-4">
+        <div class="">
+          <p class="text-sm font-extrabold">Total Billing</p>
+          <p class="text-sm">Rp. 0.00</p>
+        </div>
+        <div class="">
+          <p class="text-sm font-extrabold">Total Bayar</p>
+          <p class="text-sm">Rp. 0.00</p>
+        </div>
+        <div class="">
+          <p class="text-sm font-extrabold">Total Klaim</p>
+          <div class="flex gap-12">
+            <div class="flex gap-2" id="step_6">
+              <input type="checkbox" name="" id="" />
+              <p class="text-sm">Multi Penjamin</p>
+            </div>
+            <div class="flex gap-2" id="step_7">
+              <input type="checkbox" name="" id="" />
+              <p class="text-sm">Diskon Total</p>
+            </div>
+            <div class="flex gap-2" id="step_8">
+              <input type="checkbox" name="" id="" />
+              <p class="text-sm">Iur bayar</p>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <p class="text-sm font-extrabold">Total Tagihan</p>
+          <p class="text-sm">Rp. 0.00</p>
+        </div>
+
+        <input type="text" id="nama" name="nama" class="border border-blue-500 rounded-md h-7 px-1 focus:outline-none focus:ring focus:border-blue-700 w-full" placeholder="0" />
+      </div>
+    </div>
+
+    <div class="bottom-7 right-14 mt-4 float-right font-extrabold flex gap-3">
+      <div class="flex gap-2" id="step_9">
+        <input type="checkbox" name="" id="" />
+        <p class="text-sm">Virtual Account BNI</p>
+      </div>
+      <button class="bg-biru hover:bg-blue-500 text-white font-normal h-7 mx-auto rounded text-xs w-24" id="step_10">Rekap</button>
+      <button class="bg-biru hover:bg-blue-500 text-white font-normal h-7 mx-auto rounded text-xs w-24" id="step_11">Detail</button>
+      <button class="bg-biru hover:bg-blue-500 text-white font-normal h-7 mx-auto rounded text-xs w-24" id="step_12">Simpan</button>
+      <button class="bg-biru hover:bg-blue-500 text-white font-normal h-7 mx-auto rounded text-xs w-24" id="step_13"><a href="daftar_pasien_yang_masih_di_rawat.html">Kembali</a></button>
+    </div>
+    <div class="h-24"></div>
+    <script>
+      document.getElementById('tour').addEventListener('click', function () {
+        const wt = new WebTour();
+        const steps = [
+          {
+            //layanan
+            element: '#step_1',
+            title: '',
+            content: 'berfungsi untuk melihat semua layanan yang sudah diberikan',
+            placement: 'right-start',
+          },
+          {
+            //Resep
+            element: '#step_2',
+            title: '',
+            content: 'berfungsi untuk melihat semua resep obat  yang sudah diberikan',
+            placement: 'right-start',
+          },
+          {
+            //checkbox verifikasi semua
+            element: '#step_3',
+            title: '',
+            content: 'berfungsi untuk memilih semua data yang akan di verifikasi.',
+            placement: 'right-start',
+          },
+          {
+            //RUANG
+            element: '#step_4',
+            title: '',
+            content: 'form yang digunakan untuk mencari layanan atau resep di suatu ruangan',
+            placement: 'left-start',
+          },
+          {
+            //checkbox disamping data
+            element: '#step_5',
+            title: '',
+            content: 'berfungsi unutk memilih data tersebut',
+            placement: 'right-start',
+          },
+          {
+            //checkbox multi penjamin
+            element: '#step_6',
+            title: '',
+            content: 'berfungsi ketika pasien memiliki penjamin lebih dari satu',
+            placement: 'right-start',
+          },
+          {
+            // checkbox diskon total
+            element: '#step_7',
+            title: '',
+            content: 'berfungsi ketika pembayaran menggunakan diskon',
+            placement: 'right-start',
+          },
+          {
+            //checkbox iur bayar
+            element: '#step_8',
+            title: '',
+            content: 'berfungsi ketika metode pembayaran berbasis iuran.',
+            placement: 'right-start',
+          },
+          {
+            //checkbox BNI virtual account
+            element: '#step_9',
+            title: '',
+            content: 'berfungsi ketika pembayaran menggunakan BNI virtual account',
+            placement: 'top-start',
+          },
+          {
+            //rekap
+            element: '#step_10',
+            title: '',
+            content: 'berfungsi untuk melihat rekap tagihan pasien.',
+            placement: 'top-start',
+          },
+          {
+            //detail
+            element: '#step_11',
+            title: '',
+            content: 'berfungsi seperti tombol detail lainya',
+            placement: 'top-start',
+          },
+          {
+            //tombol simpan
+            element: '#step_12',
+            title: '',
+            content: 'berfungsi ketika sudah memilih data dan akan di verifikasi',
+            placement: 'top-end',
+          },
+          {
+            //tombol kembali
+            element: '#step_13',
+            title: '',
+            content: 'berfungsi untuk kembali ke halaman selanjutnya',
+            placement: 'left-end',
+          },
+        ];
+
+        wt.setSteps(steps);
+        wt.start();
+      });
+
+      const sidebar = document.getElementById('sidebar');
+      const toggleSidebarButton = document.getElementById('toggleSidebar');
+      const closeSidebarButton = document.getElementById('close');
+      const mainContentOverlay = document.getElementById('mainContentOverlay');
+      const dropdownContent = document.getElementById('myDropdown');
+      const dropdownContent1 = document.getElementById('myDropdown1');
+
+      toggleSidebarButton.addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+        mainContentOverlay.style.display = 'block';
+      });
+
+      closeSidebarButton.addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+        mainContentOverlay.style.display = 'none';
+      });
+
+      // Close sidebar when clicking outside
+      document.addEventListener('click', (event) => {
+        if (!sidebar.contains(event.target) && event.target !== toggleSidebarButton) {
+          sidebar.classList.add('-translate-x-full');
+          mainContentOverlay.style.display = 'none';
+        }
+      });
+
+      function toggleDropdown() {
+        dropdownContent.classList.toggle('opacity-100');
+        dropdownContent.classList.toggle('scale-y-100');
+        dropdownContent.classList.toggle('scale-y-0');
+      }
+      function toggleDropdown2() {
+        dropdownContent1.classList.toggle('opacity-100');
+        dropdownContent1.classList.toggle('scale-y-100');
+        dropdownContent1.classList.toggle('scale-y-0');
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.addEventListener('click', function (event) {
+        if (!event.target.matches('.dropbtn')) {
+          if (dropdownContent.classList.contains('opacity-100')) {
+            toggleDropdown();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
